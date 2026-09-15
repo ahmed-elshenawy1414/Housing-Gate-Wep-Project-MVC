@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App.Name" xml:space="preserve">
+    <value>بوابة السكن</value>
+  </data>
+  <data name="Nav.Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="Nav.FindHousing" xml:space="preserve">
+    <value>ابحث عن سكن</value>
+  </data>
+  <data name="Nav.Matches" xml:space="preserve">
+    <value>تطابق زملاء الغرفة</value>
+  </data>
+  <data name="Nav.MyApplications" xml:space="preserve">
+    <value>طلباتي</value>
+  </data>
+  <data name="Nav.Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="Nav.MyProperties" xml:space="preserve">
+    <value>ممتلكاتي</value>
+  </data>
+  <data name="Nav.Applications" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="Nav.Users" xml:space="preserve">
+    <value>المستخدمون</value>
+  </data>
+  <data name="Nav.Properties" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Nav.Complaints" xml:space="preserve">
+    <value>الشكاوى</value>
+  </data>
+  <data name="Nav.Reviews" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="Nav.AuditLogs" xml:space="preserve">
+    <value>سجلات التدقيق</value>
+  </data>
+  <data name="Audit.Action.Student.Verify" xml:space="preserve">
+    <value>توثيق طالب</value>
+  </data>
+  <data name="Audit.Action.Student.Reject" xml:space="preserve">
+    <value>رفض توثيق طالب</value>
+  </data>
+  <data name="Audit.Action.Student.RequestDocuments" xml:space="preserve">
+    <value>طلب مستندات الطالب</value>
+  </data>
+  <data name="Audit.Action.Owner.Verify" xml:space="preserve">
+    <value>توثيق مالك</value>
+  </data>
+  <data name="Audit.Action.Owner.Reject" xml:space="preserve">
+    <value>رفض توثيق مالك</value>
+  </data>
+  <data name="Audit.Action.Property.Approve" xml:space="preserve">
+    <value>اعتماد عقار</value>
+  </data>
+  <data name="Audit.Action.Property.Reject" xml:space="preserve">
+    <value>رفض عقار</value>
+  </data>
+  <data name="Audit.Action.User.Suspend" xml:space="preserve">
+    <value>تعليق مستخدم</value>
+  </data>
+  <data name="Audit.Action.User.Activate" xml:space="preserve">
+    <value>تفعيل مستخدم</value>
+  </data>
+  <data name="Audit.Action.Complaint.Respond" xml:space="preserve">
+    <value>الرد على شكوى</value>
+  </data>
+  <data name="Audit.Action.Review.Approve" xml:space="preserve">
+    <value>اعتماد تقييم</value>
+  </data>
+  <data name="Audit.Action.Review.Remove" xml:space="preserve">
+    <value>إزالة تقييم</value>
+  </data>
+  <data name="Audit.Entity.Student" xml:space="preserve">
+    <value>طالب</value>
+  </data>
+  <data name="Audit.Entity.Owner" xml:space="preserve">
+    <value>مالك</value>
+  </data>
+  <data name="Audit.Entity.Property" xml:space="preserve">
+    <value>عقار</value>
+  </data>
+  <data name="Audit.Entity.User" xml:space="preserve">
+    <value>مستخدم</value>
+  </data>
+  <data name="Audit.Entity.Complaint" xml:space="preserve">
+    <value>شكوى</value>
+  </data>
+  <data name="Audit.Entity.Review" xml:space="preserve">
+    <value>تقييم</value>
+  </data>
+  <data name="Nav.HowItWorks" xml:space="preserve">
+    <value>كيف يعمل</value>
+  </data>
+  <data name="Nav.About" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="Nav.SignIn" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Nav.JoinNow" xml:space="preserve">
+    <value>انضم الآن</value>
+  </data>
+  <data name="Nav.SignOut" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="Nav.MyProfile" xml:space="preserve">
+    <value>ملفي الشخصي</value>
+  </data>
+  <data name="Nav.ViewAll" xml:space="preserve">
+    <value>عرض الكل</value>
+  </data>
+  <data name="Nav.Toggle" xml:space="preserve">
+    <value>تبديل التنقل</value>
+  </data>
+  <data name="Nav.Notifications" xml:space="preserve">
+    <value>الإشعارات</value>
+  </data>
+  <data name="Nav.AllCaughtUp" xml:space="preserve">
+    <value>لا توجد إشعارات جديدة.</value>
+  </data>
+  <data name="Nav.Brand" xml:space="preserve">
+    <value>بوابة السكن</value>
+  </data>
+  <data name="Layout.FooterTagline" xml:space="preserve">
+    <value>سكن طلابي موثق ومطابقة زملاء الغرفة لطلاب الجامعات.</value>
+  </data>
+  <data name="Layout.ForStudents" xml:space="preserve">
+    <value>للطلاب</value>
+  </data>
+  <data name="Layout.AboutUs" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="Layout.NeedHelp" xml:space="preserve">
+    <value>تحتاج مساعدة؟</value>
+  </data>
+  <data name="Layout.NeedHelpText" xml:space="preserve">
+    <value>افتح شكوى من لوحة التحكم وسيتابع فريقنا الأمر.</value>
+  </data>
+  <data name="Layout.Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Layout.Language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="Layout.OtherLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Common.Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Common.Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Common.Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Common.Create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="Common.Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="Common.Submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Common.Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Common.Apply" xml:space="preserve">
+    <value>قدّم طلبًا</value>
+  </data>
+  <data name="Common.Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Common.Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="Common.View" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Common.Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="Common.Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="Common.No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="Common.Confirm" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="Common.Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Common.Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Common.Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Common.Actions" xml:space="preserve">
+    <value>إجراءات</value>
+  </data>
+  <data name="Common.Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Common.None" xml:space="preserve">
+    <value>لا يوجد</value>
+  </data>
+  <data name="Common.Date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Common.NotAvailable" xml:space="preserve">
+    <value>غير متاح</value>
+  </data>
+  <data name="Common.Optional" xml:space="preserve">
+    <value>(اختياري)</value>
+  </data>
+  <data name="Common.Rent" xml:space="preserve">
+    <value>الإيجار</value>
+  </data>
+  <data name="Common.Deposit" xml:space="preserve">
+    <value>وديعة</value>
+  </data>
+  <data name="Common.Total" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="Common.Loading" xml:space="preserve">
+    <value>جارٍ التحميل...</value>
+  </data>
+  <data name="Common.Required" xml:space="preserve">
+    <value>هذا الحقل مطلوب.</value>
+  </data>
+  <data name="Common.ConfirmDelete" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد الحذف؟</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Pending" xml:space="preserve">
+    <value>قيد المراجعة</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Approved" xml:space="preserve">
+    <value>موافق عليه</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Rejected" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="Enums.ApprovalStatus.NeedsChanges" xml:space="preserve">
+    <value>يتطلب تعديلات</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Draft" xml:space="preserve">
+    <value>مسودة</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Suspended" xml:space="preserve">
+    <value>معلق</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Archived" xml:space="preserve">
+    <value>مؤرشف</value>
+  </data>
+  <data name="Enums.PropertyType.Apartment" xml:space="preserve">
+    <value>شقة</value>
+  </data>
+  <data name="Enums.PropertyType.SharedHouse" xml:space="preserve">
+    <value>بيت مشترك</value>
+  </data>
+  <data name="Enums.PropertyType.Studio" xml:space="preserve">
+    <value>استوديو</value>
+  </data>
+  <data name="Enums.PropertyType.SingleRoom" xml:space="preserve">
+    <value>غرفة مفردة</value>
+  </data>
+  <data name="Enums.RoomType.Single" xml:space="preserve">
+    <value>مفردة</value>
+  </data>
+  <data name="Enums.RoomType.Shared" xml:space="preserve">
+    <value>مشتركة</value>
+  </data>
+  <data name="Enums.RoomType.Master" xml:space="preserve">
+    <value>رئيسية</value>
+  </data>
+  <data name="Enums.BathroomType.Private" xml:space="preserve">
+    <value>خاصة</value>
+  </data>
+  <data name="Enums.BathroomType.Shared" xml:space="preserve">
+    <value>مشتركة</value>
+  </data>
+  <data name="Enums.BathroomType.Attached" xml:space="preserve">
+    <value>ملحقة</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Pending" xml:space="preserve">
+    <value>قيد الانتظار</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Approved" xml:space="preserve">
+    <value>مقبول</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Rejected" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Cancelled" xml:space="preserve">
+    <value>ملغي</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Open" xml:space="preserve">
+    <value>مفتوحة</value>
+  </data>
+  <data name="Enums.ComplaintStatus.UnderReview" xml:space="preserve">
+    <value>قيد المعالجة</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Resolved" xml:space="preserve">
+    <value>تم الحل</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Dismissed" xml:space="preserve">
+    <value>مرفوضة</value>
+  </data>
+  <data name="Enums.VerificationStatus.Unverified" xml:space="preserve">
+    <value>غير موثق</value>
+  </data>
+  <data name="Enums.VerificationStatus.Pending" xml:space="preserve">
+    <value>قيد المراجعة</value>
+  </data>
+  <data name="Enums.VerificationStatus.Verified" xml:space="preserve">
+    <value>موثق</value>
+  </data>
+  <data name="Enums.VerificationStatus.Rejected" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="Enums.VerificationStatus.NeedsChanges" xml:space="preserve">
+    <value>يتطلب تعديلات</value>
+  </data>
+  <data name="Enums.ReviewStatus.Pending" xml:space="preserve">
+    <value>قيد المراجعة</value>
+  </data>
+  <data name="Enums.ReviewStatus.Approved" xml:space="preserve">
+    <value>منشور</value>
+  </data>
+  <data name="Enums.ReviewStatus.Removed" xml:space="preserve">
+    <value>محذوف</value>
+  </data>
+  <data name="Enums.StayStatus.Active" xml:space="preserve">
+    <value>نشط</value>
+  </data>
+  <data name="Enums.StayStatus.Completed" xml:space="preserve">
+    <value>مكتمل</value>
+  </data>
+  <data name="Enums.StayStatus.Cancelled" xml:space="preserve">
+    <value>ملغي</value>
+  </data>
+  <data name="Enums.Gender.Male" xml:space="preserve">
+    <value>ذكر</value>
+  </data>
+  <data name="Enums.Gender.Female" xml:space="preserve">
+    <value>أنثى</value>
+  </data>
+  <data name="Enums.Gender.Other" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="Enums.Gender.PreferNotToSay" xml:space="preserve">
+    <value>أفضل عدم الإفصاح</value>
+  </data>
+  <data name="Enums.SleepSchedule.EarlyBird" xml:space="preserve">
+    <value>صباحي</value>
+  </data>
+  <data name="Enums.SleepSchedule.NightOwl" xml:space="preserve">
+    <value>ليلي</value>
+  </data>
+  <data name="Enums.SleepSchedule.Flexible" xml:space="preserve">
+    <value>مرن</value>
+  </data>
+  <data name="Enums.NoiseLevel.Quiet" xml:space="preserve">
+    <value>هادئ</value>
+  </data>
+  <data name="Enums.NoiseLevel.Moderate" xml:space="preserve">
+    <value>معتدل</value>
+  </data>
+  <data name="Enums.NoiseLevel.Loud" xml:space="preserve">
+    <value>صاخب</value>
+  </data>
+  <data name="Enums.Cleanliness.Tidy" xml:space="preserve">
+    <value>مرتب</value>
+  </data>
+  <data name="Enums.Cleanliness.Casual" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="Enums.Cleanliness.Messy" xml:space="preserve">
+    <value>فوضوي</value>
+  </data>
+  <data name="Enums.ComplaintType.Harassment" xml:space="preserve">
+    <value>تحرش</value>
+  </data>
+  <data name="Enums.ComplaintType.PropertyIssue" xml:space="preserve">
+    <value>مشكلة عقار</value>
+  </data>
+  <data name="Enums.ComplaintType.Misrepresentation" xml:space="preserve">
+    <value>تضليل</value>
+  </data>
+  <data name="Enums.ComplaintType.Scam" xml:space="preserve">
+    <value>احتيال</value>
+  </data>
+  <data name="Enums.ComplaintType.Other" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Exterior" xml:space="preserve">
+    <value>واجهة المبنى</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Entrance" xml:space="preserve">
+    <value>مدخل</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.LivingRoom" xml:space="preserve">
+    <value>غرفة معيشة</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Kitchen" xml:space="preserve">
+    <value>مطبخ</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Bathroom" xml:space="preserve">
+    <value>حمام</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Bedroom" xml:space="preserve">
+    <value>غرفة نوم</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Other" xml:space="preserve">
+    <value>أخرى</value>
+  </data>
+  <data name="Enums.NotificationType.General" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="Enums.NotificationType.Application" xml:space="preserve">
+    <value>طلب</value>
+  </data>
+  <data name="Enums.NotificationType.ApplicationStatus" xml:space="preserve">
+    <value>حالة الطلب</value>
+  </data>
+  <data name="Enums.NotificationType.Message" xml:space="preserve">
+    <value>رسالة</value>
+  </data>
+  <data name="Enums.NotificationType.PropertyApproval" xml:space="preserve">
+    <value>موافقة العقار</value>
+  </data>
+  <data name="Enums.NotificationType.Review" xml:space="preserve">
+    <value>تقييم</value>
+  </data>
+  <data name="Enums.NotificationType.Complaint" xml:space="preserve">
+    <value>شكوى</value>
+  </data>
+  <data name="Enums.NotificationType.Verification" xml:space="preserve">
+    <value>توثيق</value>
+  </data>
+  <data name="Enums.NotificationType.Reminder" xml:space="preserve">
+    <value>تذكير</value>
+  </data>
+  <data name="Account.Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Account.LoginTitle" xml:space="preserve">
+    <value>مرحبًا بعودتك</value>
+  </data>
+  <data name="Account.LoginSubtitle" xml:space="preserve">
+    <value>سجل الدخول لإدارة سكنك.</value>
+  </data>
+  <data name="Account.Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Account.Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Account.RememberMe" xml:space="preserve">
+    <value>تذكرني</value>
+  </data>
+  <data name="Account.ForgotPassword" xml:space="preserve">
+    <value>نسيت كلمة المرور؟</value>
+  </data>
+  <data name="Account.NoAccount" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="Account.Register" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Account.RegisterTitle" xml:space="preserve">
+    <value>انضم إلى بوابة السكن</value>
+  </data>
+  <data name="Account.RegisterSubtitle" xml:space="preserve">
+    <value>أنشئ حسابك لبدء البحث.</value>
+  </data>
+  <data name="Account.FirstName" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
+  <data name="Account.LastName" xml:space="preserve">
+    <value>اسم العائلة</value>
+  </data>
+  <data name="Account.PhoneNumber" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="Account.ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="Account.Role" xml:space="preserve">
+    <value>أنا</value>
+  </data>
+  <data name="Account.Student" xml:space="preserve">
+    <value>طالب</value>
+  </data>
+  <data name="Account.Owner" xml:space="preserve">
+    <value>مالك عقار</value>
+  </data>
+  <data name="Account.AlreadyRegistered" xml:space="preserve">
+    <value>لديك حساب بالفعل؟</value>
+  </data>
+  <data name="Account.LogoutConfirm" xml:space="preserve">
+    <value>تسجيل الخروج؟</value>
+  </data>
+  <data name="Account.LoginError" xml:space="preserve">
+    <value>بيانات الدخول غير صحيحة.</value>
+  </data>
+  <data name="Account.LoginLocked" xml:space="preserve">
+    <value>حسابك مقفل.</value>
+  </data>
+  <data name="Account.RegisterError" xml:space="preserve">
+    <value>فشل التسجيل.</value>
+  </data>
+  <data name="Account.EmailInUse" xml:space="preserve">
+    <value>يوجد حساب بهذا البريد الإلكتروني بالفعل.</value>
+  </data>
+  <data name="Account.CreatedOwner" xml:space="preserve">
+    <value>تم إنشاء حساب المالك.</value>
+  </data>
+  <data name="Account.CreatedStudent" xml:space="preserve">
+    <value>تم إنشاء حساب الطالب.</value>
+  </data>
+  <data name="Account.AccessDenied" xml:space="preserve">
+    <value>تم رفض الوصول</value>
+  </data>
+  <data name="Account.AccessDeniedText" xml:space="preserve">
+    <value>ليس لديك صلاحية لعرض هذه الصفحة.</value>
+  </data>
+  <data name="Account.BackToHome" xml:space="preserve">
+    <value>العودة للرئيسية</value>
+  </data>
+  <data name="Account.LoginToContinue" xml:space="preserve">
+    <value>سجل الدخول للمتابعة</value>
+  </data>
+  <data name="Account.DemoAccounts" xml:space="preserve">
+    <value>حسابات تجريبية</value>
+  </data>
+  <data name="Account.DemoStudent" xml:space="preserve">
+    <value>طالب</value>
+  </data>
+  <data name="Account.DemoOwner" xml:space="preserve">
+    <value>مالك</value>
+  </data>
+  <data name="Account.DemoAdmin" xml:space="preserve">
+    <value>مشرف</value>
+  </data>
+  <data name="Account.IAmA" xml:space="preserve">
+    <value>أنا...</value>
+  </data>
+  <data name="Account.TermsPrefix" xml:space="preserve">
+    <value>أوافق على</value>
+  </data>
+  <data name="Account.TermsOfService" xml:space="preserve">
+    <value>شروط الخدمة</value>
+  </data>
+  <data name="Account.AndWord" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="Account.PrivacyPolicy" xml:space="preserve">
+    <value>سياسة الخصوصية</value>
+  </data>
+  <data name="HiW.Step1Title" xml:space="preserve">
+    <value>أنشئ حسابك</value>
+  </data>
+  <data name="HiW.Step1Text" xml:space="preserve">
+    <value>سجّل كطالب للبحث عن سكن وإيجاد زملاء، أو كمالك لعرض العقارات. كل حساب يتم توثيق هوية صاحبه.</value>
+  </data>
+  <data name="HiW.Step2Title" xml:space="preserve">
+    <value>أكمل ملفك الشخصي</value>
+  </data>
+  <data name="HiW.Step2Text" xml:space="preserve">
+    <value>يضيف الطلاب جامعتهم وميزانيتهم وتاريخ الانتقال وتفاصيل نمط الحياة. يضيف الملاك معلومات الشركة ومستندات الملكية. ارفع بطاقة طلابية أو إثبات ملكية للحصول على شارة التوثيق.</value>
+  </data>
+  <data name="HiW.Step3Title" xml:space="preserve">
+    <value>ابحث عن سكن وزملاء</value>
+  </data>
+  <data name="HiW.Step3Text" xml:space="preserve">
+    <value>تصفح العقارات الموثقة حسب المدينة والسعر والنوع. صفحة مطابقة زملاء الغرفة ترتب الطلاب حسب تداخل الميزانية وتفضيل الجنس والتدخين وجدول النوم والضوضاء والنظافة والحيوانات الأليفة.</value>
+  </data>
+  <data name="HiW.Step4Title" xml:space="preserve">
+    <value>قدّم طلبًا واحصل على الموافقة</value>
+  </data>
+  <data name="HiW.Step4Text" xml:space="preserve">
+    <value>قدّم طلبًا لغرفة مع رسالة قصيرة. يوافق المالك على طلبك أو يرفضه. تتحول الطلبات المقبولة إلى إقامات موثقة.</value>
+  </data>
+  <data name="HiW.Step5Title" xml:space="preserve">
+    <value>قيّم بصدق</value>
+  </data>
+  <data name="HiW.Step5Text" xml:space="preserve">
+    <value>بعد انتهاء إقامة موثقة، يمكنك تقييم العقار والطلاب الذين عشت معهم. يتم مراجعة التقييمات من قبل المشرفين للحفاظ على سلامة المجتمع.</value>
+  </data>
+  <data name="HiW.Step6Text" xml:space="preserve">
+    <value>يمكن للطلاب والملاك تقديم شكاوى عن مستخدم أو عقار. يقوم فريق الإدارة بمراجعة كل شكوى والمتابعة.</value>
+  </data>
+  <data name="HiW.GetStarted" xml:space="preserve">
+    <value>ابدأ الآن</value>
+  </data>
+  <data name="HiW.BrowseHousing" xml:space="preserve">
+    <value>تصفح السكن</value>
+  </data>
+  <data name="About.Lead" xml:space="preserve">
+    <value>بوابة السكن هي سوق سكن طلابي يربط طلاب الجامعات بملاك العقارات الموثقين — والأهم من ذلك، ببعضهم البعض.</value>
+  </data>
+  <data name="About.Body" xml:space="preserve">
+    <value>الابتعاد عن مسقط رأسك صعب. العثور على مكان يناسب ميزانيتك صعب. والعثور على أشخاص تريد فعلًا العيش معهم هو الأصعب غالبًا. بُنيت بوابة السكن لحل الأمور الثلاثة معًا.</value>
+  </data>
+  <data name="About.DifferentTitle" xml:space="preserve">
+    <value>ما الذي يميزنا</value>
+  </data>
+  <data name="About.Point1Title" xml:space="preserve">
+    <value>توثيق شامل</value>
+  </data>
+  <data name="About.Point1Text" xml:space="preserve">
+    <value>الطلاب والملاك والعقارات تخضع جميعها للمراجعة.</value>
+  </data>
+  <data name="About.Point2Title" xml:space="preserve">
+    <value>مطابقة زملاء الغرفة</value>
+  </data>
+  <data name="About.Point2Text" xml:space="preserve">
+    <value>درجات توافق مبنية على ملفك وتفضيلاتك.</value>
+  </data>
+  <data name="About.Point3Title" xml:space="preserve">
+    <value>تقييمات بعد إقامات موثقة</value>
+  </data>
+  <data name="About.Point3Text" xml:space="preserve">
+    <value>المقيمون الفعليون فقط يمكنهم تقييم عقار أو زميل غرفة.</value>
+  </data>
+  <data name="About.Point4Title" xml:space="preserve">
+    <value>شبكة أمان بشرية</value>
+  </data>
+  <data name="About.Point4Text" xml:space="preserve">
+    <value>المشرفون يوثقون الهويات ويراجعون التقييمات ويتعاملون مع الشكاوى.</value>
+  </data>
+  <data name="Error.RequestId" xml:space="preserve">
+    <value>معرف الطلب</value>
+  </data>
+  <data name="Home.Hero" xml:space="preserve">
+    <value>جد منزلك بعيدًا عن منزلك</value>
+  </data>
+  <data name="Home.HeroSub" xml:space="preserve">
+    <value>ابحث عن سكن طلابي موثق، قارن الغرف واعثر على زملاء متوافقين.</value>
+  </data>
+  <data name="Home.HeroTagline" xml:space="preserve">
+    <value>جد منزلك واعثر على رفاقك.</value>
+  </data>
+  <data name="Home.HeroText" xml:space="preserve">
+    <value>بوابة السكن تربط الطلاب بمؤجرين موثقين وزملاء متوافقين — حتى يشعر الانتقال إلى مدينة جديدة بمزيد من الألفة.</value>
+  </data>
+  <data name="Home.City" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="Home.CityPlaceholder" xml:space="preserve">
+    <value>المدينة، مثلًا القاهرة</value>
+  </data>
+  <data name="Home.MaxRent" xml:space="preserve">
+    <value>أقصى إيجار</value>
+  </data>
+  <data name="Home.Popular" xml:space="preserve">
+    <value>شائع:</value>
+  </data>
+  <data name="Home.VerifiedListings" xml:space="preserve">
+    <value>عقارات موثقة</value>
+  </data>
+  <data name="Home.FeaturedHousing" xml:space="preserve">
+    <value>سكن مميز</value>
+  </data>
+  <data name="Home.BrowseAll" xml:space="preserve">
+    <value>تصفح الكل</value>
+  </data>
+  <data name="Home.NoListingsYet" xml:space="preserve">
+    <value>لا توجد عقارات بعد. ترقّب قريبًا!</value>
+  </data>
+  <data name="Home.HowWorks" xml:space="preserve">
+    <value>كيف تعمل بوابة السكن</value>
+  </data>
+  <data name="Home.Step1Title" xml:space="preserve">
+    <value>1. توثيق الحساب</value>
+  </data>
+  <data name="Home.Step1Text" xml:space="preserve">
+    <value>وثّق بطاقتك الطلابية أو مستندات الملكية حتى يعرف الجميع أنك حقيقي.</value>
+  </data>
+  <data name="Home.Step2Title" xml:space="preserve">
+    <value>2. المطابقة</value>
+  </data>
+  <data name="Home.Step2Text" xml:space="preserve">
+    <value>محرك المطابقة لدينا يجد زملاء يناسبون ميزانيتك ومواعيد نومك وأسلوب حياتك.</value>
+  </data>
+  <data name="Home.Step3Title" xml:space="preserve">
+    <value>3. الانتقال والتقييم</value>
+  </data>
+  <data name="Home.Step3Text" xml:space="preserve">
+    <value>قدّم طلبك وانتقل ثم قيّم العقار وزملاءك بعد إقامة موثقة.</value>
+  </data>
+  <data name="Card.Featured" xml:space="preserve">
+    <value>مميز</value>
+  </data>
+  <data name="Card.VerifiedOwner" xml:space="preserve">
+    <value>مالك موثق</value>
+  </data>
+  <data name="Card.Furnished" xml:space="preserve">
+    <value>مفروش</value>
+  </data>
+  <data name="Card.BedroomsShort" xml:space="preserve">
+    <value>غرف</value>
+  </data>
+  <data name="Card.PerMonth" xml:space="preserve">
+    <value>/شهريًا</value>
+  </data>
+  <data name="Common.CurrencySymbol" xml:space="preserve">
+    <value>ج.م</value>
+  </data>
+  <data name="Home.SearchPlaceholder" xml:space="preserve">
+    <value>ابحث بالمدينة أو الحي أو الجامعة...</value>
+  </data>
+  <data name="Home.SearchButton" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="Home.Featured" xml:space="preserve">
+    <value>عقارات مميزة</value>
+  </data>
+  <data name="Home.LatestListings" xml:space="preserve">
+    <value>أحدث العقارات</value>
+  </data>
+  <data name="Home.ViewAll" xml:space="preserve">
+    <value>عرض جميع العقارات</value>
+  </data>
+  <data name="Home.NoListings" xml:space="preserve">
+    <value>لا توجد عقارات متاحة حاليًا.</value>
+  </data>
+  <data name="Home.Feature1" xml:space="preserve">
+    <value>عقارات موثقة</value>
+  </data>
+  <data name="Home.Feature1Text" xml:space="preserve">
+    <value>يتم مراجعة كل عقار من قبل فريقنا قبل نشره.</value>
+  </data>
+  <data name="Home.Feature2" xml:space="preserve">
+    <value>مطابقة زملاء الغرفة</value>
+  </data>
+  <data name="Home.Feature2Text" xml:space="preserve">
+    <value>اعثر على طلاب بتفضيلات وأسلوب حياة متوافق.</value>
+  </data>
+  <data name="Home.Feature3" xml:space="preserve">
+    <value>تقييمات عادلة</value>
+  </data>
+  <data name="Home.Feature3Text" xml:space="preserve">
+    <value>تقييمات حقيقية من طلاب أقاموا بالفعل.</value>
+  </data>
+  <data name="Home.HowItWorksTitle" xml:space="preserve">
+    <value>كيف يعمل</value>
+  </data>
+  <data name="Home.AboutTitle" xml:space="preserve">
+    <value>عن بوابة السكن</value>
+  </data>
+  <data name="Home.AboutText" xml:space="preserve">
+    <value>بوابة السكن تربط طلاب الجامعات بسكن موثق وعادل السعر وتساعدهم في العثور على زملاء متوافقين.</value>
+  </data>
+  <data name="Notif.NoNotifications" xml:space="preserve">
+    <value>لا توجد إشعارات بعد.</value>
+  </data>
+  <data name="Notif.MarkAllRead" xml:space="preserve">
+    <value>تحديد الكل كمقروء</value>
+  </data>
+  <data name="Notif.Unread" xml:space="preserve">
+    <value>غير مقروء</value>
+  </data>
+  <data name="Notif.Read" xml:space="preserve">
+    <value>مقروء</value>
+  </data>
+  <data name="Error.Title" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="Error.NotFound" xml:space="preserve">
+    <value>الصفحة غير موجودة</value>
+  </data>
+  <data name="Error.SomethingWentWrong" xml:space="preserve">
+    <value>حدث خطأ ما.</value>
+  </data>
+  <data name="Error.TryAgain" xml:space="preserve">
+    <value>يرجى المحاولة لاحقًا.</value>
+  </data>
+  <data name="Error.NoAccess" xml:space="preserve">
+    <value>ليس لديك حق الوصول لهذه الصفحة.</value>
+  </data>
+  <data name="Msg.Welcome" xml:space="preserve">
+    <value>مرحبًا بك في بوابة السكن! أكمل ملفك للاستفادة القصوى من المنصة.</value>
+  </data>
+  <data name="Msg.ProfileUpdated" xml:space="preserve">
+    <value>تم تحديث الملف.</value>
+  </data>
+  <data name="Msg.UpdatePrefs" xml:space="preserve">
+    <value>حدّث تفضيلات زملاء السكن أيضًا!</value>
+  </data>
+  <data name="Msg.PrefsSaved" xml:space="preserve">
+    <value>تم حفظ التفضيلات. محرك التطابق الآن يعرف ما تبحث عنه.</value>
+  </data>
+  <data name="Msg.DocsUploaded" xml:space="preserve">
+    <value>تم رفع المستندات. سيقوم أحد المشرفين بتوثيق حسابك قريبًا.</value>
+  </data>
+  <data name="Msg.AttachDocument" xml:space="preserve">
+    <value>يرجى إرفاق مستند.</value>
+  </data>
+  <data name="Msg.CancelPendingOnly" xml:space="preserve">
+    <value>يمكن إلغاء الطلبات المعلقة فقط.</value>
+  </data>
+  <data name="Msg.ApplicationCancelled" xml:space="preserve">
+    <value>تم إلغاء الطلب.</value>
+  </data>
+  <data name="Msg.ComplaintFiled" xml:space="preserve">
+    <value>تم إيداع الشكوى. سيقوم فريقنا بمراجعتها.</value>
+  </data>
+  <data name="Msg.ReviewSubmitted" xml:space="preserve">
+    <value>تم إرسال التقييم. سيظهر بعد موافقة المشرف.</value>
+  </data>
+  <data name="Msg.CommentRequired" xml:space="preserve">
+    <value>يرجى كتابة تعليق.</value>
+  </data>
+  <data name="Msg.RoommateReviewSubmitted" xml:space="preserve">
+    <value>تم إرسال تقييم زميل السكن. سيظهر بعد الموافقة.</value>
+  </data>
+  <data name="Msg.NotSharedStay" xml:space="preserve">
+    <value>لم يشاركك هذا الطالب في السكن.</value>
+  </data>
+  <data name="Msg.ApplicationSent" xml:space="preserve">
+    <value>تم إرسال الطلب! سيقوم المالك بمراجعته قريبًا.</value>
+  </data>
+  <data name="Msg.ApplicationApproved" xml:space="preserve">
+    <value>تمت الموافقة على الطلب. تم إنشاء إقامة موثقة.</value>
+  </data>
+  <data name="Msg.ApplicationRejected" xml:space="preserve">
+    <value>تم رفض الطلب.</value>
+  </data>
+  <data name="Msg.ListingCreated" xml:space="preserve">
+    <value>تم إنشاء الإعلان. سيُنشر بعد موافقة الإدارة.</value>
+  </data>
+  <data name="Msg.ListingUpdated" xml:space="preserve">
+    <value>تم تحديث الإعلان.</value>
+  </data>
+  <data name="Msg.ListingDeleted" xml:space="preserve">
+    <value>تم حذف الإعلان.</value>
+  </data>
+  <data name="Notif.ApplicationCancelled" xml:space="preserve">
+    <value>تم إلغاء الطلب</value>
+  </data>
+  <data name="Notif.ApplicationCancelledBody" xml:space="preserve">
+    <value>قام أحد الطلاب بسحب طلبه.</value>
+  </data>
+  <data name="RequiredAttribute_ValidationError" xml:space="preserve">
+    <value>هذا الحقل مطلوب.</value>
+  </data>
+  <data name="StringLengthAttribute_ValidationError" xml:space="preserve">
+    <value>يجب ألا يتجاوز طول القيمة {1} حرفًا.</value>
+  </data>
+  <data name="RangeAttribute_ValidationError" xml:space="preserve">
+    <value>يجب أن تكون القيمة بين {1} و {2}.</value>
+  </data>
+  <data name="EmailAddressAttribute_ValidationError" xml:space="preserve">
+    <value>عنوان البريد الإلكتروني غير صحيح.</value>
+  </data>
+  <data name="PhoneAttribute_ValidationError" xml:space="preserve">
+    <value>رقم الهاتف غير صحيح.</value>
+  </data>
+  <data name="CompareAttribute_ValidationError" xml:space="preserve">
+    <value>القيمتان غير متطابقتين.</value>
+  </data>
+  <data name="PasswordMismatch_ValidationError" xml:space="preserve">
+    <value>كلمة المرور وتأكيد كلمة المرور غير متطابقتين.</value>
+  </data>
+  <data name="TermsRequired_ValidationError" xml:space="preserve">
+    <value>يرجى الموافقة على الشروط للمتابعة.</value>
+  </data>
+  <data name="Err.PropertyNotFound" xml:space="preserve">
+    <value>العقار غير موجود.</value>
+  </data>
+  <data name="Err.PropertyCannotBeDeleted" xml:space="preserve">
+    <value>لا يمكن حذف هذا العقار لوجود طلبات أو إقامات مرتبطة به. يمكنك إيقافه بدلاً من ذلك.</value>
+  </data>
+  <data name="Err.ImageNotFound" xml:space="preserve">
+    <value>الصورة غير موجودة.</value>
+  </data>
+  <data name="Err.RoomNotFound" xml:space="preserve">
+    <value>الغرفة غير موجودة.</value>
+  </data>
+  <data name="Err.ListingNotAccepting" xml:space="preserve">
+    <value>هذا الإعلان لا يقبل الطلبات حالياً.</value>
+  </data>
+  <data name="Err.RoomUnavailable" xml:space="preserve">
+    <value>هذه الغرفة لم تعد متاحة.</value>
+  </data>
+  <data name="Err.AlreadyApplied" xml:space="preserve">
+    <value>لقد تقدمت بالفعل لهذه الغرفة.</value>
+  </data>
+  <data name="Err.ApplicationNotFound" xml:space="preserve">
+    <value>الطلب غير موجود.</value>
+  </data>
+  <data name="Err.ApplicationAnswered" xml:space="preserve">
+    <value>تم الرد على هذا الطلب بالفعل.</value>
+  </data>
+  <data name="Err.StudentProfileNotFoundFull" xml:space="preserve">
+    <value>ملف الطالب غير موجود. هل أنت مسجل كطالب؟</value>
+  </data>
+  <data name="Err.StudentProfileNotFound" xml:space="preserve">
+    <value>ملف الطالب غير موجود.</value>
+  </data>
+  <data name="Err.OwnerProfileNotFound" xml:space="preserve">
+    <value>ملف المالك غير موجود.</value>
+  </data>
+  <data name="Err.UserNotFound" xml:space="preserve">
+    <value>المستخدم غير موجود.</value>
+  </data>
+  <data name="Err.CannotDeactivateAdmin" xml:space="preserve">
+    <value>لا يمكن تعطيل حسابات المشرفين.</value>
+  </data>
+  <data name="Err.ComplaintNotFound" xml:space="preserve">
+    <value>الشكوى غير موجودة.</value>
+  </data>
+  <data name="Err.InvalidLogin" xml:space="preserve">
+    <value>بيانات تسجيل الدخول غير صحيحة.</value>
+  </data>
+  <data name="Err.StayNotYours" xml:space="preserve">
+    <value>هذه الإقامة ليست لك.</value>
+  </data>
+  <data name="Err.ReviewAfterStayEnd" xml:space="preserve">
+    <value>يمكنك مراجعة العقار فقط بعد انتهاء الإقامة.</value>
+  </data>
+  <data name="Err.AlreadyReviewedProperty" xml:space="preserve">
+    <value>لقد راجعت هذا العقار بالفعل لهذه الإقامة.</value>
+  </data>
+  <data name="Err.CannotReviewSelf" xml:space="preserve">
+    <value>لا يمكنك مراجعة نفسك.</value>
+  </data>
+  <data name="Err.ReviewRoommatesAfterStayEnd" xml:space="preserve">
+    <value>يمكنك مراجعة زملاء السكن فقط بعد انتهاء الإقامة.</value>
+  </data>
+  <data name="Err.OnlyLivedTogether" xml:space="preserve">
+    <value>يمكنك مراجعة الطلاب الذين عشت معهم فقط.</value>
+  </data>
+  <data name="Err.AlreadyReviewedRoommate" xml:space="preserve">
+    <value>لقد راجعت هذا الزميل بالفعل لهذه الإقامة.</value>
+  </data>
+  <data name="Err.ReviewNotFound" xml:space="preserve">
+    <value>المراجعة غير موجودة.</value>
+  </data>
+  <data name="Err.NationalIdRequired" xml:space="preserve">
+    <value>يرجى إرفاق صورة الرقم القومي.</value>
+  </data>
+  <data name="Err.UniversityIdRequired" xml:space="preserve">
+    <value>يرجى إرفاق بطاقة الطالب الجامعية.</value>
+  </data>
+  <data name="Err.ImgInvalidExtension" xml:space="preserve">
+    <value>يُسمح فقط بصور .jpg و .jpeg و .png و .webp.</value>
+  </data>
+  <data name="Err.ImgTooLarge" xml:space="preserve">
+    <value>يجب أن يتراوح حجم الصورة بين 1 بايت و 3 ميجابايت.</value>
+  </data>
+  <data name="Err.UploadFailed" xml:space="preserve">
+    <value>فشل الرفع. يرجى المحاولة مرة أخرى.</value>
+  </data>
+  <data name="Identity.DuplicateEmail" xml:space="preserve">
+    <value>البريد الإلكتروني &apos;{0}&apos; مستخدم بالفعل.</value>
+  </data>
+  <data name="Identity.DuplicateUserName" xml:space="preserve">
+    <value>اسم المستخدم &apos;{0}&apos; مستخدم بالفعل.</value>
+  </data>
+  <data name="Identity.PasswordTooShort" xml:space="preserve">
+    <value>يجب أن تتكون كلمة المرور من {0} أحرف على الأقل.</value>
+  </data>
+  <data name="Identity.PasswordRequiresDigit" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على رقم واحد على الأقل (&apos;0&apos;-&apos;9&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresLower" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل (&apos;a&apos;-&apos;z&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresUpper" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل (&apos;A&apos;-&apos;Z&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>يجب أن تحتوي كلمة المرور على حرف غير رقمي أو أبجدي واحد على الأقل.</value>
+  </data>
+  <data name="Identity.InvalidEmail" xml:space="preserve">
+    <value>البريد الإلكتروني &apos;{0}&apos; غير صالح.</value>
+  </data>
+  <data name="Identity.InvalidUserName" xml:space="preserve">
+    <value>اسم المستخدم &apos;{0}&apos; غير صالح.</value>
+  </data>
+  <data name="Identity.PasswordMismatch" xml:space="preserve">
+    <value>كلمة المرور غير صحيحة.</value>
+  </data>
+  <data name="Identity.UserAlreadyHasPassword" xml:space="preserve">
+    <value>المستخدم لديه كلمة مرور بالفعل.</value>
+  </data>
+  <data name="Identity.UserAlreadyInRole" xml:space="preserve">
+    <value>المستخدم موجود بالفعل في دور &apos;{0}&apos;.</value>
+  </data>
+  <data name="Identity.UserNotInRole" xml:space="preserve">
+    <value>المستخدم ليس في دور &apos;{0}&apos;.</value>
+  </data>
+  <data name="Identity.InvalidToken" xml:space="preserve">
+    <value>رمز غير صالح.</value>
+  </data>
+  <data name="Identity.ConcurrencyFailure" xml:space="preserve">
+    <value>تعارض التحديثات المتزامنة، تم تعديل الكائن.</value>
+  </data>
+  <data name="Identity.DefaultError" xml:space="preserve">
+    <value>حدث خطأ غير معروف.</value>
+  </data>
+  <data name="Identity.RecoveryCodeRedemptionFailed" xml:space="preserve">
+    <value>فشل استبدال رمز الاسترداد.</value>
+  </data>
+  <data name="Identity.LoginAlreadyAssociated" xml:space="preserve">
+    <value>يوجد مستخدم مسجل بهذه البيانات بالفعل.</value>
+  </data>
+  <data name="Identity.InvalidRoleName" xml:space="preserve">
+    <value>اسم الدور &apos;{0}&apos; غير صالح.</value>
+  </data>
+  <data name="Identity.DuplicateRoleName" xml:space="preserve">
+    <value>اسم الدور &apos;{0}&apos; مستخدم بالفعل.</value>
+  </data>
+  <data name="Identity.UserLockoutNotEnabled" xml:space="preserve">
+    <value>القفل غير مفعّل لهذا المستخدم.</value>
+  </data>
+  <data name="Identity.PasswordRequiresUniqueChars" xml:space="preserve">
+    <value>يجب أن تستخدم كلمة المرور {0} أحرف مختلفة على الأقل.</value>
+  </data>
+  <data name="Admin.Props.Approved" xml:space="preserve">
+    <value>تمت الموافقة على الإعلان ونشره.</value>
+  </data>
+  <data name="Admin.Props.Rejected" xml:space="preserve">
+    <value>تم رفض الإعلان.</value>
+  </data>
+  <data name="Admin.Users.StudentVerified" xml:space="preserve">
+    <value>تم التحقق من الطالب.</value>
+  </data>
+  <data name="Admin.Users.StudentRejected" xml:space="preserve">
+    <value>تم رفض التحقق من الطالب.</value>
+  </data>
+  <data name="Admin.Users.DocsRequested" xml:space="preserve">
+    <value>تم طلب مستندات جديدة من الطالب.</value>
+  </data>
+  <data name="Admin.Users.Updated" xml:space="preserve">
+    <value>تم تحديث حالة المستخدم.</value>
+  </data>
+  <data name="Admin.Cmpl.Updated" xml:space="preserve">
+    <value>تم تحديث الشكوى.</value>
+  </data>
+  <data name="Notif.NewApplicationReceived" xml:space="preserve">
+    <value>تم استلام طلب جديد</value>
+  </data>
+  <data name="Notif.NewApplicationReceivedBody" xml:space="preserve">
+    <value>تقدم طالب للغرفة &apos;{0}&apos; في عقار &apos;{1}&apos;.</value>
+  </data>
+  <data name="Notif.ListingEdited" xml:space="preserve">
+    <value>تم تعديل الإعلان</value>
+  </data>
+  <data name="Notif.ListingEditedBody" xml:space="preserve">
+    <value>تم تعديل &apos;{0}&apos; بشكل كبير ويحتاج إلى مراجعة جديدة.</value>
+  </data>
+  <data name="Notif.ApplicationAccepted" xml:space="preserve">
+    <value>تم قبول طلبك</value>
+  </data>
+  <data name="Notif.ApplicationDeclined" xml:space="preserve">
+    <value>تم رفض طلبك</value>
+  </data>
+  <data name="Notif.ApplicationAcceptedBody" xml:space="preserve">
+    <value>أخبار رائعة! تم قبول طلبك للغرفة &apos;{0}&apos;.</value>
+  </data>
+  <data name="Notif.ApplicationDeclinedBody" xml:space="preserve">
+    <value>تم رفض طلبك للغرفة &apos;{0}&apos; من قبل المالك.</value>
+  </data>
+  <data name="Notif.StudentVerified" xml:space="preserve">
+    <value>تم التحقق من حسابك الطلابي</value>
+  </data>
+  <data name="Notif.StudentVerifiedBody" xml:space="preserve">
+    <value>حصلت الآن على شارة الموثق، مما يعزز الثقة في المنصة.</value>
+  </data>
+  <data name="Notif.StudentRejected" xml:space="preserve">
+    <value>تم رفض التحقق من حسابك الطلابي</value>
+  </data>
+  <data name="Notif.StudentRejectedBody" xml:space="preserve">
+    <value>يرجى إعادة رفع نسخة أوضح من بطاقتك الطلابية من ملفك الشخصي.</value>
+  </data>
+  <data name="Notif.DocsRequested" xml:space="preserve">
+    <value>تم طلب مستندات تحقق جديدة</value>
+  </data>
+  <data name="Notif.DocsRequestedBody" xml:space="preserve">
+    <value>يرجى رفع مستندات التحقق المحدثة من ملفك الشخصي.</value>
+  </data>
+  <data name="Notif.ReasonPrefix" xml:space="preserve">
+    <value>السبب: {0}</value>
+  </data>
+  <data name="Notif.OwnerVerified" xml:space="preserve">
+    <value>تم التحقق من حسابك كمالك</value>
+  </data>
+  <data name="Notif.OwnerVerifiedBody" xml:space="preserve">
+    <value>يمكنك الآن نشر العقارات. الملاك الموثقون يحصلون على ترتيب أعلى في البحث.</value>
+  </data>
+  <data name="Notif.OwnerRejected" xml:space="preserve">
+    <value>تم رفض التحقق من حسابك كمالك</value>
+  </data>
+  <data name="Notif.OwnerRejectedBody" xml:space="preserve">
+    <value>يرجى إعادة رفع إثبات الملكية من ملفك الشخصي.</value>
+  </data>
+  <data name="Notif.ListingApproved" xml:space="preserve">
+    <value>تمت الموافقة على إعلانك</value>
+  </data>
+  <data name="Notif.ListingRejected" xml:space="preserve">
+    <value>تم رفض إعلانك</value>
+  </data>
+  <data name="Notif.ListingApprovedBody" xml:space="preserve">
+    <value>&apos;{0}&apos; أصبح منشوراً الآن على بوابة السكن.</value>
+  </data>
+  <data name="Notif.ListingRejectedBody" xml:space="preserve">
+    <value>تم رفض &apos;{0}&apos;. السبب: {1}</value>
+  </data>
+  <data name="Notif.Unspecified" xml:space="preserve">
+    <value>غير محدد</value>
+  </data>
+  <data name="Notif.ReviewLive" xml:space="preserve">
+    <value>مراجعتك منشورة الآن</value>
+  </data>
+  <data name="Notif.ReviewRemoved" xml:space="preserve">
+    <value>تمت إزالة مراجعتك</value>
+  </data>
+  <data name="Notif.ReviewLiveBody" xml:space="preserve">
+    <value>تمت الموافقة على مراجعة العقار وأصبحت ظاهرة الآن.</value>
+  </data>
+  <data name="Notif.ReviewRemovedBody" xml:space="preserve">
+    <value>قام أحد المشرفين بإزالة مراجعتك. تواصل مع الدعم إذا كانت لديك أسئلة.</value>
+  </data>
+  <data name="Notif.NewComplaint" xml:space="preserve">
+    <value>شكوى جديدة</value>
+  </data>
+  <data name="Notif.NewComplaintBody" xml:space="preserve">
+    <value>تم تقديم &apos;{0}&apos; ويحتاج إلى مراجعة.</value>
+  </data>
+  <data name="Notif.ComplaintUpdate" xml:space="preserve">
+    <value>تحديث الشكوى</value>
+  </data>
+  <data name="Notif.ComplaintUpdateBody" xml:space="preserve">
+    <value>شكواك &apos;{0}&apos; أصبحت الآن {1}.SharedResource</value>
+  </data>
+  <data name="Common.Major" xml:space="preserve">
+    <value>التخصص</value>
+  </data>
+  <data name="Common.DateOfBirth" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="Common.Furnished" xml:space="preserve">
+    <value>مفروش</value>
+  </data>
+  <data name="Admin.Users.Deleted" xml:space="preserve">
+    <value>تم حذف المستخدم.</value>
+  </data>
+  <data name="Admin.Props.Deleted" xml:space="preserve">
+    <value>تم حذف العقار.</value>
+  </data>
+  <data name="Notif.ListingDeletedByAdmin" xml:space="preserve">
+    <value>تم حذف الإعلان</value>
+  </data>
+  <data name="Notif.ListingDeletedByAdminBody" xml:space="preserve">
+    <value>قام أحد المشرفين بحذف إعلانك &quot;{0}&quot;.</value>
+  </data>
+  <data name="Err.CannotDeleteAdmin" xml:space="preserve">
+    <value>لا يمكن حذف حسابات المشرفين.</value>
+  </data>
+  <data name="Err.UserHasApplications" xml:space="preserve">
+    <value>لدى هذا المستخدم طلبات تقديم.</value>
+  </data>
+  <data name="Err.UserHasStays" xml:space="preserve">
+    <value>لدى هذا المستخدم إقامات.</value>
+  </data>
+  <data name="Err.UserHasComplaints" xml:space="preserve">
+    <value>هذا المستخدم طرف في شكاوى.</value>
+  </data>
+  <data name="Err.UserHasReviews" xml:space="preserve">
+    <value>هذا المستخدم لديه تقييمات (قدّمها أو استلمها).</value>
+  </data>
+  <data name="Err.UserPropertyHasHistory" xml:space="preserve">
+    <value>العقار &quot;{0}&quot; لديه طلبات أو إقامات أو شكاوى.</value>
+  </data>
+  <data name="Err.PropertyHasApplications" xml:space="preserve">
+    <value>لهذا العقار طلبات تقديم.</value>
+  </data>
+  <data name="Err.PropertyHasStays" xml:space="preserve">
+    <value>لهذا العقار إقامات.</value>
+  </data>
+  <data name="Err.PropertyHasComplaints" xml:space="preserve">
+    <value>لهذا العقار شكاوى.</value>
+  </data>
+  <data name="Common.Search" xml:space="preserve">
+    <value>Ø¨Ø­Ø«</value>
+  </data>
+  <data name="Common.SearchPlaceholder" xml:space="preserve">
+    <value>Ø¨Ø­Ø«...</value>
+  </data>
+  <data name="Audit.Action.User.Delete" xml:space="preserve">
+    <value>Ø­Ø°Ù Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…</value>
+  </data>
+  <data name="Audit.Action.Property.Delete" xml:space="preserve">
+    <value>Ø­Ø°Ù Ø§Ù„Ø¹Ù‚Ø§Ø±</value>
+  </data>
+  <data name="Profile.Picture" xml:space="preserve">
+    <value>صورة الملف الشخصي</value>
+  </data>
+  <data name="Profile.PictureHint" xml:space="preserve">
+    <value>أحد صور JPG أو PNG أو WebP، حد أقصى 3 ميغابايت</value>
+  </data>
+  <data name="Common.UrlPlaceholder" xml:space="preserve">
+    <value>مثال الرابط</value>
+  </data>
+  <data name="Nav.Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+</root>

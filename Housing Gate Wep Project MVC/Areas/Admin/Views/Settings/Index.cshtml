@@ -1,0 +1,70 @@
+@model StudentHousing.Areas.Admin.ViewModels.AdminSettingsViewModel
+@{
+    ViewData["Title"] = L["Nav.Settings"];
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="mb-0">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="mb-4">
+    <div class="alert alert-success d-none" id="successAlert">
+        <i class="bi bi-check-circle me-2"></i>
+        <span>Settings updated successfully.</span>
+    </div>
+    <div class="alert alert-danger d-none" id="errorAlert">
+        <i class="bi bi-exclamation-circle me-2"></i>
+        <span>Error updating settings. Please try again.</span>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">@L["Social.Media.Links"]</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="Index" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label asp-for="FacebookUrl" class="form-label">Facebook</label>
+<input type="url" asp-for="FacebookUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                    <div class="invalid-feedback">Please enter a valid Facebook URL.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="InstagramUrl" class="form-label">Instagram</label>
+<input type="url" asp-for="InstagramUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                    <div class="invalid-feedback">Please enter a valid Instagram URL.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="TikTokUrl" class="form-label">TikTok</label>
+<input type="url" asp-for="TikTokUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                    <div class="invalid-feedback">Please enter a valid TikTok URL.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Settings</button>
+                    <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="btn btn-link ms-2">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Form validation
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                })
+            })
+    })()
+</script>

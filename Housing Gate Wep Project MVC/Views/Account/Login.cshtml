@@ -1,0 +1,65 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = L["Account.Login"];
+}
+
+<div class="auth-shell">
+    <div class="auth-card p-4 p-md-5">
+        <div class="text-center mb-4">
+            <span class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.4rem;">
+                <i class="bi bi-house-heart-fill"></i>
+            </span>
+            <h1 class="h3 fw-bold mb-1">@L["Account.LoginTitle"]</h1>
+            <p class="text-muted mb-0">@L["Account.LoginToContinue"]</p>
+        </div>
+
+        <form asp-action="Login" method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">@L["Account.Email"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input asp-for="Email" class="form-control" autofocus autocomplete="email" />
+                </div>
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">@L["Account.Password"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input asp-for="Password" class="form-control" autocomplete="current-password" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-check mb-4">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label small">@L["Account.RememberMe"]</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">
+                <i class="bi bi-box-arrow-in-right me-2"></i>@L["Account.Login"]
+            </button>
+        </form>
+
+        <p class="text-center text-muted small mt-4 mb-4">
+            @L["Account.NoAccount"] <a asp-action="Register" class="fw-semibold">@L["Account.Register"]</a>
+        </p>
+
+        <div class="auth-demo p-3">
+            <p class="small fw-bold mb-2"><i class="bi bi-info-circle me-1"></i>@L["Account.DemoAccounts"]</p>
+            <ul class="small text-muted list-unstyled mb-0 d-flex flex-column gap-1">
+                <li><strong>@L["Account.DemoStudent"]:</strong> sara.ahmed@example.com <span class="text-nowrap">/ Student@123</span></li>
+                <li><strong>@L["Account.DemoOwner"]:</strong> karim.owner@example.com <span class="text-nowrap">/ Owner@123</span></li>
+                <li><strong>@L["Account.DemoAdmin"]:</strong> admin@housinggate.com <span class="text-nowrap">/ Admin@123</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

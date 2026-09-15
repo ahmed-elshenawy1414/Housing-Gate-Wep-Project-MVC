@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Common.Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Cmpl.About" xml:space="preserve">
+    <value>عن</value>
+  </data>
+  <data name="Cmpl.ColDate" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="Cmpl.ColFrom" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="Cmpl.ColId" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="Cmpl.ColProperty" xml:space="preserve">
+    <value>العقار</value>
+  </data>
+  <data name="Cmpl.ColStatus" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Cmpl.ColType" xml:space="preserve">
+    <value>الفئة</value>
+  </data>
+  <data name="Cmpl.Complaint" xml:space="preserve">
+    <value>شكوى</value>
+  </data>
+  <data name="Cmpl.Empty" xml:space="preserve">
+    <value>لا توجد شكاوى مقدمة.</value>
+  </data>
+  <data name="Cmpl.General" xml:space="preserve">
+    <value>عام</value>
+  </data>
+  <data name="Cmpl.Resolution" xml:space="preserve">
+    <value>القرار</value>
+  </data>
+  <data name="Cmpl.Response" xml:space="preserve">
+    <value>الرد</value>
+  </data>
+  <data name="Cmpl.ResponseLabel" xml:space="preserve">
+    <value>الرد (اختياري، يُرسل للطالب)</value>
+  </data>
+  <data name="Cmpl.Review" xml:space="preserve">
+    <value>مراجعة</value>
+  </data>
+  <data name="Cmpl.SaveResolution" xml:space="preserve">
+    <value>حفظ القرار</value>
+  </data>
+  <data name="Cmpl.Title" xml:space="preserve">
+    <value>الشكاوى</value>
+  </data>
+  <data name="Audit.Title" xml:space="preserve">
+    <value>سجلات التدقيق</value>
+  </data>
+  <data name="Audit.Empty" xml:space="preserve">
+    <value>لا توجد سجلات تدقيق.</value>
+  </data>
+  <data name="Audit.SearchPlaceholder" xml:space="preserve">
+    <value>ابحث بالحدث، الكيان، الوصف أو المسؤول...</value>
+  </data>
+  <data name="Audit.AllActions" xml:space="preserve">
+    <value>جميع الأحداث</value>
+  </data>
+  <data name="Audit.Filter" xml:space="preserve">
+    <value>تصفية</value>
+  </data>
+  <data name="Audit.ColTime" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="Audit.ColAdmin" xml:space="preserve">
+    <value>المسؤول</value>
+  </data>
+  <data name="Audit.ColAction" xml:space="preserve">
+    <value>الحدث</value>
+  </data>
+  <data name="Audit.ColEntity" xml:space="preserve">
+    <value>الكيان</value>
+  </data>
+  <data name="Audit.ColDetails" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Audit.ColReason" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="Audit.ColIp" xml:space="preserve">
+    <value>عنوان IP</value>
+  </data>
+  <data name="Dash.ApprovedProperties" xml:space="preserve">
+    <value>العقارات المعتمدة</value>
+  </data>
+  <data name="Dash.Dashboard" xml:space="preserve">
+    <value>لوحة التحكم</value>
+  </data>
+  <data name="Dash.NoListings" xml:space="preserve">
+    <value>لا توجد عقارات بعد.</value>
+  </data>
+  <data name="Dash.NoPendingVerifications" xml:space="preserve">
+    <value>لا توجد طلبات توثيق معلقة.</value>
+  </data>
+  <data name="Dash.OwnersAwaiting" xml:space="preserve">
+    <value>مالكون بانتظار التوثيق</value>
+  </data>
+  <data name="Dash.PendingProperties" xml:space="preserve">
+    <value>العقارات المعلقة</value>
+  </data>
+  <data name="Dash.RecentListings" xml:space="preserve">
+    <value>أحدث العقارات</value>
+  </data>
+  <data name="Dash.StudentsAwaiting" xml:space="preserve">
+    <value>طلاب بانتظار التوثيق</value>
+  </data>
+  <data name="Dash.Title" xml:space="preserve">
+    <value>لوحة تحكم الإدارة</value>
+  </data>
+  <data name="Dash.TotalListings" xml:space="preserve">
+    <value>العقارات المنشورة</value>
+  </data>
+  <data name="Dash.TotalUsers" xml:space="preserve">
+    <value>إجمالي المستخدمين</value>
+  </data>
+  <data name="Dash.VerificationRequests" xml:space="preserve">
+    <value>طلبات التوثيق</value>
+  </data>
+  <data name="Dash.ViewAll" xml:space="preserve">
+    <value>عرض الكل</value>
+  </data>
+  <data name="Props.All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="Props.Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Props.Approved" xml:space="preserve">
+    <value>معتمد</value>
+  </data>
+  <data name="Props.ColLocation" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="Props.ColOwner" xml:space="preserve">
+    <value>المالك</value>
+  </data>
+  <data name="Props.ColPublished" xml:space="preserve">
+    <value>تاريخ النشر</value>
+  </data>
+  <data name="Props.ColRooms" xml:space="preserve">
+    <value>الغرف</value>
+  </data>
+  <data name="Props.ColStatus" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Props.ColTitle" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Props.Hidden" xml:space="preserve">
+    <value>مخفي</value>
+  </data>
+  <data name="Props.Pending" xml:space="preserve">
+    <value>قيد الانتظار</value>
+  </data>
+  <data name="Props.ReasonLabel" xml:space="preserve">
+    <value>السبب (سيظهر للمالك)</value>
+  </data>
+  <data name="Props.Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="Props.Rejected" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="Props.RejectListing" xml:space="preserve">
+    <value>رفض الإعلان</value>
+  </data>
+  <data name="Props.Title" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Rev.AllReviews" xml:space="preserve">
+    <value>جميع التقييمات</value>
+  </data>
+  <data name="Rev.Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Rev.AwaitingModeration" xml:space="preserve">
+    <value>بانتظار المراجعة</value>
+  </data>
+  <data name="Rev.ColProperty" xml:space="preserve">
+    <value>العقار</value>
+  </data>
+  <data name="Rev.ColRating" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="Rev.ColReview" xml:space="preserve">
+    <value>التعليق</value>
+  </data>
+  <data name="Rev.ColStatus" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Rev.ColStudent" xml:space="preserve">
+    <value>الطالب</value>
+  </data>
+  <data name="Rev.NoPublished" xml:space="preserve">
+    <value>لا توجد تقييمات منشورة.</value>
+  </data>
+  <data name="Rev.PendingCount" xml:space="preserve">
+    <value>{0} بانتظار المراجعة</value>
+  </data>
+  <data name="Rev.Remove" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="Rev.RemoveConfirm" xml:space="preserve">
+    <value>إزالة هذا التقييم؟</value>
+  </data>
+  <data name="Rev.Title" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="Users.Activate" xml:space="preserve">
+    <value>تفعيل</value>
+  </data>
+  <data name="Users.ActivateConfirm" xml:space="preserve">
+    <value>تفعيل هذا المستخدم؟</value>
+  </data>
+  <data name="Users.All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="Users.AllUsers" xml:space="preserve">
+    <value>جميع المستخدمين</value>
+  </data>
+  <data name="Users.Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Users.ColActive" xml:space="preserve">
+    <value>نشط</value>
+  </data>
+  <data name="Users.ColCompany" xml:space="preserve">
+    <value>الشركة</value>
+  </data>
+  <data name="Users.ColDocument" xml:space="preserve">
+    <value>المستند</value>
+  </data>
+  <data name="Users.ColEmail" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Users.ColJoined" xml:space="preserve">
+    <value>تاريخ الانضمام</value>
+  </data>
+  <data name="Users.ColName" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Users.ColRoles" xml:space="preserve">
+    <value>الأدوار</value>
+  </data>
+  <data name="Users.ColStatus" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Users.ColUniversity" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="Users.Deactivate" xml:space="preserve">
+    <value>إيقاف</value>
+  </data>
+  <data name="Users.DeactivateConfirm" xml:space="preserve">
+    <value>إيقاف هذا المستخدم؟</value>
+  </data>
+  <data name="Users.NationalId" xml:space="preserve">
+    <value>البطاقة الشخصية</value>
+  </data>
+  <data name="Users.No" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="Users.Owners" xml:space="preserve">
+    <value>المالكون</value>
+  </data>
+  <data name="Users.OwnerVerification" xml:space="preserve">
+    <value>توثيق المالكين</value>
+  </data>
+  <data name="Users.ReasonForNew" xml:space="preserve">
+    <value>سبب طلب مستندات جديدة</value>
+  </data>
+  <data name="Users.Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="Users.RejectionReason" xml:space="preserve">
+    <value>سبب الرفض</value>
+  </data>
+  <data name="Users.RequestNew" xml:space="preserve">
+    <value>طلب مستندات جديدة</value>
+  </data>
+  <data name="Users.Students" xml:space="preserve">
+    <value>الطلاب</value>
+  </data>
+  <data name="Users.StudentVerification" xml:space="preserve">
+    <value>توثيق الطلاب</value>
+  </data>
+  <data name="Users.Title" xml:space="preserve">
+    <value>المستخدمون</value>
+  </data>
+  <data name="Users.UniversityId" xml:space="preserve">
+    <value>بطاقة الجامعة</value>
+  </data>
+  <data name="Users.View" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Users.Yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="Dash.OpenComplaints" xml:space="preserve">
+    <value>الشكاوى المفتوحة</value>
+  </data>
+  <data name="Dash.NoOpenComplaints" xml:space="preserve">
+    <value>لا توجد شكاوى مفتوحة.</value>
+  </data>
+  <data name="Dash.PendingReviews" xml:space="preserve">
+    <value>التقييمات المعلقة</value>
+  </data>
+  <data name="Dash.NoPendingReviews" xml:space="preserve">
+    <value>لا توجد تقييمات معلقة.</value>
+  </data>
+  <data name="Dash.PendingReviewTitle" xml:space="preserve">
+    <value>التقييمات المعلقة</value>
+  </data>
+  <data name="Dash.RecentUsers" xml:space="preserve">
+    <value>المستخدمون الأخيرون</value>
+  </data>
+  <data name="Dash.NoUsers" xml:space="preserve">
+    <value>لا يوجد مستخدمون بعد.</value>
+  </data>
+  <data name="Dash.SocialMedia" xml:space="preserve">
+    <value>وسائل التواصل الاجتماعي</value>
+  </data>
+  <data name="Social.Media.Facebook" xml:space="preserve">
+    <value>فيسبوك</value>
+  </data>
+  <data name="Social.Media.Instagram" xml:space="preserve">
+    <value>إنستغرام</value>
+  </data>
+  <data name="Social.Media.TikTok" xml:space="preserve">
+    <value>تيك توك</value>
+  </data>
+</root>

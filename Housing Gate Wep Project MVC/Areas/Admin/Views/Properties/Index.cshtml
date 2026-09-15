@@ -1,0 +1,111 @@
+@model IReadOnlyList<Property>
+@{
+    ViewData["Title"] = AL["Props.Title"];
+    var q = (string?)ViewBag.Query;
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="mb-0">@AL["Props.Title"]</h1>
+    </div>
+    <div class="btn-group btn-group-sm" role="group">
+        <a asp-action="Index" asp-route-q="@q" class="btn @(ViewBag.Filter == null ? "btn-primary" : "btn-soft") px-3">@AL["Props.All"]</a>
+        <a asp-action="Index" asp-route-status="@ApprovalStatus.Pending" asp-route-q="@q" class="btn @(ViewBag.Filter == ApprovalStatus.Pending ? "btn-primary" : "btn-soft") px-3">@AL["Props.Pending"]</a>
+        <a asp-action="Index" asp-route-status="@ApprovalStatus.Approved" asp-route-q="@q" class="btn @(ViewBag.Filter == ApprovalStatus.Approved ? "btn-primary" : "btn-soft") px-3">@AL["Props.Approved"]</a>
+        <a asp-action="Index" asp-route-status="@ApprovalStatus.Rejected" asp-route-q="@q" class="btn @(ViewBag.Filter == ApprovalStatus.Rejected ? "btn-primary" : "btn-soft") px-3">@AL["Props.Rejected"]</a>
+    </div>
+</div>
+
+<form method="get" class="mb-4">
+    <input type="hidden" name="status" value="@ViewBag.Filter" />
+    <div class="input-group" style="max-width: 420px;">
+        <span class="input-group-text bg-transparent text-muted border-end-0"><i class="bi bi-search"></i></span>
+        <input type="text" name="q" value="@q" class="form-control border-start-0" placeholder="@L["Common.SearchPlaceholder"]" />
+        <button type="submit" class="btn btn-primary"><i class="bi bi-search me-1"></i>@L["Common.Search"]</button>
+        @if (!string.IsNullOrEmpty(q))
+        {
+            <a asp-action="Index" asp-route-status="@ViewBag.Filter" class="btn btn-soft">@AL["Common.Cancel"]</a>
+        }
+    </div>
+</form>
+
+<div class="table-wrapper">
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th>@AL["Props.ColTitle"]</th>
+                <th>@AL["Props.ColOwner"]</th>
+                <th>@AL["Props.ColLocation"]</th>
+                <th>@AL["Props.ColRooms"]</th>
+                <th>@AL["Props.ColStatus"]</th>
+                <th>@AL["Props.ColPublished"]</th>
+                <th class="text-end">@L["Common.Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var property in Model)
+            {
+                var primaryImage = property.Images.FirstOrDefault(i => i.IsPrimary) ?? property.Images.FirstOrDefault();
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center gap-2">
+                            @if (primaryImage != null)
+                            {
+                                <img src="@primaryImage.FilePath" class="rounded-3" style="width: 48px; height: 36px; object-fit: cover;" alt="" />
+                            }
+                            else
+                            {
+                                <span class="avatar-initials avatar-initials-sm">@property.Title.FirstOrDefault()</span>
+                            }
+                            <span class="fw-semibold">@property.Title</span>
+                        </div>
+                    </td>
+                    <td class="small">@property.Owner.User.FullName</td>
+                    <td>@property.City</td>
+                    <td>@property.Rooms.Count</td>
+                    <td>
+                        <span class="badge @(property.ApprovalStatus == ApprovalStatus.Pending ? "badge-warning-soft" : property.ApprovalStatus == ApprovalStatus.Approved ? "badge-success-soft" : property.ApprovalStatus == ApprovalStatus.Rejected ? "badge-danger-soft" : "badge-secondary-soft")">@EnumDisplay.Get(property.ApprovalStatus, L)</span>
+                        @if (!property.IsActive) { <span class="badge badge-secondary-soft"><i class="bi bi-eye-slash me-1"></i>@AL["Props.Hidden"]</span> }
+                    </td>
+                    <td class="text-muted small">@property.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")</td>
+                    <td class="text-end">
+                        <div class="d-flex gap-2 justify-content-end align-items-start">
+                            <a asp-action="Details" asp-route-id="@property.Id" class="btn btn-sm btn-soft">
+                                <i class="bi bi-eye me-1"></i>@AL["Props.View"]
+                            </a>
+                            @if (property.ApprovalStatus == ApprovalStatus.Pending)
+                        {
+                            <div class="d-flex gap-2 justify-content-end">
+                                <form method="post" asp-action="Approve" asp-route-id="@property.Id" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-soft-success"><i class="bi bi-check-lg me-1"></i>@AL["Props.Approve"]</button>
+                                </form>
+                                <button type="button" class="btn btn-sm btn-soft-danger" data-bs-toggle="modal" data-bs-target="#reject-@property.Id"><i class="bi bi-x-lg me-1"></i>@AL["Props.Reject"]</button>
+                            </div>
+                            <div class="modal fade" id="reject-@property.Id" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form method="post" asp-action="Reject" asp-route-id="@property.Id">
+                                            <div class="modal-header border-0 pb-0">
+                                                <h5 class="modal-title">@AL["Props.Reject"] "@property.Title"</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label class="form-label">@AL["Props.ReasonLabel"]</label>
+                                                <textarea name="note" class="form-control" rows="3" required></textarea>
+                                            </div>
+                                            <div class="modal-footer border-0 pt-0">
+                                                <button type="button" class="btn btn-soft" data-bs-dismiss="modal">@AL["Common.Cancel"]</button>
+                                                <button type="submit" class="btn btn-danger">@AL["Props.RejectListing"]</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

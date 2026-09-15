@@ -1,0 +1,263 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Identity
+@using StudentHousing.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject StudentHousing.Services.Interfaces.INotificationService NotificationService
+@inject Microsoft.Extensions.Localization.IStringLocalizer<StudentHousing.Resources.SharedResource> L
+@{
+    var isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+    var cultureName = CultureInfo.CurrentUICulture.Name;
+    var currentUser = User.Identity!.IsAuthenticated ? await UserManager.GetUserAsync(User) : null;
+    var adminUser = await UserManager.GetUsersInRoleAsync("Admin");
+    var siteSocial = adminUser.FirstOrDefault();
+    var currentUrl = Context.Request.Path + Context.Request.QueryString;
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var area = ViewContext.RouteData.Values["area"]?.ToString();
+    var isHome = controller == "Home" && string.IsNullOrEmpty(area);
+    string? Initials()
+    {
+        if (currentUser == null) return null;
+        return $"{currentUser.FirstName?.FirstOrDefault()}{currentUser.LastName?.FirstOrDefault()}";
+    }
+    string RoleArea()
+    {
+        if (User.IsInRole("Admin")) return "Admin";
+        if (User.IsInRole("Owner")) return "Owner";
+        return "Student";
+    }
+    string RoleName()
+    {
+        if (User.IsInRole("Admin")) return L["Nav.Admin"];
+        if (User.IsInRole("Owner")) return L["Nav.Owner"];
+        return L["Nav.Student"];
+    }
+    var recentNotifications = new List<Notification>();
+    var unread = 0;
+    if (currentUser != null)
+    {
+        try
+        {
+            unread = await NotificationService.GetUnreadCountAsync(currentUser.Id);
+            recentNotifications = (await NotificationService.GetRecentAsync(currentUser.Id, 5)).ToList();
+        }
+        catch { }
+    }
+}
+<!DOCTYPE html>
+<html lang="@cultureName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    @await Html.PartialAsync("_LayoutHead")
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md py-2" aria-label="@L["Nav.Toggle"]">
+            <div class="container">
+                <a class="site-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="brand-mark"><i class="bi bi-house-heart-fill"></i></span>
+                    <span>@L["Nav.Brand"]</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="@L["Nav.Toggle"]">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link @(isHome ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">@L["Nav.Home"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Student" asp-controller="Search" asp-action="Index">@L["Nav.FindHousing"]</a>
+                        </li>
+                        @if (User.IsInRole("Student"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Student" asp-controller="Matches" asp-action="Index">@L["Nav.Matches"]</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="HowItWorks">@L["Nav.HowItWorks"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">@L["Nav.About"]</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        @await Html.PartialAsync("_LanguageSwitcher")
+
+                        <div class="social-links d-flex align-items-center gap-2">
+                            <a href="@(siteSocial?.FacebookUrl ?? "#")" target="_blank" class="text-reset">
+                                <i class="bi bi-facebook fs-5"></i>
+                            </a>
+                            <a href="@(siteSocial?.InstagramUrl ?? "#")" target="_blank" class="text-reset">
+                                <i class="bi bi-instagram fs-5"></i>
+                            </a>
+                            <a href="@(siteSocial?.TikTokUrl ?? "#")" target="_blank" class="text-reset">
+                                <i class="bi bi-tiktok fs-5"></i>
+                            </a>
+                        </div>
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <div class="dropdown">
+                                <button class="btn btn-light rounded-pill dropdown-toggle d-flex align-items-center gap-2 py-1 ps-1 pe-3"
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-hover-bg: var(--canvas-2);">
+                                    @if (!string.IsNullOrEmpty(currentUser?.ProfilePictureUrl))
+                                    {
+                                        <img src="@currentUser.ProfilePictureUrl" class="avatar-image" style="width:32px;height:32px;" alt="" />
+                                    }
+                                    else
+                                    {
+                                        <span class="avatar-initials">@Initials()</span>
+                                    }
+                                    <span class="d-none d-lg-inline small fw-semibold">@currentUser?.FirstName</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end shadow-md">
+                                    <li>
+                                        <span class="dropdown-header small text-muted text-uppercase">@RoleName()</span>
+                                    </li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                                                <i class="bi bi-speedometer2 me-2"></i>@L["Nav.Dashboard"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Profile" asp-action="Index">
+                                                <i class="bi bi-person me-2"></i>@L["Nav.MyProfile"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Admin" asp-controller="Settings" asp-action="Index">
+                                                <i class="bi bi-gear me-2"></i>@L["Nav.Settings"]
+                                            </a>
+                                        </li>
+                                    }
+                                    else if (User.IsInRole("Owner"))
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Owner" asp-controller="Dashboard" asp-action="Index">
+                                                <i class="bi bi-speedometer2 me-2"></i>@L["Nav.Dashboard"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Owner" asp-controller="Properties" asp-action="Index">
+                                                <i class="bi bi-building me-2"></i>@L["Nav.MyProperties"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Owner" asp-controller="Profile" asp-action="Index">
+                                                <i class="bi bi-person me-2"></i>@L["Nav.MyProfile"]
+                                            </a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Student" asp-controller="Dashboard" asp-action="Index">
+                                                <i class="bi bi-speedometer2 me-2"></i>@L["Nav.Dashboard"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Student" asp-controller="Search" asp-action="Index">
+                                                <i class="bi bi-search me-2"></i>@L["Nav.FindHousing"]
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="Student" asp-controller="Profile" asp-action="Index">
+                                                <i class="bi bi-person me-2"></i>@L["Nav.MyProfile"]
+                                            </a>
+                                        </li>
+                                    }
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">
+                                            <i class="bi bi-house me-2"></i>@L["Nav.Home"]
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                                            <button type="submit" class="dropdown-item text-danger">
+                                                <i class="bi bi-box-arrow-right me-2"></i>@L["Nav.SignOut"]
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-sm btn-soft" asp-area="" asp-controller="Account" asp-action="Login">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>@L["Nav.SignIn"]
+                            </a>
+                            <a class="btn btn-sm btn-accent" asp-area="" asp-controller="Account" asp-action="Register">@L["Nav.JoinNow"]</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @if (!isHome)
+        {
+            <div class="container pt-4">
+                @await Html.PartialAsync("_Alerts")
+            </div>
+        }
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                <div class="col-lg-4">
+                    <a class="site-brand mb-3" asp-area="" asp-controller="Home" asp-action="Index" style="color:#fff;">
+                        <span class="brand-mark"><i class="bi bi-house-heart-fill"></i></span>
+                        <span>@L["Nav.Brand"]</span>
+                    </a>
+                    <p class="mt-3 mb-0 small" style="max-width: 22rem;">@L["Layout.FooterTagline"]</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="mb-3">@L["Layout.FooterExplore"]</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a asp-area="Student" asp-controller="Search" asp-action="Index">@L["Nav.FindHousing"]</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="HowItWorks">@L["Nav.HowItWorks"]</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">@L["Nav.About"]</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h6 class="mb-3">@L["Layout.FooterAccounts"]</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">@L["Nav.SignIn"]</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Register">@L["Nav.JoinNow"]</a></li>
+                        @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                        {
+                            <li><a asp-area="Owner" asp-controller="Dashboard" asp-action="Index">@L["Nav.Dashboard"]</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">@L["Layout.FooterHelp"]</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a asp-area="Student" asp-controller="Complaints" asp-action="Create">@L["Nav.ContactUs"]</a></li>
+                        <li><a asp-area="Student" asp-controller="Complaints" asp-action="Index">@L["Nav.Complaints"]</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3"
+                 style="border-top: 1px solid rgba(148,163,184,0.15);">
+                <span class="small">&copy; @DateTime.Now.Year @L["App.Name"]</span>
+                <span class="small">@L["Layout.FooterRights"]</span>
+            </div>
+        </div>
+    </footer>
+
+    @await Html.PartialAsync("_LayoutScripts")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

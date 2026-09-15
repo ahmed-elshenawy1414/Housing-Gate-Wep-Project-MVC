@@ -1,0 +1,147 @@
+@model IReadOnlyList<PropertyReview>
+@{
+    ViewData["Title"] = AL["Reviews.MyTitle"];
+    var aboutMe = ViewBag.AboutMe as IReadOnlyList<UserReview> ?? new List<UserReview>();
+    var writtenByMe = ViewBag.WrittenByMe as IReadOnlyList<UserReview> ?? new List<UserReview>();
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-0">@AL["Reviews.Title"]</h1>
+</div>
+
+<ul class="nav nav-pills gap-1 mb-4" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#property" type="button" role="tab">@AL["Reviews.PropertyReviews"]</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roommate-about" type="button" role="tab">@AL["Reviews.AboutMe"]</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#roommate-wrote" type="button" role="tab">@AL["Reviews.IWrote"]</button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="property" role="tabpanel">
+        @if (Model.Count == 0)
+        {
+            <div class="card">
+                <div class="empty-state">
+                    <div class="empty-icon mb-3"><i class="bi bi-star"></i></div>
+                    <h4>@AL["Reviews.NoPropertyReviews"]</h4>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var review in Model)
+                {
+                    var statusCls = review.Status switch
+                    {
+                        ReviewStatus.Approved => "badge-success-soft",
+                        ReviewStatus.Pending => "badge-warning-soft",
+                        _ => "badge-danger-soft"
+                    };
+                    var statusLabel = review.Status switch
+                    {
+                        ReviewStatus.Approved => AL["Reviews.Live"],
+                        ReviewStatus.Pending => AL["Reviews.PendingApproval"],
+                        _ => AL["Reviews.Removed"]
+                    };
+                    <div class="col-md-6">
+                        <div class="card card-hover h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start gap-2 mb-1">
+                                    <div class="fw-bold text-truncate">@review.Title</div>
+                                    <span class="badge @statusCls flex-shrink-0">@statusLabel</span>
+                                </div>
+                                <div class="star-rating small mb-1">
+                                    @for (var i = 1; i <= 5; i++)
+                                    {
+                                        <i class="bi bi-star-fill @(i <= review.Rating ? "" : "opacity-25")"></i>
+                                    }
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <i class="bi bi-building me-1"></i>@review.Property.Title
+                                </div>
+                                <p class="text-muted mb-2">@review.Comment</p>
+                                <small class="text-secondary"><i class="bi bi-calendar3 me-1"></i>@review.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="tab-pane fade" id="roommate-about" role="tabpanel">
+        @if (aboutMe.Count == 0)
+        {
+            <div class="card">
+                <div class="empty-state">
+                    <div class="empty-icon mb-3"><i class="bi bi-star-half"></i></div>
+                    <h4>@AL["Reviews.NoReviewsAboutMe"]</h4>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var review in aboutMe)
+                {
+                    <div class="col-md-6">
+                        <div class="card card-hover h-100">
+                            <div class="card-body">
+                                <div class="star-rating small mb-2">
+                                    @for (var i = 1; i <= 5; i++)
+                                    {
+                                        <i class="bi bi-star-fill @(i <= review.Rating ? "" : "opacity-25")"></i>
+                                    }
+                                </div>
+                                <p class="text-muted mb-2">"@review.Comment"</p>
+                                <span class="badge badge-success-soft">@AL["Reviews.FromVerifiedStay"]</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="tab-pane fade" id="roommate-wrote" role="tabpanel">
+        @if (writtenByMe.Count == 0)
+        {
+            <div class="card">
+                <div class="empty-state">
+                    <div class="empty-icon mb-3"><i class="bi bi-pencil-square"></i></div>
+                    <h4>@AL["Reviews.NoReviewsIWrote"]</h4>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var review in writtenByMe)
+                {
+                    <div class="col-md-6">
+                        <div class="card card-hover h-100">
+                            <div class="card-body">
+                                <div class="star-rating small mb-2">
+                                    @for (var i = 1; i <= 5; i++)
+                                    {
+                                        <i class="bi bi-star-fill @(i <= review.Rating ? "" : "opacity-25")"></i>
+                                    }
+                                </div>
+                                <p class="text-muted mb-2">"@review.Comment"</p>
+                                <span class="badge @(review.Status == ReviewStatus.Pending ? "badge-warning-soft" : "badge-neutral-soft")">
+                                    @(review.Status == ReviewStatus.Pending ? AL["Reviews.PendingApproval"] : EnumDisplay.Get(review.Status, L))
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

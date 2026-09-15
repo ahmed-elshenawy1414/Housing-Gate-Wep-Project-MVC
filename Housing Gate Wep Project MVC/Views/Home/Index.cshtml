@@ -1,0 +1,214 @@
+﻿@model StudentHousing.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = L["Nav.Home"];
+}
+@{
+    var isRtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+    var arrowIcon = isRtl ? "bi-arrow-left" : "bi-arrow-right";
+}
+
+<section class="hero-section">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container position-relative py-5">
+        <div class="row align-items-center g-5 py-lg-4">
+            <div class="col-lg-7">
+                <span class="eyebrow mb-4">
+                    <i class="bi bi-shield-check"></i>
+                    @L["Home.HeroTagline"]
+                </span>
+                <h1 class="mb-3">@L["Home.HeroText"]</h1>
+                <p class="lead mb-4">@L["Home.HeroSub"]</p>
+
+                <form method="get" asp-area="Student" asp-controller="Search" asp-action="Index">
+                    <div class="hero-search d-flex flex-column flex-md-row gap-2">
+                        <div class="input-group flex-grow-1">
+                            <span class="input-group-text"><i class="bi bi-geo-alt" style="color: var(--brand-500);"></i></span>
+                            <input type="text" name="city" class="form-control" placeholder="@L["Home.CityPlaceholder"]" aria-label="@L["Home.City"]" />
+                        </div>
+                        <div class="input-group flex-grow-1">
+                            <span class="input-group-text">@L["Common.CurrencySymbol"]</span>
+                            <input type="number" name="maxRent" class="form-control" placeholder="@L["Home.MaxRent"]" aria-label="@L["Home.MaxRent"]" />
+                        </div>
+                        <button type="submit" class="btn btn-accent px-4 flex-shrink-0">
+                            <i class="bi bi-search me-1"></i>@L["Home.SearchButton"]
+                        </button>
+                    </div>
+                </form>
+
+                @if (Model.PopularCities.Count > 0)
+                {
+                    <div class="d-flex align-items-center flex-wrap gap-2 mt-4">
+                        <span class="small" style="color: rgba(255,255,255,0.65);">@L["Home.Popular"]:</span>
+                        @foreach (var city in Model.PopularCities.Take(5))
+                        {
+                            <a asp-area="Student" asp-controller="Search" asp-action="Index" asp-route-city="@city"
+                               class="btn btn-sm rounded-pill px-3"
+                               style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.16); color: #e2e8f0;">
+                                @city
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="col-lg-5">
+                <div class="row g-3 hero-stats">
+                    <div class="col-6">
+                        <div class="hero-stat">
+                            <div class="stat-num">@Model.AvailableListings</div>
+                            <div class="stat-label">@L["Home.VerifiedListings"]</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="hero-stat">
+                            <div class="stat-num">@Model.VerifiedStudents</div>
+                            <div class="stat-label">@L["Home.VerifiedStudents"]</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="hero-stat">
+                            <div class="stat-num">@Model.VerifiedOwners</div>
+                            <div class="stat-label">@L["Home.VerifiedOwners"]</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="hero-stat">
+                            <div class="stat-num"><i class="bi bi-patch-check-fill"></i></div>
+                            <div class="stat-label">@L["Home.VerifiedOnly"]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-strip py-5 border-bottom" style="background: var(--surface);">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <div class="feature-icon" style="background: var(--brand-100); color: var(--brand-600);">
+                        <i class="bi bi-patch-check-fill"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">@L["Home.Feature1"]</h6>
+                        <p class="small text-muted mb-0">@L["Home.Feature1Text"]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <div class="feature-icon" style="background: #fef3c7; color: #b45309;">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">@L["Home.Feature2"]</h6>
+                        <p class="small text-muted mb-0">@L["Home.Feature2Text"]</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <div class="feature-icon" style="background: var(--brand-100); color: var(--brand-600);">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">@L["Home.Feature3"]</h6>
+                        <p class="small text-muted mb-0">@L["Home.Feature3Text"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="section-head d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+            <div>
+                <span class="section-eyebrow">@L["Home.LatestListings"]</span>
+                <h2 class="mb-0">@L["Home.FeaturedHousing"]</h2>
+            </div>
+            <a asp-area="Student" asp-controller="Search" asp-action="Index" class="btn btn-sm btn-soft">
+                @L["Home.BrowseAll"] <i class="bi @arrowIcon ms-1"></i>
+            </a>
+        </div>
+
+        @if (Model.FeaturedProperties.Count == 0)
+        {
+            <div class="empty-state">
+                <div class="empty-icon mb-3"><i class="bi bi-house-x"></i></div>
+                <h4>@L["Home.NoListings"]</h4>
+                <p>@L["Home.NoListingsYet"]</p>
+            </div>
+        }
+        else
+        {
+            <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-xl-3">
+                @foreach (var property in Model.FeaturedProperties)
+                {
+                    <partial name="_PropertyCard" model="property" />
+                }
+            </div>
+        }
+    </div>
+</section>
+
+<section class="py-5" style="background: var(--surface); border-block: 1px solid var(--line-soft);">
+    <div class="container">
+        <div class="section-head text-center mb-5">
+            <span class="section-eyebrow">@L["Home.HowItWorksTitle"]</span>
+            <h2 class="mb-0">@L["Home.HowWorks"]</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="step-card text-center">
+                    <div class="step-icon mx-auto mb-3"><i class="bi bi-person-check-fill"></i></div>
+                    <div class="step-num mb-2" style="position:absolute; top:1rem; inset-inline-start:1rem;">1</div>
+                    <h6 class="fw-bold mb-2">@L["Home.Step1Title"]</h6>
+                    <p class="small text-muted mb-0">@L["Home.Step1Text"]</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card text-center">
+                    <div class="step-icon mx-auto mb-3" style="background: #fef3c7; color: #b45309;"><i class="bi bi-people-fill"></i></div>
+                    <div class="step-num mb-2" style="position:absolute; top:1rem; inset-inline-start:1rem;">2</div>
+                    <h6 class="fw-bold mb-2">@L["Home.Step2Title"]</h6>
+                    <p class="small text-muted mb-0">@L["Home.Step2Text"]</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card text-center">
+                    <div class="step-icon mx-auto mb-3"><i class="bi bi-house-heart-fill"></i></div>
+                    <div class="step-num mb-2" style="position:absolute; top:1rem; inset-inline-start:1rem;">3</div>
+                    <h6 class="fw-bold mb-2">@L["Home.Step3Title"]</h6>
+                    <p class="small text-muted mb-0">@L["Home.Step3Text"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="cta-band p-4 p-lg-5">
+            <div class="cta-grid" aria-hidden="true"></div>
+            <div class="row align-items-center g-4 position-relative">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-2" style="color: #fff;">@L["Home.AboutTitle"]</h2>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82); max-width: 34rem;">@L["Home.AboutText"]</p>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                        <a asp-area="" asp-controller="Account" asp-action="Register"
+                           class="btn btn-accent px-4">@L["Nav.JoinNow"]</a>
+                        <a asp-area="Student" asp-controller="Search" asp-action="Index"
+                           class="btn px-4" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #fff;">
+                            @L["Home.BrowseAll"] <i class="bi @arrowIcon ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

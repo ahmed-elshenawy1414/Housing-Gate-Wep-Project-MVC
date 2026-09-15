@@ -1,0 +1,224 @@
+@model AdminUserDetailsViewModel
+@{
+    ViewData["Title"] = AL["Users.Details"];
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <a asp-action="Index" class="btn btn-sm btn-soft"><i class="bi bi-arrow-left me-1"></i>@AL["Common.Back"]</a>
+        <div>
+            <h1 class="mb-1">@Model.User.FullName</h1>
+            <div class="d-flex align-items-center gap-2">
+                @foreach (var role in Model.Roles)
+                {
+                    <span class="badge @(role == "Admin" ? "badge-danger-soft" : role == "Owner" ? "badge-warning-soft" : "badge-primary-soft")">@role</span>
+                }
+                <span class="badge @(Model.User.IsActive ? "badge-success-soft" : "badge-danger-soft")">
+                    <i class="bi @(Model.User.IsActive ? "bi-check-circle" : "bi-x-circle") me-1"></i>
+                    @(Model.User.IsActive ? AL["Users.Yes"] : AL["Users.No"])
+                </span>
+            </div>
+        </div>
+    </div>
+    @if (Model.CanDelete)
+    {
+        <form method="post" asp-action="Delete" asp-route-userId="@Model.User.Id"
+              onsubmit="return confirm('@AL["Users.DeleteConfirm"]');">
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash me-1"></i>@AL["Users.Delete"]
+            </button>
+        </form>
+    }
+</div>
+
+@if (!Model.CanDelete)
+{
+    <div class="alert alert-danger d-flex gap-2 align-items-start mb-4">
+        <i class="bi bi-shield-exclamation fs-5"></i>
+        <div>
+            <div class="fw-semibold">@AL["Users.BlockedHeader"]</div>
+            <ul class="mb-0 ps-4">
+                @foreach (var reason in Model.BlockReasons)
+                {
+                    <li>@reason</li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header"><span class="fw-semibold">@AL["Users.AccountInfo"]</span></div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0 small">
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted">@AL["Users.ColEmail"]</span>
+                        <span class="fw-semibold text-break">@Model.User.Email</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted">@L["Common.Phone"]</span>
+                        <span class="fw-semibold">@(string.IsNullOrEmpty(Model.User.PhoneNumber) ? "—" : Model.User.PhoneNumber)</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2 border-bottom">
+                        <span class="text-muted">@AL["Users.ColJoined"]</span>
+                        <span class="fw-semibold">@Model.User.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")</span>
+                    </li>
+                    <li class="d-flex justify-content-between py-2">
+                        <span class="text-muted">@AL["Users.ColActive"]</span>
+                        <span class="fw-semibold">@(Model.User.IsActive ? AL["Users.Yes"] : AL["Users.No"])</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @if (Model.OwnerProfile != null)
+        {
+            <div class="card mt-4">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <span class="fw-semibold">@AL["Users.OwnerVerification"]</span>
+                    <span class="badge @(Model.OwnerProfile.VerificationStatus switch
+                    {
+                        VerificationStatus.Pending => "badge-warning-soft",
+                        VerificationStatus.Verified => "badge-success-soft",
+                        VerificationStatus.Rejected => "badge-danger-soft",
+                        VerificationStatus.NeedsChanges => "badge-primary-soft",
+                        _ => "badge-secondary-soft"
+                    })">@EnumDisplay.Get(Model.OwnerProfile.VerificationStatus, L)</span>
+                </div>
+                <div class="card-body small">
+                    <div class="mb-2">
+                        <span class="text-muted">@AL["Users.ColCompany"]:</span>
+                        <span class="fw-semibold">@(string.IsNullOrEmpty(Model.OwnerProfile.CompanyName) ? "—" : Model.OwnerProfile.CompanyName)</span>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.OwnerProfile.VerificationDocumentUrl))
+                    {
+                        <a href="@Model.OwnerProfile.VerificationDocumentUrl" target="_blank" class="btn btn-sm btn-soft w-100">
+                            <i class="bi bi-file-earmark-image me-1"></i>@AL["Users.Document"]
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="text-muted">@AL["Users.NoDocument"]</div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-lg-8">
+        @if (Model.StudentProfile != null)
+        {
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <span class="fw-semibold">@AL["Users.StudentVerification"]</span>
+                    <span class="badge @(Model.StudentProfile.VerificationStatus switch
+                    {
+                        VerificationStatus.Pending => "badge-warning-soft",
+                        VerificationStatus.Verified => "badge-success-soft",
+                        VerificationStatus.Rejected => "badge-danger-soft",
+                        VerificationStatus.NeedsChanges => "badge-primary-soft",
+                        _ => "badge-secondary-soft"
+                    })">@EnumDisplay.Get(Model.StudentProfile.VerificationStatus, L)</span>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="text-muted small">@AL["Users.ColUniversity"]</div>
+                            <div class="fw-semibold">@Model.StudentProfile.University</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-muted small">@L["Common.Major"]</div>
+                            <div class="fw-semibold">@(string.IsNullOrEmpty(Model.StudentProfile.Major) ? "—" : Model.StudentProfile.Major)</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-muted small">@AL["Users.ColStatus"]</div>
+                            <div class="fw-semibold">@(string.IsNullOrEmpty(Model.StudentProfile.VerificationRejectReason) ? "—" : Model.StudentProfile.VerificationRejectReason)</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-muted small">@L["Common.DateOfBirth"]</div>
+                            <div class="fw-semibold">@(Model.StudentProfile.DateOfBirth?.ToString("dd MMM yyyy") ?? "—")</div>
+                        </div>
+                        <div class="col-12 d-flex gap-2 flex-wrap">
+                            @if (!string.IsNullOrEmpty(Model.StudentProfile.NationalIdDocumentUrl))
+                            {
+                                <a href="@Model.StudentProfile.NationalIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft">
+                                    <i class="bi bi-file-earmark-image me-1"></i>@AL["Users.NationalId"]
+                                </a>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.StudentProfile.UniversityIdDocumentUrl))
+                            {
+                                <a href="@Model.StudentProfile.UniversityIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft">
+                                    <i class="bi bi-file-earmark-image me-1"></i>@AL["Users.UniversityId"]
+                                </a>
+                            }
+                            @if (string.IsNullOrEmpty(Model.StudentProfile.NationalIdDocumentUrl) && string.IsNullOrEmpty(Model.StudentProfile.UniversityIdDocumentUrl))
+                            {
+                                <span class="text-muted small">@AL["Users.NoDocument"]</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="row g-3 mb-4">
+            @if (Model.OwnerProfile != null)
+            {
+                <div class="col-6 col-md-3">
+                    <div class="stat-card card-hover">
+                        <div class="stat-icon" style="background: var(--brand-100); color: var(--brand-600);"><i class="bi bi-houses-fill"></i></div>
+                        <div class="stat-value">@Model.PropertyCount</div>
+                        <div class="stat-label">@AL["Users.Properties"]</div>
+                    </div>
+                </div>
+            }
+            @if (Model.StudentProfile != null)
+            {
+                <div class="col-6 col-md-3">
+                    <div class="stat-card card-hover">
+                        <div class="stat-icon" style="background: #cffafe; color: #0e7490;"><i class="bi bi-file-earmark-text"></i></div>
+                        <div class="stat-value">@Model.ApplicationCount</div>
+                        <div class="stat-label">@AL["Users.Applications"]</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card card-hover">
+                        <div class="stat-icon" style="background: #dcfce7; color: #15803d;"><i class="bi bi-house-check"></i></div>
+                        <div class="stat-value">@Model.StayCount</div>
+                        <div class="stat-label">@AL["Users.Stays"]</div>
+                    </div>
+                </div>
+            }
+            <div class="col-6 col-md-3">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #fef3c7; color: #b45309;"><i class="bi bi-megaphone"></i></div>
+                    <div class="stat-value">@Model.ComplaintsFiled</div>
+                    <div class="stat-label">@AL["Users.ComplaintsFiled"]</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #fee2e2; color: #b91c1c;"><i class="bi bi-flag"></i></div>
+                    <div class="stat-value">@Model.ComplaintsReceived</div>
+                    <div class="stat-label">@AL["Users.ComplaintsReceived"]</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #ede9fe; color: #6d28d9;"><i class="bi bi-star"></i></div>
+                    <div class="stat-value">@Model.UserReviewsGiven</div>
+                    <div class="stat-label">@AL["Users.ReviewsGiven"]</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #cffafe; color: #0e7490;"><i class="bi bi-people"></i></div>
+                    <div class="stat-value">@Model.UserReviewsReceived</div>
+                    <div class="stat-label">@AL["Users.ReviewsReceived"]</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

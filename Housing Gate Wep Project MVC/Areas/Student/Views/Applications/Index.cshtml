@@ -1,0 +1,76 @@
+@model IReadOnlyList<PropertyApplication>
+@{
+    ViewData["Title"] = L["Nav.MyApplications"];
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-0">@L["Nav.MyApplications"]</h1>
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="card">
+        <div class="empty-state">
+            <div class="empty-icon mb-3"><i class="bi bi-inbox"></i></div>
+            <h4>@AL["Applications.Empty"]</h4>
+            <p class="mb-0"><a asp-controller="Search" asp-action="Index" class="fw-semibold">@L["Nav.FindHousing"]</a> @AL["Applications.Empty2"]</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="table-wrapper">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>@AL["Applications.Property"]</th>
+                    <th>@AL["Applications.Room"]</th>
+                    <th>@AL["Applications.Applied"]</th>
+                    <th>@L["Common.Status"]</th>
+                    <th class="text-end">@L["Common.Actions"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var app in Model)
+                {
+                    var cls = app.Status switch
+                    {
+                        ApplicationStatus.Approved => "badge-success-soft",
+                        ApplicationStatus.Rejected => "badge-danger-soft",
+                        ApplicationStatus.Cancelled => "badge-neutral-soft",
+                        _ => "badge-warning-soft"
+                    };
+                    <tr>
+                        <td>
+                            <div class="fw-semibold">
+                                <a asp-controller="Search" asp-action="Details" asp-route-id="@app.Room.PropertyId" class="text-decoration-none" style="color: var(--ink-900);">
+                                    @app.Room.Property.Title
+                                </a>
+                            </div>
+                            <small class="text-muted">
+                                <i class="bi bi-geo-alt me-1"></i>@app.Room.Property.City
+                            </small>
+                        </td>
+                        <td>
+                            <span class="badge badge-neutral-soft">@app.Room.Name</span>
+                        </td>
+                        <td class="text-muted small">@app.AppliedAt.ToLocalTime().ToString("dd MMM yyyy")</td>
+                        <td>
+                            <span class="badge @cls">@EnumDisplay.Get(app.Status, L)</span>
+                        </td>
+                        <td class="text-end">
+                            @if (app.Status == ApplicationStatus.Pending)
+                            {
+                                <form method="post" asp-action="Cancel" asp-route-id="@app.Id" onsubmit="return confirm('@L["Common.ConfirmDelete"]');" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-soft-danger">
+                                        <i class="bi bi-x-circle me-1"></i>@AL["Applications.Cancel"]
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

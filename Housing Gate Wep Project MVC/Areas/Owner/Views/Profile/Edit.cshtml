@@ -1,0 +1,70 @@
+@model OwnerProfileViewModel
+@{
+    ViewData["Title"] = AL["OProfile.EditTitle"];
+}
+
+<div class="container py-4" style="max-width: 720px;">
+    <div class="page-head mb-4">
+        <h1 class="mb-0">@AL["OProfile.EditTitle"]</h1>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" class="card">
+        <div class="card-body p-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="d-flex align-items-center gap-3 mb-4 p-3 rounded-3" style="background: var(--canvas-2);">
+                @if (!string.IsNullOrEmpty(Model.ProfilePictureUrl))
+                {
+                    <img src="@Model.ProfilePictureUrl" class="avatar-image avatar-lg" style="width:64px;height:64px;" alt="" />
+                }
+                else
+                {
+                    <span class="avatar-initials avatar-lg" style="width:64px;height:64px;font-size:1.4rem;">
+                        @string.Concat(Model.FirstName.Split(' ').Take(1).Select(p => p[0]))@string.Concat(Model.LastName.Split(' ').Take(1).Select(p => p[0]))
+                    </span>
+                }
+                <div>
+                    <label class="form-label fw-semibold mb-1 small">@AL["Profile.Picture"]</label>
+                    <input type="file" name="profilePicture" class="form-control form-control-sm" accept=".jpg,.jpeg,.png,.webp" />
+                    <div class="form-text">@AL["Profile.PictureHint"]</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CompanyName" class="form-label">@AL["OProfile.Company"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-buildings"></i></span>
+                    <input asp-for="CompanyName" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">@AL["OProfile.Phone"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LicenseNumber" class="form-label">@AL["OProfile.License"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-card-text"></i></span>
+                    <input asp-for="LicenseNumber" class="form-control" placeholder="@AL["OProfile.LicensePlaceholder"]" />
+                </div>
+            </div>
+            <div class="mb-4">
+                <label asp-for="Bio" class="form-label">@AL["OProfile.Bio"]</label>
+                <textarea asp-for="Bio" class="form-control" rows="4" placeholder="@AL["OProfile.BioPlaceholder"]"></textarea>
+                <span asp-validation-for="Bio" class="text-danger small"></span>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>@AL["OProfile.Save"]</button>
+                <a asp-action="Index" class="btn btn-soft">@L["Common.Cancel"]</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

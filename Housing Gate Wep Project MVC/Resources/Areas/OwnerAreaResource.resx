@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Common.Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Apps.Applied" xml:space="preserve">
+    <value>Applied</value>
+  </data>
+  <data name="Apps.Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="Apps.ApproveConfirm" xml:space="preserve">
+    <value>Approve and create a verified stay for this student?</value>
+  </data>
+  <data name="Apps.Empty" xml:space="preserve">
+    <value>No applications for your properties yet.</value>
+  </data>
+  <data name="Apps.Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Apps.PropertyRoom" xml:space="preserve">
+    <value>Property / Room</value>
+  </data>
+  <data name="Apps.Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="Apps.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Apps.Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="Apps.Title" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="Dash.ActiveStays" xml:space="preserve">
+    <value>Active stays</value>
+  </data>
+  <data name="Dash.AddFirstListing" xml:space="preserve">
+    <value>Add your first listing</value>
+  </data>
+  <data name="Dash.AddProperty" xml:space="preserve">
+    <value>Add property</value>
+  </data>
+  <data name="Dash.ApprovedListings" xml:space="preserve">
+    <value>Approved listings</value>
+  </data>
+  <data name="Dash.Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Dash.NoApplications" xml:space="preserve">
+    <value>No applications yet.</value>
+  </data>
+  <data name="Dash.NoProperties" xml:space="preserve">
+    <value>No properties yet.</value>
+  </data>
+  <data name="Dash.NotVerifiedBanner" xml:space="preserve">
+    <value>Your owner account is</value>
+  </data>
+  <data name="Dash.PendingApplications" xml:space="preserve">
+    <value>Pending applications</value>
+  </data>
+  <data name="Dash.RecentApplications" xml:space="preserve">
+    <value>Recent applications</value>
+  </data>
+  <data name="Dash.Title" xml:space="preserve">
+    <value>Owner Dashboard</value>
+  </data>
+  <data name="Dash.TotalProperties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Dash.UploadOwnershipProof" xml:space="preserve">
+    <value>Upload ownership proof</value>
+  </data>
+  <data name="Dash.VerifyToRank" xml:space="preserve">
+    <value>to get verified and rank higher in search.</value>
+  </data>
+  <data name="Dash.YourListings" xml:space="preserve">
+    <value>Your properties</value>
+  </data>
+  <data name="Dash.YourProperties" xml:space="preserve">
+    <value>Your properties</value>
+  </data>
+  <data name="Form.AddPhotos" xml:space="preserve">
+    <value>Add photos</value>
+  </data>
+  <data name="Form.AddPhotosHint" xml:space="preserve">
+    <value>Up to 6 images. The first uploaded image becomes the cover photo.</value>
+  </data>
+  <data name="Form.Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Form.AddRoom" xml:space="preserve">
+    <value>Add room</value>
+  </data>
+  <data name="Form.Amenities" xml:space="preserve">
+    <value>Amenities</value>
+  </data>
+  <data name="Form.Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="Form.AvailableFrom" xml:space="preserve">
+    <value>Available from</value>
+  </data>
+  <data name="Form.AvailBeds" xml:space="preserve">
+    <value>Avail. beds</value>
+  </data>
+  <data name="Form.Bathrooms" xml:space="preserve">
+    <value>Bathrooms</value>
+  </data>
+  <data name="Form.Bedrooms" xml:space="preserve">
+    <value>Bedrooms</value>
+  </data>
+  <data name="Form.Beds" xml:space="preserve">
+    <value>Beds</value>
+  </data>
+  <data name="Form.City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Form.CurrentStatus" xml:space="preserve">
+    <value>Current status:</value>
+  </data>
+  <data name="Form.Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="Form.DescPlaceholder" xml:space="preserve">
+    <value>Describe the home, the neighborhood, utilities...</value>
+  </data>
+  <data name="Form.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Form.District" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="Form.IsFurnished" xml:space="preserve">
+    <value>Furnished</value>
+  </data>
+  <data name="Form.Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Form.Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Form.PetAllowed" xml:space="preserve">
+    <value>Pets allowed</value>
+  </data>
+  <data name="Form.Photos" xml:space="preserve">
+    <value>Photos</value>
+  </data>
+  <data name="Form.Primary" xml:space="preserve">
+    <value>Primary</value>
+  </data>
+  <data name="Form.PropertyType" xml:space="preserve">
+    <value>Property type</value>
+  </data>
+  <data name="Form.RemovePhotoConfirm" xml:space="preserve">
+    <value>Remove this photo?</value>
+  </data>
+  <data name="Form.RoomDesc" xml:space="preserve">
+    <value>Room description (optional)</value>
+  </data>
+  <data name="Form.RoomName" xml:space="preserve">
+    <value>Room name</value>
+  </data>
+  <data name="Form.RoomRent" xml:space="preserve">
+    <value>Rent/mo</value>
+  </data>
+  <data name="Form.Rooms" xml:space="preserve">
+    <value>Rooms</value>
+  </data>
+  <data name="Form.RoomsHint" xml:space="preserve">
+    <value>Add each room you rent out. Students apply to specific rooms.</value>
+  </data>
+  <data name="Form.State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Form.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Form.University" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="Form.UniversityPlaceholder" xml:space="preserve">
+    <value>e.g. Cairo University</value>
+  </data>
+  <data name="Form.ZipCode" xml:space="preserve">
+    <value>Zip code</value>
+  </data>
+  <data name="OProfile.Bio" xml:space="preserve">
+    <value>Bio</value>
+  </data>
+  <data name="OProfile.BioPlaceholder" xml:space="preserve">
+    <value>Tell students a bit about yourself and your properties...</value>
+  </data>
+  <data name="OProfile.Company" xml:space="preserve">
+    <value>Company / name</value>
+  </data>
+  <data name="OProfile.DocLabel" xml:space="preserve">
+    <value>Document (jpg, png or webp, max 3 MB)</value>
+  </data>
+  <data name="OProfile.EditTitle" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="OProfile.License" xml:space="preserve">
+    <value>License number</value>
+  </data>
+  <data name="OProfile.LicensePlaceholder" xml:space="preserve">
+    <value>Optional license / tax number</value>
+  </data>
+  <data name="OProfile.MyProfile" xml:space="preserve">
+    <value>My profile</value>
+  </data>
+  <data name="OProfile.NotVerified" xml:space="preserve">
+    <value>Not verified.</value>
+  </data>
+  <data name="OProfile.PendingBanner" xml:space="preserve">
+    <value>Your verification document is under review.</value>
+  </data>
+  <data name="OProfile.Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="OProfile.RejectedBanner" xml:space="preserve">
+    <value>Your verification was rejected.</value>
+  </data>
+  <data name="OProfile.Save" xml:space="preserve">
+    <value>Save profile</value>
+  </data>
+  <data name="OProfile.Title" xml:space="preserve">
+    <value>Owner profile</value>
+  </data>
+  <data name="OProfile.ToUnlockBadge" xml:space="preserve">
+    <value>to unlock the verified badge.</value>
+  </data>
+  <data name="OProfile.Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="OProfile.UploadClearerDoc" xml:space="preserve">
+    <value>Upload a clearer document</value>
+  </data>
+  <data name="OProfile.VerifiedBanner" xml:space="preserve">
+    <value>Your owner account is</value>
+  </data>
+  <data name="OProfile.VerifiedSince" xml:space="preserve">
+    <value>Since</value>
+  </data>
+  <data name="OProfile.VerifyHeading" xml:space="preserve">
+    <value>Verify your owner account</value>
+  </data>
+  <data name="OProfile.VerifyIntro" xml:space="preserve">
+    <value>Upload a copy of your property ownership document or business registration. Only the admin team can see it.</value>
+  </data>
+  <data name="OProfile.VerifyOwnership" xml:space="preserve">
+    <value>Verify your ownership</value>
+  </data>
+  <data name="OProfile.VerifyTitle" xml:space="preserve">
+    <value>Verify owner account</value>
+  </data>
+  <data name="Props.Add" xml:space="preserve">
+    <value>Add property</value>
+  </data>
+  <data name="Props.AddHeading" xml:space="preserve">
+    <value>Add a property</value>
+  </data>
+  <data name="Props.AddTitle" xml:space="preserve">
+    <value>Add property</value>
+  </data>
+  <data name="Props.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Props.DeleteConfirm" xml:space="preserve">
+    <value>Delete this property? This cannot be undone.</value>
+  </data>
+  <data name="Props.EditHeading" xml:space="preserve">
+    <value>Edit property</value>
+  </data>
+  <data name="Props.EditTitle" xml:space="preserve">
+    <value>Edit property</value>
+  </data>
+  <data name="Props.Empty" xml:space="preserve">
+    <value>You haven&apos;t listed any properties yet.</value>
+  </data>
+  <data name="Props.Hidden" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="Props.Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="Props.Reason" xml:space="preserve">
+    <value>Reason:</value>
+  </data>
+  <data name="Props.RoomsCount" xml:space="preserve">
+    <value>room(s)</value>
+  </data>
+  <data name="Props.SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="Props.Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="Props.SubmitListing" xml:space="preserve">
+    <value>Submit listing</value>
+  </data>
+  <data name="Props.Title" xml:space="preserve">
+    <value>My properties</value>
+  </data>
+  <data name="Dash.ComplaintsAboutProperties" xml:space="preserve">
+    <value>Complaints about your properties</value>
+  </data>
+  <data name="Dash.NoComplaints" xml:space="preserve">
+    <value>No complaints about your properties.</value>
+  </data>
+  <data name="Dash.ReviewsOnProperties" xml:space="preserve">
+    <value>Reviews on your properties</value>
+  </data>
+  <data name="Dash.NoReviews" xml:space="preserve">
+    <value>No reviews on your properties yet.</value>
+  </data>
+  <data name="Dash.RecentReviews" xml:space="preserve">
+    <value>Recent reviews</value>
+  </data>
+</root>

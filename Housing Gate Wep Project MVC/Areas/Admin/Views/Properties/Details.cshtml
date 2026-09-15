@@ -1,0 +1,272 @@
+@model AdminPropertyDetailsViewModel
+@{
+    ViewData["Title"] = AL["Props.Details"];
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div class="d-flex align-items-center gap-3">
+        <a asp-action="Index" class="btn btn-sm btn-soft"><i class="bi bi-arrow-left me-1"></i>@AL["Common.Back"]</a>
+        <div>
+            <h1 class="mb-1">@Model.Property.Title</h1>
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge @(Model.Property.ApprovalStatus switch
+                {
+                    ApprovalStatus.Pending => "badge-warning-soft",
+                    ApprovalStatus.Approved => "badge-success-soft",
+                    ApprovalStatus.Rejected => "badge-danger-soft",
+                    _ => "badge-neutral-soft"
+                })">@EnumDisplay.Get(Model.Property.ApprovalStatus, L)</span>
+                @if (!Model.Property.IsActive)
+                {
+                    <span class="badge badge-secondary-soft"><i class="bi bi-eye-slash me-1"></i>@AL["Props.Hidden"]</span>
+                }
+                @if (Model.Property.IsFeatured)
+                {
+                    <span class="badge badge-primary-soft"><i class="bi bi-star-fill me-1"></i>@AL["Props.Featured"]</span>
+                }
+            </div>
+        </div>
+    </div>
+    @if (Model.CanDelete)
+    {
+        <form method="post" asp-action="Delete" asp-route-id="@Model.Property.Id"
+              onsubmit="return confirm('@AL["Props.DeleteConfirm"]');">
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash me-1"></i>@AL["Props.Delete"]
+            </button>
+        </form>
+    }
+</div>
+
+@if (!Model.CanDelete)
+{
+    <div class="alert alert-danger d-flex gap-2 align-items-start mb-4">
+        <i class="bi bi-shield-exclamation fs-5"></i>
+        <div>
+            <div class="fw-semibold">@AL["Props.BlockedHeader"]</div>
+            <div class="small mb-2">@AL["Props.DeleteNote"]</div>
+            <ul class="mb-0 ps-4">
+                @foreach (var reason in Model.BlockReasons)
+                {
+                    <li>@reason</li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+<div class="row g-4">
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.Images"]</span></div>
+            <div class="card-body">
+                @if (Model.Property.Images.Count == 0)
+                {
+                    <div class="empty-state py-4">
+                        <div class="empty-icon mb-3"><i class="bi bi-image"></i></div>
+                        <h4>@AL["Props.NoImages"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach (var image in Model.Property.Images)
+                        {
+                            <a href="@image.FilePath" target="_blank" class="d-block">
+                                <img src="@image.FilePath" class="rounded-3" style="width: 90px; height: 70px; object-fit: cover;" alt="" />
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.OwnerInfo"]</span></div>
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <div class="fw-semibold">@Model.Property.Owner.User.FullName</div>
+                        <div class="small text-muted">@Model.Property.Owner.User.Email</div>
+                    </div>
+                    <a asp-controller="Users" asp-action="Details" asp-route-id="@Model.Property.OwnerId" class="btn btn-sm btn-soft">
+                        <i class="bi bi-person me-1"></i>@AL["Users.View"]
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.Features"]</span></div>
+            <div class="card-body">
+                @if (Model.Property.Amenities.Count == 0)
+                {
+                    <div class="text-muted small">@AL["Props.NoAmenities"]</div>
+                }
+                else
+                {
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach (var amenity in Model.Property.Amenities)
+                        {
+                            <span class="badge badge-neutral-soft">@amenity.Name</span>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-7">
+        <div class="card mb-4">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.Information"]</span></div>
+            <div class="card-body">
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <div class="text-muted">@AL["Props.ColType"]</div>
+                        <div class="fw-semibold">@EnumDisplay.Get(Model.Property.PropertyType, L)</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">@AL["Props.ColLocation"]</div>
+                        <div class="fw-semibold">@Model.Property.Address, @Model.Property.City, @Model.Property.State</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">@AL["Props.ColRooms"]</div>
+                        <div class="fw-semibold">@Model.Property.Rooms.Count</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">@AL["Props.Deposit"]</div>
+                        <div class="fw-semibold">@Model.Property.Deposit.ToString("N0")</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">@L["Common.Furnished"]</div>
+                        <div class="fw-semibold">@(Model.Property.IsFurnished ? AL["Users.Yes"] : AL["Users.No"])</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-muted">@AL["Props.Pets"]</div>
+                        <div class="fw-semibold">@(Model.Property.PetAllowed ? AL["Users.Yes"] : AL["Users.No"])</div>
+                    </div>
+                    @if (Model.Property.AvailableFrom.HasValue)
+                    {
+                        <div class="col-md-6">
+                            <div class="text-muted">@AL["Props.AvailableFrom"]</div>
+                            <div class="fw-semibold">@Model.Property.AvailableFrom.Value.ToString("dd MMM yyyy")</div>
+                        </div>
+                    }
+                    @if (Model.Property.PublicId != null)
+                    {
+                        <div class="col-md-6">
+                            <div class="text-muted">@AL["Props.PublicId"]</div>
+                            <div class="fw-semibold">@Model.Property.PublicId</div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Property.AdminNote))
+                    {
+                        <div class="col-12">
+                            <div class="text-muted">@AL["Props.AdminNote"]</div>
+                            <div class="fw-semibold">@Model.Property.AdminNote</div>
+                        </div>
+                    }
+                </div>
+                <hr />
+                <div class="small text-muted">@Model.Property.Description</div>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-4">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: var(--brand-100); color: var(--brand-600);"><i class="bi bi-file-earmark-text"></i></div>
+                    <div class="stat-value">@Model.ApplicationCount</div>
+                    <div class="stat-label">@AL["Props.Applications"]</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #dcfce7; color: #15803d;"><i class="bi bi-house-check"></i></div>
+                    <div class="stat-value">@Model.StayCount</div>
+                    <div class="stat-label">@AL["Props.Stays"]</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="stat-card card-hover">
+                    <div class="stat-icon" style="background: #fee2e2; color: #b91c1c;"><i class="bi bi-flag"></i></div>
+                    <div class="stat-value">@Model.ComplaintCount</div>
+                    <div class="stat-label">@AL["Props.Complaints"]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.RoomsTitle"]</span></div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>@AL["Props.RoomName"]</th>
+                                <th>@AL["Props.RoomType"]</th>
+                                <th>@AL["Props.Rent"]</th>
+                                <th>@AL["Props.Beds"]</th>
+                                <th>@AL["Props.Availability"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var room in Model.Property.Rooms)
+                            {
+                                var occupied = room.Beds.Count(b => !b.IsAvailable);
+                                <tr>
+                                    <td class="fw-semibold">@room.Name</td>
+                                    <td class="small">@EnumDisplay.Get(room.RoomType, L)</td>
+                                    <td>@room.RentPerMonth.ToString("N0")</td>
+                                    <td class="small">@occupied/@room.NumberOfBeds</td>
+                                    <td>
+                                        <span class="badge @(room.IsAvailable ? "badge-success-soft" : "badge-danger-soft")">
+                                            @(room.IsAvailable ? AL["Props.Available"] : AL["Props.Occupied"])
+                                        </span>
+                                    </td>
+                                </tr>
+                            }
+                            @if (Model.Property.Rooms.Count == 0)
+                            {
+                                <tr><td colspan="5" class="text-center text-muted py-4">@AL["Props.NoRooms"]</td></tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><span class="fw-semibold">@AL["Props.ReviewsTitle"]</span></div>
+            <div class="card-body p-0">
+                <ul class="list-group list-group-flush">
+                    @foreach (var review in Model.Property.Reviews)
+                    {
+                        <li class="list-group-item px-3 py-3">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="fw-semibold small">@review.Reviewer.FullName</span>
+                                <span class="badge @(review.Status switch
+                                {
+                                    ReviewStatus.Approved => "badge-success-soft",
+                                    ReviewStatus.Pending => "badge-warning-soft",
+                                    _ => "badge-danger-soft"
+                                })">@EnumDisplay.Get(review.Status, L)</span>
+                            </div>
+                            <div class="small text-muted my-1">@review.Comment</div>
+                            <div class="small text-warning">
+                                @for (var i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi @(i <= review.Rating ? "bi-star-fill" : "bi-star")"></i>
+                                }
+                            </div>
+                        </li>
+                    }
+                    @if (Model.Property.Reviews.Count == 0)
+                    {
+                        <li class="list-group-item text-center text-muted py-4">@AL["Props.NoReviews"]</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

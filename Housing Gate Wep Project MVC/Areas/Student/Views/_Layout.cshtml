@@ -1,0 +1,117 @@
+@using System.Globalization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<StudentHousing.Resources.SharedResource> L
+@{
+    var isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+    var cultureName = CultureInfo.CurrentUICulture.Name;
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+    bool IsActive(string c, string? a = null) =>
+        string.Equals(controller, c, StringComparison.OrdinalIgnoreCase) &&
+        (a == null || string.Equals(action, a, StringComparison.OrdinalIgnoreCase));
+}
+<!DOCTYPE html>
+<html lang="@cultureName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    @await Html.PartialAsync("_LayoutHead")
+</head>
+<body class="app-body role-student">
+    @await Html.PartialAsync("~/Areas/Student/Views/Shared/_StudentTopbar.cshtml")
+
+    <div class="app-shell">
+        <aside class="app-sidebar" id="appSidebar">
+            <nav aria-label="@L["Nav.Toggle"]">
+                <ul class="nav flex-column" style="list-style:none; padding:0; margin:0;">
+                    <li class="app-nav-section">@L["Sidebar.Main"]</li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Dashboard") ? "active" : "")"
+                           asp-area="Student" asp-controller="Dashboard" asp-action="Index">
+                            <i class="bi bi-speedometer2"></i><span class="nav-link-text">@L["Nav.Dashboard"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Search") ? "active" : "")"
+                           asp-area="Student" asp-controller="Search" asp-action="Index">
+                            <i class="bi bi-search"></i><span class="nav-link-text">@L["Nav.FindHousing"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Matches") ? "active" : "")"
+                           asp-area="Student" asp-controller="Matches" asp-action="Index">
+                            <i class="bi bi-people"></i><span class="nav-link-text">@L["Nav.Matches"]</span>
+                        </a>
+                    </li>
+
+                    <li class="app-nav-section">@L["Sidebar.MyActivity"]</li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Applications") ? "active" : "")"
+                           asp-area="Student" asp-controller="Applications" asp-action="Index">
+                            <i class="bi bi-file-earmark-text"></i><span class="nav-link-text">@L["Nav.MyApplications"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Stays") ? "active" : "")"
+                           asp-area="Student" asp-controller="Stays" asp-action="Index">
+                            <i class="bi bi-house-check"></i><span class="nav-link-text">@L["Nav.MyStays"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Reviews") ? "active" : "")"
+                           asp-area="Student" asp-controller="Reviews" asp-action="Index">
+                            <i class="bi bi-star"></i><span class="nav-link-text">@L["Nav.MyReviews"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Complaints") ? "active" : "")"
+                           asp-area="Student" asp-controller="Complaints" asp-action="Index">
+                            <i class="bi bi-shield-exclamation"></i><span class="nav-link-text">@L["Nav.Complaints"]</span>
+                        </a>
+                    </li>
+
+                    <li class="app-nav-section">@L["Sidebar.Account"]</li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Profile", "Index") || IsActive("Profile", "Edit") ? "active" : "")"
+                           asp-area="Student" asp-controller="Profile" asp-action="Index">
+                            <i class="bi bi-person"></i><span class="nav-link-text">@L["Nav.MyProfile"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Profile", "Preferences") ? "active" : "")"
+                           asp-area="Student" asp-controller="Profile" asp-action="Preferences">
+                            <i class="bi bi-sliders"></i><span class="nav-link-text">@L["Nav.Preferences"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Profile", "Verify") ? "active" : "")"
+                           asp-area="Student" asp-controller="Profile" asp-action="Verify">
+                            <i class="bi bi-patch-check"></i><span class="nav-link-text">@L["Nav.Verification"]</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-cta mt-4">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-patch-check-fill fs-4" style="color: #ea580c;"></i>
+                    <span class="fw-bold small">@L["Sidebar.VerifyTitle"]</span>
+                </div>
+                <p class="small mb-3" style="color: var(--ink-600);">@L["Sidebar.VerifyText"]</p>
+                <a asp-area="Student" asp-controller="Profile" asp-action="Verify" class="btn btn-sm btn-soft w-100" style="--bs-btn-bg: #fff7ed; --bs-btn-color: #ea580c;">@L["Sidebar.VerifyAction"]</a>
+            </div>
+        </aside>
+
+        <main class="app-content" id="appContent">
+            <div class="app-content-inner">
+                <div class="mb-3">
+                    @await Html.PartialAsync("_Alerts")
+                </div>
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <div class="app-sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+    @await Html.PartialAsync("_LayoutScripts")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

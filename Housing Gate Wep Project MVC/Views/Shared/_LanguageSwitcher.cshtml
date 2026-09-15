@@ -1,0 +1,28 @@
+@using System.Globalization
+@using Microsoft.AspNetCore.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<StudentHousing.Resources.SharedResource> L
+@{
+    var current = CultureInfo.CurrentUICulture.Name;
+    var currentUrl = Context.Request.Path + Context.Request.QueryString;
+}
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="@L["Layout.Language"]">
+            <i class="bi bi-translate"></i> @(current == "ar-EG" ? "العربية" : "English")
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+                <form method="post" asp-controller="Culture" asp-action="SetLanguage" asp-route-returnUrl="@currentUrl">
+                    <input type="hidden" name="culture" value="ar-EG" />
+                    <button type="submit" class="dropdown-item @(current == "ar-EG" ? "active" : "")">العربية</button>
+                </form>
+            </li>
+            <li>
+                <form method="post" asp-controller="Culture" asp-action="SetLanguage" asp-route-returnUrl="@currentUrl">
+                    <input type="hidden" name="culture" value="en-US" />
+                    <button type="submit" class="dropdown-item @(current == "en-US" ? "active" : "")">English</button>
+                </form>
+            </li>
+        </ul>
+    </li>
+</ul>

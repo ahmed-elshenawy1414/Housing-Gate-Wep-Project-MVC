@@ -1,0 +1,815 @@
+target	key	en	ar
+SharedResource	App.Name	Housing Gate	بوابة السكن
+SharedResource	Nav.Home	Home	الرئيسية
+SharedResource	Nav.FindHousing	Find Housing	ابحث عن سكن
+SharedResource	Nav.Matches	Roommate Matches	تطابق زملاء الغرفة
+SharedResource	Nav.MyApplications	My Applications	طلباتي
+SharedResource	Nav.Dashboard	Dashboard	لوحة التحكم
+SharedResource	Nav.MyProperties	My Properties	ممتلكاتي
+SharedResource	Nav.Applications	Applications	الطلبات
+SharedResource	Nav.Users	Users	المستخدمون
+SharedResource	Nav.Properties	Properties	العقارات
+SharedResource	Nav.Complaints	Complaints	الشكاوى
+SharedResource	Nav.Reviews	Reviews	التقييمات
+SharedResource	Nav.AuditLogs	Audit Logs	سجلات التدقيق
+SharedResource	Audit.Action.Student.Verify	Verify student	توثيق طالب
+SharedResource	Audit.Action.Student.Reject	Reject student verification	رفض توثيق طالب
+SharedResource	Audit.Action.Student.RequestDocuments	Request student documents	طلب مستندات الطالب
+SharedResource	Audit.Action.Owner.Verify	Verify owner	توثيق مالك
+SharedResource	Audit.Action.Owner.Reject	Reject owner verification	رفض توثيق مالك
+SharedResource	Audit.Action.Property.Approve	Approve property	اعتماد عقار
+SharedResource	Audit.Action.Property.Reject	Reject property	رفض عقار
+SharedResource	Audit.Action.User.Suspend	Suspend user	تعليق مستخدم
+SharedResource	Audit.Action.User.Activate	Activate user	تفعيل مستخدم
+SharedResource	Audit.Action.Complaint.Respond	Respond to complaint	الرد على شكوى
+SharedResource	Audit.Action.Review.Approve	Approve review	اعتماد تقييم
+SharedResource	Audit.Action.Review.Remove	Remove review	إزالة تقييم
+SharedResource	Audit.Entity.Student	Student	طالب
+SharedResource	Audit.Entity.Owner	Owner	مالك
+SharedResource	Audit.Entity.Property	Property	عقار
+SharedResource	Audit.Entity.User	User	مستخدم
+SharedResource	Audit.Entity.Complaint	Complaint	شكوى
+SharedResource	Audit.Entity.Review	Review	تقييم
+SharedResource	Nav.HowItWorks	How it works	كيف يعمل
+SharedResource	Nav.About	About	من نحن
+SharedResource	Nav.SignIn	Sign in	تسجيل الدخول
+SharedResource	Nav.JoinNow	Join now	انضم الآن
+SharedResource	Nav.SignOut	Sign out	تسجيل الخروج
+SharedResource	Nav.MyProfile	My Profile	ملفي الشخصي
+SharedResource	Nav.ViewAll	View all	عرض الكل
+SharedResource	Nav.Toggle	Toggle navigation	تبديل التنقل
+SharedResource	Nav.Notifications	Notifications	الإشعارات
+SharedResource	Nav.AllCaughtUp	You're all caught up.	لا توجد إشعارات جديدة.
+SharedResource	Nav.Brand	Housing Gate	بوابة السكن
+SharedResource	Layout.FooterTagline	Verified student housing and roommate matching for university students.	سكن طلابي موثق ومطابقة زملاء الغرفة لطلاب الجامعات.
+SharedResource	Layout.ForStudents	For students	للطلاب
+SharedResource	Layout.AboutUs	About us	من نحن
+SharedResource	Layout.NeedHelp	Need help?	تحتاج مساعدة؟
+SharedResource	Layout.NeedHelpText	Open a complaint from your dashboard and our team will follow up.	افتح شكوى من لوحة التحكم وسيتابع فريقنا الأمر.
+SharedResource	Layout.Close	Close	إغلاق
+SharedResource	Layout.Language	Language	اللغة
+SharedResource	Layout.OtherLanguage	English	English
+SharedResource	Common.Save	Save	حفظ
+SharedResource	Common.Cancel	Cancel	إلغاء
+SharedResource	Common.Edit	Edit	تعديل
+SharedResource	Common.Delete	Delete	حذف
+SharedResource	Common.Create	Create	إنشاء
+SharedResource	Common.Add	Add	إضافة
+SharedResource	Common.Submit	Submit	إرسال
+SharedResource	Common.Search	Search	بحث
+SharedResource	Common.Apply	Apply	قدّم طلبًا
+SharedResource	Common.Approve	Approve	موافقة
+SharedResource	Common.Reject	Reject	رفض
+SharedResource	Common.View	View	عرض
+SharedResource	Common.Back	Back	رجوع
+SharedResource	Common.Yes	Yes	نعم
+SharedResource	Common.No	No	لا
+SharedResource	Common.Confirm	Confirm	تأكيد
+SharedResource	Common.Status	Status	الحالة
+SharedResource	Common.Name	Name	الاسم
+SharedResource	Common.Email	Email	البريد الإلكتروني
+SharedResource	Common.Actions	Actions	إجراءات
+SharedResource	Common.Details	Details	التفاصيل
+SharedResource	Common.None	None	لا يوجد
+SharedResource	Common.Date	Date	التاريخ
+SharedResource	Common.NotAvailable	N/A	غير متاح
+SharedResource	Common.Optional	(optional)	(اختياري)
+SharedResource	Common.Rent	Rent	الإيجار
+SharedResource	Common.Deposit	Deposit	وديعة
+SharedResource	Common.Total	Total	الإجمالي
+SharedResource	Common.Loading	Loading...	جارٍ التحميل...
+SharedResource	Common.Required	This field is required.	هذا الحقل مطلوب.
+SharedResource	Common.ConfirmDelete	Are you sure you want to delete this?	هل أنت متأكد أنك تريد الحذف؟
+SharedResource	Enums.ApprovalStatus.Pending	Pending	قيد المراجعة
+SharedResource	Enums.ApprovalStatus.Approved	Approved	موافق عليه
+SharedResource	Enums.ApprovalStatus.Rejected	Rejected	مرفوض
+SharedResource	Enums.ApprovalStatus.NeedsChanges	Needs changes	يتطلب تعديلات
+SharedResource	Enums.ApprovalStatus.Draft	Draft	مسودة
+SharedResource	Enums.ApprovalStatus.Suspended	Suspended	معلق
+SharedResource	Enums.ApprovalStatus.Archived	Archived	مؤرشف
+SharedResource	Enums.PropertyType.Apartment	Apartment	شقة
+SharedResource	Enums.PropertyType.SharedHouse	Shared house	بيت مشترك
+SharedResource	Enums.PropertyType.Studio	Studio	استوديو
+SharedResource	Enums.PropertyType.SingleRoom	Single room	غرفة مفردة
+SharedResource	Enums.RoomType.Single	Single	مفردة
+SharedResource	Enums.RoomType.Shared	Shared	مشتركة
+SharedResource	Enums.RoomType.Master	Master	رئيسية
+SharedResource	Enums.BathroomType.Private	Private	خاصة
+SharedResource	Enums.BathroomType.Shared	Shared	مشتركة
+SharedResource	Enums.BathroomType.Attached	Attached	ملحقة
+SharedResource	Enums.ApplicationStatus.Pending	Pending	قيد الانتظار
+SharedResource	Enums.ApplicationStatus.Approved	Approved	مقبول
+SharedResource	Enums.ApplicationStatus.Rejected	Rejected	مرفوض
+SharedResource	Enums.ApplicationStatus.Cancelled	Cancelled	ملغي
+SharedResource	Enums.ComplaintStatus.Open	Open	مفتوحة
+SharedResource	Enums.ComplaintStatus.UnderReview	Under review	قيد المعالجة
+SharedResource	Enums.ComplaintStatus.Resolved	Resolved	تم الحل
+SharedResource	Enums.ComplaintStatus.Dismissed	Dismissed	مرفوضة
+SharedResource	Enums.VerificationStatus.Unverified	Unverified	غير موثق
+SharedResource	Enums.VerificationStatus.Pending	Pending	قيد المراجعة
+SharedResource	Enums.VerificationStatus.Verified	Verified	موثق
+SharedResource	Enums.VerificationStatus.Rejected	Rejected	مرفوض
+SharedResource	Enums.VerificationStatus.NeedsChanges	Needs changes	يتطلب تعديلات
+SharedResource	Enums.ReviewStatus.Pending	Pending	قيد المراجعة
+SharedResource	Enums.ReviewStatus.Approved	Approved	منشور
+SharedResource	Enums.ReviewStatus.Removed	Removed	محذوف
+SharedResource	Enums.StayStatus.Active	Active	نشط
+SharedResource	Enums.StayStatus.Completed	Completed	مكتمل
+SharedResource	Enums.StayStatus.Cancelled	Cancelled	ملغي
+SharedResource	Enums.Gender.Male	Male	ذكر
+SharedResource	Enums.Gender.Female	Female	أنثى
+SharedResource	Enums.Gender.Other	Other	أخرى
+SharedResource	Enums.Gender.PreferNotToSay	Prefer not to say	أفضل عدم الإفصاح
+SharedResource	Enums.SleepSchedule.EarlyBird	Early bird	صباحي
+SharedResource	Enums.SleepSchedule.NightOwl	Night owl	ليلي
+SharedResource	Enums.SleepSchedule.Flexible	Flexible	مرن
+SharedResource	Enums.NoiseLevel.Quiet	Quiet	هادئ
+SharedResource	Enums.NoiseLevel.Moderate	Moderate	معتدل
+SharedResource	Enums.NoiseLevel.Loud	Lively	صاخب
+SharedResource	Enums.Cleanliness.Tidy	Tidy	مرتب
+SharedResource	Enums.Cleanliness.Casual	Casual	عادي
+SharedResource	Enums.Cleanliness.Messy	Messy	فوضوي
+SharedResource	Enums.ComplaintType.Harassment	Harassment	تحرش
+SharedResource	Enums.ComplaintType.PropertyIssue	Property issue	مشكلة عقار
+SharedResource	Enums.ComplaintType.Misrepresentation	Misrepresentation	تضليل
+SharedResource	Enums.ComplaintType.Scam	Scam	احتيال
+SharedResource	Enums.ComplaintType.Other	Other	أخرى
+SharedResource	Enums.PropertyImageCategory.Exterior	Exterior	واجهة المبنى
+SharedResource	Enums.PropertyImageCategory.Entrance	Entrance	مدخل
+SharedResource	Enums.PropertyImageCategory.LivingRoom	Living room	غرفة معيشة
+SharedResource	Enums.PropertyImageCategory.Kitchen	Kitchen	مطبخ
+SharedResource	Enums.PropertyImageCategory.Bathroom	Bathroom	حمام
+SharedResource	Enums.PropertyImageCategory.Bedroom	Bedroom	غرفة نوم
+SharedResource	Enums.PropertyImageCategory.Other	Other	أخرى
+SharedResource	Enums.NotificationType.General	General	عام
+SharedResource	Enums.NotificationType.Application	Application	طلب
+SharedResource	Enums.NotificationType.ApplicationStatus	Application status	حالة الطلب
+SharedResource	Enums.NotificationType.Message	Message	رسالة
+SharedResource	Enums.NotificationType.PropertyApproval	Property approval	موافقة العقار
+SharedResource	Enums.NotificationType.Review	Review	تقييم
+SharedResource	Enums.NotificationType.Complaint	Complaint	شكوى
+SharedResource	Enums.NotificationType.Verification	Verification	توثيق
+SharedResource	Enums.NotificationType.Reminder	Reminder	تذكير
+SharedResource	Account.Login	Sign in	تسجيل الدخول
+SharedResource	Account.LoginTitle	Welcome back	مرحبًا بعودتك
+SharedResource	Account.LoginSubtitle	Sign in to manage your housing.	سجل الدخول لإدارة سكنك.
+SharedResource	Account.Email	Email	البريد الإلكتروني
+SharedResource	Account.Password	Password	كلمة المرور
+SharedResource	Account.RememberMe	Remember me	تذكرني
+SharedResource	Account.ForgotPassword	Forgot your password?	نسيت كلمة المرور؟
+SharedResource	Account.NoAccount	Don't have an account?	ليس لديك حساب؟
+SharedResource	Account.Register	Create account	إنشاء حساب
+SharedResource	Account.RegisterTitle	Join Housing Gate	انضم إلى بوابة السكن
+SharedResource	Account.RegisterSubtitle	Create your account to start searching.	أنشئ حسابك لبدء البحث.
+SharedResource	Account.FirstName	First name	الاسم الأول
+SharedResource	Account.LastName	Last name	اسم العائلة
+SharedResource	Account.PhoneNumber	Phone number	رقم الهاتف
+SharedResource	Account.ConfirmPassword	Confirm password	تأكيد كلمة المرور
+SharedResource	Account.Role	I am a	أنا
+SharedResource	Account.Student	Student	طالب
+SharedResource	Account.Owner	Property owner	مالك عقار
+SharedResource	Account.AlreadyRegistered	Already have an account?	لديك حساب بالفعل؟
+SharedResource	Account.LogoutConfirm	Sign out?	تسجيل الخروج؟
+SharedResource	Account.LoginError	Invalid login attempt.	بيانات الدخول غير صحيحة.
+SharedResource	Account.LoginLocked	Your account is locked.	حسابك مقفل.
+SharedResource	Account.RegisterError	Registration failed.	فشل التسجيل.
+SharedResource	Account.EmailInUse	An account with this email already exists.	يوجد حساب بهذا البريد الإلكتروني بالفعل.
+SharedResource	Account.CreatedOwner	Owner account created.	تم إنشاء حساب المالك.
+SharedResource	Account.CreatedStudent	Student account created.	تم إنشاء حساب الطالب.
+SharedResource	Account.AccessDenied	Access denied	تم رفض الوصول
+SharedResource	Account.AccessDeniedText	You don't have permission to view this page.	ليس لديك صلاحية لعرض هذه الصفحة.
+SharedResource	Account.BackToHome	Back to home	العودة للرئيسية
+SharedResource	Account.LoginToContinue	Sign in to continue	سجل الدخول للمتابعة
+SharedResource	Account.DemoAccounts	Demo accounts	حسابات تجريبية
+SharedResource	Account.DemoStudent	Student	طالب
+SharedResource	Account.DemoOwner	Owner	مالك
+SharedResource	Account.DemoAdmin	Admin	مشرف
+SharedResource	Account.IAmA	I am a...	أنا...
+SharedResource	Account.TermsPrefix	I agree to the	أوافق على
+SharedResource	Account.TermsOfService	Terms of Service	شروط الخدمة
+SharedResource	Account.AndWord	and	و
+SharedResource	Account.PrivacyPolicy	Privacy Policy	سياسة الخصوصية
+SharedResource	HiW.Step1Title	Create your account	أنشئ حسابك
+SharedResource	HiW.Step1Text	Sign up as a Student to search housing and find roommates, or as an Owner to list properties. Every account is real-person verified.	سجّل كطالب للبحث عن سكن وإيجاد زملاء، أو كمالك لعرض العقارات. كل حساب يتم توثيق هوية صاحبه.
+SharedResource	HiW.Step2Title	Complete your profile	أكمل ملفك الشخصي
+SharedResource	HiW.Step2Text	Students add their university, budget, move-in date and lifestyle details (sleep schedule, noise level, cleanliness). Owners add company info and ownership documents. Upload a student ID or ownership proof to earn the verified badge.	يضيف الطلاب جامعتهم وميزانيتهم وتاريخ الانتقال وتفاصيل نمط الحياة. يضيف الملاك معلومات الشركة ومستندات الملكية. ارفع بطاقة طلابية أو إثبات ملكية للحصول على شارة التوثيق.
+SharedResource	HiW.Step3Title	Find housing & roommates	ابحث عن سكن وزملاء
+SharedResource	HiW.Step3Text	Browse verified listings by city, price and type. The Roommate Matches page ranks other students by budget overlap, gender preference, smoking, sleep schedule, noise, cleanliness and pets.	تصفح العقارات الموثقة حسب المدينة والسعر والنوع. صفحة مطابقة زملاء الغرفة ترتب الطلاب حسب تداخل الميزانية وتفضيل الجنس والتدخين وجدول النوم والضوضاء والنظافة والحيوانات الأليفة.
+SharedResource	HiW.Step4Title	Apply & get approved	قدّم طلبًا واحصل على الموافقة
+SharedResource	HiW.Step4Text	Apply to a room with a short message. The owner approves or rejects your application. Approved applications become verified stays.	قدّم طلبًا لغرفة مع رسالة قصيرة. يوافق المالك على طلبك أو يرفضه. تتحول الطلبات المقبولة إلى إقامات موثقة.
+SharedResource	HiW.Step5Title	Review honestly	قيّم بصدق
+SharedResource	HiW.Step5Text	After a verified stay ends, you can review the property and the students you lived with. Reviews are moderated by admins to keep the community safe and honest.	بعد انتهاء إقامة موثقة، يمكنك تقييم العقار والطلاب الذين عشت معهم. يتم مراجعة التقييمات من قبل المشرفين للحفاظ على سلامة المجتمع.
+SharedResource	HiW.Step6Text	Students and owners can file complaints about a user or a property. Our admin team reviews every complaint and follows up.	يمكن للطلاب والملاك تقديم شكاوى عن مستخدم أو عقار. يقوم فريق الإدارة بمراجعة كل شكوى والمتابعة.
+SharedResource	HiW.GetStarted	Get started	ابدأ الآن
+SharedResource	HiW.BrowseHousing	Browse housing	تصفح السكن
+SharedResource	About.Lead	Housing Gate is a student housing marketplace that connects university students with verified property owners — and, more importantly, with each other.	بوابة السكن هي سوق سكن طلابي يربط طلاب الجامعات بملاك العقارات الموثقين — والأهم من ذلك، ببعضهم البعض.
+SharedResource	About.Body	Moving away from your hometown is hard. Finding a place to live that fits your budget is hard. Finding people you actually want to live with is often the hardest part. Housing Gate was built to solve all three at once.	الابتعاد عن مسقط رأسك صعب. العثور على مكان يناسب ميزانيتك صعب. والعثور على أشخاص تريد فعلًا العيش معهم هو الأصعب غالبًا. بُنيت بوابة السكن لحل الأمور الثلاثة معًا.
+SharedResource	About.DifferentTitle	What makes us different	ما الذي يميزنا
+SharedResource	About.Point1Title	Verified everything	توثيق شامل
+SharedResource	About.Point1Text	students, owners and listings all go through review.	الطلاب والملاك والعقارات تخضع جميعها للمراجعة.
+SharedResource	About.Point2Title	Roommate matching	مطابقة زملاء الغرفة
+SharedResource	About.Point2Text	compatibility scores based on your profile and preferences.	درجات توافق مبنية على ملفك وتفضيلاتك.
+SharedResource	About.Point3Title	Reviews after verified stays	تقييمات بعد إقامات موثقة
+SharedResource	About.Point3Text	only real residents can review a property or a roommate.	المقيمون الفعليون فقط يمكنهم تقييم عقار أو زميل غرفة.
+SharedResource	About.Point4Title	A human safety net	شبكة أمان بشرية
+SharedResource	About.Point4Text	admins verify identities, moderate reviews and handle complaints.	المشرفون يوثقون الهويات ويراجعون التقييمات ويتعاملون مع الشكاوى.
+SharedResource	Error.RequestId	Request ID	معرف الطلب
+SharedResource	Home.Hero	Find your home away from home	جد منزلك بعيدًا عن منزلك
+SharedResource	Home.HeroSub	Search verified student housing, compare rooms and find compatible roommates.	ابحث عن سكن طلابي موثق، قارن الغرف واعثر على زملاء متوافقين.
+SharedResource	Home.HeroTagline	Find your home, find your people.	جد منزلك واعثر على رفاقك.
+SharedResource	Home.HeroText	Housing Gate connects students with verified landlords and compatible roommates — so moving to a new city feels a little more like home.	بوابة السكن تربط الطلاب بمؤجرين موثقين وزملاء متوافقين — حتى يشعر الانتقال إلى مدينة جديدة بمزيد من الألفة.
+SharedResource	Home.City	City	المدينة
+SharedResource	Home.CityPlaceholder	City, e.g. Cairo	المدينة، مثلًا القاهرة
+SharedResource	Home.MaxRent	Max rent	أقصى إيجار
+SharedResource	Home.Popular	Popular:	شائع:
+SharedResource	Home.VerifiedListings	Verified listings	عقارات موثقة
+SharedResource	Home.FeaturedHousing	Featured housing	سكن مميز
+SharedResource	Home.BrowseAll	Browse all	تصفح الكل
+SharedResource	Home.NoListingsYet	No listings yet. Check back soon!	لا توجد عقارات بعد. ترقّب قريبًا!
+SharedResource	Home.HowWorks	How Housing Gate works	كيف تعمل بوابة السكن
+SharedResource	Home.Step1Title	1. Get verified	1. توثيق الحساب
+SharedResource	Home.Step1Text	Verify your student ID or ownership documents so everyone knows you're real.	وثّق بطاقتك الطلابية أو مستندات الملكية حتى يعرف الجميع أنك حقيقي.
+SharedResource	Home.Step2Title	2. Get matched	2. المطابقة
+SharedResource	Home.Step2Text	Our matching engine finds roommates who fit your budget, sleep schedule and lifestyle.	محرك المطابقة لدينا يجد زملاء يناسبون ميزانيتك ومواعيد نومك وأسلوب حياتك.
+SharedResource	Home.Step3Title	3. Move in & review	3. الانتقال والتقييم
+SharedResource	Home.Step3Text	Apply, move in, then review the property and your roommates after a verified stay.	قدّم طلبك وانتقل ثم قيّم العقار وزملاءك بعد إقامة موثقة.
+SharedResource	Card.Featured	Featured	مميز
+SharedResource	Card.VerifiedOwner	Verified owner	مالك موثق
+SharedResource	Card.Furnished	Furnished	مفروش
+SharedResource	Card.BedroomsShort	bd	غرف
+SharedResource	Card.PerMonth	/mo	/شهريًا
+SharedResource	Common.CurrencySymbol	EGP	ج.م
+SharedResource	Home.SearchPlaceholder	Search by city, district or university...	ابحث بالمدينة أو الحي أو الجامعة...
+SharedResource	Home.SearchButton	Search	بحث
+SharedResource	Home.Featured	Featured listings	عقارات مميزة
+SharedResource	Home.LatestListings	Latest listings	أحدث العقارات
+SharedResource	Home.ViewAll	View all listings	عرض جميع العقارات
+SharedResource	Home.NoListings	No listings available yet.	لا توجد عقارات متاحة حاليًا.
+SharedResource	Home.Feature1	Verified properties	عقارات موثقة
+SharedResource	Home.Feature1Text	Every listing is reviewed by our team before going live.	يتم مراجعة كل عقار من قبل فريقنا قبل نشره.
+SharedResource	Home.Feature2	Roommate matching	مطابقة زملاء الغرفة
+SharedResource	Home.Feature2Text	Find students with compatible habits and lifestyle.	اعثر على طلاب بتفضيلات وأسلوب حياة متوافق.
+SharedResource	Home.Feature3	Fair reviews	تقييمات عادلة
+SharedResource	Home.Feature3Text	Real reviews from students who actually stayed.	تقييمات حقيقية من طلاب أقاموا بالفعل.
+SharedResource	Home.HowItWorksTitle	How it works	كيف يعمل
+SharedResource	Home.AboutTitle	About Housing Gate	عن بوابة السكن
+SharedResource	Home.AboutText	Housing Gate connects university students with verified, fairly-priced housing and helps them find compatible roommates.	بوابة السكن تربط طلاب الجامعات بسكن موثق وعادل السعر وتساعدهم في العثور على زملاء متوافقين.
+SharedResource	Notif.NoNotifications	No notifications yet.	لا توجد إشعارات بعد.
+SharedResource	Notif.MarkAllRead	Mark all as read	تحديد الكل كمقروء
+SharedResource	Notif.Unread	Unread	غير مقروء
+SharedResource	Notif.Read	Read	مقروء
+SharedResource	Error.Title	Error	خطأ
+SharedResource	Error.NotFound	Page not found	الصفحة غير موجودة
+SharedResource	Error.SomethingWentWrong	Something went wrong.	حدث خطأ ما.
+SharedResource	Error.TryAgain	Please try again later.	يرجى المحاولة لاحقًا.
+SharedResource	Error.NoAccess	You do not have access to this page.	ليس لديك حق الوصول لهذه الصفحة.
+Areas/StudentAreaResource	Common.Back	Back	رجوع
+Areas/StudentAreaResource	Common.Cancel	Cancel	إلغاء
+Areas/StudentAreaResource	Applications.Applied	Applied	تم التقديم
+Areas/StudentAreaResource	Applications.Cancel	Cancel application	إلغاء التقديم
+Areas/StudentAreaResource	Applications.Empty	You haven't applied to any properties yet.	لم تتقدم لأي عقار بعد.
+Areas/StudentAreaResource	Applications.Empty2	Browse available properties and start applying.	تصفح العقارات المتاحة وابدأ بالتقديم.
+Areas/StudentAreaResource	Applications.Property	Property	العقار
+Areas/StudentAreaResource	Applications.Room	Room	الغرفة
+Areas/StudentAreaResource	Complaints.About	About	عن
+Areas/StudentAreaResource	Complaints.AboutUser	About you	عنك
+Areas/StudentAreaResource	Complaints.AdminResponse	Admin response	رد الإدارة
+Areas/StudentAreaResource	Complaints.DescPlaceholder	Describe the issue in detail...	صف المشكلة بالتفصيل...
+Areas/StudentAreaResource	Complaints.Details	Details	التفاصيل
+Areas/StudentAreaResource	Complaints.Empty	No complaints filed.	لا توجد شكاوى مقدمة.
+Areas/StudentAreaResource	Complaints.File	File	إيداع
+Areas/StudentAreaResource	Complaints.FiledOn	Filed on	مقدمة في
+Areas/StudentAreaResource	Complaints.New	New complaint	شكوى جديدة
+Areas/StudentAreaResource	Complaints.NoProperty	No property	لا يوجد عقار
+Areas/StudentAreaResource	Complaints.NoResponse	No response yet.	لا يوجد رد بعد.
+Areas/StudentAreaResource	Complaints.NoUser	No user	لا يوجد مستخدم
+Areas/StudentAreaResource	Complaints.Subject	Subject	الموضوع
+Areas/StudentAreaResource	Complaints.SubjectPlaceholder	Short summary of the issue	ملخص مختصر للمشكلة
+Areas/StudentAreaResource	Complaints.Submit	Submit complaint	إرسال الشكوى
+Areas/StudentAreaResource	Complaints.Description	Description	الوصف
+Areas/StudentAreaResource	Complaints.ReportedUser	Reported user	المستخدم المُبلَّغ عنه
+Areas/StudentAreaResource	Complaints.ReportedProperty	Reported property	العقار المُبلَّغ عنه
+Areas/StudentAreaResource	Complaints.Title	Complaints	الشكاوى
+Areas/StudentAreaResource	Complaints.Type	Category	الفئة
+Areas/StudentAreaResource	Dash.ActiveApplications	Active applications	الطلبات النشطة
+Areas/StudentAreaResource	Dash.ActiveStays	Active stays	الإقامات النشطة
+Areas/StudentAreaResource	Dash.Applied	Applied	تم التقديم
+Areas/StudentAreaResource	Dash.EditProfile	Edit profile	تعديل الملف الشخصي
+Areas/StudentAreaResource	Dash.Hello	Hello	مرحبًا
+Areas/StudentAreaResource	Dash.NoApplications	You haven't applied to any property yet.	لم تتقدم لأي عقار بعد.
+Areas/StudentAreaResource	Dash.NoStays	No stays yet.	لا توجد إقامات بعد.
+Areas/StudentAreaResource	Dash.RecentApplications	Recent applications	أحدث الطلبات
+Areas/StudentAreaResource	Dash.RecentStays	Recent stays	أحدث الإقامات
+Areas/StudentAreaResource	Dash.ReviewsToWrite	Reviews to write	تقييمات بانتظار كتابتها
+Areas/StudentAreaResource	Dash.Room	Room	الغرفة
+Areas/StudentAreaResource	Dash.Started	Started	بدأت
+Areas/StudentAreaResource	Dash.StartSearching	Start searching for housing	ابدأ البحث عن سكن
+Areas/StudentAreaResource	Dash.UploadStudentId	Upload your student ID to get verified	ارفع بطاقة الجامعة للتحقق
+Areas/StudentAreaResource	Dash.VerifiedStays	Verified stays	إقامات موثقة
+Areas/StudentAreaResource	Dash.VerifyBanner	Your account is being reviewed by an admin.	يتم مراجعة حسابك من قِبل الإدارة.
+Areas/StudentAreaResource	Dash.VerifyBanner2	Verify your student account to unlock full features.	وثّق حسابك الطلابي لتفعيل جميع الميزات.
+Areas/StudentAreaResource	Matches.And	and	و
+Areas/StudentAreaResource	Matches.BudgetFit	Budget fit	توافق الميزانية
+Areas/StudentAreaResource	Matches.Empty	No strong matches yet. Try completing your profile or widening your preferences.	لا توجد تطابقات قوية بعد. حاول إكمال ملفك أو توسيع تفضيلاتك.
+Areas/StudentAreaResource	Matches.GenderFit	Gender fit	توافق الجنس
+Areas/StudentAreaResource	Matches.Incomplete	Complete your	أكمل
+Areas/StudentAreaResource	Matches.IncompleteTail	to get meaningful matches.	للحصول على تطابقات مفيدة.
+Areas/StudentAreaResource	Matches.Intro	Students ranked by how well your profiles and preferences fit together. Budget (30%), gender (10%) and lifestyle (60%).	يتم ترتيب الطلاب حسب مدى توافق ملفاتكم وتفضيلاتكم. الميزانية (30%) والجنس (10%) وأسلوب الحياة (60%).
+Areas/StudentAreaResource	Matches.LifestyleFit	Lifestyle fit	توافق أسلوب الحياة
+Areas/StudentAreaResource	Matches.Match	match	تطابق
+Areas/StudentAreaResource	Matches.Title	Roommate matches	تطابقات زملاء السكن
+Areas/StudentAreaResource	Matches.VerifiedStays	verified stay(s)	إقامات موثقة
+Areas/StudentAreaResource	Matches.VerifiedStudent	Verified student	طالب موثق
+Areas/StudentAreaResource	Matches.YourPrefs	roommate preferences	تفضيلات زملاء السكن
+Areas/StudentAreaResource	Matches.YourProfile	profile	الملف الشخصي
+Areas/StudentAreaResource	Profile.AcademicYear	Academic year	السنة الدراسية
+Areas/StudentAreaResource	Profile.AcceptsPets	I'm OK with roommates who have pets	أتقبل زملاء يملكون حيوانات أليفة
+Areas/StudentAreaResource	Profile.AcceptsSmokers	I'm OK with roommates who smoke	أتقبل زملاء يدخنون
+Areas/StudentAreaResource	Profile.Bio	Bio	نبذة عني
+Areas/StudentAreaResource	Profile.BioPlaceholder	A short intro about yourself...	نبذة قصيرة عن نفسك...
+Areas/StudentAreaResource	Profile.BudgetMax	Monthly budget (max)	الميزانية الشهرية (الحد الأقصى)
+Areas/StudentAreaResource	Profile.BudgetMin	Monthly budget (min)	الميزانية الشهرية (الحد الأدنى)
+Areas/StudentAreaResource	Profile.CityDistrict	City / district of origin	المدينة / الحي
+Areas/StudentAreaResource	Profile.Cleanliness	Cleanliness	النظافة
+Areas/StudentAreaResource	Profile.DateOfBirth	Date of birth	تاريخ الميلاد
+Areas/StudentAreaResource	Profile.EditPrefs	Edit preferences	تعديل التفضيلات
+Areas/StudentAreaResource	Profile.EditTitle	Edit profile	تعديل الملف الشخصي
+Areas/StudentAreaResource	Profile.Flexible	Flexible	مرن
+Areas/StudentAreaResource	Profile.Gender	Gender	الجنس
+Areas/StudentAreaResource	Profile.Governorate	Governorate of origin	محافظة المنشأ
+Areas/StudentAreaResource	Profile.HasPets	I have pets	أملك حيوانات أليفة
+Areas/StudentAreaResource	Profile.IsSmoker	I smoke	أنا مدخن
+Areas/StudentAreaResource	Profile.Lifestyle	Lifestyle	أسلوب الحياة
+Areas/StudentAreaResource	Profile.LifestyleHeading	Lifestyle (used by the matching engine)	أسلوب الحياة (يستخدمه محرك التطابق)
+Areas/StudentAreaResource	Profile.Major	Major	التخصص
+Areas/StudentAreaResource	Profile.MinLease	Minimum lease (months)	الحد الأدنى لمدة العقد (بالأشهر)
+Areas/StudentAreaResource	Profile.Months	months	أشهر
+Areas/StudentAreaResource	Profile.MoveInDate	Move-in date	تاريخ الانتقال
+Areas/StudentAreaResource	Profile.NationalId	National ID	البطاقة الشخصية
+Areas/StudentAreaResource	Profile.NationalIdLabel	National ID image	صورة البطاقة الشخصية
+Areas/StudentAreaResource	Profile.NewDocsRequested	New documents requested.	تم طلب مستندات جديدة.
+Areas/StudentAreaResource	Profile.NoiseLevel	Comfortable noise level	مستوى الضوضاء المريح
+Areas/StudentAreaResource	Profile.NoPreference	No preference	بدون تفضيل
+Areas/StudentAreaResource	Profile.Notes	Notes	ملاحظات
+Areas/StudentAreaResource	Profile.NotesPlaceholder	Anything else? e.g. I cook a lot, I study late...	أي شيء آخر؟ مثلًا: أطبخ كثيرًا، أدرس ليلًا...
+Areas/StudentAreaResource	Profile.NotUploaded	Not uploaded	لم يتم الرفع
+Areas/StudentAreaResource	Profile.NotVerified	Your account is not verified yet.	حسابك غير موثق بعد.
+Areas/StudentAreaResource	Profile.Overview	Overview	نظرة عامة
+Areas/StudentAreaResource	Profile.PendingBanner	Your verification is pending review.	تحققك قيد المراجعة.
+Areas/StudentAreaResource	Profile.PrefBudgetMax	Max budget	الحد الأقصى للميزانية
+Areas/StudentAreaResource	Profile.PrefBudgetMin	Min budget	الحد الأدنى للميزانية
+Areas/StudentAreaResource	Profile.PrefCleanliness	Preferred cleanliness	النظافة المفضلة
+Areas/StudentAreaResource	Profile.Preferences	Preferences	التفضيلات
+Areas/StudentAreaResource	Profile.PrefNoiseLevel	Preferred noise level	مستوى الضوضاء المفضل
+Areas/StudentAreaResource	Profile.PrefPreferredGender	Preferred gender	الجنس المفضل
+Areas/StudentAreaResource	Profile.PrefsIntro	These preferences tell the matching engine what you're looking for in a roommate.	تُخبر هذه التفضيلات محرك التطابق بما تبحث عنه في زميل السكن.
+Areas/StudentAreaResource	Profile.PrefSleepSchedule	Preferred sleep schedule	مواعيد النوم المفضلة
+Areas/StudentAreaResource	Profile.PrefsText	Adjust your housing and lifestyle preferences.	اضبط تفضيلات السكن وأسلوب الحياة.
+Areas/StudentAreaResource	Profile.PrefsTitle	Roommate preferences	تفضيلات زملاء السكن
+Areas/StudentAreaResource	Profile.RejectedBanner	Your verification was rejected.	تم رفض تحققك.
+Areas/StudentAreaResource	Profile.Save	Save profile	حفظ الملف
+Areas/StudentAreaResource	Profile.SavePrefs	Save preferences	حفظ التفضيلات
+Areas/StudentAreaResource	Profile.SleepSchedule	Sleep schedule	مواعيد النوم
+Areas/StudentAreaResource	Profile.Smoker	Smoker	مدخن
+Areas/StudentAreaResource	Profile.Title	My profile	ملفي الشخصي
+Areas/StudentAreaResource	Profile.University	University	الجامعة
+Areas/StudentAreaResource	Profile.UniversityId	University ID	بطاقة الجامعة
+Areas/StudentAreaResource	Profile.UniversityIdLabel	University ID / student card image	صورة بطاقة الجامعة / كارت الطالب
+Areas/StudentAreaResource	Profile.Upload	Upload	رفع
+Areas/StudentAreaResource	Profile.UploadDocs	Upload documents	رفع المستندات
+Areas/StudentAreaResource	Profile.Uploaded	Uploaded	تم الرفع
+Areas/StudentAreaResource	Profile.UploadNewDocs	Upload new documents	ارفع مستندات جديدة
+Areas/StudentAreaResource	Profile.UploadUpdatedDocs	Upload updated documents	ارفع مستندات محدثة
+Areas/StudentAreaResource	Profile.VerifiedBanner	You are a verified student.	أنت طالب موثق.
+Areas/StudentAreaResource	Profile.VerifiedStays	Verified stays:	الإقامات الموثقة:
+Areas/StudentAreaResource	Profile.VerifyIntro	Upload a clear photo of your National ID and your University ID / student card. Only the admin team can see them. Verification is reviewed within a few days.	ارفع صورة واضحة لبطاقتك الشخصية وبطاقة جامعتك / كارت الطالب. لن يطلع عليها سوى فريق الإدارة. تتم مراجعة التحقق خلال أيام قليلة.
+Areas/StudentAreaResource	Profile.VerifyStudentId	Verify your student ID	وثّق بطاقة الطالب الخاصة بك
+Areas/StudentAreaResource	Profile.VerifyText	Upload your documents to become a verified student.	ارفع مستنداتك لتصبح طالبًا موثقًا.
+Areas/StudentAreaResource	Profile.VerifyTitle	Verify student account	توثيق الحساب الطلابي
+Areas/StudentAreaResource	Prop.About	About	نبذة
+Areas/StudentAreaResource	Prop.Applied	Applied	تم التقديم
+Areas/StudentAreaResource	Prop.AppliedPending	Your application is pending approval.	طلبك قيد المراجعة.
+Areas/StudentAreaResource	Prop.ApplyFor	Apply for	تقديم طلب لـ
+Areas/StudentAreaResource	Prop.Available	Available	متاح
+Areas/StudentAreaResource	Prop.AvailableRooms	Available rooms	الغرف المتاحة
+Areas/StudentAreaResource	Prop.Bathrooms	Bathrooms	الحمامات
+Areas/StudentAreaResource	Prop.Bedrooms	Bedrooms	غرف النوم
+Areas/StudentAreaResource	Prop.MessagePlaceholder	Write a message to the owner...	اكتب رسالة للمالك...
+Areas/StudentAreaResource	Prop.MessageToOwner	Message to owner	رسالة إلى المالك
+Areas/StudentAreaResource	Prop.NoRooms	No rooms available	لا توجد غرف متاحة
+Areas/StudentAreaResource	Prop.PetsAllowed	Pets allowed	يُسمح بالحيوانات الأليفة
+Areas/StudentAreaResource	Prop.RentPerMonth	Rent per month	الإيجار الشهري
+Areas/StudentAreaResource	Prop.Room	Room	الغرفة
+Areas/StudentAreaResource	Prop.SendApplication	Send application	إرسال الطلب
+Areas/StudentAreaResource	Prop.Taken	Taken	محجوز
+Areas/StudentAreaResource	Prop.UnverifiedOwner	Unverified owner	مالك غير موثق
+Areas/StudentAreaResource	Reviews.AboutMe	Reviews about me	التقييمات عني
+Areas/StudentAreaResource	Reviews.Comment	Comment	تعليق
+Areas/StudentAreaResource	Reviews.CommentPlaceholder	How was your stay?...	كيف كانت إقامتك؟...
+Areas/StudentAreaResource	Reviews.CommentPlaceholder2	How was living together?...	كيف كانت المعيشة معًا؟...
+Areas/StudentAreaResource	Reviews.FromVerifiedStay	From a verified stay	من إقامة موثقة
+Areas/StudentAreaResource	Reviews.IWrote	Roommate reviews I wrote	تقييمات زملاء السكن التي كتبتها
+Areas/StudentAreaResource	Reviews.Live	Live	منشور
+Areas/StudentAreaResource	Reviews.MyTitle	My reviews	تقييماتي
+Areas/StudentAreaResource	Reviews.NoPropertyReviews	You haven't reviewed any properties yet. Review after a completed stay.	لم تقيّم أي عقار بعد. يمكنك التقييم بعد إقامة مكتملة.
+Areas/StudentAreaResource	Reviews.NoReviewsAboutMe	No reviews about you yet.	لا توجد تقييمات عنك بعد.
+Areas/StudentAreaResource	Reviews.NoReviewsIWrote	You haven't reviewed any roommates yet.	لم تقيّم أي زميل سكن بعد.
+Areas/StudentAreaResource	Reviews.PendingApproval	Pending approval	قيد المراجعة
+Areas/StudentAreaResource	Reviews.PropertyReviews	Property reviews	تقييمات العقارات
+Areas/StudentAreaResource	Reviews.Removed	Removed	تمت الإزالة
+Areas/StudentAreaResource	Reviews.ReviewProperty	Review property	قيّم العقار
+Areas/StudentAreaResource	Reviews.ReviewRoommate	Review roommate	قيّم زميل السكن
+Areas/StudentAreaResource	Reviews.ReviewRoommateSub	Rate your experience living with this roommate.	قيّم تجربتك في العيش مع زميل السكن هذا.
+Areas/StudentAreaResource	Reviews.ReviewRoommateTitle	Roommate review	تقييم زميل السكن
+Areas/StudentAreaResource	Reviews.ReviewYourStay	Review your stay at	قيّم إقامتك في
+Areas/StudentAreaResource	Reviews.Submit	Submit review	إرسال التقييم
+Areas/StudentAreaResource	Reviews.Rating	Rating	التقييم
+Areas/StudentAreaResource	Reviews.Title	Reviews	التقييمات
+Areas/StudentAreaResource	Reviews.TitleLabel	Title	العنوان
+Areas/StudentAreaResource	Reviews.TitlePlaceholder	Title of your review	عنوان تقييمك
+Areas/StudentAreaResource	Search.AllCities	All cities	جميع المدن
+Areas/StudentAreaResource	Search.AllTypes	All types	جميع الأنواع
+Areas/StudentAreaResource	Search.KeywordPlaceholder	Search by keyword, university, city...	ابحث بالكلمة المفتاحية، الجامعة، المدينة...
+Areas/StudentAreaResource	Search.NoResults	No properties match your search.	لا توجد عقارات مطابقة لبحثك.
+Areas/StudentAreaResource	Search.ResultsCount	properties found	عقار تم العثور عليه
+Areas/StudentAreaResource	Search.Reviews	reviews	تقييم
+Areas/StudentAreaResource	Search.SortNewest	Newest	الأحدث
+Areas/StudentAreaResource	Search.SortPriceAsc	Price: low to high	السعر: من الأقل إلى الأعلى
+Areas/StudentAreaResource	Search.SortPriceDesc	Price: high to low	السعر: من الأعلى إلى الأقل
+Areas/StudentAreaResource	Search.SortRecommended	Recommended	الأفضل تطابقًا
+Areas/StudentAreaResource	Search.VerifiedReviews	verified reviews	تقييمات موثقة
+Areas/StudentAreaResource	Stays.Empty	No stays yet.	لا توجد إقامات بعد.
+Areas/StudentAreaResource	Stays.Ended	Ended	انتهت
+Areas/StudentAreaResource	Stays.PropertyReviewed	Property reviewed	تم تقييم العقار
+Areas/StudentAreaResource	Stays.ReviewProperty	Review property	قيّم العقار
+Areas/StudentAreaResource	Stays.ReviewRoommate	Review roommate	قيّم زميل السكن
+Areas/StudentAreaResource	Stays.Room	Room	الغرفة
+Areas/StudentAreaResource	Stays.Started	Started	بدأت
+Areas/StudentAreaResource	Stays.Title	My stays	إقاماتي
+Areas/OwnerAreaResource	Common.Back	Back	رجوع
+Areas/OwnerAreaResource	Common.Cancel	Cancel	إلغاء
+Areas/OwnerAreaResource	Apps.Applied	Applied	تاريخ التقديم
+Areas/OwnerAreaResource	Apps.Approve	Approve	موافقة
+Areas/OwnerAreaResource	Apps.ApproveConfirm	Approve and create a verified stay for this student?	هل تريد الموافقة وإنشاء إقامة موثقة لهذا الطالب؟
+Areas/OwnerAreaResource	Apps.Empty	No applications for your properties yet.	لا توجد طلبات لعقاراتك بعد.
+Areas/OwnerAreaResource	Apps.Message	Message	الرسالة
+Areas/OwnerAreaResource	Apps.PropertyRoom	Property / Room	العقار / الغرفة
+Areas/OwnerAreaResource	Apps.Reject	Reject	رفض
+Areas/OwnerAreaResource	Apps.Status	Status	الحالة
+Areas/OwnerAreaResource	Apps.Student	Student	الطالب
+Areas/OwnerAreaResource	Apps.Title	Applications	الطلبات
+Areas/OwnerAreaResource	Dash.ActiveStays	Active stays	الإقامات النشطة
+Areas/OwnerAreaResource	Dash.AddFirstListing	Add your first listing	أضف أول عقار لك
+Areas/OwnerAreaResource	Dash.AddProperty	Add property	إضافة عقار
+Areas/OwnerAreaResource	Dash.ApprovedListings	Approved listings	العقارات المعتمدة
+Areas/OwnerAreaResource	Dash.Hello	Hello	مرحبًا
+Areas/OwnerAreaResource	Dash.NoApplications	No applications yet.	لا توجد طلبات بعد.
+Areas/OwnerAreaResource	Dash.NoProperties	No properties yet.	لا توجد عقارات بعد.
+Areas/OwnerAreaResource	Dash.NotVerifiedBanner	Your owner account is	حسابك كمالك
+Areas/OwnerAreaResource	Dash.PendingApplications	Pending applications	الطلبات المعلقة
+Areas/OwnerAreaResource	Dash.RecentApplications	Recent applications	أحدث الطلبات
+Areas/OwnerAreaResource	Dash.Title	Owner Dashboard	لوحة تحكم المالك
+Areas/OwnerAreaResource	Dash.TotalProperties	Properties	العقارات
+Areas/OwnerAreaResource	Dash.UploadOwnershipProof	Upload ownership proof	ارفع مستند الملكية
+Areas/OwnerAreaResource	Dash.VerifyToRank	to get verified and rank higher in search.	للتوثيق والظهور أعلى في نتائج البحث.
+Areas/OwnerAreaResource	Dash.YourListings	Your properties	عقاراتك
+Areas/OwnerAreaResource	Dash.YourProperties	Your properties	عقاراتك
+Areas/OwnerAreaResource	Form.AddPhotos	Add photos	إضافة صور
+Areas/OwnerAreaResource	Form.AddPhotosHint	Up to 6 images. The first uploaded image becomes the cover photo.	حتى 6 صور. أول صورة تُرفع تصبح صورة الغلاف.
+Areas/OwnerAreaResource	Form.Address	Address	العنوان
+Areas/OwnerAreaResource	Form.AddRoom	Add room	إضافة غرفة
+Areas/OwnerAreaResource	Form.Amenities	Amenities	المرافق
+Areas/OwnerAreaResource	Form.Available	Available	متاحة
+Areas/OwnerAreaResource	Form.AvailableFrom	Available from	متاح من
+Areas/OwnerAreaResource	Form.AvailBeds	Avail. beds	الأسرة المتاحة
+Areas/OwnerAreaResource	Form.Bathrooms	Bathrooms	الحمامات
+Areas/OwnerAreaResource	Form.Bedrooms	Bedrooms	غرف النوم
+Areas/OwnerAreaResource	Form.Beds	Beds	الأسرة
+Areas/OwnerAreaResource	Form.City	City	المدينة
+Areas/OwnerAreaResource	Form.CurrentStatus	Current status:	الحالة الحالية:
+Areas/OwnerAreaResource	Form.Deposit	Deposit	التأمين
+Areas/OwnerAreaResource	Form.DescPlaceholder	Describe the home, the neighborhood, utilities...	صف المنزل والحي والمرافق...
+Areas/OwnerAreaResource	Form.Description	Description	الوصف
+Areas/OwnerAreaResource	Form.District	District	الحي
+Areas/OwnerAreaResource	Form.IsFurnished	Furnished	مفروش
+Areas/OwnerAreaResource	Form.Latitude	Latitude	خط العرض
+Areas/OwnerAreaResource	Form.Longitude	Longitude	خط الطول
+Areas/OwnerAreaResource	Form.PetAllowed	Pets allowed	يُسمح بالحيوانات الأليفة
+Areas/OwnerAreaResource	Form.Photos	Photos	الصور
+Areas/OwnerAreaResource	Form.Primary	Primary	رئيسية
+Areas/OwnerAreaResource	Form.PropertyType	Property type	نوع العقار
+Areas/OwnerAreaResource	Form.RemovePhotoConfirm	Remove this photo?	إزالة هذه الصورة؟
+Areas/OwnerAreaResource	Form.RoomDesc	Room description (optional)	وصف الغرفة (اختياري)
+Areas/OwnerAreaResource	Form.RoomName	Room name	اسم الغرفة
+Areas/OwnerAreaResource	Form.RoomRent	Rent/mo	الإيجار/شهريًا
+Areas/OwnerAreaResource	Form.Rooms	Rooms	الغرف
+Areas/OwnerAreaResource	Form.RoomsHint	Add each room you rent out. Students apply to specific rooms.	أضف كل غرفة تؤجرها. يتقدم الطلاب لغرف محددة.
+Areas/OwnerAreaResource	Form.State	State	المحافظة
+Areas/OwnerAreaResource	Form.Title	Title	العنوان
+Areas/OwnerAreaResource	Form.University	University	الجامعة
+Areas/OwnerAreaResource	Form.UniversityPlaceholder	e.g. Cairo University	مثال: جامعة القاهرة
+Areas/OwnerAreaResource	Form.ZipCode	Zip code	الرمز البريدي
+Areas/OwnerAreaResource	OProfile.Bio	Bio	نبذة
+Areas/OwnerAreaResource	OProfile.BioPlaceholder	Tell students a bit about yourself and your properties...	عرّف الطلاب بنفسك وبعقاراتك...
+Areas/OwnerAreaResource	OProfile.Company	Company / name	الشركة / الاسم
+Areas/OwnerAreaResource	OProfile.DocLabel	Document (jpg, png or webp, max 3 MB)	المستند (jpg أو png أو webp، بحد أقصى 3 ميجابايت)
+Areas/OwnerAreaResource	OProfile.EditTitle	Edit profile	تعديل الملف الشخصي
+Areas/OwnerAreaResource	OProfile.License	License number	رقم الترخيص
+Areas/OwnerAreaResource	OProfile.LicensePlaceholder	Optional license / tax number	رقم الترخيص / الضريبة (اختياري)
+Areas/OwnerAreaResource	OProfile.MyProfile	My profile	ملفي الشخصي
+Areas/OwnerAreaResource	OProfile.NotVerified	Not verified.	غير موثق.
+Areas/OwnerAreaResource	OProfile.PendingBanner	Your verification document is under review.	مستند تحققك قيد المراجعة.
+Areas/OwnerAreaResource	OProfile.Phone	Phone	الهاتف
+Areas/OwnerAreaResource	OProfile.RejectedBanner	Your verification was rejected.	تم رفض تحققك.
+Areas/OwnerAreaResource	OProfile.Save	Save profile	حفظ الملف
+Areas/OwnerAreaResource	OProfile.Title	Owner profile	الملف الشخصي للمالك
+Areas/OwnerAreaResource	OProfile.ToUnlockBadge	to unlock the verified badge.	لتفعيل شارة التوثيق.
+Areas/OwnerAreaResource	OProfile.Upload	Upload	رفع
+Areas/OwnerAreaResource	OProfile.UploadClearerDoc	Upload a clearer document	ارفع مستندًا أوضح
+Areas/OwnerAreaResource	OProfile.VerifiedBanner	Your owner account is	حسابك كمالك
+Areas/OwnerAreaResource	OProfile.VerifiedSince	Since	منذ
+Areas/OwnerAreaResource	OProfile.VerifyHeading	Verify your owner account	وثّق حسابك كمالك
+Areas/OwnerAreaResource	OProfile.VerifyIntro	Upload a copy of your property ownership document or business registration. Only the admin team can see it.	ارفع نسخة من مستند ملكية العقار أو السجل التجاري. لن يطلع عليها سوى فريق الإدارة.
+Areas/OwnerAreaResource	OProfile.VerifyOwnership	Verify your ownership	وثّق ملكيتك
+Areas/OwnerAreaResource	OProfile.VerifyTitle	Verify owner account	توثيق حساب المالك
+Areas/OwnerAreaResource	Props.Add	Add property	إضافة عقار
+Areas/OwnerAreaResource	Props.AddHeading	Add a property	إضافة عقار
+Areas/OwnerAreaResource	Props.AddTitle	Add property	إضافة عقار
+Areas/OwnerAreaResource	Props.Delete	Delete	حذف
+Areas/OwnerAreaResource	Props.DeleteConfirm	Delete this property? This cannot be undone.	حذف هذا العقار؟ لا يمكن التراجع عن ذلك.
+Areas/OwnerAreaResource	Props.EditHeading	Edit property	تعديل العقار
+Areas/OwnerAreaResource	Props.EditTitle	Edit property	تعديل العقار
+Areas/OwnerAreaResource	Props.Empty	You haven't listed any properties yet.	لم تضف أي عقار بعد.
+Areas/OwnerAreaResource	Props.Hidden	Hidden	مخفي
+Areas/OwnerAreaResource	Props.Hide	Hide	إخفاء
+Areas/OwnerAreaResource	Props.Reason	Reason:	السبب:
+Areas/OwnerAreaResource	Props.RoomsCount	room(s)	غرفة
+Areas/OwnerAreaResource	Props.SaveChanges	Save changes	حفظ التغييرات
+Areas/OwnerAreaResource	Props.Show	Show	إظهار
+Areas/OwnerAreaResource	Props.SubmitListing	Submit listing	إرسال الإعلان
+Areas/OwnerAreaResource	Props.Title	My properties	عقاراتي
+Areas/AdminAreaResource	Common.Back	Back	رجوع
+Areas/AdminAreaResource	Common.Cancel	Cancel	إلغاء
+Areas/AdminAreaResource	Cmpl.About	about	عن
+Areas/AdminAreaResource	Cmpl.ColDate	Date	التاريخ
+Areas/AdminAreaResource	Cmpl.ColFrom	From	من
+Areas/AdminAreaResource	Cmpl.ColId	#	#
+Areas/AdminAreaResource	Cmpl.ColProperty	Property	العقار
+Areas/AdminAreaResource	Cmpl.ColStatus	Status	الحالة
+Areas/AdminAreaResource	Cmpl.ColType	Type	الفئة
+Areas/AdminAreaResource	Cmpl.Complaint	Complaint	شكوى
+Areas/AdminAreaResource	Cmpl.Empty	No complaints filed.	لا توجد شكاوى مقدمة.
+Areas/AdminAreaResource	Cmpl.General	general	عام
+Areas/AdminAreaResource	Cmpl.Resolution	Resolution	القرار
+Areas/AdminAreaResource	Cmpl.Response	Response	الرد
+Areas/AdminAreaResource	Cmpl.ResponseLabel	Response (optional, sent to the student)	الرد (اختياري، يُرسل للطالب)
+Areas/AdminAreaResource	Cmpl.Review	Review	مراجعة
+Areas/AdminAreaResource	Cmpl.SaveResolution	Save resolution	حفظ القرار
+Areas/AdminAreaResource	Cmpl.Title	Complaints	الشكاوى
+Areas/AdminAreaResource	Audit.Title	Audit logs	سجلات التدقيق
+Areas/AdminAreaResource	Audit.Empty	No audit entries found.	لا توجد سجلات تدقيق.
+Areas/AdminAreaResource	Audit.SearchPlaceholder	Search by action, entity, description or admin...	ابحث بالحدث، الكيان، الوصف أو المسؤول...
+Areas/AdminAreaResource	Audit.AllActions	All actions	جميع الأحداث
+Areas/AdminAreaResource	Audit.Filter	Filter	تصفية
+Areas/AdminAreaResource	Audit.ColTime	Time	الوقت
+Areas/AdminAreaResource	Audit.ColAdmin	Admin	المسؤول
+Areas/AdminAreaResource	Audit.ColAction	Action	الحدث
+Areas/AdminAreaResource	Audit.ColEntity	Entity	الكيان
+Areas/AdminAreaResource	Audit.ColDetails	Details	التفاصيل
+Areas/AdminAreaResource	Audit.ColReason	Reason	السبب
+Areas/AdminAreaResource	Audit.ColIp	IP address	عنوان IP
+Areas/AdminAreaResource	Dash.ApprovedProperties	Approved listings	العقارات المعتمدة
+Areas/AdminAreaResource	Dash.Dashboard	Dashboard	لوحة التحكم
+Areas/AdminAreaResource	Dash.NoListings	No listings yet.	لا توجد عقارات بعد.
+Areas/AdminAreaResource	Dash.NoPendingVerifications	No pending verification requests.	لا توجد طلبات توثيق معلقة.
+Areas/AdminAreaResource	Dash.OwnersAwaiting	Owners awaiting verification	مالكون بانتظار التوثيق
+Areas/AdminAreaResource	Dash.PendingProperties	Pending listings	العقارات المعلقة
+Areas/AdminAreaResource	Dash.RecentListings	Recent listings	أحدث العقارات
+Areas/AdminAreaResource	Dash.StudentsAwaiting	Students awaiting verification	طلاب بانتظار التوثيق
+Areas/AdminAreaResource	Dash.Title	Admin dashboard	لوحة تحكم الإدارة
+Areas/AdminAreaResource	Dash.TotalListings	Live listings	العقارات المنشورة
+Areas/AdminAreaResource	Dash.TotalUsers	Total users	إجمالي المستخدمين
+Areas/AdminAreaResource	Dash.VerificationRequests	Verification requests	طلبات التوثيق
+Areas/AdminAreaResource	Dash.ViewAll	View all	عرض الكل
+Areas/AdminAreaResource	Props.All	All	الكل
+Areas/AdminAreaResource	Props.Approve	Approve	موافقة
+Areas/AdminAreaResource	Props.Approved	Approved	معتمد
+Areas/AdminAreaResource	Props.ColLocation	Location	الموقع
+Areas/AdminAreaResource	Props.ColOwner	Owner	المالك
+Areas/AdminAreaResource	Props.ColPublished	Published	تاريخ النشر
+Areas/AdminAreaResource	Props.ColRooms	Rooms	الغرف
+Areas/AdminAreaResource	Props.ColStatus	Status	الحالة
+Areas/AdminAreaResource	Props.ColTitle	Title	العنوان
+Areas/AdminAreaResource	Props.Hidden	Hidden	مخفي
+Areas/AdminAreaResource	Props.Pending	Pending	قيد الانتظار
+Areas/AdminAreaResource	Props.ReasonLabel	Reason (shown to the owner)	السبب (سيظهر للمالك)
+Areas/AdminAreaResource	Props.Reject	Reject	رفض
+Areas/AdminAreaResource	Props.Rejected	Rejected	مرفوض
+Areas/AdminAreaResource	Props.RejectListing	Reject listing	رفض الإعلان
+Areas/AdminAreaResource	Props.Title	Properties	العقارات
+Areas/AdminAreaResource	Rev.AllReviews	All reviews	جميع التقييمات
+Areas/AdminAreaResource	Rev.Approve	Approve	موافقة
+Areas/AdminAreaResource	Rev.AwaitingModeration	Awaiting moderation	بانتظار المراجعة
+Areas/AdminAreaResource	Rev.ColProperty	Property	العقار
+Areas/AdminAreaResource	Rev.ColRating	Rating	التقييم
+Areas/AdminAreaResource	Rev.ColReview	Review	التعليق
+Areas/AdminAreaResource	Rev.ColStatus	Status	الحالة
+Areas/AdminAreaResource	Rev.ColStudent	Student	الطالب
+Areas/AdminAreaResource	Rev.NoPublished	No published reviews.	لا توجد تقييمات منشورة.
+Areas/AdminAreaResource	Rev.PendingCount	{0} pending	{0} بانتظار المراجعة
+Areas/AdminAreaResource	Rev.Remove	Remove	إزالة
+Areas/AdminAreaResource	Rev.RemoveConfirm	Remove this review?	إزالة هذا التقييم؟
+Areas/AdminAreaResource	Rev.Title	Reviews	التقييمات
+Areas/AdminAreaResource	Users.Activate	Activate	تفعيل
+Areas/AdminAreaResource	Users.ActivateConfirm	Activate this user?	تفعيل هذا المستخدم؟
+Areas/AdminAreaResource	Users.All	All	الكل
+Areas/AdminAreaResource	Users.AllUsers	All users	جميع المستخدمين
+Areas/AdminAreaResource	Users.Approve	Approve	موافقة
+Areas/AdminAreaResource	Users.ColActive	Active	نشط
+Areas/AdminAreaResource	Users.ColCompany	Company	الشركة
+Areas/AdminAreaResource	Users.ColDocument	Document	المستند
+Areas/AdminAreaResource	Users.ColEmail	Email	البريد الإلكتروني
+Areas/AdminAreaResource	Users.ColJoined	Joined	تاريخ الانضمام
+Areas/AdminAreaResource	Users.ColName	Name	الاسم
+Areas/AdminAreaResource	Users.ColRoles	Roles	الأدوار
+Areas/AdminAreaResource	Users.ColStatus	Status	الحالة
+Areas/AdminAreaResource	Users.ColUniversity	University	الجامعة
+Areas/AdminAreaResource	Users.Deactivate	Deactivate	إيقاف
+Areas/AdminAreaResource	Users.DeactivateConfirm	Deactivate this user?	إيقاف هذا المستخدم؟
+Areas/AdminAreaResource	Users.NationalId	National ID	البطاقة الشخصية
+Areas/AdminAreaResource	Users.No	No	لا
+Areas/AdminAreaResource	Users.Owners	Owners	المالكون
+Areas/AdminAreaResource	Users.OwnerVerification	Owner verification	توثيق المالكين
+Areas/AdminAreaResource	Users.ReasonForNew	Reason for new documents	سبب طلب مستندات جديدة
+Areas/AdminAreaResource	Users.Reject	Reject	رفض
+Areas/AdminAreaResource	Users.RejectionReason	Rejection reason	سبب الرفض
+Areas/AdminAreaResource	Users.RequestNew	Request new	طلب مستندات جديدة
+Areas/AdminAreaResource	Users.Students	Students	الطلاب
+Areas/AdminAreaResource	Users.StudentVerification	Student verification	توثيق الطلاب
+Areas/AdminAreaResource	Users.Title	Users	المستخدمون
+Areas/AdminAreaResource	Users.UniversityId	University ID	بطاقة الجامعة
+Areas/AdminAreaResource	Users.View	View	عرض
+Areas/AdminAreaResource	Users.Yes	Yes	نعم
+SharedResource	Msg.Welcome	Welcome to Housing Gate! Complete your profile to get the most out of the platform.	مرحبًا بك في بوابة السكن! أكمل ملفك للاستفادة القصوى من المنصة.
+SharedResource	Msg.ProfileUpdated	Profile updated.	تم تحديث الملف.
+SharedResource	Msg.UpdatePrefs	Update your roommate preferences too!	حدّث تفضيلات زملاء السكن أيضًا!
+SharedResource	Msg.PrefsSaved	Preferences saved. The matching engine now knows what you're looking for.	تم حفظ التفضيلات. محرك التطابق الآن يعرف ما تبحث عنه.
+SharedResource	Msg.DocsUploaded	Documents uploaded. An admin will verify your account shortly.	تم رفع المستندات. سيقوم أحد المشرفين بتوثيق حسابك قريبًا.
+SharedResource	Msg.AttachDocument	Please attach a document.	يرجى إرفاق مستند.
+SharedResource	Msg.CancelPendingOnly	Only pending applications can be cancelled.	يمكن إلغاء الطلبات المعلقة فقط.
+SharedResource	Msg.ApplicationCancelled	Application cancelled.	تم إلغاء الطلب.
+SharedResource	Msg.ComplaintFiled	Complaint filed. Our team will review it.	تم إيداع الشكوى. سيقوم فريقنا بمراجعتها.
+SharedResource	Msg.ReviewSubmitted	Review submitted. It will appear once approved by a moderator.	تم إرسال التقييم. سيظهر بعد موافقة المشرف.
+SharedResource	Msg.CommentRequired	Please write a comment.	يرجى كتابة تعليق.
+SharedResource	Msg.RoommateReviewSubmitted	Roommate review submitted. It will appear once approved.	تم إرسال تقييم زميل السكن. سيظهر بعد الموافقة.
+SharedResource	Msg.NotSharedStay	This student did not share the property with you.	لم يشاركك هذا الطالب في السكن.
+SharedResource	Msg.ApplicationSent	Application sent! The owner will review it shortly.	تم إرسال الطلب! سيقوم المالك بمراجعته قريبًا.
+SharedResource	Msg.ApplicationApproved	Application approved. A verified stay was created.	تمت الموافقة على الطلب. تم إنشاء إقامة موثقة.
+SharedResource	Msg.ApplicationRejected	Application rejected.	تم رفض الطلب.
+SharedResource	Msg.ListingCreated	Listing created. It will go live once an admin approves it.	تم إنشاء الإعلان. سيُنشر بعد موافقة الإدارة.
+SharedResource	Msg.ListingUpdated	Listing updated.	تم تحديث الإعلان.
+SharedResource	Msg.ListingDeleted	Listing deleted.	تم حذف الإعلان.
+SharedResource	Notif.ApplicationCancelled	Application cancelled	تم إلغاء الطلب
+SharedResource	Notif.ApplicationCancelledBody	A student withdrew their application.	قام أحد الطلاب بسحب طلبه.
+SharedResource	RequiredAttribute_ValidationError	This field is required.	هذا الحقل مطلوب.
+SharedResource	StringLengthAttribute_ValidationError	The value must not exceed {1} characters.	يجب ألا يتجاوز طول القيمة {1} حرفًا.
+SharedResource	RangeAttribute_ValidationError	The value must be between {1} and {2}.	يجب أن تكون القيمة بين {1} و {2}.
+SharedResource	EmailAddressAttribute_ValidationError	The email address is not valid.	عنوان البريد الإلكتروني غير صحيح.
+SharedResource	PhoneAttribute_ValidationError	The phone number is not valid.	رقم الهاتف غير صحيح.
+SharedResource	CompareAttribute_ValidationError	The values do not match.	القيمتان غير متطابقتين.
+SharedResource	PasswordMismatch_ValidationError	The password and confirmation password do not match.	كلمة المرور وتأكيد كلمة المرور غير متطابقتين.
+SharedResource	TermsRequired_ValidationError	Please accept the terms to continue.	يرجى الموافقة على الشروط للمتابعة.
+# ---------- Service-level error messages ----------
+SharedResource	Err.PropertyNotFound	Property not found.	العقار غير موجود.
+SharedResource	Err.PropertyCannotBeDeleted	This property cannot be deleted because it has applications or stays. Deactivate it instead.	لا يمكن حذف هذا العقار لوجود طلبات أو إقامات مرتبطة به. يمكنك إيقافه بدلاً من ذلك.
+SharedResource	Err.ImageNotFound	Image not found.	الصورة غير موجودة.
+SharedResource	Err.RoomNotFound	Room not found.	الغرفة غير موجودة.
+SharedResource	Err.ListingNotAccepting	This listing is not currently accepting applications.	هذا الإعلان لا يقبل الطلبات حالياً.
+SharedResource	Err.RoomUnavailable	This room is no longer available.	هذه الغرفة لم تعد متاحة.
+SharedResource	Err.AlreadyApplied	You have already applied for this room.	لقد تقدمت بالفعل لهذه الغرفة.
+SharedResource	Err.ApplicationNotFound	Application not found.	الطلب غير موجود.
+SharedResource	Err.ApplicationAnswered	This application has already been answered.	تم الرد على هذا الطلب بالفعل.
+SharedResource	Err.StudentProfileNotFoundFull	Student profile not found. Are you registered as a student?	ملف الطالب غير موجود. هل أنت مسجل كطالب؟
+SharedResource	Err.StudentProfileNotFound	Student profile not found.	ملف الطالب غير موجود.
+SharedResource	Err.OwnerProfileNotFound	Owner profile not found.	ملف المالك غير موجود.
+SharedResource	Err.UserNotFound	User not found.	المستخدم غير موجود.
+SharedResource	Err.CannotDeactivateAdmin	Admin accounts cannot be deactivated.	لا يمكن تعطيل حسابات المشرفين.
+SharedResource	Err.ComplaintNotFound	Complaint not found.	الشكوى غير موجودة.
+SharedResource	Err.InvalidLogin	Invalid login attempt.	بيانات تسجيل الدخول غير صحيحة.
+SharedResource	Err.StayNotYours	This stay does not belong to you.	هذه الإقامة ليست لك.
+SharedResource	Err.ReviewAfterStayEnd	You can only review a property after the stay has ended.	يمكنك مراجعة العقار فقط بعد انتهاء الإقامة.
+SharedResource	Err.AlreadyReviewedProperty	You already reviewed this property for that stay.	لقد راجعت هذا العقار بالفعل لهذه الإقامة.
+SharedResource	Err.CannotReviewSelf	You cannot review yourself.	لا يمكنك مراجعة نفسك.
+SharedResource	Err.ReviewRoommatesAfterStayEnd	You can only review roommates after the stay has ended.	يمكنك مراجعة زملاء السكن فقط بعد انتهاء الإقامة.
+SharedResource	Err.OnlyLivedTogether	You can only review students you actually lived with.	يمكنك مراجعة الطلاب الذين عشت معهم فقط.
+SharedResource	Err.AlreadyReviewedRoommate	You already reviewed this roommate for that stay.	لقد راجعت هذا الزميل بالفعل لهذه الإقامة.
+SharedResource	Err.ReviewNotFound	Review not found.	المراجعة غير موجودة.
+SharedResource	Err.NationalIdRequired	Please attach a National ID image.	يرجى إرفاق صورة الرقم القومي.
+SharedResource	Err.UniversityIdRequired	Please attach a University ID / student card image.	يرجى إرفاق بطاقة الطالب الجامعية.
+SharedResource	Err.ImgInvalidExtension	Only .jpg, .jpeg, .png and .webp images are allowed.	يُسمح فقط بصور .jpg و .jpeg و .png و .webp.
+SharedResource	Err.ImgTooLarge	Image must be between 1 byte and 3 MB.	يجب أن يتراوح حجم الصورة بين 1 بايت و 3 ميجابايت.
+SharedResource	Err.UploadFailed	The upload failed. Please try again.	فشل الرفع. يرجى المحاولة مرة أخرى.
+# ---------- Identity error messages ----------
+SharedResource	Identity.DuplicateEmail	Email '{0}' is already taken.	البريد الإلكتروني '{0}' مستخدم بالفعل.
+SharedResource	Identity.DuplicateUserName	User name '{0}' is already taken.	اسم المستخدم '{0}' مستخدم بالفعل.
+SharedResource	Identity.PasswordTooShort	Passwords must be at least {0} characters.	يجب أن تتكون كلمة المرور من {0} أحرف على الأقل.
+SharedResource	Identity.PasswordRequiresDigit	Passwords must have at least one digit ('0'-'9').	يجب أن تحتوي كلمة المرور على رقم واحد على الأقل ('0'-'9').
+SharedResource	Identity.PasswordRequiresLower	Passwords must have at least one lowercase letter ('a'-'z').	يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل ('a'-'z').
+SharedResource	Identity.PasswordRequiresUpper	Passwords must have at least one uppercase letter ('A'-'Z').	يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل ('A'-'Z').
+SharedResource	Identity.PasswordRequiresNonAlphanumeric	Passwords must have at least one non-alphanumeric character.	يجب أن تحتوي كلمة المرور على حرف غير رقمي أو أبجدي واحد على الأقل.
+SharedResource	Identity.InvalidEmail	Email '{0}' is invalid.	البريد الإلكتروني '{0}' غير صالح.
+SharedResource	Identity.InvalidUserName	User name '{0}' is invalid, can only contain letters or digits.	اسم المستخدم '{0}' غير صالح.
+SharedResource	Identity.PasswordMismatch	Incorrect password.	كلمة المرور غير صحيحة.
+SharedResource	Identity.UserAlreadyHasPassword	User already has a password set.	المستخدم لديه كلمة مرور بالفعل.
+SharedResource	Identity.UserAlreadyInRole	User already in role '{0}'.	المستخدم موجود بالفعل في دور '{0}'.
+SharedResource	Identity.UserNotInRole	User is not in role '{0}'.	المستخدم ليس في دور '{0}'.
+SharedResource	Identity.InvalidToken	Invalid token.	رمز غير صالح.
+SharedResource	Identity.ConcurrencyFailure	Optimistic concurrency failure, object has been modified.	تعارض التحديثات المتزامنة، تم تعديل الكائن.
+SharedResource	Identity.DefaultError	An unknown failure occurred.	حدث خطأ غير معروف.
+SharedResource	Identity.RecoveryCodeRedemptionFailed	Recovery code redemption failed.	فشل استبدال رمز الاسترداد.
+SharedResource	Identity.LoginAlreadyAssociated	A user with this login already exists.	يوجد مستخدم مسجل بهذه البيانات بالفعل.
+SharedResource	Identity.InvalidRoleName	Role name '{0}' is invalid.	اسم الدور '{0}' غير صالح.
+SharedResource	Identity.DuplicateRoleName	Role name '{0}' is already taken.	اسم الدور '{0}' مستخدم بالفعل.
+SharedResource	Identity.UserLockoutNotEnabled	Lockout is not enabled for this user.	القفل غير مفعّل لهذا المستخدم.
+SharedResource	Identity.PasswordRequiresUniqueChars	Passwords must use at least {0} different characters.	يجب أن تستخدم كلمة المرور {0} أحرف مختلفة على الأقل.
+# ---------- Admin controller success messages ----------
+SharedResource	Admin.Props.Approved	Listing approved and published.	تمت الموافقة على الإعلان ونشره.
+SharedResource	Admin.Props.Rejected	Listing rejected.	تم رفض الإعلان.
+SharedResource	Admin.Users.StudentVerified	Student verified.	تم التحقق من الطالب.
+SharedResource	Admin.Users.StudentRejected	Student verification rejected.	تم رفض التحقق من الطالب.
+SharedResource	Admin.Users.DocsRequested	New documents requested from the student.	تم طلب مستندات جديدة من الطالب.
+SharedResource	Admin.Users.Updated	User status updated.	تم تحديث حالة المستخدم.
+SharedResource	Admin.Cmpl.Updated	Complaint updated.	تم تحديث الشكوى.
+# ---------- Notification content (localized at creation time) ----------
+SharedResource	Notif.NewApplicationReceived	New application received	تم استلام طلب جديد
+SharedResource	Notif.NewApplicationReceivedBody	A student applied for '{0}' in '{1}'.	تقدم طالب للغرفة '{0}' في عقار '{1}'.
+SharedResource	Notif.ListingEdited	Listing edited	تم تعديل الإعلان
+SharedResource	Notif.ListingEditedBody	'{0}' was significantly edited and needs re-review.	تم تعديل '{0}' بشكل كبير ويحتاج إلى مراجعة جديدة.
+SharedResource	Notif.ApplicationAccepted	Your application was accepted	تم قبول طلبك
+SharedResource	Notif.ApplicationDeclined	Your application was declined	تم رفض طلبك
+SharedResource	Notif.ApplicationAcceptedBody	Great news! Your application for '{0}' was accepted.	أخبار رائعة! تم قبول طلبك للغرفة '{0}'.
+SharedResource	Notif.ApplicationDeclinedBody	Your application for '{0}' was declined by the owner.	تم رفض طلبك للغرفة '{0}' من قبل المالك.
+SharedResource	Notif.StudentVerified	Your student account was verified	تم التحقق من حسابك الطلابي
+SharedResource	Notif.StudentVerifiedBody	You now have the Verified badge, which unlocks trust on the platform.	حصلت الآن على شارة الموثق، مما يعزز الثقة في المنصة.
+SharedResource	Notif.StudentRejected	Your student verification was rejected	تم رفض التحقق من حسابك الطلابي
+SharedResource	Notif.StudentRejectedBody	Please re-upload a clearer copy of your student ID from your profile.	يرجى إعادة رفع نسخة أوضح من بطاقتك الطلابية من ملفك الشخصي.
+SharedResource	Notif.DocsRequested	New verification documents requested	تم طلب مستندات تحقق جديدة
+SharedResource	Notif.DocsRequestedBody	Please upload updated verification documents from your profile.	يرجى رفع مستندات التحقق المحدثة من ملفك الشخصي.
+SharedResource	Notif.ReasonPrefix	Reason: {0}	السبب: {0}
+SharedResource	Notif.OwnerVerified	Your owner account was verified	تم التحقق من حسابك كمالك
+SharedResource	Notif.OwnerVerifiedBody	You can now list properties. Verified owners rank higher in search.	يمكنك الآن نشر العقارات. الملاك الموثقون يحصلون على ترتيب أعلى في البحث.
+SharedResource	Notif.OwnerRejected	Your owner verification was rejected	تم رفض التحقق من حسابك كمالك
+SharedResource	Notif.OwnerRejectedBody	Please re-upload your ownership proof from your profile.	يرجى إعادة رفع إثبات الملكية من ملفك الشخصي.
+SharedResource	Notif.ListingApproved	Your listing was approved	تمت الموافقة على إعلانك
+SharedResource	Notif.ListingRejected	Your listing was rejected	تم رفض إعلانك
+SharedResource	Notif.ListingApprovedBody	'{0}' is now live on Housing Gate.	'{0}' أصبح منشوراً الآن على بوابة السكن.
+SharedResource	Notif.ListingRejectedBody	'{0}' was rejected. Reason: {1}	تم رفض '{0}'. السبب: {1}
+SharedResource	Notif.Unspecified	unspecified	غير محدد
+SharedResource	Notif.ReviewLive	Your review is now live	مراجعتك منشورة الآن
+SharedResource	Notif.ReviewRemoved	Your review was removed	تمت إزالة مراجعتك
+SharedResource	Notif.ReviewLiveBody	Your property review was approved and is now visible.	تمت الموافقة على مراجعة العقار وأصبحت ظاهرة الآن.
+SharedResource	Notif.ReviewRemovedBody	A moderator removed your review. Contact support if you have questions.	قام أحد المشرفين بإزالة مراجعتك. تواصل مع الدعم إذا كانت لديك أسئلة.
+SharedResource	Notif.NewComplaint	New complaint	شكوى جديدة
+SharedResource	Notif.NewComplaintBody	'{0}' was filed and needs review.	تم تقديم '{0}' ويحتاج إلى مراجعة.
+SharedResource	Notif.ComplaintUpdate	Complaint update	تحديث الشكوى
+SharedResource	Notif.ComplaintUpdateBody	Your complaint '{0}' is now {1}.	شكواك '{0}' أصبحت الآن {1}.SharedResource	Common.Phone	Phone	رقم الهاتف
+SharedResource	Common.Major	Major	التخصص
+SharedResource	Common.DateOfBirth	Date of birth	تاريخ الميلاد
+SharedResource	Common.Furnished	Furnished	مفروش
+SharedResource	Admin.Users.Deleted	User deleted.	تم حذف المستخدم.
+SharedResource	Admin.Props.Deleted	Property deleted.	تم حذف العقار.
+SharedResource	Notif.ListingDeletedByAdmin	Listing deleted	تم حذف الإعلان
+SharedResource	Notif.ListingDeletedByAdminBody	Your listing "{0}" was deleted by an admin.	قام أحد المشرفين بحذف إعلانك "{0}".
+SharedResource	Err.CannotDeleteAdmin	Admin accounts cannot be deleted.	لا يمكن حذف حسابات المشرفين.
+SharedResource	Err.UserHasApplications	This user has applications.	لدى هذا المستخدم طلبات تقديم.
+SharedResource	Err.UserHasStays	This user has stays.	لدى هذا المستخدم إقامات.
+SharedResource	Err.UserHasComplaints	This user is involved in complaints.	هذا المستخدم طرف في شكاوى.
+SharedResource	Err.UserHasReviews	This user has reviews (given or received).	هذا المستخدم لديه تقييمات (قدّمها أو استلمها).
+SharedResource	Err.UserPropertyHasHistory	The property "{0}" has applications, stays or complaints.	العقار "{0}" لديه طلبات أو إقامات أو شكاوى.
+SharedResource	Err.PropertyHasApplications	This property has applications.	لهذا العقار طلبات تقديم.
+SharedResource	Err.PropertyHasStays	This property has stays.	لهذا العقار إقامات.
+SharedResource	Err.PropertyHasComplaints	This property has complaints.	لهذا العقار شكاوى.
+SharedResource	Common.Search	Search	Ø¨Ø­Ø«
+SharedResource	Common.SearchPlaceholder	Search...	Ø¨Ø­Ø«...
+SharedResource	Audit.Action.User.Delete	Delete user	Ø­Ø°Ù Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…
+SharedResource	Audit.Action.Property.Delete	Delete property	Ø­Ø°Ù Ø§Ù„Ø¹Ù‚Ø§Ø±
+SharedResource	Profile.Picture	Profile picture	صورة الملف الشخصي
+SharedResource	Profile.PictureHint	JPG, PNG or WebP, max 3 MB	أحد صور JPG أو PNG أو WebP، حد أقصى 3 ميغابايت
+SharedResource	Common.UrlPlaceholder	URL placeholder	مثال الرابط
+Areas/AdminAreaResource	Dash.OpenComplaints	Open complaints	الشكاوى المفتوحة
+Areas/AdminAreaResource	Dash.NoOpenComplaints	No open complaints.	لا توجد شكاوى مفتوحة.
+Areas/AdminAreaResource	Dash.PendingReviews	Pending reviews	التقييمات المعلقة
+Areas/AdminAreaResource	Dash.NoPendingReviews	No pending reviews.	لا توجد تقييمات معلقة.
+Areas/AdminAreaResource	Dash.PendingReviewTitle	Pending reviews	التقييمات المعلقة
+Areas/AdminAreaResource	Dash.RecentUsers	Recent users	المستخدمون الأخيرون
+Areas/AdminAreaResource	Dash.NoUsers	No users yet.	لا يوجد مستخدمون بعد.
+Areas/OwnerAreaResource	Dash.ComplaintsAboutProperties	Complaints about your properties	شكاوى حول عقاراتك
+Areas/OwnerAreaResource	Dash.NoComplaints	No complaints about your properties.	لا توجد شكاوى حول عقاراتك.
+Areas/OwnerAreaResource	Dash.ReviewsOnProperties	Reviews on your properties	تقييمات على عقاراتك
+Areas/OwnerAreaResource	Dash.NoReviews	No reviews on your properties yet.	لا توجد تقييمات على عقاراتك بعد.
+Areas/OwnerAreaResource	Dash.RecentReviews	Recent reviews	أحدث التقييمات
+Areas/AdminAreaResource	Dash.SocialMedia	Social Media	وسائل التواصل الاجتماعي
+Areas/AdminAreaResource	Social.Media.Facebook	Facebook	فيسبوك
+Areas/AdminAreaResource	Social.Media.Instagram	Instagram	إنستغرام
+Areas/AdminAreaResource	Social.Media.TikTok	TikTok	تيك توك
+SharedResource	Nav.Settings	Settings	الإعدادات

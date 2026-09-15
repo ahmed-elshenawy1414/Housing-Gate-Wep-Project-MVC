@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Common.Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Applications.Applied" xml:space="preserve">
+    <value>Applied</value>
+  </data>
+  <data name="Applications.Cancel" xml:space="preserve">
+    <value>Cancel application</value>
+  </data>
+  <data name="Applications.Empty" xml:space="preserve">
+    <value>You haven&apos;t applied to any properties yet.</value>
+  </data>
+  <data name="Applications.Empty2" xml:space="preserve">
+    <value>Browse available properties and start applying.</value>
+  </data>
+  <data name="Applications.Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="Applications.Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Complaints.About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Complaints.AboutUser" xml:space="preserve">
+    <value>About you</value>
+  </data>
+  <data name="Complaints.AdminResponse" xml:space="preserve">
+    <value>Admin response</value>
+  </data>
+  <data name="Complaints.DescPlaceholder" xml:space="preserve">
+    <value>Describe the issue in detail...</value>
+  </data>
+  <data name="Complaints.Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Complaints.Empty" xml:space="preserve">
+    <value>No complaints filed.</value>
+  </data>
+  <data name="Complaints.File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Complaints.FiledOn" xml:space="preserve">
+    <value>Filed on</value>
+  </data>
+  <data name="Complaints.New" xml:space="preserve">
+    <value>New complaint</value>
+  </data>
+  <data name="Complaints.NoProperty" xml:space="preserve">
+    <value>No property</value>
+  </data>
+  <data name="Complaints.NoResponse" xml:space="preserve">
+    <value>No response yet.</value>
+  </data>
+  <data name="Complaints.NoUser" xml:space="preserve">
+    <value>No user</value>
+  </data>
+  <data name="Complaints.Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Complaints.SubjectPlaceholder" xml:space="preserve">
+    <value>Short summary of the issue</value>
+  </data>
+  <data name="Complaints.Submit" xml:space="preserve">
+    <value>Submit complaint</value>
+  </data>
+  <data name="Complaints.Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Complaints.ReportedUser" xml:space="preserve">
+    <value>Reported user</value>
+  </data>
+  <data name="Complaints.ReportedProperty" xml:space="preserve">
+    <value>Reported property</value>
+  </data>
+  <data name="Complaints.Title" xml:space="preserve">
+    <value>Complaints</value>
+  </data>
+  <data name="Complaints.Type" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Dash.ActiveApplications" xml:space="preserve">
+    <value>Active applications</value>
+  </data>
+  <data name="Dash.ActiveStays" xml:space="preserve">
+    <value>Active stays</value>
+  </data>
+  <data name="Dash.Applied" xml:space="preserve">
+    <value>Applied</value>
+  </data>
+  <data name="Dash.EditProfile" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="Dash.Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Dash.NoApplications" xml:space="preserve">
+    <value>You haven&apos;t applied to any property yet.</value>
+  </data>
+  <data name="Dash.NoStays" xml:space="preserve">
+    <value>No stays yet.</value>
+  </data>
+  <data name="Dash.RecentApplications" xml:space="preserve">
+    <value>Recent applications</value>
+  </data>
+  <data name="Dash.RecentStays" xml:space="preserve">
+    <value>Recent stays</value>
+  </data>
+  <data name="Dash.ReviewsToWrite" xml:space="preserve">
+    <value>Reviews to write</value>
+  </data>
+  <data name="Dash.Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Dash.Started" xml:space="preserve">
+    <value>Started</value>
+  </data>
+  <data name="Dash.StartSearching" xml:space="preserve">
+    <value>Start searching for housing</value>
+  </data>
+  <data name="Dash.UploadStudentId" xml:space="preserve">
+    <value>Upload your student ID to get verified</value>
+  </data>
+  <data name="Dash.VerifiedStays" xml:space="preserve">
+    <value>Verified stays</value>
+  </data>
+  <data name="Dash.VerifyBanner" xml:space="preserve">
+    <value>Your account is being reviewed by an admin.</value>
+  </data>
+  <data name="Dash.VerifyBanner2" xml:space="preserve">
+    <value>Verify your student account to unlock full features.</value>
+  </data>
+  <data name="Matches.And" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Matches.BudgetFit" xml:space="preserve">
+    <value>Budget fit</value>
+  </data>
+  <data name="Matches.Empty" xml:space="preserve">
+    <value>No strong matches yet. Try completing your profile or widening your preferences.</value>
+  </data>
+  <data name="Matches.GenderFit" xml:space="preserve">
+    <value>Gender fit</value>
+  </data>
+  <data name="Matches.Incomplete" xml:space="preserve">
+    <value>Complete your</value>
+  </data>
+  <data name="Matches.IncompleteTail" xml:space="preserve">
+    <value>to get meaningful matches.</value>
+  </data>
+  <data name="Matches.Intro" xml:space="preserve">
+    <value>Students ranked by how well your profiles and preferences fit together. Budget (30%), gender (10%) and lifestyle (60%).</value>
+  </data>
+  <data name="Matches.LifestyleFit" xml:space="preserve">
+    <value>Lifestyle fit</value>
+  </data>
+  <data name="Matches.Match" xml:space="preserve">
+    <value>match</value>
+  </data>
+  <data name="Matches.Title" xml:space="preserve">
+    <value>Roommate matches</value>
+  </data>
+  <data name="Matches.VerifiedStays" xml:space="preserve">
+    <value>verified stay(s)</value>
+  </data>
+  <data name="Matches.VerifiedStudent" xml:space="preserve">
+    <value>Verified student</value>
+  </data>
+  <data name="Matches.YourPrefs" xml:space="preserve">
+    <value>roommate preferences</value>
+  </data>
+  <data name="Matches.YourProfile" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="Profile.AcademicYear" xml:space="preserve">
+    <value>Academic year</value>
+  </data>
+  <data name="Profile.AcceptsPets" xml:space="preserve">
+    <value>I&apos;m OK with roommates who have pets</value>
+  </data>
+  <data name="Profile.AcceptsSmokers" xml:space="preserve">
+    <value>I&apos;m OK with roommates who smoke</value>
+  </data>
+  <data name="Profile.Bio" xml:space="preserve">
+    <value>Bio</value>
+  </data>
+  <data name="Profile.BioPlaceholder" xml:space="preserve">
+    <value>A short intro about yourself...</value>
+  </data>
+  <data name="Profile.BudgetMax" xml:space="preserve">
+    <value>Monthly budget (max)</value>
+  </data>
+  <data name="Profile.BudgetMin" xml:space="preserve">
+    <value>Monthly budget (min)</value>
+  </data>
+  <data name="Profile.CityDistrict" xml:space="preserve">
+    <value>City / district of origin</value>
+  </data>
+  <data name="Profile.Cleanliness" xml:space="preserve">
+    <value>Cleanliness</value>
+  </data>
+  <data name="Profile.DateOfBirth" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="Profile.EditPrefs" xml:space="preserve">
+    <value>Edit preferences</value>
+  </data>
+  <data name="Profile.EditTitle" xml:space="preserve">
+    <value>Edit profile</value>
+  </data>
+  <data name="Profile.Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="Profile.Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Profile.Governorate" xml:space="preserve">
+    <value>Governorate of origin</value>
+  </data>
+  <data name="Profile.HasPets" xml:space="preserve">
+    <value>I have pets</value>
+  </data>
+  <data name="Profile.IsSmoker" xml:space="preserve">
+    <value>I smoke</value>
+  </data>
+  <data name="Profile.Lifestyle" xml:space="preserve">
+    <value>Lifestyle</value>
+  </data>
+  <data name="Profile.LifestyleHeading" xml:space="preserve">
+    <value>Lifestyle (used by the matching engine)</value>
+  </data>
+  <data name="Profile.Major" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="Profile.MinLease" xml:space="preserve">
+    <value>Minimum lease (months)</value>
+  </data>
+  <data name="Profile.Months" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Profile.MoveInDate" xml:space="preserve">
+    <value>Move-in date</value>
+  </data>
+  <data name="Profile.NationalId" xml:space="preserve">
+    <value>National ID</value>
+  </data>
+  <data name="Profile.NationalIdLabel" xml:space="preserve">
+    <value>National ID image</value>
+  </data>
+  <data name="Profile.NewDocsRequested" xml:space="preserve">
+    <value>New documents requested.</value>
+  </data>
+  <data name="Profile.NoiseLevel" xml:space="preserve">
+    <value>Comfortable noise level</value>
+  </data>
+  <data name="Profile.NoPreference" xml:space="preserve">
+    <value>No preference</value>
+  </data>
+  <data name="Profile.Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Profile.NotesPlaceholder" xml:space="preserve">
+    <value>Anything else? e.g. I cook a lot, I study late...</value>
+  </data>
+  <data name="Profile.NotUploaded" xml:space="preserve">
+    <value>Not uploaded</value>
+  </data>
+  <data name="Profile.NotVerified" xml:space="preserve">
+    <value>Your account is not verified yet.</value>
+  </data>
+  <data name="Profile.Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Profile.PendingBanner" xml:space="preserve">
+    <value>Your verification is pending review.</value>
+  </data>
+  <data name="Profile.PrefBudgetMax" xml:space="preserve">
+    <value>Max budget</value>
+  </data>
+  <data name="Profile.PrefBudgetMin" xml:space="preserve">
+    <value>Min budget</value>
+  </data>
+  <data name="Profile.PrefCleanliness" xml:space="preserve">
+    <value>Preferred cleanliness</value>
+  </data>
+  <data name="Profile.Preferences" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="Profile.PrefNoiseLevel" xml:space="preserve">
+    <value>Preferred noise level</value>
+  </data>
+  <data name="Profile.PrefPreferredGender" xml:space="preserve">
+    <value>Preferred gender</value>
+  </data>
+  <data name="Profile.PrefsIntro" xml:space="preserve">
+    <value>These preferences tell the matching engine what you&apos;re looking for in a roommate.</value>
+  </data>
+  <data name="Profile.PrefSleepSchedule" xml:space="preserve">
+    <value>Preferred sleep schedule</value>
+  </data>
+  <data name="Profile.PrefsText" xml:space="preserve">
+    <value>Adjust your housing and lifestyle preferences.</value>
+  </data>
+  <data name="Profile.PrefsTitle" xml:space="preserve">
+    <value>Roommate preferences</value>
+  </data>
+  <data name="Profile.RejectedBanner" xml:space="preserve">
+    <value>Your verification was rejected.</value>
+  </data>
+  <data name="Profile.Save" xml:space="preserve">
+    <value>Save profile</value>
+  </data>
+  <data name="Profile.SavePrefs" xml:space="preserve">
+    <value>Save preferences</value>
+  </data>
+  <data name="Profile.SleepSchedule" xml:space="preserve">
+    <value>Sleep schedule</value>
+  </data>
+  <data name="Profile.Smoker" xml:space="preserve">
+    <value>Smoker</value>
+  </data>
+  <data name="Profile.Title" xml:space="preserve">
+    <value>My profile</value>
+  </data>
+  <data name="Profile.University" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="Profile.UniversityId" xml:space="preserve">
+    <value>University ID</value>
+  </data>
+  <data name="Profile.UniversityIdLabel" xml:space="preserve">
+    <value>University ID / student card image</value>
+  </data>
+  <data name="Profile.Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Profile.UploadDocs" xml:space="preserve">
+    <value>Upload documents</value>
+  </data>
+  <data name="Profile.Uploaded" xml:space="preserve">
+    <value>Uploaded</value>
+  </data>
+  <data name="Profile.UploadNewDocs" xml:space="preserve">
+    <value>Upload new documents</value>
+  </data>
+  <data name="Profile.UploadUpdatedDocs" xml:space="preserve">
+    <value>Upload updated documents</value>
+  </data>
+  <data name="Profile.VerifiedBanner" xml:space="preserve">
+    <value>You are a verified student.</value>
+  </data>
+  <data name="Profile.VerifiedStays" xml:space="preserve">
+    <value>Verified stays:</value>
+  </data>
+  <data name="Profile.VerifyIntro" xml:space="preserve">
+    <value>Upload a clear photo of your National ID and your University ID / student card. Only the admin team can see them. Verification is reviewed within a few days.</value>
+  </data>
+  <data name="Profile.VerifyStudentId" xml:space="preserve">
+    <value>Verify your student ID</value>
+  </data>
+  <data name="Profile.VerifyText" xml:space="preserve">
+    <value>Upload your documents to become a verified student.</value>
+  </data>
+  <data name="Profile.VerifyTitle" xml:space="preserve">
+    <value>Verify student account</value>
+  </data>
+  <data name="Prop.About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Prop.Applied" xml:space="preserve">
+    <value>Applied</value>
+  </data>
+  <data name="Prop.AppliedPending" xml:space="preserve">
+    <value>Your application is pending approval.</value>
+  </data>
+  <data name="Prop.ApplyFor" xml:space="preserve">
+    <value>Apply for</value>
+  </data>
+  <data name="Prop.Available" xml:space="preserve">
+    <value>Available</value>
+  </data>
+  <data name="Prop.AvailableRooms" xml:space="preserve">
+    <value>Available rooms</value>
+  </data>
+  <data name="Prop.Bathrooms" xml:space="preserve">
+    <value>Bathrooms</value>
+  </data>
+  <data name="Prop.Bedrooms" xml:space="preserve">
+    <value>Bedrooms</value>
+  </data>
+  <data name="Prop.MessagePlaceholder" xml:space="preserve">
+    <value>Write a message to the owner...</value>
+  </data>
+  <data name="Prop.MessageToOwner" xml:space="preserve">
+    <value>Message to owner</value>
+  </data>
+  <data name="Prop.NoRooms" xml:space="preserve">
+    <value>No rooms available</value>
+  </data>
+  <data name="Prop.PetsAllowed" xml:space="preserve">
+    <value>Pets allowed</value>
+  </data>
+  <data name="Prop.RentPerMonth" xml:space="preserve">
+    <value>Rent per month</value>
+  </data>
+  <data name="Prop.Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Prop.SendApplication" xml:space="preserve">
+    <value>Send application</value>
+  </data>
+  <data name="Prop.Taken" xml:space="preserve">
+    <value>Taken</value>
+  </data>
+  <data name="Prop.UnverifiedOwner" xml:space="preserve">
+    <value>Unverified owner</value>
+  </data>
+  <data name="Reviews.AboutMe" xml:space="preserve">
+    <value>Reviews about me</value>
+  </data>
+  <data name="Reviews.Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Reviews.CommentPlaceholder" xml:space="preserve">
+    <value>How was your stay?...</value>
+  </data>
+  <data name="Reviews.CommentPlaceholder2" xml:space="preserve">
+    <value>How was living together?...</value>
+  </data>
+  <data name="Reviews.FromVerifiedStay" xml:space="preserve">
+    <value>From a verified stay</value>
+  </data>
+  <data name="Reviews.IWrote" xml:space="preserve">
+    <value>Roommate reviews I wrote</value>
+  </data>
+  <data name="Reviews.Live" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="Reviews.MyTitle" xml:space="preserve">
+    <value>My reviews</value>
+  </data>
+  <data name="Reviews.NoPropertyReviews" xml:space="preserve">
+    <value>You haven&apos;t reviewed any properties yet. Review after a completed stay.</value>
+  </data>
+  <data name="Reviews.NoReviewsAboutMe" xml:space="preserve">
+    <value>No reviews about you yet.</value>
+  </data>
+  <data name="Reviews.NoReviewsIWrote" xml:space="preserve">
+    <value>You haven&apos;t reviewed any roommates yet.</value>
+  </data>
+  <data name="Reviews.PendingApproval" xml:space="preserve">
+    <value>Pending approval</value>
+  </data>
+  <data name="Reviews.PropertyReviews" xml:space="preserve">
+    <value>Property reviews</value>
+  </data>
+  <data name="Reviews.Removed" xml:space="preserve">
+    <value>Removed</value>
+  </data>
+  <data name="Reviews.ReviewProperty" xml:space="preserve">
+    <value>Review property</value>
+  </data>
+  <data name="Reviews.ReviewRoommate" xml:space="preserve">
+    <value>Review roommate</value>
+  </data>
+  <data name="Reviews.ReviewRoommateSub" xml:space="preserve">
+    <value>Rate your experience living with this roommate.</value>
+  </data>
+  <data name="Reviews.ReviewRoommateTitle" xml:space="preserve">
+    <value>Roommate review</value>
+  </data>
+  <data name="Reviews.ReviewYourStay" xml:space="preserve">
+    <value>Review your stay at</value>
+  </data>
+  <data name="Reviews.Submit" xml:space="preserve">
+    <value>Submit review</value>
+  </data>
+  <data name="Reviews.Rating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="Reviews.Title" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="Reviews.TitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Reviews.TitlePlaceholder" xml:space="preserve">
+    <value>Title of your review</value>
+  </data>
+  <data name="Search.AllCities" xml:space="preserve">
+    <value>All cities</value>
+  </data>
+  <data name="Search.AllTypes" xml:space="preserve">
+    <value>All types</value>
+  </data>
+  <data name="Search.KeywordPlaceholder" xml:space="preserve">
+    <value>Search by keyword, university, city...</value>
+  </data>
+  <data name="Search.NoResults" xml:space="preserve">
+    <value>No properties match your search.</value>
+  </data>
+  <data name="Search.ResultsCount" xml:space="preserve">
+    <value>properties found</value>
+  </data>
+  <data name="Search.Reviews" xml:space="preserve">
+    <value>reviews</value>
+  </data>
+  <data name="Search.SortNewest" xml:space="preserve">
+    <value>Newest</value>
+  </data>
+  <data name="Search.SortPriceAsc" xml:space="preserve">
+    <value>Price: low to high</value>
+  </data>
+  <data name="Search.SortPriceDesc" xml:space="preserve">
+    <value>Price: high to low</value>
+  </data>
+  <data name="Search.SortRecommended" xml:space="preserve">
+    <value>Recommended</value>
+  </data>
+  <data name="Search.VerifiedReviews" xml:space="preserve">
+    <value>verified reviews</value>
+  </data>
+  <data name="Stays.Empty" xml:space="preserve">
+    <value>No stays yet.</value>
+  </data>
+  <data name="Stays.Ended" xml:space="preserve">
+    <value>Ended</value>
+  </data>
+  <data name="Stays.PropertyReviewed" xml:space="preserve">
+    <value>Property reviewed</value>
+  </data>
+  <data name="Stays.ReviewProperty" xml:space="preserve">
+    <value>Review property</value>
+  </data>
+  <data name="Stays.ReviewRoommate" xml:space="preserve">
+    <value>Review roommate</value>
+  </data>
+  <data name="Stays.Room" xml:space="preserve">
+    <value>Room</value>
+  </data>
+  <data name="Stays.Started" xml:space="preserve">
+    <value>Started</value>
+  </data>
+  <data name="Stays.Title" xml:space="preserve">
+    <value>My stays</value>
+  </data>
+</root>

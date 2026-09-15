@@ -1,0 +1,156 @@
+@model StudentDashboardViewModel
+@{
+    ViewData["Title"] = L["Nav.Dashboard"];
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="mb-1">@AL["Dash.Hello"] @Model.Profile.User?.FirstName!</h1>
+        <p>@Model.Profile.University</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a asp-controller="Profile" asp-action="Edit" class="btn btn-soft">
+            <i class="bi bi-pencil-square me-1"></i>@AL["Dash.EditProfile"]
+        </a>
+        <a asp-controller="Search" asp-action="Index" class="btn btn-primary">
+            <i class="bi bi-search me-1"></i>@L["Nav.FindHousing"]
+        </a>
+    </div>
+</div>
+
+@if (Model.Profile.VerificationStatus != VerificationStatus.Verified)
+{
+    <div class="alert alert-warning d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-patch-question fs-4"></i>
+        <div class="d-flex flex-wrap align-items-center gap-1">
+            @AL["Dash.VerifyBanner"]
+            <strong>@EnumDisplay.Get(Model.Profile.VerificationStatus, L)</strong>.
+            <a asp-controller="Profile" asp-action="Verify" class="fw-semibold">@AL["Dash.UploadStudentId"]</a>
+            @AL["Dash.VerifyBanner2"]
+        </div>
+    </div>
+}
+
+<div class="row g-3 g-lg-4 mb-4">
+    <div class="col-6 col-xl-3">
+        <div class="stat-card card-hover">
+            <div class="stat-icon" style="background: var(--brand-100); color: var(--brand-600);">
+                <i class="bi bi-send-fill"></i>
+            </div>
+            <div class="stat-value">@Model.ActiveApplications</div>
+            <div class="stat-label">@AL["Dash.ActiveApplications"]</div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="stat-card card-hover">
+            <div class="stat-icon" style="background: #dcfce7; color: #15803d;">
+                <i class="bi bi-house-check-fill"></i>
+            </div>
+            <div class="stat-value">@Model.ActiveStays</div>
+            <div class="stat-label">@AL["Dash.ActiveStays"]</div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="stat-card card-hover">
+            <div class="stat-icon" style="background: #cffafe; color: #0e7490;">
+                <i class="bi bi-check2-circle"></i>
+            </div>
+            <div class="stat-value">@Model.CompletedStays</div>
+            <div class="stat-label">@AL["Dash.VerifiedStays"]</div>
+        </div>
+    </div>
+    <div class="col-6 col-xl-3">
+        <div class="stat-card card-hover">
+            <div class="stat-icon" style="background: #fef3c7; color: #b45309;">
+                <i class="bi bi-pencil-square"></i>
+            </div>
+            <div class="stat-value">@Model.PendingReviews</div>
+            <div class="stat-label">@AL["Dash.ReviewsToWrite"]</div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.RecentApplications"]</span>
+                <a asp-controller="Applications" asp-action="Index" class="btn btn-sm btn-soft">@L["Nav.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentApplications.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-file-earmark-text"></i></div>
+                        <h4>@AL["Dash.NoApplications"]</h4>
+                        <p class="mb-0"><a asp-controller="Search" asp-action="Index">@AL["Dash.StartSearching"]</a>.</p>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var app in Model.RecentApplications)
+                        {
+                            var cls = app.Status switch
+                            {
+                                ApplicationStatus.Approved => "badge-success-soft",
+                                ApplicationStatus.Rejected => "badge-danger-soft",
+                                ApplicationStatus.Cancelled => "badge-neutral-soft",
+                                _ => "badge-warning-soft"
+                            };
+                            <li class="list-group-item d-flex align-items-center gap-2 px-3 py-3">
+                                <div class="flex-grow-1 min-width-0">
+                                    <div class="fw-semibold text-truncate">@app.Room.Property.Title</div>
+                                    <small class="text-muted">
+                                        @AL["Dash.Room"] @app.Room.Name &middot; @AL["Dash.Applied"] @app.AppliedAt.ToLocalTime().ToString("dd MMM yyyy")
+                                    </small>
+                                </div>
+                                <span class="badge @cls">@EnumDisplay.Get(app.Status, L)</span>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.RecentStays"]</span>
+                <a asp-controller="Stays" asp-action="Index" class="btn btn-sm btn-soft">@L["Nav.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentStays.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-house-check"></i></div>
+                        <h4>@AL["Dash.NoStays"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var stay in Model.RecentStays)
+                        {
+                            var cls = stay.Status switch
+                            {
+                                StayStatus.Active => "badge-success-soft",
+                                StayStatus.Completed => "badge-info-soft",
+                                _ => "badge-neutral-soft"
+                            };
+                            <li class="list-group-item d-flex align-items-center gap-2 px-3 py-3">
+                                <div class="flex-grow-1 min-width-0">
+                                    <div class="fw-semibold text-truncate">@stay.Room.Property.Title</div>
+                                    <small class="text-muted">
+                                        @AL["Dash.Room"] @stay.Room.Name &middot; @AL["Dash.Started"] @stay.StartDate.ToLocalTime().ToString("dd MMM yyyy")
+                                    </small>
+                                </div>
+                                <span class="badge @cls">@EnumDisplay.Get(stay.Status, L)</span>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

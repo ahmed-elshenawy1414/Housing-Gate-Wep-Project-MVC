@@ -1,0 +1,107 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = L["Account.RegisterTitle"];
+}
+
+<div class="auth-shell">
+    <div class="auth-card p-4 p-md-5">
+        <div class="text-center mb-4">
+            <span class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.4rem;">
+                <i class="bi bi-house-heart-fill"></i>
+            </span>
+            <h1 class="h3 fw-bold mb-1">@L["Account.RegisterTitle"]</h1>
+            <p class="text-muted mb-0">@L["Account.RegisterSubtitle"]</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="mb-4">
+                <label class="form-label">@L["Account.IAmA"]</label>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <input type="radio" class="btn-check" id="typeStudent" name="AccountType" value="Student" checked />
+                        <label class="btn btn-outline-primary w-100 py-2" for="typeStudent">
+                            <i class="bi bi-mortarboard-fill d-block fs-4 mb-1"></i>@L["Account.Student"]
+                        </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" class="btn-check" id="typeOwner" name="AccountType" value="Owner" />
+                        <label class="btn btn-outline-primary w-100 py-2" for="typeOwner">
+                            <i class="bi bi-house-fill d-block fs-4 mb-1"></i>@L["Account.Owner"]
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-6">
+                    <label asp-for="FirstName" class="form-label">@L["Account.FirstName"]</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger small"></span>
+                </div>
+                <div class="col-6">
+                    <label asp-for="LastName" class="form-label">@L["Account.LastName"]</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="PhoneNumber" class="form-label">@L["Account.PhoneNumber"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="01x xxxxxxxx" />
+                </div>
+                <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="Email" class="form-label">@L["Account.Email"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder="you@university.edu" />
+                </div>
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="Password" class="form-label">@L["Account.Password"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                </div>
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="ConfirmPassword" class="form-label">@L["Account.ConfirmPassword"]</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                    <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                </div>
+                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+            </div>
+
+            <div class="form-check mt-3 mb-4">
+                <input asp-for="AgreeToTerms" class="form-check-input" />
+                <label asp-for="AgreeToTerms" class="form-check-label small">
+                    @L["Account.TermsPrefix"] <a href="#">@L["Account.TermsOfService"]</a> @L["Account.AndWord"] <a href="#">@L["Account.PrivacyPolicy"]</a>.
+                </label>
+                <span asp-validation-for="AgreeToTerms" class="text-danger small d-block"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2">
+                <i class="bi bi-person-plus me-2"></i>@L["Account.Register"]
+            </button>
+        </form>
+
+        <p class="text-center text-muted small mt-4 mb-0">
+            @L["Account.AlreadyRegistered"] <a asp-action="Login" class="fw-semibold">@L["Account.Login"]</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

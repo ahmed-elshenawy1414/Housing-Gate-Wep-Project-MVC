@@ -1,0 +1,55 @@
+@model PropertyReviewFormViewModel
+@{
+    ViewData["Title"] = AL["Reviews.ReviewProperty"];
+}
+
+<div class="auth-shell">
+    <div class="auth-card p-4 p-md-5">
+        <div class="text-center mb-4">
+            <span class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.4rem;">
+                <i class="bi bi-star-fill"></i>
+            </span>
+            <h1 class="h3 fw-bold mb-1">@AL["Reviews.ReviewYourStay"]</h1>
+            <p class="text-muted mb-0"><strong>@Model.PropertyTitle</strong> &middot; @AL["Stays.Room"] @Model.RoomName</p>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+            <input type="hidden" asp-for="StayId" />
+            <input type="hidden" asp-for="PropertyId" />
+
+            <div class="mb-3">
+                <label asp-for="Rating" class="form-label">@AL["Reviews.Rating"]</label>
+                <div class="d-flex gap-1" role="group" id="ratingGroup">
+                    @for (var i = 1; i <= 5; i++)
+                    {
+                        <input type="radio" class="btn-check" name="Rating" id="rating@i" value="@i" @(i == 5 ? "checked" : "") />
+                        <label class="btn btn-outline-warning flex-grow-1" for="rating@i" style="--bs-btn-hover-bg: var(--accent-500); --bs-btn-active-bg: var(--accent-500);"><i class="bi bi-star-fill"></i></label>
+                    }
+                </div>
+                <span asp-validation-for="Rating" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">@AL["Reviews.TitleLabel"]</label>
+                <input asp-for="Title" class="form-control" placeholder="@AL["Reviews.TitlePlaceholder"]" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Comment" class="form-label">@AL["Reviews.Comment"]</label>
+                <textarea asp-for="Comment" class="form-control" rows="5" placeholder="@AL["Reviews.CommentPlaceholder"]"></textarea>
+                <span asp-validation-for="Comment" class="text-danger small"></span>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-grow-1"><i class="bi bi-send me-1"></i>@AL["Reviews.Submit"]</button>
+                <a asp-controller="Stays" asp-action="Index" class="btn btn-soft">@L["Common.Cancel"]</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

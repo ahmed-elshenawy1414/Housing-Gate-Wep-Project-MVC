@@ -1,0 +1,62 @@
+@model Complaint
+@{
+    ViewData["Title"] = AL["Complaints.Details"];
+}
+
+<div class="container py-4" style="max-width: 760px;">
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a asp-action="Index">@L["Nav.Complaints"]</a></li>
+            <li class="breadcrumb-item active" aria-current="page">#@Model.Id</li>
+        </ol>
+    </nav>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                <h1 class="h4 fw-bold mb-0">@Model.Subject</h1>
+                <span class="badge @(Model.Status == ComplaintStatus.Resolved ? "badge-success-soft" : Model.Status == ComplaintStatus.UnderReview ? "badge-info-soft" : Model.Status == ComplaintStatus.Open ? "badge-warning-soft" : "badge-neutral-soft")">
+                    @EnumDisplay.Get(Model.Status, L)
+                </span>
+            </div>
+            <div class="text-muted small mb-3 d-flex flex-wrap align-items-center gap-2">
+                <span class="badge badge-neutral-soft">@EnumDisplay.Get(Model.ComplaintType, L)</span>
+                <span><i class="bi bi-calendar3 me-1"></i>@AL["Complaints.FiledOn"] @Model.CreatedAt.ToLocalTime().ToString("f")</span>
+                @if (Model.TargetProperty != null)
+                {
+                    <span>&middot; @AL["Complaints.About"] <strong>@Model.TargetProperty.Title</strong></span>
+                }
+                @if (Model.TargetUser != null)
+                {
+                    <span>&middot; @AL["Complaints.AboutUser"] <strong>@Model.TargetUser.FullName</strong></span>
+                }
+            </div>
+            <p class="mb-0" style="white-space: pre-line; color: var(--ink-700);">@Model.Description</p>
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.AdminResponse))
+    {
+        <div class="card" style="border-inline-start: 4px solid var(--ok);">
+            <div class="card-body">
+                <div class="fw-semibold mb-1 d-flex align-items-center gap-2">
+                    <span class="icon-chip icon-chip-sm" style="background: #dcfce7; color: #15803d;"><i class="bi bi-person-badge-fill"></i></span>
+                    @AL["Complaints.AdminResponse"]
+                </div>
+                <p class="mb-2">@Model.AdminResponse</p>
+                @if (Model.ResolvedAt.HasValue)
+                {
+                    <small class="text-muted"><i class="bi bi-clock me-1"></i>@Model.ResolvedAt.Value.ToLocalTime().ToString("f")</small>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state card">
+            <div class="empty-icon mb-3"><i class="bi bi-hourglass-split"></i></div>
+            <h4>@AL["Complaints.NoResponse"]</h4>
+            <p class="mb-0">@L["Nav.Complaints"]</p>
+        </div>
+    }
+</div>

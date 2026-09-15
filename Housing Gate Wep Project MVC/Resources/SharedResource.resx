@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="App.Name" xml:space="preserve">
+    <value>Housing Gate</value>
+  </data>
+  <data name="Nav.Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Nav.FindHousing" xml:space="preserve">
+    <value>Find Housing</value>
+  </data>
+  <data name="Nav.Matches" xml:space="preserve">
+    <value>Roommate Matches</value>
+  </data>
+  <data name="Nav.MyApplications" xml:space="preserve">
+    <value>My Applications</value>
+  </data>
+  <data name="Nav.Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Nav.MyProperties" xml:space="preserve">
+    <value>My Properties</value>
+  </data>
+  <data name="Nav.Applications" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="Nav.Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Nav.Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Nav.Complaints" xml:space="preserve">
+    <value>Complaints</value>
+  </data>
+  <data name="Nav.Reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="Nav.AuditLogs" xml:space="preserve">
+    <value>Audit Logs</value>
+  </data>
+  <data name="Audit.Action.Student.Verify" xml:space="preserve">
+    <value>Verify student</value>
+  </data>
+  <data name="Audit.Action.Student.Reject" xml:space="preserve">
+    <value>Reject student verification</value>
+  </data>
+  <data name="Audit.Action.Student.RequestDocuments" xml:space="preserve">
+    <value>Request student documents</value>
+  </data>
+  <data name="Audit.Action.Owner.Verify" xml:space="preserve">
+    <value>Verify owner</value>
+  </data>
+  <data name="Audit.Action.Owner.Reject" xml:space="preserve">
+    <value>Reject owner verification</value>
+  </data>
+  <data name="Audit.Action.Property.Approve" xml:space="preserve">
+    <value>Approve property</value>
+  </data>
+  <data name="Audit.Action.Property.Reject" xml:space="preserve">
+    <value>Reject property</value>
+  </data>
+  <data name="Audit.Action.User.Suspend" xml:space="preserve">
+    <value>Suspend user</value>
+  </data>
+  <data name="Audit.Action.User.Activate" xml:space="preserve">
+    <value>Activate user</value>
+  </data>
+  <data name="Audit.Action.Complaint.Respond" xml:space="preserve">
+    <value>Respond to complaint</value>
+  </data>
+  <data name="Audit.Action.Review.Approve" xml:space="preserve">
+    <value>Approve review</value>
+  </data>
+  <data name="Audit.Action.Review.Remove" xml:space="preserve">
+    <value>Remove review</value>
+  </data>
+  <data name="Audit.Entity.Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="Audit.Entity.Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="Audit.Entity.Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="Audit.Entity.User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Audit.Entity.Complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="Audit.Entity.Review" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="Nav.HowItWorks" xml:space="preserve">
+    <value>How it works</value>
+  </data>
+  <data name="Nav.About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Nav.SignIn" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Nav.JoinNow" xml:space="preserve">
+    <value>Join now</value>
+  </data>
+  <data name="Nav.SignOut" xml:space="preserve">
+    <value>Sign out</value>
+  </data>
+  <data name="Nav.MyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Nav.ViewAll" xml:space="preserve">
+    <value>View all</value>
+  </data>
+  <data name="Nav.Toggle" xml:space="preserve">
+    <value>Toggle navigation</value>
+  </data>
+  <data name="Nav.Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Nav.AllCaughtUp" xml:space="preserve">
+    <value>You&apos;re all caught up.</value>
+  </data>
+  <data name="Nav.Brand" xml:space="preserve">
+    <value>Housing Gate</value>
+  </data>
+  <data name="Layout.FooterTagline" xml:space="preserve">
+    <value>Verified student housing and roommate matching for university students.</value>
+  </data>
+  <data name="Layout.ForStudents" xml:space="preserve">
+    <value>For students</value>
+  </data>
+  <data name="Layout.AboutUs" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="Layout.NeedHelp" xml:space="preserve">
+    <value>Need help?</value>
+  </data>
+  <data name="Layout.NeedHelpText" xml:space="preserve">
+    <value>Open a complaint from your dashboard and our team will follow up.</value>
+  </data>
+  <data name="Layout.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Layout.Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Layout.OtherLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Common.Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common.Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Common.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Common.Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Common.Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Common.Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Common.Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Common.Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Common.Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="Common.Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="Common.View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Common.Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Common.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Common.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Common.Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Common.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Common.Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Common.Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Common.Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Common.Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Common.None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Common.Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Common.NotAvailable" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Common.Optional" xml:space="preserve">
+    <value>(optional)</value>
+  </data>
+  <data name="Common.Rent" xml:space="preserve">
+    <value>Rent</value>
+  </data>
+  <data name="Common.Deposit" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="Common.Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Common.Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Common.Required" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="Common.ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="Enums.ApprovalStatus.NeedsChanges" xml:space="preserve">
+    <value>Needs changes</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Suspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="Enums.ApprovalStatus.Archived" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="Enums.PropertyType.Apartment" xml:space="preserve">
+    <value>Apartment</value>
+  </data>
+  <data name="Enums.PropertyType.SharedHouse" xml:space="preserve">
+    <value>Shared house</value>
+  </data>
+  <data name="Enums.PropertyType.Studio" xml:space="preserve">
+    <value>Studio</value>
+  </data>
+  <data name="Enums.PropertyType.SingleRoom" xml:space="preserve">
+    <value>Single room</value>
+  </data>
+  <data name="Enums.RoomType.Single" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="Enums.RoomType.Shared" xml:space="preserve">
+    <value>Shared</value>
+  </data>
+  <data name="Enums.RoomType.Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="Enums.BathroomType.Private" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="Enums.BathroomType.Shared" xml:space="preserve">
+    <value>Shared</value>
+  </data>
+  <data name="Enums.BathroomType.Attached" xml:space="preserve">
+    <value>Attached</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="Enums.ApplicationStatus.Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Enums.ComplaintStatus.UnderReview" xml:space="preserve">
+    <value>Under review</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Resolved" xml:space="preserve">
+    <value>Resolved</value>
+  </data>
+  <data name="Enums.ComplaintStatus.Dismissed" xml:space="preserve">
+    <value>Dismissed</value>
+  </data>
+  <data name="Enums.VerificationStatus.Unverified" xml:space="preserve">
+    <value>Unverified</value>
+  </data>
+  <data name="Enums.VerificationStatus.Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Enums.VerificationStatus.Verified" xml:space="preserve">
+    <value>Verified</value>
+  </data>
+  <data name="Enums.VerificationStatus.Rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="Enums.VerificationStatus.NeedsChanges" xml:space="preserve">
+    <value>Needs changes</value>
+  </data>
+  <data name="Enums.ReviewStatus.Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Enums.ReviewStatus.Approved" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="Enums.ReviewStatus.Removed" xml:space="preserve">
+    <value>Removed</value>
+  </data>
+  <data name="Enums.StayStatus.Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Enums.StayStatus.Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="Enums.StayStatus.Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Enums.Gender.Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Enums.Gender.Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Enums.Gender.Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Enums.Gender.PreferNotToSay" xml:space="preserve">
+    <value>Prefer not to say</value>
+  </data>
+  <data name="Enums.SleepSchedule.EarlyBird" xml:space="preserve">
+    <value>Early bird</value>
+  </data>
+  <data name="Enums.SleepSchedule.NightOwl" xml:space="preserve">
+    <value>Night owl</value>
+  </data>
+  <data name="Enums.SleepSchedule.Flexible" xml:space="preserve">
+    <value>Flexible</value>
+  </data>
+  <data name="Enums.NoiseLevel.Quiet" xml:space="preserve">
+    <value>Quiet</value>
+  </data>
+  <data name="Enums.NoiseLevel.Moderate" xml:space="preserve">
+    <value>Moderate</value>
+  </data>
+  <data name="Enums.NoiseLevel.Loud" xml:space="preserve">
+    <value>Lively</value>
+  </data>
+  <data name="Enums.Cleanliness.Tidy" xml:space="preserve">
+    <value>Tidy</value>
+  </data>
+  <data name="Enums.Cleanliness.Casual" xml:space="preserve">
+    <value>Casual</value>
+  </data>
+  <data name="Enums.Cleanliness.Messy" xml:space="preserve">
+    <value>Messy</value>
+  </data>
+  <data name="Enums.ComplaintType.Harassment" xml:space="preserve">
+    <value>Harassment</value>
+  </data>
+  <data name="Enums.ComplaintType.PropertyIssue" xml:space="preserve">
+    <value>Property issue</value>
+  </data>
+  <data name="Enums.ComplaintType.Misrepresentation" xml:space="preserve">
+    <value>Misrepresentation</value>
+  </data>
+  <data name="Enums.ComplaintType.Scam" xml:space="preserve">
+    <value>Scam</value>
+  </data>
+  <data name="Enums.ComplaintType.Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Exterior" xml:space="preserve">
+    <value>Exterior</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Entrance" xml:space="preserve">
+    <value>Entrance</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.LivingRoom" xml:space="preserve">
+    <value>Living room</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Kitchen" xml:space="preserve">
+    <value>Kitchen</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Bathroom" xml:space="preserve">
+    <value>Bathroom</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Bedroom" xml:space="preserve">
+    <value>Bedroom</value>
+  </data>
+  <data name="Enums.PropertyImageCategory.Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Enums.NotificationType.General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Enums.NotificationType.Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="Enums.NotificationType.ApplicationStatus" xml:space="preserve">
+    <value>Application status</value>
+  </data>
+  <data name="Enums.NotificationType.Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Enums.NotificationType.PropertyApproval" xml:space="preserve">
+    <value>Property approval</value>
+  </data>
+  <data name="Enums.NotificationType.Review" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="Enums.NotificationType.Complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="Enums.NotificationType.Verification" xml:space="preserve">
+    <value>Verification</value>
+  </data>
+  <data name="Enums.NotificationType.Reminder" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="Account.Login" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Account.LoginTitle" xml:space="preserve">
+    <value>Welcome back</value>
+  </data>
+  <data name="Account.LoginSubtitle" xml:space="preserve">
+    <value>Sign in to manage your housing.</value>
+  </data>
+  <data name="Account.Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Account.Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Account.RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Account.ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Account.NoAccount" xml:space="preserve">
+    <value>Don&apos;t have an account?</value>
+  </data>
+  <data name="Account.Register" xml:space="preserve">
+    <value>Create account</value>
+  </data>
+  <data name="Account.RegisterTitle" xml:space="preserve">
+    <value>Join Housing Gate</value>
+  </data>
+  <data name="Account.RegisterSubtitle" xml:space="preserve">
+    <value>Create your account to start searching.</value>
+  </data>
+  <data name="Account.FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Account.LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Account.PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="Account.ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Account.Role" xml:space="preserve">
+    <value>I am a</value>
+  </data>
+  <data name="Account.Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="Account.Owner" xml:space="preserve">
+    <value>Property owner</value>
+  </data>
+  <data name="Account.AlreadyRegistered" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="Account.LogoutConfirm" xml:space="preserve">
+    <value>Sign out?</value>
+  </data>
+  <data name="Account.LoginError" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="Account.LoginLocked" xml:space="preserve">
+    <value>Your account is locked.</value>
+  </data>
+  <data name="Account.RegisterError" xml:space="preserve">
+    <value>Registration failed.</value>
+  </data>
+  <data name="Account.EmailInUse" xml:space="preserve">
+    <value>An account with this email already exists.</value>
+  </data>
+  <data name="Account.CreatedOwner" xml:space="preserve">
+    <value>Owner account created.</value>
+  </data>
+  <data name="Account.CreatedStudent" xml:space="preserve">
+    <value>Student account created.</value>
+  </data>
+  <data name="Account.AccessDenied" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="Account.AccessDeniedText" xml:space="preserve">
+    <value>You don&apos;t have permission to view this page.</value>
+  </data>
+  <data name="Account.BackToHome" xml:space="preserve">
+    <value>Back to home</value>
+  </data>
+  <data name="Account.LoginToContinue" xml:space="preserve">
+    <value>Sign in to continue</value>
+  </data>
+  <data name="Account.DemoAccounts" xml:space="preserve">
+    <value>Demo accounts</value>
+  </data>
+  <data name="Account.DemoStudent" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="Account.DemoOwner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="Account.DemoAdmin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Account.IAmA" xml:space="preserve">
+    <value>I am a...</value>
+  </data>
+  <data name="Account.TermsPrefix" xml:space="preserve">
+    <value>I agree to the</value>
+  </data>
+  <data name="Account.TermsOfService" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+  <data name="Account.AndWord" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Account.PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="HiW.Step1Title" xml:space="preserve">
+    <value>Create your account</value>
+  </data>
+  <data name="HiW.Step1Text" xml:space="preserve">
+    <value>Sign up as a Student to search housing and find roommates, or as an Owner to list properties. Every account is real-person verified.</value>
+  </data>
+  <data name="HiW.Step2Title" xml:space="preserve">
+    <value>Complete your profile</value>
+  </data>
+  <data name="HiW.Step2Text" xml:space="preserve">
+    <value>Students add their university, budget, move-in date and lifestyle details (sleep schedule, noise level, cleanliness). Owners add company info and ownership documents. Upload a student ID or ownership proof to earn the verified badge.</value>
+  </data>
+  <data name="HiW.Step3Title" xml:space="preserve">
+    <value>Find housing &amp; roommates</value>
+  </data>
+  <data name="HiW.Step3Text" xml:space="preserve">
+    <value>Browse verified listings by city, price and type. The Roommate Matches page ranks other students by budget overlap, gender preference, smoking, sleep schedule, noise, cleanliness and pets.</value>
+  </data>
+  <data name="HiW.Step4Title" xml:space="preserve">
+    <value>Apply &amp; get approved</value>
+  </data>
+  <data name="HiW.Step4Text" xml:space="preserve">
+    <value>Apply to a room with a short message. The owner approves or rejects your application. Approved applications become verified stays.</value>
+  </data>
+  <data name="HiW.Step5Title" xml:space="preserve">
+    <value>Review honestly</value>
+  </data>
+  <data name="HiW.Step5Text" xml:space="preserve">
+    <value>After a verified stay ends, you can review the property and the students you lived with. Reviews are moderated by admins to keep the community safe and honest.</value>
+  </data>
+  <data name="HiW.Step6Text" xml:space="preserve">
+    <value>Students and owners can file complaints about a user or a property. Our admin team reviews every complaint and follows up.</value>
+  </data>
+  <data name="HiW.GetStarted" xml:space="preserve">
+    <value>Get started</value>
+  </data>
+  <data name="HiW.BrowseHousing" xml:space="preserve">
+    <value>Browse housing</value>
+  </data>
+  <data name="About.Lead" xml:space="preserve">
+    <value>Housing Gate is a student housing marketplace that connects university students with verified property owners — and, more importantly, with each other.</value>
+  </data>
+  <data name="About.Body" xml:space="preserve">
+    <value>Moving away from your hometown is hard. Finding a place to live that fits your budget is hard. Finding people you actually want to live with is often the hardest part. Housing Gate was built to solve all three at once.</value>
+  </data>
+  <data name="About.DifferentTitle" xml:space="preserve">
+    <value>What makes us different</value>
+  </data>
+  <data name="About.Point1Title" xml:space="preserve">
+    <value>Verified everything</value>
+  </data>
+  <data name="About.Point1Text" xml:space="preserve">
+    <value>students, owners and listings all go through review.</value>
+  </data>
+  <data name="About.Point2Title" xml:space="preserve">
+    <value>Roommate matching</value>
+  </data>
+  <data name="About.Point2Text" xml:space="preserve">
+    <value>compatibility scores based on your profile and preferences.</value>
+  </data>
+  <data name="About.Point3Title" xml:space="preserve">
+    <value>Reviews after verified stays</value>
+  </data>
+  <data name="About.Point3Text" xml:space="preserve">
+    <value>only real residents can review a property or a roommate.</value>
+  </data>
+  <data name="About.Point4Title" xml:space="preserve">
+    <value>A human safety net</value>
+  </data>
+  <data name="About.Point4Text" xml:space="preserve">
+    <value>admins verify identities, moderate reviews and handle complaints.</value>
+  </data>
+  <data name="Error.RequestId" xml:space="preserve">
+    <value>Request ID</value>
+  </data>
+  <data name="Home.Hero" xml:space="preserve">
+    <value>Find your home away from home</value>
+  </data>
+  <data name="Home.HeroSub" xml:space="preserve">
+    <value>Search verified student housing, compare rooms and find compatible roommates.</value>
+  </data>
+  <data name="Home.HeroTagline" xml:space="preserve">
+    <value>Find your home, find your people.</value>
+  </data>
+  <data name="Home.HeroText" xml:space="preserve">
+    <value>Housing Gate connects students with verified landlords and compatible roommates — so moving to a new city feels a little more like home.</value>
+  </data>
+  <data name="Home.City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Home.CityPlaceholder" xml:space="preserve">
+    <value>City, e.g. Cairo</value>
+  </data>
+  <data name="Home.MaxRent" xml:space="preserve">
+    <value>Max rent</value>
+  </data>
+  <data name="Home.Popular" xml:space="preserve">
+    <value>Popular:</value>
+  </data>
+  <data name="Home.VerifiedListings" xml:space="preserve">
+    <value>Verified listings</value>
+  </data>
+  <data name="Home.FeaturedHousing" xml:space="preserve">
+    <value>Featured housing</value>
+  </data>
+  <data name="Home.BrowseAll" xml:space="preserve">
+    <value>Browse all</value>
+  </data>
+  <data name="Home.NoListingsYet" xml:space="preserve">
+    <value>No listings yet. Check back soon!</value>
+  </data>
+  <data name="Home.HowWorks" xml:space="preserve">
+    <value>How Housing Gate works</value>
+  </data>
+  <data name="Home.Step1Title" xml:space="preserve">
+    <value>1. Get verified</value>
+  </data>
+  <data name="Home.Step1Text" xml:space="preserve">
+    <value>Verify your student ID or ownership documents so everyone knows you&apos;re real.</value>
+  </data>
+  <data name="Home.Step2Title" xml:space="preserve">
+    <value>2. Get matched</value>
+  </data>
+  <data name="Home.Step2Text" xml:space="preserve">
+    <value>Our matching engine finds roommates who fit your budget, sleep schedule and lifestyle.</value>
+  </data>
+  <data name="Home.Step3Title" xml:space="preserve">
+    <value>3. Move in &amp; review</value>
+  </data>
+  <data name="Home.Step3Text" xml:space="preserve">
+    <value>Apply, move in, then review the property and your roommates after a verified stay.</value>
+  </data>
+  <data name="Card.Featured" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="Card.VerifiedOwner" xml:space="preserve">
+    <value>Verified owner</value>
+  </data>
+  <data name="Card.Furnished" xml:space="preserve">
+    <value>Furnished</value>
+  </data>
+  <data name="Card.BedroomsShort" xml:space="preserve">
+    <value>bd</value>
+  </data>
+  <data name="Card.PerMonth" xml:space="preserve">
+    <value>/mo</value>
+  </data>
+  <data name="Common.CurrencySymbol" xml:space="preserve">
+    <value>EGP</value>
+  </data>
+  <data name="Home.SearchPlaceholder" xml:space="preserve">
+    <value>Search by city, district or university...</value>
+  </data>
+  <data name="Home.SearchButton" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Home.Featured" xml:space="preserve">
+    <value>Featured listings</value>
+  </data>
+  <data name="Home.LatestListings" xml:space="preserve">
+    <value>Latest listings</value>
+  </data>
+  <data name="Home.ViewAll" xml:space="preserve">
+    <value>View all listings</value>
+  </data>
+  <data name="Home.NoListings" xml:space="preserve">
+    <value>No listings available yet.</value>
+  </data>
+  <data name="Home.Feature1" xml:space="preserve">
+    <value>Verified properties</value>
+  </data>
+  <data name="Home.Feature1Text" xml:space="preserve">
+    <value>Every listing is reviewed by our team before going live.</value>
+  </data>
+  <data name="Home.Feature2" xml:space="preserve">
+    <value>Roommate matching</value>
+  </data>
+  <data name="Home.Feature2Text" xml:space="preserve">
+    <value>Find students with compatible habits and lifestyle.</value>
+  </data>
+  <data name="Home.Feature3" xml:space="preserve">
+    <value>Fair reviews</value>
+  </data>
+  <data name="Home.Feature3Text" xml:space="preserve">
+    <value>Real reviews from students who actually stayed.</value>
+  </data>
+  <data name="Home.HowItWorksTitle" xml:space="preserve">
+    <value>How it works</value>
+  </data>
+  <data name="Home.AboutTitle" xml:space="preserve">
+    <value>About Housing Gate</value>
+  </data>
+  <data name="Home.AboutText" xml:space="preserve">
+    <value>Housing Gate connects university students with verified, fairly-priced housing and helps them find compatible roommates.</value>
+  </data>
+  <data name="Notif.NoNotifications" xml:space="preserve">
+    <value>No notifications yet.</value>
+  </data>
+  <data name="Notif.MarkAllRead" xml:space="preserve">
+    <value>Mark all as read</value>
+  </data>
+  <data name="Notif.Unread" xml:space="preserve">
+    <value>Unread</value>
+  </data>
+  <data name="Notif.Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="Error.Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error.NotFound" xml:space="preserve">
+    <value>Page not found</value>
+  </data>
+  <data name="Error.SomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong.</value>
+  </data>
+  <data name="Error.TryAgain" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="Error.NoAccess" xml:space="preserve">
+    <value>You do not have access to this page.</value>
+  </data>
+  <data name="Msg.Welcome" xml:space="preserve">
+    <value>Welcome to Housing Gate! Complete your profile to get the most out of the platform.</value>
+  </data>
+  <data name="Msg.ProfileUpdated" xml:space="preserve">
+    <value>Profile updated.</value>
+  </data>
+  <data name="Msg.UpdatePrefs" xml:space="preserve">
+    <value>Update your roommate preferences too!</value>
+  </data>
+  <data name="Msg.PrefsSaved" xml:space="preserve">
+    <value>Preferences saved. The matching engine now knows what you&apos;re looking for.</value>
+  </data>
+  <data name="Msg.DocsUploaded" xml:space="preserve">
+    <value>Documents uploaded. An admin will verify your account shortly.</value>
+  </data>
+  <data name="Msg.AttachDocument" xml:space="preserve">
+    <value>Please attach a document.</value>
+  </data>
+  <data name="Msg.CancelPendingOnly" xml:space="preserve">
+    <value>Only pending applications can be cancelled.</value>
+  </data>
+  <data name="Msg.ApplicationCancelled" xml:space="preserve">
+    <value>Application cancelled.</value>
+  </data>
+  <data name="Msg.ComplaintFiled" xml:space="preserve">
+    <value>Complaint filed. Our team will review it.</value>
+  </data>
+  <data name="Msg.ReviewSubmitted" xml:space="preserve">
+    <value>Review submitted. It will appear once approved by a moderator.</value>
+  </data>
+  <data name="Msg.CommentRequired" xml:space="preserve">
+    <value>Please write a comment.</value>
+  </data>
+  <data name="Msg.RoommateReviewSubmitted" xml:space="preserve">
+    <value>Roommate review submitted. It will appear once approved.</value>
+  </data>
+  <data name="Msg.NotSharedStay" xml:space="preserve">
+    <value>This student did not share the property with you.</value>
+  </data>
+  <data name="Msg.ApplicationSent" xml:space="preserve">
+    <value>Application sent! The owner will review it shortly.</value>
+  </data>
+  <data name="Msg.ApplicationApproved" xml:space="preserve">
+    <value>Application approved. A verified stay was created.</value>
+  </data>
+  <data name="Msg.ApplicationRejected" xml:space="preserve">
+    <value>Application rejected.</value>
+  </data>
+  <data name="Msg.ListingCreated" xml:space="preserve">
+    <value>Listing created. It will go live once an admin approves it.</value>
+  </data>
+  <data name="Msg.ListingUpdated" xml:space="preserve">
+    <value>Listing updated.</value>
+  </data>
+  <data name="Msg.ListingDeleted" xml:space="preserve">
+    <value>Listing deleted.</value>
+  </data>
+  <data name="Notif.ApplicationCancelled" xml:space="preserve">
+    <value>Application cancelled</value>
+  </data>
+  <data name="Notif.ApplicationCancelledBody" xml:space="preserve">
+    <value>A student withdrew their application.</value>
+  </data>
+  <data name="RequiredAttribute_ValidationError" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="StringLengthAttribute_ValidationError" xml:space="preserve">
+    <value>The value must not exceed {1} characters.</value>
+  </data>
+  <data name="RangeAttribute_ValidationError" xml:space="preserve">
+    <value>The value must be between {1} and {2}.</value>
+  </data>
+  <data name="EmailAddressAttribute_ValidationError" xml:space="preserve">
+    <value>The email address is not valid.</value>
+  </data>
+  <data name="PhoneAttribute_ValidationError" xml:space="preserve">
+    <value>The phone number is not valid.</value>
+  </data>
+  <data name="CompareAttribute_ValidationError" xml:space="preserve">
+    <value>The values do not match.</value>
+  </data>
+  <data name="PasswordMismatch_ValidationError" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="TermsRequired_ValidationError" xml:space="preserve">
+    <value>Please accept the terms to continue.</value>
+  </data>
+  <data name="Err.PropertyNotFound" xml:space="preserve">
+    <value>Property not found.</value>
+  </data>
+  <data name="Err.PropertyCannotBeDeleted" xml:space="preserve">
+    <value>This property cannot be deleted because it has applications or stays. Deactivate it instead.</value>
+  </data>
+  <data name="Err.ImageNotFound" xml:space="preserve">
+    <value>Image not found.</value>
+  </data>
+  <data name="Err.RoomNotFound" xml:space="preserve">
+    <value>Room not found.</value>
+  </data>
+  <data name="Err.ListingNotAccepting" xml:space="preserve">
+    <value>This listing is not currently accepting applications.</value>
+  </data>
+  <data name="Err.RoomUnavailable" xml:space="preserve">
+    <value>This room is no longer available.</value>
+  </data>
+  <data name="Err.AlreadyApplied" xml:space="preserve">
+    <value>You have already applied for this room.</value>
+  </data>
+  <data name="Err.ApplicationNotFound" xml:space="preserve">
+    <value>Application not found.</value>
+  </data>
+  <data name="Err.ApplicationAnswered" xml:space="preserve">
+    <value>This application has already been answered.</value>
+  </data>
+  <data name="Err.StudentProfileNotFoundFull" xml:space="preserve">
+    <value>Student profile not found. Are you registered as a student?</value>
+  </data>
+  <data name="Err.StudentProfileNotFound" xml:space="preserve">
+    <value>Student profile not found.</value>
+  </data>
+  <data name="Err.OwnerProfileNotFound" xml:space="preserve">
+    <value>Owner profile not found.</value>
+  </data>
+  <data name="Err.UserNotFound" xml:space="preserve">
+    <value>User not found.</value>
+  </data>
+  <data name="Err.CannotDeactivateAdmin" xml:space="preserve">
+    <value>Admin accounts cannot be deactivated.</value>
+  </data>
+  <data name="Err.ComplaintNotFound" xml:space="preserve">
+    <value>Complaint not found.</value>
+  </data>
+  <data name="Err.InvalidLogin" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="Err.StayNotYours" xml:space="preserve">
+    <value>This stay does not belong to you.</value>
+  </data>
+  <data name="Err.ReviewAfterStayEnd" xml:space="preserve">
+    <value>You can only review a property after the stay has ended.</value>
+  </data>
+  <data name="Err.AlreadyReviewedProperty" xml:space="preserve">
+    <value>You already reviewed this property for that stay.</value>
+  </data>
+  <data name="Err.CannotReviewSelf" xml:space="preserve">
+    <value>You cannot review yourself.</value>
+  </data>
+  <data name="Err.ReviewRoommatesAfterStayEnd" xml:space="preserve">
+    <value>You can only review roommates after the stay has ended.</value>
+  </data>
+  <data name="Err.OnlyLivedTogether" xml:space="preserve">
+    <value>You can only review students you actually lived with.</value>
+  </data>
+  <data name="Err.AlreadyReviewedRoommate" xml:space="preserve">
+    <value>You already reviewed this roommate for that stay.</value>
+  </data>
+  <data name="Err.ReviewNotFound" xml:space="preserve">
+    <value>Review not found.</value>
+  </data>
+  <data name="Err.NationalIdRequired" xml:space="preserve">
+    <value>Please attach a National ID image.</value>
+  </data>
+  <data name="Err.UniversityIdRequired" xml:space="preserve">
+    <value>Please attach a University ID / student card image.</value>
+  </data>
+  <data name="Err.ImgInvalidExtension" xml:space="preserve">
+    <value>Only .jpg, .jpeg, .png and .webp images are allowed.</value>
+  </data>
+  <data name="Err.ImgTooLarge" xml:space="preserve">
+    <value>Image must be between 1 byte and 3 MB.</value>
+  </data>
+  <data name="Err.UploadFailed" xml:space="preserve">
+    <value>The upload failed. Please try again.</value>
+  </data>
+  <data name="Identity.DuplicateEmail" xml:space="preserve">
+    <value>Email &apos;{0}&apos; is already taken.</value>
+  </data>
+  <data name="Identity.DuplicateUserName" xml:space="preserve">
+    <value>User name &apos;{0}&apos; is already taken.</value>
+  </data>
+  <data name="Identity.PasswordTooShort" xml:space="preserve">
+    <value>Passwords must be at least {0} characters.</value>
+  </data>
+  <data name="Identity.PasswordRequiresDigit" xml:space="preserve">
+    <value>Passwords must have at least one digit (&apos;0&apos;-&apos;9&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresLower" xml:space="preserve">
+    <value>Passwords must have at least one lowercase letter (&apos;a&apos;-&apos;z&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresUpper" xml:space="preserve">
+    <value>Passwords must have at least one uppercase letter (&apos;A&apos;-&apos;Z&apos;).</value>
+  </data>
+  <data name="Identity.PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Passwords must have at least one non-alphanumeric character.</value>
+  </data>
+  <data name="Identity.InvalidEmail" xml:space="preserve">
+    <value>Email &apos;{0}&apos; is invalid.</value>
+  </data>
+  <data name="Identity.InvalidUserName" xml:space="preserve">
+    <value>User name &apos;{0}&apos; is invalid, can only contain letters or digits.</value>
+  </data>
+  <data name="Identity.PasswordMismatch" xml:space="preserve">
+    <value>Incorrect password.</value>
+  </data>
+  <data name="Identity.UserAlreadyHasPassword" xml:space="preserve">
+    <value>User already has a password set.</value>
+  </data>
+  <data name="Identity.UserAlreadyInRole" xml:space="preserve">
+    <value>User already in role &apos;{0}&apos;.</value>
+  </data>
+  <data name="Identity.UserNotInRole" xml:space="preserve">
+    <value>User is not in role &apos;{0}&apos;.</value>
+  </data>
+  <data name="Identity.InvalidToken" xml:space="preserve">
+    <value>Invalid token.</value>
+  </data>
+  <data name="Identity.ConcurrencyFailure" xml:space="preserve">
+    <value>Optimistic concurrency failure, object has been modified.</value>
+  </data>
+  <data name="Identity.DefaultError" xml:space="preserve">
+    <value>An unknown failure occurred.</value>
+  </data>
+  <data name="Identity.RecoveryCodeRedemptionFailed" xml:space="preserve">
+    <value>Recovery code redemption failed.</value>
+  </data>
+  <data name="Identity.LoginAlreadyAssociated" xml:space="preserve">
+    <value>A user with this login already exists.</value>
+  </data>
+  <data name="Identity.InvalidRoleName" xml:space="preserve">
+    <value>Role name &apos;{0}&apos; is invalid.</value>
+  </data>
+  <data name="Identity.DuplicateRoleName" xml:space="preserve">
+    <value>Role name &apos;{0}&apos; is already taken.</value>
+  </data>
+  <data name="Identity.UserLockoutNotEnabled" xml:space="preserve">
+    <value>Lockout is not enabled for this user.</value>
+  </data>
+  <data name="Identity.PasswordRequiresUniqueChars" xml:space="preserve">
+    <value>Passwords must use at least {0} different characters.</value>
+  </data>
+  <data name="Admin.Props.Approved" xml:space="preserve">
+    <value>Listing approved and published.</value>
+  </data>
+  <data name="Admin.Props.Rejected" xml:space="preserve">
+    <value>Listing rejected.</value>
+  </data>
+  <data name="Admin.Users.StudentVerified" xml:space="preserve">
+    <value>Student verified.</value>
+  </data>
+  <data name="Admin.Users.StudentRejected" xml:space="preserve">
+    <value>Student verification rejected.</value>
+  </data>
+  <data name="Admin.Users.DocsRequested" xml:space="preserve">
+    <value>New documents requested from the student.</value>
+  </data>
+  <data name="Admin.Users.Updated" xml:space="preserve">
+    <value>User status updated.</value>
+  </data>
+  <data name="Admin.Cmpl.Updated" xml:space="preserve">
+    <value>Complaint updated.</value>
+  </data>
+  <data name="Notif.NewApplicationReceived" xml:space="preserve">
+    <value>New application received</value>
+  </data>
+  <data name="Notif.NewApplicationReceivedBody" xml:space="preserve">
+    <value>A student applied for &apos;{0}&apos; in &apos;{1}&apos;.</value>
+  </data>
+  <data name="Notif.ListingEdited" xml:space="preserve">
+    <value>Listing edited</value>
+  </data>
+  <data name="Notif.ListingEditedBody" xml:space="preserve">
+    <value>&apos;{0}&apos; was significantly edited and needs re-review.</value>
+  </data>
+  <data name="Notif.ApplicationAccepted" xml:space="preserve">
+    <value>Your application was accepted</value>
+  </data>
+  <data name="Notif.ApplicationDeclined" xml:space="preserve">
+    <value>Your application was declined</value>
+  </data>
+  <data name="Notif.ApplicationAcceptedBody" xml:space="preserve">
+    <value>Great news! Your application for &apos;{0}&apos; was accepted.</value>
+  </data>
+  <data name="Notif.ApplicationDeclinedBody" xml:space="preserve">
+    <value>Your application for &apos;{0}&apos; was declined by the owner.</value>
+  </data>
+  <data name="Notif.StudentVerified" xml:space="preserve">
+    <value>Your student account was verified</value>
+  </data>
+  <data name="Notif.StudentVerifiedBody" xml:space="preserve">
+    <value>You now have the Verified badge, which unlocks trust on the platform.</value>
+  </data>
+  <data name="Notif.StudentRejected" xml:space="preserve">
+    <value>Your student verification was rejected</value>
+  </data>
+  <data name="Notif.StudentRejectedBody" xml:space="preserve">
+    <value>Please re-upload a clearer copy of your student ID from your profile.</value>
+  </data>
+  <data name="Notif.DocsRequested" xml:space="preserve">
+    <value>New verification documents requested</value>
+  </data>
+  <data name="Notif.DocsRequestedBody" xml:space="preserve">
+    <value>Please upload updated verification documents from your profile.</value>
+  </data>
+  <data name="Notif.ReasonPrefix" xml:space="preserve">
+    <value>Reason: {0}</value>
+  </data>
+  <data name="Notif.OwnerVerified" xml:space="preserve">
+    <value>Your owner account was verified</value>
+  </data>
+  <data name="Notif.OwnerVerifiedBody" xml:space="preserve">
+    <value>You can now list properties. Verified owners rank higher in search.</value>
+  </data>
+  <data name="Notif.OwnerRejected" xml:space="preserve">
+    <value>Your owner verification was rejected</value>
+  </data>
+  <data name="Notif.OwnerRejectedBody" xml:space="preserve">
+    <value>Please re-upload your ownership proof from your profile.</value>
+  </data>
+  <data name="Notif.ListingApproved" xml:space="preserve">
+    <value>Your listing was approved</value>
+  </data>
+  <data name="Notif.ListingRejected" xml:space="preserve">
+    <value>Your listing was rejected</value>
+  </data>
+  <data name="Notif.ListingApprovedBody" xml:space="preserve">
+    <value>&apos;{0}&apos; is now live on Housing Gate.</value>
+  </data>
+  <data name="Notif.ListingRejectedBody" xml:space="preserve">
+    <value>&apos;{0}&apos; was rejected. Reason: {1}</value>
+  </data>
+  <data name="Notif.Unspecified" xml:space="preserve">
+    <value>unspecified</value>
+  </data>
+  <data name="Notif.ReviewLive" xml:space="preserve">
+    <value>Your review is now live</value>
+  </data>
+  <data name="Notif.ReviewRemoved" xml:space="preserve">
+    <value>Your review was removed</value>
+  </data>
+  <data name="Notif.ReviewLiveBody" xml:space="preserve">
+    <value>Your property review was approved and is now visible.</value>
+  </data>
+  <data name="Notif.ReviewRemovedBody" xml:space="preserve">
+    <value>A moderator removed your review. Contact support if you have questions.</value>
+  </data>
+  <data name="Notif.NewComplaint" xml:space="preserve">
+    <value>New complaint</value>
+  </data>
+  <data name="Notif.NewComplaintBody" xml:space="preserve">
+    <value>&apos;{0}&apos; was filed and needs review.</value>
+  </data>
+  <data name="Notif.ComplaintUpdate" xml:space="preserve">
+    <value>Complaint update</value>
+  </data>
+  <data name="Notif.ComplaintUpdateBody" xml:space="preserve">
+    <value>Your complaint &apos;{0}&apos; is now {1}.</value>
+  </data>
+  <data name="Common.Major" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="Common.DateOfBirth" xml:space="preserve">
+    <value>Date of birth</value>
+  </data>
+  <data name="Common.Furnished" xml:space="preserve">
+    <value>Furnished</value>
+  </data>
+  <data name="Admin.Users.Deleted" xml:space="preserve">
+    <value>User deleted.</value>
+  </data>
+  <data name="Admin.Props.Deleted" xml:space="preserve">
+    <value>Property deleted.</value>
+  </data>
+  <data name="Notif.ListingDeletedByAdmin" xml:space="preserve">
+    <value>Listing deleted</value>
+  </data>
+  <data name="Notif.ListingDeletedByAdminBody" xml:space="preserve">
+    <value>Your listing &quot;{0}&quot; was deleted by an admin.</value>
+  </data>
+  <data name="Err.CannotDeleteAdmin" xml:space="preserve">
+    <value>Admin accounts cannot be deleted.</value>
+  </data>
+  <data name="Err.UserHasApplications" xml:space="preserve">
+    <value>This user has applications.</value>
+  </data>
+  <data name="Err.UserHasStays" xml:space="preserve">
+    <value>This user has stays.</value>
+  </data>
+  <data name="Err.UserHasComplaints" xml:space="preserve">
+    <value>This user is involved in complaints.</value>
+  </data>
+  <data name="Err.UserHasReviews" xml:space="preserve">
+    <value>This user has reviews (given or received).</value>
+  </data>
+  <data name="Err.UserPropertyHasHistory" xml:space="preserve">
+    <value>The property &quot;{0}&quot; has applications, stays or complaints.</value>
+  </data>
+  <data name="Err.PropertyHasApplications" xml:space="preserve">
+    <value>This property has applications.</value>
+  </data>
+  <data name="Err.PropertyHasStays" xml:space="preserve">
+    <value>This property has stays.</value>
+  </data>
+  <data name="Err.PropertyHasComplaints" xml:space="preserve">
+    <value>This property has complaints.</value>
+  </data>
+  <data name="Common.Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Common.SearchPlaceholder" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="Audit.Action.User.Delete" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="Audit.Action.Property.Delete" xml:space="preserve">
+    <value>Delete property</value>
+  </data>
+  <data name="Profile.Picture" xml:space="preserve">
+    <value>Profile picture</value>
+  </data>
+  <data name="Profile.PictureHint" xml:space="preserve">
+    <value>JPG, PNG or WebP, max 3 MB</value>
+  </data>
+  <data name="Common.UrlPlaceholder" xml:space="preserve">
+    <value>URL placeholder</value>
+  </data>
+  <data name="Nav.Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+</root>

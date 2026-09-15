@@ -1,0 +1,59 @@
+@model Complaint
+@{
+    ViewData["Title"] = AL["Cmpl.Complaint"] + " #" + Model.Id;
+}
+
+<div class="container py-4" style="max-width: 760px;">
+    <div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <div>
+            <h1 class="mb-0">@AL["Cmpl.Complaint"] #@Model.Id</h1>
+        </div>
+        <a asp-action="Index" class="btn btn-soft btn-sm"><i class="bi bi-arrow-right me-1"></i> @AL["Common.Back"]</a>
+    </div>
+
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <div class="fw-bold">@EnumDisplay.Get(Model.ComplaintType, L) &middot; @Model.Subject</div>
+                    <div class="text-muted small">
+                        @Model.Complainant.FullName &middot; @AL["Cmpl.About"] @(Model.TargetProperty?.Title ?? Model.TargetUser?.FullName ?? AL["Cmpl.General"])
+                        &middot; @Model.CreatedAt.ToLocalTime().ToString("dd MMM yyyy HH:mm")
+                    </div>
+                </div>
+                <span class="badge @(Model.Status == ComplaintStatus.Open ? "badge-danger-soft" : Model.Status == ComplaintStatus.Resolved ? "badge-success-soft" : "badge-secondary-soft") h-100">@EnumDisplay.Get(Model.Status, L)</span>
+            </div>
+            <p class="mb-0 text-muted">@Model.Description</p>
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.AdminResponse))
+    {
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+                <div class="fw-semibold mb-1"><i class="bi bi-reply me-1" style="color: var(--brand-500);"></i>@AL["Cmpl.Response"]</div>
+                <p class="mb-0 text-muted">@Model.AdminResponse</p>
+            </div>
+        </div>
+    }
+
+    @if (Model.Status == ComplaintStatus.Open)
+    {
+        <form method="post" asp-action="Respond" asp-route-id="@Model.Id" class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">@AL["Cmpl.Resolution"]</label>
+                    <select name="status" class="form-select" required>
+                        <option value="@ComplaintStatus.Resolved">@EnumDisplay.Get(ComplaintStatus.Resolved, L)</option>
+                        <option value="@ComplaintStatus.Dismissed">@EnumDisplay.Get(ComplaintStatus.Dismissed, L)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">@AL["Cmpl.ResponseLabel"]</label>
+                    <textarea name="response" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-send me-1"></i>@AL["Cmpl.SaveResolution"]</button>
+            </div>
+        </form>
+    }
+</div>

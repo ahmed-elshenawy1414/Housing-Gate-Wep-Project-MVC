@@ -1,0 +1,67 @@
+@model PropertyCardViewModel
+
+<div class="col h-100">
+    <div class="card card-hover property-card h-100 overflow-hidden">
+        <div class="card-img-wrap">
+            <img src="@(Model.PrimaryImageUrl ?? "/images/property-placeholder.svg")" alt="@Model.Title" loading="lazy" />
+            <div class="card-badges">
+                <div class="d-flex gap-1">
+                    @if (Model.IsFeatured)
+                    {
+                        <span class="badge text-bg-warning">
+                            <i class="bi bi-star-fill"></i> @L["Card.Featured"]
+                        </span>
+                    }
+                </div>
+                <div class="d-flex gap-1">
+                    @if (Model.OwnerIsVerified)
+                    {
+                        <span class="badge text-bg-success">
+                            <i class="bi bi-patch-check-fill"></i> @L["Card.VerifiedOwner"]
+                        </span>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body d-flex flex-column p-3">
+            <h6 class="card-title mb-1">
+                <a asp-area="Student" asp-controller="Search" asp-action="Details" asp-route-id="@Model.Id"
+                   class="text-decoration-none fw-bold text-truncate d-block" style="color: var(--ink-900);">
+                    @Model.Title
+                </a>
+            </h6>
+            <div class="property-meta-line mb-2">
+                <i class="bi bi-geo-alt-fill" style="color: var(--brand-500);"></i>
+                <span class="text-truncate">@Model.City, @Model.State</span>
+            </div>
+
+            <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="badge badge-neutral-soft">@EnumDisplay.Get(Model.PropertyType, L)</span>
+                <span class="badge badge-neutral-soft"><i class="bi bi-door-closed me-1"></i>@Model.Bedrooms @L["Card.BedroomsShort"]</span>
+                @if (Model.IsFurnished)
+                {
+                    <span class="badge badge-neutral-soft"><i class="bi bi-lamp me-1"></i>@L["Card.Furnished"]</span>
+                }
+            </div>
+
+            <div class="mt-auto d-flex align-items-end justify-content-between gap-2">
+                <div class="property-price">
+                    @if (Model.MinRent > 0)
+                    {
+                        <text>@Model.MinRent.ToString("N0") @L["Common.CurrencySymbol"]</text>
+                        <span class="text-muted small fw-normal">/ @L["Card.PerMonth"]</span>
+                    }
+                </div>
+                @if (Model.ReviewsCount > 0)
+                {
+                    <div class="star-rating d-flex align-items-center gap-1 small fw-semibold" style="color: var(--ink-700);">
+                        <i class="bi bi-star-fill"></i>
+                        <span>@Model.AverageRating.ToString("0.0")</span>
+                        <span class="text-muted fw-normal">(@Model.ReviewsCount)</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+@model IReadOnlyList<Stay>
+@{
+    ViewData["Title"] = AL["Stays.Title"];
+    var stayIdsToReview = ViewBag.StayIdsToReview as HashSet<int> ?? new HashSet<int>();
+    var roommatesByStay = ViewBag.RoommatesByStay as Dictionary<int, IReadOnlyList<ApplicationUser>> ?? new Dictionary<int, IReadOnlyList<ApplicationUser>>();
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-0">@AL["Stays.Title"]</h1>
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="card">
+        <div class="empty-state">
+            <div class="empty-icon mb-3"><i class="bi bi-house-x"></i></div>
+            <h4>@AL["Stays.Empty"]</h4>
+            <p class="mb-0"><a asp-controller="Search" asp-action="Index" class="fw-semibold">@L["Nav.FindHousing"]</a></p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var stay in Model)
+        {
+            var primaryImage = stay.Room.Property.Images.FirstOrDefault(i => i.IsPrimary)?.FilePath
+                               ?? stay.Room.Property.Images.FirstOrDefault()?.FilePath
+                               ?? "/images/property-placeholder.svg";
+            var stayCls = stay.Status switch
+            {
+                StayStatus.Active => "badge-success-soft",
+                StayStatus.Completed => "badge-info-soft",
+                _ => "badge-neutral-soft"
+            };
+
+            <div class="col-lg-6">
+                <div class="card card-hover h-100 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="@primaryImage" class="w-100 h-100" style="object-fit: cover; min-height: 160px;" alt="" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start gap-2">
+                                    <div class="min-width-0">
+                                        <div class="fw-bold text-truncate">
+                                            <a asp-controller="Search" asp-action="Details" asp-route-id="@stay.Room.PropertyId"
+                                               class="text-decoration-none" style="color: var(--ink-900);">@stay.Room.Property.Title</a>
+                                        </div>
+                                        <small class="text-muted">@AL["Stays.Room"] @stay.Room.Name &middot; @stay.Room.Property.City</small>
+                                    </div>
+                                    <span class="badge @stayCls flex-shrink-0">@EnumDisplay.Get(stay.Status, L)</span>
+                                </div>
+
+                                <div class="text-muted small mt-3 d-flex flex-column gap-1">
+                                    <span><i class="bi bi-calendar3 me-1"></i>@AL["Stays.Started"]: @stay.StartDate.ToLocalTime().ToString("dd MMM yyyy")</span>
+                                    @if (stay.EndDate.HasValue)
+                                    {
+                                        <span><i class="bi bi-calendar-x me-1"></i>@AL["Stays.Ended"]: @stay.EndDate.Value.ToLocalTime().ToString("dd MMM yyyy")</span>
+                                    }
+                                </div>
+
+                                @if (stay.Status == StayStatus.Completed)
+                                {
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        @if (stayIdsToReview.Contains(stay.Id))
+                                        {
+                                            <a asp-controller="Reviews" asp-action="Create" asp-route-stayId="@stay.Id" class="btn btn-sm btn-primary">
+                                                <i class="bi bi-pencil-square me-1"></i>@AL["Stays.ReviewProperty"]
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-success-soft align-self-center"><i class="bi bi-check2-circle me-1"></i>@AL["Stays.PropertyReviewed"]</span>
+                                        }
+
+                                        @if (roommatesByStay.TryGetValue(stay.Id, out var roommates) && roommates.Count > 0)
+                                        {
+                                            <div class="dropdown">
+                                                <button class="btn btn-sm btn-soft dropdown-toggle" data-bs-toggle="dropdown">
+                                                    <i class="bi bi-people me-1"></i>@AL["Stays.ReviewRoommate"]
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    @foreach (var roommate in roommates)
+                                                    {
+                                                        <li>
+                                                            <a class="dropdown-item" asp-controller="Reviews" asp-action="ReviewRoommate"
+                                                               asp-route-stayId="@stay.Id" asp-route-userId="@roommate.Id">
+                                                                @roommate.FullName
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,142 @@
+@model StudentProfileViewModel
+@{
+    ViewData["Title"] = AL["Profile.EditTitle"];
+}
+
+<div class="container py-4" style="max-width: 820px;">
+    <div class="page-head mb-4">
+        <h1 class="mb-0">@AL["Profile.EditTitle"]</h1>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" class="card">
+        <div class="card-body p-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="d-flex align-items-center gap-3 mb-4 p-3 rounded-3" style="background: var(--canvas-2);">
+                @if (!string.IsNullOrEmpty(Model.ProfilePictureUrl))
+                {
+                    <img src="@Model.ProfilePictureUrl" class="avatar-image avatar-lg" style="width:64px;height:64px;" alt="" />
+                }
+                else
+                {
+                    <span class="avatar-initials avatar-lg" style="width:64px;height:64px;font-size:1.4rem;">
+                        @string.Concat(Model.FirstName.Split(' ').Take(1).Select(p => p[0]))@string.Concat(Model.LastName.Split(' ').Take(1).Select(p => p[0]))
+                    </span>
+                }
+                <div>
+                    <label class="form-label fw-semibold mb-1 small">@AL["Profile.Picture"]</label>
+                    <input type="file" name="profilePicture" class="form-control form-control-sm" accept=".jpg,.jpeg,.png,.webp" />
+                    <div class="form-text">@AL["Profile.PictureHint"]</div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="University" class="form-label">@AL["Profile.University"]</label>
+                    <input asp-for="University" class="form-control" />
+                    <span asp-validation-for="University" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Major" class="form-label">@AL["Profile.Major"]</label>
+                    <input asp-for="Major" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-4">
+                    <label asp-for="Governorate" class="form-label">@AL["Profile.Governorate"]</label>
+                    <input asp-for="Governorate" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="District" class="form-label">@AL["Profile.CityDistrict"]</label>
+                    <input asp-for="District" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="AcademicYear" class="form-label">@AL["Profile.AcademicYear"]</label>
+                    <input asp-for="AcademicYear" class="form-control" type="number" min="1" max="10" />
+                </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                    <label asp-for="DateOfBirth" class="form-label">@AL["Profile.DateOfBirth"]</label>
+                    <input asp-for="DateOfBirth" class="form-control" type="date" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Gender" class="form-label">@AL["Profile.Gender"]</label>
+                    <select asp-for="Gender" asp-items="EnumSelectList.Get<Gender>(L)" class="form-select"></select>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="Bio" class="form-label">@AL["Profile.Bio"]</label>
+                <textarea asp-for="Bio" class="form-control" rows="3" placeholder="@AL["Profile.BioPlaceholder"]"></textarea>
+                <span asp-validation-for="Bio" class="text-danger small"></span>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                    <label asp-for="BudgetMin" class="form-label">@AL["Profile.BudgetMin"]</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@L["Common.CurrencySymbol"]</span>
+                        <input asp-for="BudgetMin" class="form-control" type="number" />
+                    </div>
+                    <span asp-validation-for="BudgetMin" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="BudgetMax" class="form-label">@AL["Profile.BudgetMax"]</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@L["Common.CurrencySymbol"]</span>
+                        <input asp-for="BudgetMax" class="form-control" type="number" />
+                    </div>
+                    <span asp-validation-for="BudgetMax" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                    <label asp-for="MoveInDate" class="form-label">@AL["Profile.MoveInDate"]</label>
+                    <input asp-for="MoveInDate" class="form-control" type="date" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="MinLeaseMonths" class="form-label">@AL["Profile.MinLease"]</label>
+                    <input asp-for="MinLeaseMonths" class="form-control" type="number" />
+                </div>
+            </div>
+
+            <h6 class="fw-bold mt-4 mb-2">@AL["Profile.LifestyleHeading"]</h6>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label asp-for="SleepSchedule" class="form-label">@AL["Profile.SleepSchedule"]</label>
+                    <select asp-for="SleepSchedule" asp-items="EnumSelectList.Get<SleepSchedule>(L)" class="form-select"></select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="NoiseLevel" class="form-label">@AL["Profile.NoiseLevel"]</label>
+                    <select asp-for="NoiseLevel" asp-items="EnumSelectList.Get<NoiseLevel>(L)" class="form-select"></select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Cleanliness" class="form-label">@AL["Profile.Cleanliness"]</label>
+                    <select asp-for="Cleanliness" asp-items="EnumSelectList.Get<Cleanliness>(L)" class="form-select"></select>
+                </div>
+            </div>
+
+            <div class="form-check form-switch mt-3 mb-2">
+                <input asp-for="IsSmoker" class="form-check-input" />
+                <label asp-for="IsSmoker" class="form-check-label">@AL["Profile.IsSmoker"]</label>
+            </div>
+            <div class="form-check form-switch mb-4">
+                <input asp-for="HasPets" class="form-check-input" />
+                <label asp-for="HasPets" class="form-check-label">@AL["Profile.HasPets"]</label>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>@AL["Profile.Save"]</button>
+                <a asp-action="Index" class="btn btn-soft">@L["Common.Cancel"]</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

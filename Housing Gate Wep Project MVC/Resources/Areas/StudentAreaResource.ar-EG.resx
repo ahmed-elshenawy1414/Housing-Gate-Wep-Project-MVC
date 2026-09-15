@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Common.Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Applications.Applied" xml:space="preserve">
+    <value>تم التقديم</value>
+  </data>
+  <data name="Applications.Cancel" xml:space="preserve">
+    <value>إلغاء التقديم</value>
+  </data>
+  <data name="Applications.Empty" xml:space="preserve">
+    <value>لم تتقدم لأي عقار بعد.</value>
+  </data>
+  <data name="Applications.Empty2" xml:space="preserve">
+    <value>تصفح العقارات المتاحة وابدأ بالتقديم.</value>
+  </data>
+  <data name="Applications.Property" xml:space="preserve">
+    <value>العقار</value>
+  </data>
+  <data name="Applications.Room" xml:space="preserve">
+    <value>الغرفة</value>
+  </data>
+  <data name="Complaints.About" xml:space="preserve">
+    <value>عن</value>
+  </data>
+  <data name="Complaints.AboutUser" xml:space="preserve">
+    <value>عنك</value>
+  </data>
+  <data name="Complaints.AdminResponse" xml:space="preserve">
+    <value>رد الإدارة</value>
+  </data>
+  <data name="Complaints.DescPlaceholder" xml:space="preserve">
+    <value>صف المشكلة بالتفصيل...</value>
+  </data>
+  <data name="Complaints.Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Complaints.Empty" xml:space="preserve">
+    <value>لا توجد شكاوى مقدمة.</value>
+  </data>
+  <data name="Complaints.File" xml:space="preserve">
+    <value>إيداع</value>
+  </data>
+  <data name="Complaints.FiledOn" xml:space="preserve">
+    <value>مقدمة في</value>
+  </data>
+  <data name="Complaints.New" xml:space="preserve">
+    <value>شكوى جديدة</value>
+  </data>
+  <data name="Complaints.NoProperty" xml:space="preserve">
+    <value>لا يوجد عقار</value>
+  </data>
+  <data name="Complaints.NoResponse" xml:space="preserve">
+    <value>لا يوجد رد بعد.</value>
+  </data>
+  <data name="Complaints.NoUser" xml:space="preserve">
+    <value>لا يوجد مستخدم</value>
+  </data>
+  <data name="Complaints.Subject" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="Complaints.SubjectPlaceholder" xml:space="preserve">
+    <value>ملخص مختصر للمشكلة</value>
+  </data>
+  <data name="Complaints.Submit" xml:space="preserve">
+    <value>إرسال الشكوى</value>
+  </data>
+  <data name="Complaints.Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Complaints.ReportedUser" xml:space="preserve">
+    <value>المستخدم المُبلَّغ عنه</value>
+  </data>
+  <data name="Complaints.ReportedProperty" xml:space="preserve">
+    <value>العقار المُبلَّغ عنه</value>
+  </data>
+  <data name="Complaints.Title" xml:space="preserve">
+    <value>الشكاوى</value>
+  </data>
+  <data name="Complaints.Type" xml:space="preserve">
+    <value>الفئة</value>
+  </data>
+  <data name="Dash.ActiveApplications" xml:space="preserve">
+    <value>الطلبات النشطة</value>
+  </data>
+  <data name="Dash.ActiveStays" xml:space="preserve">
+    <value>الإقامات النشطة</value>
+  </data>
+  <data name="Dash.Applied" xml:space="preserve">
+    <value>تم التقديم</value>
+  </data>
+  <data name="Dash.EditProfile" xml:space="preserve">
+    <value>تعديل الملف الشخصي</value>
+  </data>
+  <data name="Dash.Hello" xml:space="preserve">
+    <value>مرحبًا</value>
+  </data>
+  <data name="Dash.NoApplications" xml:space="preserve">
+    <value>لم تتقدم لأي عقار بعد.</value>
+  </data>
+  <data name="Dash.NoStays" xml:space="preserve">
+    <value>لا توجد إقامات بعد.</value>
+  </data>
+  <data name="Dash.RecentApplications" xml:space="preserve">
+    <value>أحدث الطلبات</value>
+  </data>
+  <data name="Dash.RecentStays" xml:space="preserve">
+    <value>أحدث الإقامات</value>
+  </data>
+  <data name="Dash.ReviewsToWrite" xml:space="preserve">
+    <value>تقييمات بانتظار كتابتها</value>
+  </data>
+  <data name="Dash.Room" xml:space="preserve">
+    <value>الغرفة</value>
+  </data>
+  <data name="Dash.Started" xml:space="preserve">
+    <value>بدأت</value>
+  </data>
+  <data name="Dash.StartSearching" xml:space="preserve">
+    <value>ابدأ البحث عن سكن</value>
+  </data>
+  <data name="Dash.UploadStudentId" xml:space="preserve">
+    <value>ارفع بطاقة الجامعة للتحقق</value>
+  </data>
+  <data name="Dash.VerifiedStays" xml:space="preserve">
+    <value>إقامات موثقة</value>
+  </data>
+  <data name="Dash.VerifyBanner" xml:space="preserve">
+    <value>يتم مراجعة حسابك من قِبل الإدارة.</value>
+  </data>
+  <data name="Dash.VerifyBanner2" xml:space="preserve">
+    <value>وثّق حسابك الطلابي لتفعيل جميع الميزات.</value>
+  </data>
+  <data name="Matches.And" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="Matches.BudgetFit" xml:space="preserve">
+    <value>توافق الميزانية</value>
+  </data>
+  <data name="Matches.Empty" xml:space="preserve">
+    <value>لا توجد تطابقات قوية بعد. حاول إكمال ملفك أو توسيع تفضيلاتك.</value>
+  </data>
+  <data name="Matches.GenderFit" xml:space="preserve">
+    <value>توافق الجنس</value>
+  </data>
+  <data name="Matches.Incomplete" xml:space="preserve">
+    <value>أكمل</value>
+  </data>
+  <data name="Matches.IncompleteTail" xml:space="preserve">
+    <value>للحصول على تطابقات مفيدة.</value>
+  </data>
+  <data name="Matches.Intro" xml:space="preserve">
+    <value>يتم ترتيب الطلاب حسب مدى توافق ملفاتكم وتفضيلاتكم. الميزانية (30%) والجنس (10%) وأسلوب الحياة (60%).</value>
+  </data>
+  <data name="Matches.LifestyleFit" xml:space="preserve">
+    <value>توافق أسلوب الحياة</value>
+  </data>
+  <data name="Matches.Match" xml:space="preserve">
+    <value>تطابق</value>
+  </data>
+  <data name="Matches.Title" xml:space="preserve">
+    <value>تطابقات زملاء السكن</value>
+  </data>
+  <data name="Matches.VerifiedStays" xml:space="preserve">
+    <value>إقامات موثقة</value>
+  </data>
+  <data name="Matches.VerifiedStudent" xml:space="preserve">
+    <value>طالب موثق</value>
+  </data>
+  <data name="Matches.YourPrefs" xml:space="preserve">
+    <value>تفضيلات زملاء السكن</value>
+  </data>
+  <data name="Matches.YourProfile" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="Profile.AcademicYear" xml:space="preserve">
+    <value>السنة الدراسية</value>
+  </data>
+  <data name="Profile.AcceptsPets" xml:space="preserve">
+    <value>أتقبل زملاء يملكون حيوانات أليفة</value>
+  </data>
+  <data name="Profile.AcceptsSmokers" xml:space="preserve">
+    <value>أتقبل زملاء يدخنون</value>
+  </data>
+  <data name="Profile.Bio" xml:space="preserve">
+    <value>نبذة عني</value>
+  </data>
+  <data name="Profile.BioPlaceholder" xml:space="preserve">
+    <value>نبذة قصيرة عن نفسك...</value>
+  </data>
+  <data name="Profile.BudgetMax" xml:space="preserve">
+    <value>الميزانية الشهرية (الحد الأقصى)</value>
+  </data>
+  <data name="Profile.BudgetMin" xml:space="preserve">
+    <value>الميزانية الشهرية (الحد الأدنى)</value>
+  </data>
+  <data name="Profile.CityDistrict" xml:space="preserve">
+    <value>المدينة / الحي</value>
+  </data>
+  <data name="Profile.Cleanliness" xml:space="preserve">
+    <value>النظافة</value>
+  </data>
+  <data name="Profile.DateOfBirth" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="Profile.EditPrefs" xml:space="preserve">
+    <value>تعديل التفضيلات</value>
+  </data>
+  <data name="Profile.EditTitle" xml:space="preserve">
+    <value>تعديل الملف الشخصي</value>
+  </data>
+  <data name="Profile.Flexible" xml:space="preserve">
+    <value>مرن</value>
+  </data>
+  <data name="Profile.Gender" xml:space="preserve">
+    <value>الجنس</value>
+  </data>
+  <data name="Profile.Governorate" xml:space="preserve">
+    <value>محافظة المنشأ</value>
+  </data>
+  <data name="Profile.HasPets" xml:space="preserve">
+    <value>أملك حيوانات أليفة</value>
+  </data>
+  <data name="Profile.IsSmoker" xml:space="preserve">
+    <value>أنا مدخن</value>
+  </data>
+  <data name="Profile.Lifestyle" xml:space="preserve">
+    <value>أسلوب الحياة</value>
+  </data>
+  <data name="Profile.LifestyleHeading" xml:space="preserve">
+    <value>أسلوب الحياة (يستخدمه محرك التطابق)</value>
+  </data>
+  <data name="Profile.Major" xml:space="preserve">
+    <value>التخصص</value>
+  </data>
+  <data name="Profile.MinLease" xml:space="preserve">
+    <value>الحد الأدنى لمدة العقد (بالأشهر)</value>
+  </data>
+  <data name="Profile.Months" xml:space="preserve">
+    <value>أشهر</value>
+  </data>
+  <data name="Profile.MoveInDate" xml:space="preserve">
+    <value>تاريخ الانتقال</value>
+  </data>
+  <data name="Profile.NationalId" xml:space="preserve">
+    <value>البطاقة الشخصية</value>
+  </data>
+  <data name="Profile.NationalIdLabel" xml:space="preserve">
+    <value>صورة البطاقة الشخصية</value>
+  </data>
+  <data name="Profile.NewDocsRequested" xml:space="preserve">
+    <value>تم طلب مستندات جديدة.</value>
+  </data>
+  <data name="Profile.NoiseLevel" xml:space="preserve">
+    <value>مستوى الضوضاء المريح</value>
+  </data>
+  <data name="Profile.NoPreference" xml:space="preserve">
+    <value>بدون تفضيل</value>
+  </data>
+  <data name="Profile.Notes" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="Profile.NotesPlaceholder" xml:space="preserve">
+    <value>أي شيء آخر؟ مثلًا: أطبخ كثيرًا، أدرس ليلًا...</value>
+  </data>
+  <data name="Profile.NotUploaded" xml:space="preserve">
+    <value>لم يتم الرفع</value>
+  </data>
+  <data name="Profile.NotVerified" xml:space="preserve">
+    <value>حسابك غير موثق بعد.</value>
+  </data>
+  <data name="Profile.Overview" xml:space="preserve">
+    <value>نظرة عامة</value>
+  </data>
+  <data name="Profile.PendingBanner" xml:space="preserve">
+    <value>تحققك قيد المراجعة.</value>
+  </data>
+  <data name="Profile.PrefBudgetMax" xml:space="preserve">
+    <value>الحد الأقصى للميزانية</value>
+  </data>
+  <data name="Profile.PrefBudgetMin" xml:space="preserve">
+    <value>الحد الأدنى للميزانية</value>
+  </data>
+  <data name="Profile.PrefCleanliness" xml:space="preserve">
+    <value>النظافة المفضلة</value>
+  </data>
+  <data name="Profile.Preferences" xml:space="preserve">
+    <value>التفضيلات</value>
+  </data>
+  <data name="Profile.PrefNoiseLevel" xml:space="preserve">
+    <value>مستوى الضوضاء المفضل</value>
+  </data>
+  <data name="Profile.PrefPreferredGender" xml:space="preserve">
+    <value>الجنس المفضل</value>
+  </data>
+  <data name="Profile.PrefsIntro" xml:space="preserve">
+    <value>تُخبر هذه التفضيلات محرك التطابق بما تبحث عنه في زميل السكن.</value>
+  </data>
+  <data name="Profile.PrefSleepSchedule" xml:space="preserve">
+    <value>مواعيد النوم المفضلة</value>
+  </data>
+  <data name="Profile.PrefsText" xml:space="preserve">
+    <value>اضبط تفضيلات السكن وأسلوب الحياة.</value>
+  </data>
+  <data name="Profile.PrefsTitle" xml:space="preserve">
+    <value>تفضيلات زملاء السكن</value>
+  </data>
+  <data name="Profile.RejectedBanner" xml:space="preserve">
+    <value>تم رفض تحققك.</value>
+  </data>
+  <data name="Profile.Save" xml:space="preserve">
+    <value>حفظ الملف</value>
+  </data>
+  <data name="Profile.SavePrefs" xml:space="preserve">
+    <value>حفظ التفضيلات</value>
+  </data>
+  <data name="Profile.SleepSchedule" xml:space="preserve">
+    <value>مواعيد النوم</value>
+  </data>
+  <data name="Profile.Smoker" xml:space="preserve">
+    <value>مدخن</value>
+  </data>
+  <data name="Profile.Title" xml:space="preserve">
+    <value>ملفي الشخصي</value>
+  </data>
+  <data name="Profile.University" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="Profile.UniversityId" xml:space="preserve">
+    <value>بطاقة الجامعة</value>
+  </data>
+  <data name="Profile.UniversityIdLabel" xml:space="preserve">
+    <value>صورة بطاقة الجامعة / كارت الطالب</value>
+  </data>
+  <data name="Profile.Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="Profile.UploadDocs" xml:space="preserve">
+    <value>رفع المستندات</value>
+  </data>
+  <data name="Profile.Uploaded" xml:space="preserve">
+    <value>تم الرفع</value>
+  </data>
+  <data name="Profile.UploadNewDocs" xml:space="preserve">
+    <value>ارفع مستندات جديدة</value>
+  </data>
+  <data name="Profile.UploadUpdatedDocs" xml:space="preserve">
+    <value>ارفع مستندات محدثة</value>
+  </data>
+  <data name="Profile.VerifiedBanner" xml:space="preserve">
+    <value>أنت طالب موثق.</value>
+  </data>
+  <data name="Profile.VerifiedStays" xml:space="preserve">
+    <value>الإقامات الموثقة:</value>
+  </data>
+  <data name="Profile.VerifyIntro" xml:space="preserve">
+    <value>ارفع صورة واضحة لبطاقتك الشخصية وبطاقة جامعتك / كارت الطالب. لن يطلع عليها سوى فريق الإدارة. تتم مراجعة التحقق خلال أيام قليلة.</value>
+  </data>
+  <data name="Profile.VerifyStudentId" xml:space="preserve">
+    <value>وثّق بطاقة الطالب الخاصة بك</value>
+  </data>
+  <data name="Profile.VerifyText" xml:space="preserve">
+    <value>ارفع مستنداتك لتصبح طالبًا موثقًا.</value>
+  </data>
+  <data name="Profile.VerifyTitle" xml:space="preserve">
+    <value>توثيق الحساب الطلابي</value>
+  </data>
+  <data name="Prop.About" xml:space="preserve">
+    <value>نبذة</value>
+  </data>
+  <data name="Prop.Applied" xml:space="preserve">
+    <value>تم التقديم</value>
+  </data>
+  <data name="Prop.AppliedPending" xml:space="preserve">
+    <value>طلبك قيد المراجعة.</value>
+  </data>
+  <data name="Prop.ApplyFor" xml:space="preserve">
+    <value>تقديم طلب لـ</value>
+  </data>
+  <data name="Prop.Available" xml:space="preserve">
+    <value>متاح</value>
+  </data>
+  <data name="Prop.AvailableRooms" xml:space="preserve">
+    <value>الغرف المتاحة</value>
+  </data>
+  <data name="Prop.Bathrooms" xml:space="preserve">
+    <value>الحمامات</value>
+  </data>
+  <data name="Prop.Bedrooms" xml:space="preserve">
+    <value>غرف النوم</value>
+  </data>
+  <data name="Prop.MessagePlaceholder" xml:space="preserve">
+    <value>اكتب رسالة للمالك...</value>
+  </data>
+  <data name="Prop.MessageToOwner" xml:space="preserve">
+    <value>رسالة إلى المالك</value>
+  </data>
+  <data name="Prop.NoRooms" xml:space="preserve">
+    <value>لا توجد غرف متاحة</value>
+  </data>
+  <data name="Prop.PetsAllowed" xml:space="preserve">
+    <value>يُسمح بالحيوانات الأليفة</value>
+  </data>
+  <data name="Prop.RentPerMonth" xml:space="preserve">
+    <value>الإيجار الشهري</value>
+  </data>
+  <data name="Prop.Room" xml:space="preserve">
+    <value>الغرفة</value>
+  </data>
+  <data name="Prop.SendApplication" xml:space="preserve">
+    <value>إرسال الطلب</value>
+  </data>
+  <data name="Prop.Taken" xml:space="preserve">
+    <value>محجوز</value>
+  </data>
+  <data name="Prop.UnverifiedOwner" xml:space="preserve">
+    <value>مالك غير موثق</value>
+  </data>
+  <data name="Reviews.AboutMe" xml:space="preserve">
+    <value>التقييمات عني</value>
+  </data>
+  <data name="Reviews.Comment" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="Reviews.CommentPlaceholder" xml:space="preserve">
+    <value>كيف كانت إقامتك؟...</value>
+  </data>
+  <data name="Reviews.CommentPlaceholder2" xml:space="preserve">
+    <value>كيف كانت المعيشة معًا؟...</value>
+  </data>
+  <data name="Reviews.FromVerifiedStay" xml:space="preserve">
+    <value>من إقامة موثقة</value>
+  </data>
+  <data name="Reviews.IWrote" xml:space="preserve">
+    <value>تقييمات زملاء السكن التي كتبتها</value>
+  </data>
+  <data name="Reviews.Live" xml:space="preserve">
+    <value>منشور</value>
+  </data>
+  <data name="Reviews.MyTitle" xml:space="preserve">
+    <value>تقييماتي</value>
+  </data>
+  <data name="Reviews.NoPropertyReviews" xml:space="preserve">
+    <value>لم تقيّم أي عقار بعد. يمكنك التقييم بعد إقامة مكتملة.</value>
+  </data>
+  <data name="Reviews.NoReviewsAboutMe" xml:space="preserve">
+    <value>لا توجد تقييمات عنك بعد.</value>
+  </data>
+  <data name="Reviews.NoReviewsIWrote" xml:space="preserve">
+    <value>لم تقيّم أي زميل سكن بعد.</value>
+  </data>
+  <data name="Reviews.PendingApproval" xml:space="preserve">
+    <value>قيد المراجعة</value>
+  </data>
+  <data name="Reviews.PropertyReviews" xml:space="preserve">
+    <value>تقييمات العقارات</value>
+  </data>
+  <data name="Reviews.Removed" xml:space="preserve">
+    <value>تمت الإزالة</value>
+  </data>
+  <data name="Reviews.ReviewProperty" xml:space="preserve">
+    <value>قيّم العقار</value>
+  </data>
+  <data name="Reviews.ReviewRoommate" xml:space="preserve">
+    <value>قيّم زميل السكن</value>
+  </data>
+  <data name="Reviews.ReviewRoommateSub" xml:space="preserve">
+    <value>قيّم تجربتك في العيش مع زميل السكن هذا.</value>
+  </data>
+  <data name="Reviews.ReviewRoommateTitle" xml:space="preserve">
+    <value>تقييم زميل السكن</value>
+  </data>
+  <data name="Reviews.ReviewYourStay" xml:space="preserve">
+    <value>قيّم إقامتك في</value>
+  </data>
+  <data name="Reviews.Submit" xml:space="preserve">
+    <value>إرسال التقييم</value>
+  </data>
+  <data name="Reviews.Rating" xml:space="preserve">
+    <value>التقييم</value>
+  </data>
+  <data name="Reviews.Title" xml:space="preserve">
+    <value>التقييمات</value>
+  </data>
+  <data name="Reviews.TitleLabel" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Reviews.TitlePlaceholder" xml:space="preserve">
+    <value>عنوان تقييمك</value>
+  </data>
+  <data name="Search.AllCities" xml:space="preserve">
+    <value>جميع المدن</value>
+  </data>
+  <data name="Search.AllTypes" xml:space="preserve">
+    <value>جميع الأنواع</value>
+  </data>
+  <data name="Search.KeywordPlaceholder" xml:space="preserve">
+    <value>ابحث بالكلمة المفتاحية، الجامعة، المدينة...</value>
+  </data>
+  <data name="Search.NoResults" xml:space="preserve">
+    <value>لا توجد عقارات مطابقة لبحثك.</value>
+  </data>
+  <data name="Search.ResultsCount" xml:space="preserve">
+    <value>عقار تم العثور عليه</value>
+  </data>
+  <data name="Search.Reviews" xml:space="preserve">
+    <value>تقييم</value>
+  </data>
+  <data name="Search.SortNewest" xml:space="preserve">
+    <value>الأحدث</value>
+  </data>
+  <data name="Search.SortPriceAsc" xml:space="preserve">
+    <value>السعر: من الأقل إلى الأعلى</value>
+  </data>
+  <data name="Search.SortPriceDesc" xml:space="preserve">
+    <value>السعر: من الأعلى إلى الأقل</value>
+  </data>
+  <data name="Search.SortRecommended" xml:space="preserve">
+    <value>الأفضل تطابقًا</value>
+  </data>
+  <data name="Search.VerifiedReviews" xml:space="preserve">
+    <value>تقييمات موثقة</value>
+  </data>
+  <data name="Stays.Empty" xml:space="preserve">
+    <value>لا توجد إقامات بعد.</value>
+  </data>
+  <data name="Stays.Ended" xml:space="preserve">
+    <value>انتهت</value>
+  </data>
+  <data name="Stays.PropertyReviewed" xml:space="preserve">
+    <value>تم تقييم العقار</value>
+  </data>
+  <data name="Stays.ReviewProperty" xml:space="preserve">
+    <value>قيّم العقار</value>
+  </data>
+  <data name="Stays.ReviewRoommate" xml:space="preserve">
+    <value>قيّم زميل السكن</value>
+  </data>
+  <data name="Stays.Room" xml:space="preserve">
+    <value>الغرفة</value>
+  </data>
+  <data name="Stays.Started" xml:space="preserve">
+    <value>بدأت</value>
+  </data>
+  <data name="Stays.Title" xml:space="preserve">
+    <value>إقاماتي</value>
+  </data>
+</root>

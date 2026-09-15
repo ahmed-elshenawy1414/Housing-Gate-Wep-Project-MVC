@@ -1,0 +1,279 @@
+@model PropertyDetailViewModel
+@{
+    ViewData["Title"] = Model.Title;
+    var primaryImage = Model.Images.FirstOrDefault(i => i.IsPrimary)?.FilePath ?? Model.Images.FirstOrDefault()?.FilePath ?? "/images/property-placeholder.svg";
+    var isRtl = System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+}
+
+<div class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Search" asp-action="Index">@L["Nav.FindHousing"]</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+        </ol>
+    </nav>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card overflow-hidden mb-4">
+                <div class="position-relative">
+                    <img src="@primaryImage" id="galleryMain" class="gallery-main" alt="@Model.Title" />
+                    @if (Model.IsFeatured)
+                    {
+                        <span class="badge text-bg-warning position-absolute m-3"><i class="bi bi-star-fill me-1"></i>@L["Card.Featured"]</span>
+                    }
+                </div>
+                @if (Model.Images.Count > 1)
+                {
+                    <div class="d-flex gap-2 p-2 gallery-thumbs overflow-auto">
+                        @foreach (var image in Model.Images)
+                        {
+                            <img src="@image.FilePath" data-full="@image.FilePath"
+                                 class="property-gallery-thumb @(image.FilePath == primaryImage ? "active" : "")" alt="" />
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-2">
+                        <div>
+                            <h1 class="h4 fw-bold mb-1">@Model.Title</h1>
+                            <div class="property-meta-line">
+                                <i class="bi bi-geo-alt-fill" style="color: var(--brand-500);"></i>
+                                <span>@Model.Address, @Model.City, @Model.State @Model.ZipCode</span>
+                            </div>
+                        </div>
+                        @if (Model.AverageRating > 0)
+                        {
+                            <span class="badge badge-neutral-soft fs-6" style="padding: 0.5rem 0.85rem;">
+                                <i class="bi bi-star-fill me-1" style="color: var(--accent-500);"></i>
+                                @Model.AverageRating.ToString("0.0")
+                                <span class="text-muted fw-normal">(@Model.Reviews.Count @AL["Search.Reviews"])</span>
+                            </span>
+                        }
+                    </div>
+
+                    <hr class="my-3" />
+
+                    <div class="row g-3 text-center property-facts">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-door-closed d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@Model.Bedrooms</span>
+                                <small class="text-muted">@AL["Prop.Bedrooms"]</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-droplet-half d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@Model.Bathrooms</span>
+                                <small class="text-muted">@AL["Prop.Bathrooms"]</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-cash-stack d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@Model.Deposit.ToString("N0")</span>
+                                <small class="text-muted">@L["Common.Deposit"]</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-lamp d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@(Model.IsFurnished ? L["Common.Yes"] : L["Common.No"])</span>
+                                <small class="text-muted">@L["Card.Furnished"]</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-paw d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@(Model.PetAllowed ? L["Common.Yes"] : L["Common.No"])</span>
+                                <small class="text-muted">@AL["Prop.PetsAllowed"]</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="badge badge-neutral-soft fs-6 w-100 py-3">
+                                <i class="bi bi-house d-block fs-4 mb-1" style="color: var(--brand-500);"></i>
+                                <span class="fw-bold d-block">@EnumDisplay.Get(Model.PropertyType, L)</span>
+                                <small class="text-muted">@AL["Prop.Type"]</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-3" />
+                    <h5 class="fw-bold mb-2"><i class="bi bi-info-circle me-2" style="color: var(--brand-500);"></i>@AL["Prop.About"]</h5>
+                    <p class="text-muted mb-0" style="white-space: pre-line;">@Model.Description</p>
+
+                    <h5 class="fw-bold mt-4 mb-2"><i class="bi bi-door-open me-2" style="color: var(--brand-500);"></i>@AL["Prop.AvailableRooms"]</h5>
+                    @if (Model.Rooms.Count == 0)
+                    {
+                        <p class="text-muted mb-0">@AL["Prop.NoRooms"]</p>
+                    }
+                    else
+                    {
+                        <div class="row g-3">
+                            @foreach (var room in Model.Rooms)
+                            {
+                                <div class="col-md-6">
+                                    <div class="card card-hover h-100 @(room.IsAvailable ? "" : "opacity-75")">
+                                        <div class="card-body d-flex flex-column">
+                                            <div class="d-flex align-items-center justify-content-between gap-2 mb-1">
+                                                <span class="fw-bold">@room.Name</span>
+                                                @if (room.IsAvailable)
+                                                {
+                                                    <span class="badge badge-success-soft"><i class="bi bi-check-circle me-1"></i>@AL["Prop.Available"]</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-neutral-soft"><i class="bi bi-lock me-1"></i>@AL["Prop.Taken"]</span>
+                                                }
+                                            </div>
+                                            <div class="small text-muted mb-2">@EnumDisplay.Get(room.RoomType, L)</div>
+                                            <div class="d-flex align-items-center justify-content-between gap-2 mt-auto">
+                                                <div class="property-price">@room.RentPerMonth.ToString("N0") @L["Common.CurrencySymbol"]<span class="text-muted small fw-normal">/ @L["Card.PerMonth"]</span></div>
+                                                @if (room.IsAvailable)
+                                                {
+                                                    if (Model.AlreadyAppliedRoomId == room.Id)
+                                                    {
+                                                        <span class="badge badge-primary-soft"><i class="bi bi-hourglass-split me-1"></i>@AL["Prop.Applied"]</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                                                data-room-id="@room.Id" data-room-name="@room.Name" data-rent="@room.RentPerMonth">
+                                                            @L["Common.Apply"]
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @if (Model.Reviews.Count > 0)
+            {
+                <div class="card mb-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <span class="fw-semibold"><i class="bi bi-stars me-2" style="color: var(--accent-500);"></i>@AL["Search.VerifiedReviews"]</span>
+                        <span class="badge badge-neutral-soft">@Model.AverageRating.ToString("0.0")</span>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var review in Model.Reviews)
+                        {
+                            <div class="d-flex gap-3 py-3 @(review != Model.Reviews.Last() ? "border-bottom" : "")">
+                                <span class="avatar-initials">@(string.IsNullOrEmpty(review.Reviewer.FullName) ? "?" : string.Join("", review.Reviewer.FullName.Split(' ').Take(2).Select(p => p[0])))</span>
+                                <div class="flex-grow-1 min-width-0">
+                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                                        <span class="fw-semibold">@review.Reviewer.FullName</span>
+                                        <div class="star-rating small">
+                                            @for (var i = 1; i <= 5; i++)
+                                            {
+                                                <i class="bi bi-star-fill @(i <= review.Rating ? "" : "opacity-25")"></i>
+                                            }
+                                        </div>
+                                        <span class="ms-auto text-muted small">@review.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")</span>
+                                    </div>
+                                    <div class="fw-semibold small mb-1">@review.Title</div>
+                                    <p class="text-muted small mb-0">@review.Comment</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card sticky-top" style="top: 5.5rem; z-index: 10;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="avatar-initials avatar-lg">@(string.IsNullOrEmpty(Model.OwnerName) ? "?" : string.Join("", Model.OwnerName.Split(' ').Take(2).Select(p => p[0])))</span>
+                        <div>
+                            <div class="fw-bold">@Model.OwnerName</div>
+                            @if (Model.OwnerIsVerified)
+                            {
+                                <span class="badge badge-success-soft"><i class="bi bi-patch-check-fill me-1"></i>@L["Card.VerifiedOwner"]</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-neutral-soft"><i class="bi bi-shield me-1"></i>@AL["Prop.UnverifiedOwner"]</span>
+                            }
+                        </div>
+                    </div>
+
+                    @if (Model.AlreadyAppliedRoomId.HasValue && Model.AppliedStatus == (int)ApplicationStatus.Pending)
+                    {
+                        <div class="alert alert-info d-flex align-items-center gap-2 mb-0">
+                            <i class="bi bi-hourglass-split fs-5"></i>
+                            <div>@AL["Prop.AppliedPending"]</div>
+                        </div>
+                    }
+                    else
+                    {
+                        var firstAvailable = Model.Rooms.FirstOrDefault(r => r.IsAvailable);
+                        @if (firstAvailable != null)
+                        {
+                            <div class="text-center mb-3">
+                                <div class="property-price fs-3">@firstAvailable.RentPerMonth.ToString("N0") @L["Common.CurrencySymbol"]<span class="text-muted small fw-normal">/ @L["Card.PerMonth"]</span></div>
+                                <div class="small text-muted">@AL["Prop.RentPerMonth"]</div>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100 py-2" data-bs-toggle="modal" data-bs-target="#applyModal"
+                                    data-room-id="@firstAvailable.Id" data-room-name="@firstAvailable.Name" data-rent="@firstAvailable.RentPerMonth">
+                                <i class="bi bi-send me-1"></i>@L["Common.Apply"]
+                            </button>
+                            <p class="small text-muted text-center mt-2 mb-0">
+                                <i class="bi bi-shield-check me-1"></i>@AL["Prop.SecureApply"]
+                            </p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="applyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <form method="post" asp-controller="Search" asp-action="Apply">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@AL["Prop.ApplyFor"] <span id="roomName"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="@L["Layout.Close"]"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="PropertyId" value="@Model.Id" />
+                    <input type="hidden" name="RoomId" id="roomId" />
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge badge-primary-soft fs-6"><strong>@L["Common.Rent"]:</strong> <span id="roomRent"></span> @L["Card.PerMonth"]</span>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">@AL["Prop.MessageToOwner"]</label>
+                        <textarea name="Message" class="form-control" rows="3" placeholder="@AL["Prop.MessagePlaceholder"]"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-soft" data-bs-dismiss="modal">@L["Common.Cancel"]</button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-send me-1"></i>@AL["Prop.SendApplication"]</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#applyModal').on('show.bs.modal', function (event) {
+            var btn = $(event.relatedTarget);
+            $('#roomId').val(btn.data('room-id'));
+            $('#roomName').text(btn.data('room-name'));
+            $('#roomRent').text(btn.data('rent').toLocaleString());
+        });
+    </script>
+}

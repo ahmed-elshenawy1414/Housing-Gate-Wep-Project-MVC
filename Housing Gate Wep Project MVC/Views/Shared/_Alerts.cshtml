@@ -1,0 +1,25 @@
+@inject Microsoft.Extensions.Localization.IStringLocalizer<StudentHousing.Resources.SharedResource> L
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="bi bi-check-circle-fill"></i>
+        <div>@TempData["Success"]</div>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="@L["Layout.Close"]"></button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="bi bi-x-circle-fill"></i>
+        <div>@TempData["Error"]</div>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="@L["Layout.Close"]"></button>
+    </div>
+}
+@if (TempData["Info"] != null)
+{
+    <div class="alert alert-info alert-dismissible fade show d-flex align-items-center gap-2" role="alert">
+        <i class="bi bi-info-circle-fill"></i>
+        <div>@TempData["Info"]</div>
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="@L["Layout.Close"]"></button>
+    </div>
+}

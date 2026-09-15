@@ -1,0 +1,61 @@
+@model ComplaintFormViewModel
+@{
+    ViewData["Title"] = AL["Complaints.New"];
+}
+
+<div class="auth-shell">
+    <div class="auth-card p-4 p-md-5" style="max-width: 560px;">
+        <div class="text-center mb-4">
+            <span class="brand-mark mx-auto mb-3" style="width: 48px; height: 48px; font-size: 1.4rem;">
+                <i class="bi bi-shield-exclamation"></i>
+            </span>
+            <h1 class="h3 fw-bold mb-1">@AL["Complaints.File"]</h1>
+            <p class="text-muted mb-0">@AL["Complaints.About"]</p>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Subject" class="form-label">@AL["Complaints.Subject"]</label>
+                <input asp-for="Subject" class="form-control" placeholder="@AL["Complaints.SubjectPlaceholder"]" />
+                <span asp-validation-for="Subject" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ComplaintType" class="form-label">@AL["Complaints.Type"]</label>
+                <select asp-for="ComplaintType" asp-items="EnumSelectList.Get<ComplaintType>(L)" class="form-select"></select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">@AL["Complaints.Description"]</label>
+                <textarea asp-for="Description" class="form-control" rows="5" placeholder="@AL["Complaints.DescPlaceholder"]"></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-6">
+                    <label asp-for="TargetUserId" class="form-label">@AL["Complaints.ReportedUser"]</label>
+                    <select asp-for="TargetUserId" asp-items="@(Model.TargetUsers.Select(u => new SelectListItem { Value = u.Value, Text = u.Text }))" class="form-select">
+                        <option value="">@AL["Complaints.NoUser"]</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label asp-for="TargetPropertyId" class="form-label">@AL["Complaints.ReportedProperty"]</label>
+                    <select asp-for="TargetPropertyId" asp-items="@(Model.TargetProperties.Select(p => new SelectListItem { Value = p.Value, Text = p.Text }))" class="form-select">
+                        <option value="">@AL["Complaints.NoProperty"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-grow-1"><i class="bi bi-send me-1"></i>@AL["Complaints.Submit"]</button>
+                <a asp-action="Index" class="btn btn-soft">@L["Common.Cancel"]</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

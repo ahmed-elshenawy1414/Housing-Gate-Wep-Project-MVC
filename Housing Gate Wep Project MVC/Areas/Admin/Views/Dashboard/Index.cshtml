@@ -1,0 +1,280 @@
+@model AdminDashboardViewModel
+@{
+    ViewData["Title"] = AL["Dash.Dashboard"];
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="mb-1">@AL["Dash.Dashboard"]</h1>
+        <p>@DateTime.Now.ToString("dd MMM yyyy")</p>
+    </div>
+</div>
+
+<div class="row g-3 g-lg-4 mb-4">
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Users" asp-action="Index" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: var(--brand-100); color: var(--brand-600);">
+                <i class="bi bi-people-fill"></i>
+            </div>
+            <div class="stat-value">@Model.TotalUsers</div>
+            <div class="stat-label">@AL["Dash.TotalUsers"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Properties" asp-action="Index" asp-route-status="@ApprovalStatus.Approved" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #cffafe; color: #0e7490;">
+                <i class="bi bi-houses-fill"></i>
+            </div>
+            <div class="stat-value">@Model.TotalListings</div>
+            <div class="stat-label">@AL["Dash.TotalListings"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Properties" asp-action="Index" asp-route-status="@ApprovalStatus.Pending" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #fef3c7; color: #b45309;">
+                <i class="bi bi-hourglass-split"></i>
+            </div>
+            <div class="stat-value">@Model.PendingProperties</div>
+            <div class="stat-label">@AL["Dash.PendingProperties"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Properties" asp-action="Index" asp-route-status="@ApprovalStatus.Approved" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #dcfce7; color: #15803d;">
+                <i class="bi bi-check2-circle"></i>
+            </div>
+            <div class="stat-value">@Model.ApprovedProperties</div>
+            <div class="stat-label">@AL["Dash.ApprovedProperties"]</div>
+        </a>
+    </div>
+</div>
+
+<div class="row g-3 g-lg-4 mb-4">
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Users" asp-action="Students" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #ede9fe; color: #6d28d9;">
+                <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <div class="stat-value">@Model.TotalStudents</div>
+            <div class="stat-label">@AL["Dash.Students"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Users" asp-action="Owners" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #fef3c7; color: #b45309;">
+                <i class="bi bi-house-fill"></i>
+            </div>
+            <div class="stat-value">@Model.TotalOwners</div>
+            <div class="stat-label">@AL["Dash.Owners"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Complaints" asp-action="Index" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #fee2e2; color: #b91c1c;">
+                <i class="bi bi-flag-fill"></i>
+            </div>
+            <div class="stat-value">@Model.OpenComplaints</div>
+            <div class="stat-label">@AL["Dash.OpenComplaints"]</div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a asp-controller="Reviews" asp-action="Index" class="stat-card card-hover stat-card-link">
+            <div class="stat-icon" style="background: #fef3c7; color: #b45309;">
+                <i class="bi bi-star-half"></i>
+            </div>
+            <div class="stat-value">@Model.PendingReviews</div>
+            <div class="stat-label">@AL["Dash.PendingReviews"]</div>
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.VerificationRequests"]</span>
+                <a asp-controller="Users" asp-action="Index" class="btn btn-sm btn-soft">@AL["Dash.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.PendingStudentVerifications + Model.PendingOwnerVerifications == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-patch-check"></i></div>
+                        <h4>@AL["Dash.NoPendingVerifications"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @if (Model.PendingStudentVerifications > 0)
+                        {
+                            <li class="list-group-item d-flex align-items-center justify-content-between px-3 py-3">
+                                <span class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-mortarboard-fill" style="color: var(--brand-500);"></i>
+                                    @AL["Dash.StudentsAwaiting"]
+                                </span>
+                                <a asp-controller="Users" asp-action="Students" class="badge badge-warning-soft text-decoration-none fs-6">@Model.PendingStudentVerifications</a>
+                            </li>
+                        }
+                        @if (Model.PendingOwnerVerifications > 0)
+                        {
+                            <li class="list-group-item d-flex align-items-center justify-content-between px-3 py-3">
+                                <span class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-house-fill" style="color: var(--brand-500);"></i>
+                                    @AL["Dash.OwnersAwaiting"]
+                                </span>
+                                <a asp-controller="Users" asp-action="Owners" class="badge badge-warning-soft text-decoration-none fs-6">@Model.PendingOwnerVerifications</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.RecentListings"]</span>
+                <a asp-controller="Properties" asp-action="Index" class="btn btn-sm btn-soft">@AL["Dash.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentlyAddedProperties.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-building"></i></div>
+                        <h4>@AL["Dash.NoListings"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var p in Model.RecentlyAddedProperties)
+                        {
+                            var cls = p.ApprovalStatus switch
+                            {
+                                ApprovalStatus.Approved => "badge-success-soft",
+                                ApprovalStatus.Rejected => "badge-danger-soft",
+                                ApprovalStatus.Draft => "badge-neutral-soft",
+                                _ => "badge-warning-soft"
+                            };
+                            <li class="list-group-item d-flex align-items-center justify-content-between gap-2 px-3 py-3">
+                                <a asp-controller="Properties" asp-action="Details" asp-route-id="@p.Id" class="fw-semibold text-truncate text-decoration-none text-reset">@p.Title</a>
+                                <span class="badge @cls flex-shrink-0">@EnumDisplay.Get(p.ApprovalStatus, L)</span>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-0">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.RecentUsers"]</span>
+                <a asp-controller="Users" asp-action="Index" class="btn btn-sm btn-soft">@AL["Dash.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentlyJoinedUsers.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-person-plus"></i></div>
+                        <h4>@AL["Dash.NoUsers"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var u in Model.RecentlyJoinedUsers)
+                        {
+                            var roleClass = u.OwnerProfile != null ? "badge-warning-soft" : u.StudentProfile != null ? "badge-primary-soft" : "badge-secondary-soft";
+                            var roleName = u.OwnerProfile != null ? "Owner" : u.StudentProfile != null ? "Student" : "—";
+                            <li class="list-group-item d-flex align-items-center justify-content-between gap-2 px-3 py-3">
+                                <a asp-controller="Users" asp-action="Details" asp-route-id="@u.Id" class="d-flex align-items-center gap-2 text-decoration-none text-reset">
+                                    <span class="avatar-initials avatar-initials-sm">@string.Concat(u.FirstName?.FirstOrDefault(), u.LastName?.FirstOrDefault())</span>
+                                    <span class="fw-semibold">@u.FullName</span>
+                                </a>
+                                <span class="d-flex align-items-center gap-2 flex-shrink-0">
+                                    <span class="badge @roleClass">@roleName</span>
+                                    <span class="text-muted small">@u.CreatedAt.ToLocalTime().ToString("dd MMM")</span>
+                                </span>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.OpenComplaints"]</span>
+                <a asp-controller="Complaints" asp-action="Index" class="btn btn-sm btn-soft">@AL["Dash.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentComplaints.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-check2-all"></i></div>
+                        <h4>@AL["Dash.NoOpenComplaints"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var c in Model.RecentComplaints)
+                        {
+                            <li class="list-group-item px-3 py-3">
+                                <div class="d-flex align-items-center justify-content-between gap-2">
+                                    <a asp-controller="Complaints" asp-action="Details" asp-route-id="@c.Id" class="fw-semibold small text-truncate text-decoration-none text-reset">@c.Subject</a>
+                                    <span class="badge @(c.Status == ComplaintStatus.Open ? "badge-warning-soft" : c.Status == ComplaintStatus.UnderReview ? "badge-primary-soft" : "badge-success-soft") flex-shrink-0">
+                                        @EnumDisplay.Get(c.Status, L)
+                                    </span>
+                                </div>
+                                <div class="small text-muted mt-1">
+                                    @c.Complainant.FullName · @c.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-0">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <span class="fw-semibold">@AL["Dash.PendingReviewTitle"]</span>
+                <a asp-controller="Reviews" asp-action="Index" class="btn btn-sm btn-soft">@AL["Dash.ViewAll"]</a>
+            </div>
+            <div class="card-body p-0">
+                @if (Model.RecentPendingReviews.Count == 0)
+                {
+                    <div class="empty-state">
+                        <div class="empty-icon mb-3"><i class="bi bi-star"></i></div>
+                        <h4>@AL["Dash.NoPendingReviews"]</h4>
+                    </div>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var r in Model.RecentPendingReviews)
+                        {
+                            <li class="list-group-item px-3 py-3">
+                                <div class="d-flex align-items-center justify-content-between gap-2">
+                                    <span class="fw-semibold small text-truncate">@r.Title</span>
+                                    <span class="small text-muted flex-shrink-0">@r.Reviewer.FullName · @r.Property.Title</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>

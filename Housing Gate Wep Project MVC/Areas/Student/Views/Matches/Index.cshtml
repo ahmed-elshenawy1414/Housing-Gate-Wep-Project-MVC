@@ -1,0 +1,96 @@
+@model MatchesViewModel
+@{
+    ViewData["Title"] = AL["Matches.Title"];
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-1">@AL["Matches.Title"]</h1>
+    <p class="mb-0">@AL["Matches.Intro"]</p>
+</div>
+
+@if (Model.ProfileIncomplete)
+{
+    <div class="alert alert-warning d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+        <div>
+            @AL["Matches.Incomplete"]
+            <a asp-controller="Profile" asp-action="Edit" class="fw-semibold">@AL["Matches.YourProfile"]</a>
+            @AL["Matches.And"]
+            <a asp-controller="Profile" asp-action="Preferences" class="fw-semibold">@AL["Matches.YourPrefs"]</a>
+            @AL["Matches.IncompleteTail"]
+        </div>
+    </div>
+}
+
+@if (Model.Matches.Count == 0)
+{
+    <div class="card">
+        <div class="empty-state">
+            <div class="empty-icon mb-3"><i class="bi bi-people"></i></div>
+            <h4>@AL["Matches.Empty"]</h4>
+            <p class="mb-0"><a asp-controller="Profile" asp-action="Preferences" class="fw-semibold">@AL["Matches.YourPrefs"]</a></p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var match in Model.Matches)
+        {
+            var barCls = match.Score >= 75 ? "success" : match.Score >= 55 ? "warning" : "danger";
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-hover h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="avatar-initials avatar-lg">@string.Concat(match.FirstName.Split(' ').Take(1).Select(p => p[0]))@string.Concat(match.LastName.Split(' ').Take(1).Select(p => p[0]))</span>
+                            <div class="min-width-0">
+                                <div class="fw-bold text-truncate">
+                                    @match.FirstName @match.LastName
+                                    @if (match.IsVerified)
+                                    {
+                                        <i class="bi bi-patch-check-fill" style="color: var(--ok);" title="@AL["Matches.VerifiedStudent"]"></i>
+                                    }
+                                </div>
+                                <div class="text-muted small text-truncate">@match.University</div>
+                            </div>
+                            <div class="ms-auto text-end">
+                                <div class="fw-bold fs-4" style="color: var(--brand-600);">@match.Score%</div>
+                                <small class="text-muted">@AL["Matches.Match"]</small>
+                            </div>
+                        </div>
+
+                        <div class="compatibility-bar mb-3">
+                            <span class="bg-@barCls" style="width: @match.Score%"></span>
+                        </div>
+
+                        <div class="small text-muted mb-2">
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge badge-neutral-soft">@AL["Matches.BudgetFit"] @match.BudgetScore%</span>
+                                <span class="badge badge-neutral-soft">@AL["Matches.GenderFit"] @match.GenderScore%</span>
+                                <span class="badge badge-neutral-soft">@AL["Matches.LifestyleFit"] @match.LifestyleScore%</span>
+                            </div>
+                            @if (match.AverageRating > 0)
+                            {
+                                <div class="mt-2 d-flex align-items-center gap-1">
+                                    <span class="star-rating"><i class="bi bi-star-fill"></i></span>
+                                    <span class="fw-semibold">@match.AverageRating.ToString("0.0")</span>
+                                    @if (match.VerifiedStayCount > 0)
+                                    {
+                                        <span class="text-muted">&middot; @match.VerifiedStayCount @AL["Matches.VerifiedStays"]</span>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(match.Notes))
+                        {
+                            <p class="text-muted small mb-2 px-3 py-2 rounded" style="background: var(--canvas); border-inline-start: 3px solid var(--brand-100);">
+                                "@match.Notes"
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Common.Back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
+  <data name="Common.Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Apps.Applied" xml:space="preserve">
+    <value>تاريخ التقديم</value>
+  </data>
+  <data name="Apps.Approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="Apps.ApproveConfirm" xml:space="preserve">
+    <value>هل تريد الموافقة وإنشاء إقامة موثقة لهذا الطالب؟</value>
+  </data>
+  <data name="Apps.Empty" xml:space="preserve">
+    <value>لا توجد طلبات لعقاراتك بعد.</value>
+  </data>
+  <data name="Apps.Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="Apps.PropertyRoom" xml:space="preserve">
+    <value>العقار / الغرفة</value>
+  </data>
+  <data name="Apps.Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="Apps.Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="Apps.Student" xml:space="preserve">
+    <value>الطالب</value>
+  </data>
+  <data name="Apps.Title" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="Dash.ActiveStays" xml:space="preserve">
+    <value>الإقامات النشطة</value>
+  </data>
+  <data name="Dash.AddFirstListing" xml:space="preserve">
+    <value>أضف أول عقار لك</value>
+  </data>
+  <data name="Dash.AddProperty" xml:space="preserve">
+    <value>إضافة عقار</value>
+  </data>
+  <data name="Dash.ApprovedListings" xml:space="preserve">
+    <value>العقارات المعتمدة</value>
+  </data>
+  <data name="Dash.Hello" xml:space="preserve">
+    <value>مرحبًا</value>
+  </data>
+  <data name="Dash.NoApplications" xml:space="preserve">
+    <value>لا توجد طلبات بعد.</value>
+  </data>
+  <data name="Dash.NoProperties" xml:space="preserve">
+    <value>لا توجد عقارات بعد.</value>
+  </data>
+  <data name="Dash.NotVerifiedBanner" xml:space="preserve">
+    <value>حسابك كمالك</value>
+  </data>
+  <data name="Dash.PendingApplications" xml:space="preserve">
+    <value>الطلبات المعلقة</value>
+  </data>
+  <data name="Dash.RecentApplications" xml:space="preserve">
+    <value>أحدث الطلبات</value>
+  </data>
+  <data name="Dash.Title" xml:space="preserve">
+    <value>لوحة تحكم المالك</value>
+  </data>
+  <data name="Dash.TotalProperties" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Dash.UploadOwnershipProof" xml:space="preserve">
+    <value>ارفع مستند الملكية</value>
+  </data>
+  <data name="Dash.VerifyToRank" xml:space="preserve">
+    <value>للتوثيق والظهور أعلى في نتائج البحث.</value>
+  </data>
+  <data name="Dash.YourListings" xml:space="preserve">
+    <value>عقاراتك</value>
+  </data>
+  <data name="Dash.YourProperties" xml:space="preserve">
+    <value>عقاراتك</value>
+  </data>
+  <data name="Form.AddPhotos" xml:space="preserve">
+    <value>إضافة صور</value>
+  </data>
+  <data name="Form.AddPhotosHint" xml:space="preserve">
+    <value>حتى 6 صور. أول صورة تُرفع تصبح صورة الغلاف.</value>
+  </data>
+  <data name="Form.Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Form.AddRoom" xml:space="preserve">
+    <value>إضافة غرفة</value>
+  </data>
+  <data name="Form.Amenities" xml:space="preserve">
+    <value>المرافق</value>
+  </data>
+  <data name="Form.Available" xml:space="preserve">
+    <value>متاحة</value>
+  </data>
+  <data name="Form.AvailableFrom" xml:space="preserve">
+    <value>متاح من</value>
+  </data>
+  <data name="Form.AvailBeds" xml:space="preserve">
+    <value>الأسرة المتاحة</value>
+  </data>
+  <data name="Form.Bathrooms" xml:space="preserve">
+    <value>الحمامات</value>
+  </data>
+  <data name="Form.Bedrooms" xml:space="preserve">
+    <value>غرف النوم</value>
+  </data>
+  <data name="Form.Beds" xml:space="preserve">
+    <value>الأسرة</value>
+  </data>
+  <data name="Form.City" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="Form.CurrentStatus" xml:space="preserve">
+    <value>الحالة الحالية:</value>
+  </data>
+  <data name="Form.Deposit" xml:space="preserve">
+    <value>التأمين</value>
+  </data>
+  <data name="Form.DescPlaceholder" xml:space="preserve">
+    <value>صف المنزل والحي والمرافق...</value>
+  </data>
+  <data name="Form.Description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="Form.District" xml:space="preserve">
+    <value>الحي</value>
+  </data>
+  <data name="Form.IsFurnished" xml:space="preserve">
+    <value>مفروش</value>
+  </data>
+  <data name="Form.Latitude" xml:space="preserve">
+    <value>خط العرض</value>
+  </data>
+  <data name="Form.Longitude" xml:space="preserve">
+    <value>خط الطول</value>
+  </data>
+  <data name="Form.PetAllowed" xml:space="preserve">
+    <value>يُسمح بالحيوانات الأليفة</value>
+  </data>
+  <data name="Form.Photos" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="Form.Primary" xml:space="preserve">
+    <value>رئيسية</value>
+  </data>
+  <data name="Form.PropertyType" xml:space="preserve">
+    <value>نوع العقار</value>
+  </data>
+  <data name="Form.RemovePhotoConfirm" xml:space="preserve">
+    <value>إزالة هذه الصورة؟</value>
+  </data>
+  <data name="Form.RoomDesc" xml:space="preserve">
+    <value>وصف الغرفة (اختياري)</value>
+  </data>
+  <data name="Form.RoomName" xml:space="preserve">
+    <value>اسم الغرفة</value>
+  </data>
+  <data name="Form.RoomRent" xml:space="preserve">
+    <value>الإيجار/شهريًا</value>
+  </data>
+  <data name="Form.Rooms" xml:space="preserve">
+    <value>الغرف</value>
+  </data>
+  <data name="Form.RoomsHint" xml:space="preserve">
+    <value>أضف كل غرفة تؤجرها. يتقدم الطلاب لغرف محددة.</value>
+  </data>
+  <data name="Form.State" xml:space="preserve">
+    <value>المحافظة</value>
+  </data>
+  <data name="Form.Title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Form.University" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="Form.UniversityPlaceholder" xml:space="preserve">
+    <value>مثال: جامعة القاهرة</value>
+  </data>
+  <data name="Form.ZipCode" xml:space="preserve">
+    <value>الرمز البريدي</value>
+  </data>
+  <data name="OProfile.Bio" xml:space="preserve">
+    <value>نبذة</value>
+  </data>
+  <data name="OProfile.BioPlaceholder" xml:space="preserve">
+    <value>عرّف الطلاب بنفسك وبعقاراتك...</value>
+  </data>
+  <data name="OProfile.Company" xml:space="preserve">
+    <value>الشركة / الاسم</value>
+  </data>
+  <data name="OProfile.DocLabel" xml:space="preserve">
+    <value>المستند (jpg أو png أو webp، بحد أقصى 3 ميجابايت)</value>
+  </data>
+  <data name="OProfile.EditTitle" xml:space="preserve">
+    <value>تعديل الملف الشخصي</value>
+  </data>
+  <data name="OProfile.License" xml:space="preserve">
+    <value>رقم الترخيص</value>
+  </data>
+  <data name="OProfile.LicensePlaceholder" xml:space="preserve">
+    <value>رقم الترخيص / الضريبة (اختياري)</value>
+  </data>
+  <data name="OProfile.MyProfile" xml:space="preserve">
+    <value>ملفي الشخصي</value>
+  </data>
+  <data name="OProfile.NotVerified" xml:space="preserve">
+    <value>غير موثق.</value>
+  </data>
+  <data name="OProfile.PendingBanner" xml:space="preserve">
+    <value>مستند تحققك قيد المراجعة.</value>
+  </data>
+  <data name="OProfile.Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="OProfile.RejectedBanner" xml:space="preserve">
+    <value>تم رفض تحققك.</value>
+  </data>
+  <data name="OProfile.Save" xml:space="preserve">
+    <value>حفظ الملف</value>
+  </data>
+  <data name="OProfile.Title" xml:space="preserve">
+    <value>الملف الشخصي للمالك</value>
+  </data>
+  <data name="OProfile.ToUnlockBadge" xml:space="preserve">
+    <value>لتفعيل شارة التوثيق.</value>
+  </data>
+  <data name="OProfile.Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="OProfile.UploadClearerDoc" xml:space="preserve">
+    <value>ارفع مستندًا أوضح</value>
+  </data>
+  <data name="OProfile.VerifiedBanner" xml:space="preserve">
+    <value>حسابك كمالك</value>
+  </data>
+  <data name="OProfile.VerifiedSince" xml:space="preserve">
+    <value>منذ</value>
+  </data>
+  <data name="OProfile.VerifyHeading" xml:space="preserve">
+    <value>وثّق حسابك كمالك</value>
+  </data>
+  <data name="OProfile.VerifyIntro" xml:space="preserve">
+    <value>ارفع نسخة من مستند ملكية العقار أو السجل التجاري. لن يطلع عليها سوى فريق الإدارة.</value>
+  </data>
+  <data name="OProfile.VerifyOwnership" xml:space="preserve">
+    <value>وثّق ملكيتك</value>
+  </data>
+  <data name="OProfile.VerifyTitle" xml:space="preserve">
+    <value>توثيق حساب المالك</value>
+  </data>
+  <data name="Props.Add" xml:space="preserve">
+    <value>إضافة عقار</value>
+  </data>
+  <data name="Props.AddHeading" xml:space="preserve">
+    <value>إضافة عقار</value>
+  </data>
+  <data name="Props.AddTitle" xml:space="preserve">
+    <value>إضافة عقار</value>
+  </data>
+  <data name="Props.Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Props.DeleteConfirm" xml:space="preserve">
+    <value>حذف هذا العقار؟ لا يمكن التراجع عن ذلك.</value>
+  </data>
+  <data name="Props.EditHeading" xml:space="preserve">
+    <value>تعديل العقار</value>
+  </data>
+  <data name="Props.EditTitle" xml:space="preserve">
+    <value>تعديل العقار</value>
+  </data>
+  <data name="Props.Empty" xml:space="preserve">
+    <value>لم تضف أي عقار بعد.</value>
+  </data>
+  <data name="Props.Hidden" xml:space="preserve">
+    <value>مخفي</value>
+  </data>
+  <data name="Props.Hide" xml:space="preserve">
+    <value>إخفاء</value>
+  </data>
+  <data name="Props.Reason" xml:space="preserve">
+    <value>السبب:</value>
+  </data>
+  <data name="Props.RoomsCount" xml:space="preserve">
+    <value>غرفة</value>
+  </data>
+  <data name="Props.SaveChanges" xml:space="preserve">
+    <value>حفظ التغييرات</value>
+  </data>
+  <data name="Props.Show" xml:space="preserve">
+    <value>إظهار</value>
+  </data>
+  <data name="Props.SubmitListing" xml:space="preserve">
+    <value>إرسال الإعلان</value>
+  </data>
+  <data name="Props.Title" xml:space="preserve">
+    <value>عقاراتي</value>
+  </data>
+  <data name="Dash.ComplaintsAboutProperties" xml:space="preserve">
+    <value>شكاوى حول عقاراتك</value>
+  </data>
+  <data name="Dash.NoComplaints" xml:space="preserve">
+    <value>لا توجد شكاوى حول عقاراتك.</value>
+  </data>
+  <data name="Dash.ReviewsOnProperties" xml:space="preserve">
+    <value>تقييمات على عقاراتك</value>
+  </data>
+  <data name="Dash.NoReviews" xml:space="preserve">
+    <value>لا توجد تقييمات على عقاراتك بعد.</value>
+  </data>
+  <data name="Dash.RecentReviews" xml:space="preserve">
+    <value>أحدث التقييمات</value>
+  </data>
+</root>

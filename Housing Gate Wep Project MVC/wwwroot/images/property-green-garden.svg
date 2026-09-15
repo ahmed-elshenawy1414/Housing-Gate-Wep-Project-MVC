@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g1)"/>
+  <g fill="#ffffff" opacity="0.92">
+    <path d="M400 120 L580 260 H520 V380 H280 V260 H220 Z"/>
+  </g>
+  <text x="400" y="460" font-family="Segoe UI, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle" opacity="0.9">Green Garden Shared Flat</text>
+</svg>

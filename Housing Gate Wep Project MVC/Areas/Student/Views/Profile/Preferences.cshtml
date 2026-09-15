@@ -1,0 +1,87 @@
+@model RoommatePreferenceViewModel
+@{
+    ViewData["Title"] = AL["Profile.PrefsTitle"];
+}
+
+<div class="container py-4" style="max-width: 820px;">
+    <div class="page-head mb-4">
+        <h1 class="mb-1">@AL["Profile.PrefsTitle"]</h1>
+        <p class="mb-0">@AL["Profile.PrefsIntro"]</p>
+    </div>
+
+    <form method="post" class="card">
+        <div class="card-body p-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="PreferredGender" class="form-label">@AL["Profile.PrefPreferredGender"]</label>
+                    <select asp-for="PreferredGender" asp-items="EnumSelectList.Get<Gender>(L)" class="form-select">
+                        <option value="">@AL["Profile.NoPreference"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-6">
+                    <label asp-for="MinBudget" class="form-label">@AL["Profile.PrefBudgetMin"]</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@L["Common.CurrencySymbol"]</span>
+                        <input asp-for="MinBudget" class="form-control" type="number" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="MaxBudget" class="form-label">@AL["Profile.PrefBudgetMax"]</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@L["Common.CurrencySymbol"]</span>
+                        <input asp-for="MaxBudget" class="form-control" type="number" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3 mt-1">
+                <div class="col-md-4">
+                    <label asp-for="PreferredSleepSchedule" class="form-label">@AL["Profile.PrefSleepSchedule"]</label>
+                    <select asp-for="PreferredSleepSchedule" asp-items="EnumSelectList.Get<SleepSchedule>(L)" class="form-select">
+                        <option value="">@AL["Profile.NoPreference"]</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="PreferredNoiseLevel" class="form-label">@AL["Profile.PrefNoiseLevel"]</label>
+                    <select asp-for="PreferredNoiseLevel" asp-items="EnumSelectList.Get<NoiseLevel>(L)" class="form-select">
+                        <option value="">@AL["Profile.NoPreference"]</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="PreferredCleanliness" class="form-label">@AL["Profile.PrefCleanliness"]</label>
+                    <select asp-for="PreferredCleanliness" asp-items="EnumSelectList.Get<Cleanliness>(L)" class="form-select">
+                        <option value="">@AL["Profile.NoPreference"]</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-check form-switch mt-3 mb-2">
+                <input asp-for="AcceptsSmokers" class="form-check-input" />
+                <label asp-for="AcceptsSmokers" class="form-check-label">@AL["Profile.AcceptsSmokers"]</label>
+            </div>
+            <div class="form-check form-switch mb-4">
+                <input asp-for="AcceptsPets" class="form-check-input" />
+                <label asp-for="AcceptsPets" class="form-check-label">@AL["Profile.AcceptsPets"]</label>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="Notes" class="form-label">@AL["Profile.Notes"]</label>
+                <textarea asp-for="Notes" class="form-control" rows="3" placeholder="@AL["Profile.NotesPlaceholder"]"></textarea>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg me-1"></i>@AL["Profile.SavePrefs"]</button>
+                <a asp-action="Index" class="btn btn-soft">@L["Common.Cancel"]</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

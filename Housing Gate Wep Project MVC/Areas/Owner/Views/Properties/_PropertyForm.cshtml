@@ -1,0 +1,257 @@
+@model PropertyFormViewModel
+
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+<div class="row">
+    <div class="col-md-8 mb-3">
+        <label asp-for="Title" class="form-label">@AL["Form.Title"]</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger small"></span>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label asp-for="PropertyType" class="form-label">@AL["Form.PropertyType"]</label>
+        <select asp-for="PropertyType" asp-items="EnumSelectList.Get<PropertyType>(L)" class="form-select"></select>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label">@AL["Form.Description"]</label>
+    <textarea asp-for="Description" class="form-control" rows="4" placeholder="@AL["Form.DescPlaceholder"]"></textarea>
+    <span asp-validation-for="Description" class="text-danger small"></span>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="Address" class="form-label">@AL["Form.Address"]</label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="City" class="form-label">@AL["Form.City"]</label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="State" class="form-label">@AL["Form.State"]</label>
+        <input asp-for="State" class="form-control" />
+        <span asp-validation-for="State" class="text-danger small"></span>
+    </div>
+    <div class="col-md-2 mb-3">
+        <label asp-for="District" class="form-label">@AL["Form.District"]</label>
+        <input asp-for="District" class="form-control" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="University" class="form-label">@AL["Form.University"]</label>
+        <input asp-for="University" class="form-control" placeholder="@AL["Form.UniversityPlaceholder"]" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Latitude" class="form-label">@AL["Form.Latitude"]</label>
+        <input asp-for="Latitude" class="form-control" type="number" step="any" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Longitude" class="form-label">@AL["Form.Longitude"]</label>
+        <input asp-for="Longitude" class="form-control" type="number" step="any" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <label asp-for="ZipCode" class="form-label">@AL["Form.ZipCode"]</label>
+        <input asp-for="ZipCode" class="form-control" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Deposit" class="form-label">@AL["Form.Deposit"]</label>
+        <input asp-for="Deposit" class="form-control" type="number" />
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Bedrooms" class="form-label">@AL["Form.Bedrooms"]</label>
+        <input asp-for="Bedrooms" class="form-control" type="number" />
+        <span asp-validation-for="Bedrooms" class="text-danger small"></span>
+    </div>
+    <div class="col-md-3 mb-3">
+        <label asp-for="Bathrooms" class="form-label">@AL["Form.Bathrooms"]</label>
+        <input asp-for="Bathrooms" class="form-control" type="number" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="AvailableFrom" class="form-label">@AL["Form.AvailableFrom"]</label>
+        <input asp-for="AvailableFrom" class="form-control" type="date" />
+    </div>
+</div>
+
+<div class="form-check form-switch d-inline-block me-4 mb-3">
+    <input asp-for="IsFurnished" class="form-check-input" />
+    <label asp-for="IsFurnished" class="form-check-label">@AL["Form.IsFurnished"]</label>
+</div>
+<div class="form-check form-switch d-inline-block mb-3">
+    <input asp-for="PetAllowed" class="form-check-input" />
+    <label asp-for="PetAllowed" class="form-check-label">@AL["Form.PetAllowed"]</label>
+</div>
+
+@if (Model.AllAmenities.Count > 0)
+{
+<hr />
+<h6 class="fw-bold"><i class="bi bi-grid-3x3-gap me-2" style="color: var(--brand-500);"></i>@AL["Form.Amenities"]</h6>
+<div class="row g-2 mb-3">
+    @foreach (var amenity in Model.AllAmenities)
+    {
+        <div class="col-md-4 col-6 form-check">
+            <input class="form-check-input" type="checkbox" name="SelectedAmenityIds" value="@amenity.Id"
+                   id="amenity_@amenity.Id" checked="@Model.SelectedAmenityIds.Contains(amenity.Id)" />
+            <label class="form-check-label small" for="amenity_@amenity.Id">@LocalizedData.Name(amenity.NameAr, amenity.Name)</label>
+        </div>
+    }
+</div>
+}
+
+<hr />
+<h6 class="fw-bold"><i class="bi bi-door-open me-2" style="color: var(--brand-500);"></i>@AL["Form.Rooms"]</h6>
+<p class="text-muted small">@AL["Form.RoomsHint"]</p>
+
+<div id="roomsContainer">
+    @for (var i = 0; i < Model.Rooms.Count; i++)
+    {
+        <div class="border rounded-3 p-3 mb-3 room-row" style="background: var(--canvas);">
+            <input type="hidden" name="Rooms[@i].Id" value="@Model.Rooms[i].Id" />
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <input name="Rooms[@i].Name" value="@Model.Rooms[i].Name" class="form-control" placeholder="@AL["Form.RoomName"]" />
+                </div>
+                <div class="col-md-3">
+                    <select name="Rooms[@i].RoomType" class="form-select">
+                        @foreach (var type in Enum.GetValues<RoomType>())
+                        {
+                            <option value="@type" selected="@(Model.Rooms[i].RoomType == type)">@EnumDisplay.Get(type, L)</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input name="Rooms[@i].RentPerMonth" value="@Model.Rooms[i].RentPerMonth" class="form-control" type="number" placeholder="@AL["Form.RoomRent"]" />
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-between">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" name="Rooms[@i].IsAvailable" type="checkbox" value="true" checked="@Model.Rooms[i].IsAvailable" />
+                        <label class="form-check-label small">@AL["Form.Available"]</label>
+                    </div>
+                    <input type="hidden" name="Rooms[@i].IsAvailable" value="false" />
+                    <button type="button" class="btn btn-sm btn-outline-danger remove-room"><i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+            <div class="row g-2 mt-0">
+                <div class="col-md-4">
+                    <input name="Rooms[@i].Description" value="@Model.Rooms[i].Description" class="form-control" placeholder="@AL["Form.RoomDesc"]" />
+                </div>
+                <div class="col-md-3">
+                    <select name="Rooms[@i].BathroomType" class="form-select">
+                        @foreach (var bath in Enum.GetValues<BathroomType>())
+                        {
+                            <option value="@bath" selected="@(Model.Rooms[i].BathroomType == bath)">@EnumDisplay.Get(bath, L)</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input name="Rooms[@i].NumberOfBeds" value="@Model.Rooms[i].NumberOfBeds" class="form-control" type="number" min="0" max="20" placeholder="@AL["Form.Beds"]" />
+                </div>
+                <div class="col-md-2">
+                    <input name="Rooms[@i].AvailableBeds" value="@Model.Rooms[i].AvailableBeds" class="form-control" type="number" min="0" max="20" placeholder="@AL["Form.AvailBeds"]" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<button type="button" class="btn btn-sm btn-soft mb-4" id="addRoom"><i class="bi bi-plus-lg me-1"></i>@AL["Form.AddRoom"]</button>
+
+<!-- Hidden template for new room rows -->
+<div id="roomTemplate" style="display:none;">
+    <div class="border rounded-3 p-3 mb-3 room-row" style="background: var(--canvas);">
+        <input type="hidden" name="Rooms[__INDEX__].Id" value="0" />
+        <div class="row g-2">
+            <div class="col-md-3">
+                <input name="Rooms[__INDEX__].Name" class="form-control" placeholder="@AL["Form.RoomName"]" />
+            </div>
+            <div class="col-md-3">
+                <select name="Rooms[__INDEX__].RoomType" class="form-select">
+                    @foreach (var type in Enum.GetValues<RoomType>())
+                    {
+                        <option value="@type">@EnumDisplay.Get(type, L)</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input name="Rooms[__INDEX__].RentPerMonth" class="form-control" type="number" placeholder="@AL["Form.RoomRent"]" />
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-between">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" name="Rooms[__INDEX__].IsAvailable" type="checkbox" value="true" checked />
+                    <label class="form-check-label small">@AL["Form.Available"]</label>
+                </div>
+                <input type="hidden" name="Rooms[__INDEX__].IsAvailable" value="false" />
+                <button type="button" class="btn btn-sm btn-outline-danger remove-room"><i class="bi bi-trash"></i></button>
+            </div>
+        </div>
+        <div class="row g-2 mt-0">
+            <div class="col-md-4">
+                <input name="Rooms[__INDEX__].Description" class="form-control" placeholder="@AL["Form.RoomDesc"]" />
+            </div>
+            <div class="col-md-3">
+                <select name="Rooms[__INDEX__].BathroomType" class="form-select">
+                    @foreach (var bath in Enum.GetValues<BathroomType>())
+                    {
+                        <option value="@bath">@EnumDisplay.Get(bath, L)</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-2">
+                <input name="Rooms[__INDEX__].NumberOfBeds" value="1" class="form-control" type="number" min="0" max="20" placeholder="@AL["Form.Beds"]" />
+            </div>
+            <div class="col-md-2">
+                <input name="Rooms[__INDEX__].AvailableBeds" value="1" class="form-control" type="number" min="0" max="20" placeholder="@AL["Form.AvailBeds"]" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.Id.HasValue && Model.ExistingImages.Count > 0)
+{
+    <hr />
+    <h6 class="fw-bold"><i class="bi bi-images me-2" style="color: var(--brand-500);"></i>@AL["Form.Photos"]</h6>
+    <div class="row g-3 mb-3">
+        @foreach (var image in Model.ExistingImages)
+        {
+            <div class="col-4 col-md-3">
+                <div class="position-relative">
+                    <img src="@image.FilePath" class="rounded-3 border w-100" style="height: 96px; object-fit: cover;" alt="" />
+                    @if (image.IsPrimary)
+                    {
+                        <span class="badge badge-primary-soft position-absolute top-0 start-0 m-1">@AL["Form.Primary"]</span>
+                    }
+                    <form method="post" asp-action="DeleteImage" asp-route-propertyId="@Model.Id" asp-route-imageId="@image.Id"
+                          onsubmit="return confirm('@AL["Form.RemovePhotoConfirm"]');">
+                        <button type="submit" class="btn btn-sm btn-soft-danger position-absolute top-0 end-0 m-1" style="padding: 0.2rem 0.45rem;"><i class="bi bi-x-lg"></i></button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<hr />
+<h6 class="fw-bold"><i class="bi bi-cloud-arrow-up me-2" style="color: var(--brand-500);"></i>@AL["Form.AddPhotos"]</h6>
+<p class="text-muted small">@AL["Form.AddPhotosHint"]</p>
+<div class="mb-3">
+    <label class="upload-zone d-block">
+        <i class="bi bi-cloud-arrow-up-fill fs-2 d-block mb-2" style="color: var(--brand-500);"></i>
+        <span class="small fw-semibold">@AL["Form.AddPhotos"]</span>
+        <input type="file" name="UploadedImages" class="d-none" accept=".jpg,.jpeg,.png,.webp" multiple />
+    </label>
+</div>
+
+@if (!string.IsNullOrEmpty(Model.ApprovalStatusDisplay))
+{
+    <div class="alert alert-light border small">@AL["Form.CurrentStatus"] <strong>@Model.ApprovalStatusDisplay</strong></div>
+}

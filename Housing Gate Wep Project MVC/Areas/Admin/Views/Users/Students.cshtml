@@ -1,0 +1,121 @@
+@model IReadOnlyList<ApplicationUser>
+@{
+    ViewData["Title"] = AL["Users.StudentVerification"];
+    var q = (string?)ViewBag.Query;
+}
+
+<div class="page-head d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+        <h1 class="mb-0">@AL["Users.StudentVerification"]</h1>
+    </div>
+    <div class="btn-group btn-group-sm" role="group">
+        <a asp-action="Index" asp-route-q="@q" class="btn btn-soft px-3">@AL["Users.AllUsers"]</a>
+        <a asp-action="Students" asp-route-q="@q" class="btn btn-primary px-3">@AL["Users.Students"]</a>
+        <a asp-action="Owners" asp-route-q="@q" class="btn btn-soft px-3">@AL["Users.Owners"]</a>
+    </div>
+</div>
+
+<form method="get" class="mb-4">
+    <div class="input-group" style="max-width: 420px;">
+        <span class="input-group-text bg-transparent text-muted border-end-0"><i class="bi bi-search"></i></span>
+        <input type="text" name="q" value="@q" class="form-control border-start-0" placeholder="@L["Common.SearchPlaceholder"]" />
+        <button type="submit" class="btn btn-primary"><i class="bi bi-search me-1"></i>@L["Common.Search"]</button>
+        @if (!string.IsNullOrEmpty(q))
+        {
+            <a asp-action="Students" class="btn btn-soft">@AL["Common.Cancel"]</a>
+        }
+    </div>
+</form>
+
+<div class="table-wrapper">
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th>@AL["Users.ColName"]</th>
+                <th>@AL["Users.ColEmail"]</th>
+                <th>@AL["Users.ColUniversity"]</th>
+                <th>@AL["Users.ColStatus"]</th>
+                <th>@AL["Users.ColDocument"]</th>
+                <th class="text-end">@L["Common.Actions"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                var student = user.StudentProfile;
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="avatar-initials avatar-initials-sm">@string.Concat(user.FirstName?.FirstOrDefault(), user.LastName?.FirstOrDefault())</span>
+                            <span class="fw-semibold">@user.FullName</span>
+                        </div>
+                    </td>
+                    <td class="small text-muted">@user.Email</td>
+                    <td>@(student?.University ?? "-")</td>
+                    <td>
+                        @if (student == null)
+                        {
+                            <span class="badge badge-secondary-soft">@EnumDisplay.Get(VerificationStatus.Unverified, L)</span>
+                        }
+                        else
+                        {
+                            var vClass = student.VerificationStatus switch
+                            {
+                                VerificationStatus.Pending => "badge-warning-soft",
+                                VerificationStatus.Verified => "badge-success-soft",
+                                VerificationStatus.Rejected => "badge-danger-soft",
+                                VerificationStatus.NeedsChanges => "badge-primary-soft",
+                                _ => "badge-secondary-soft"
+                            };
+                            <span class="badge @vClass">@EnumDisplay.Get(student.VerificationStatus, L)</span>
+                            @if (!string.IsNullOrEmpty(student.VerificationRejectReason))
+                            {
+                                <div class="small text-muted mt-1">@student.VerificationRejectReason</div>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @if (student != null && (!string.IsNullOrEmpty(student.NationalIdDocumentUrl) || !string.IsNullOrEmpty(student.UniversityIdDocumentUrl)))
+                        {
+                            <div class="d-flex gap-2">
+                                @if (!string.IsNullOrEmpty(student.NationalIdDocumentUrl))
+                                {
+                                    <a href="@student.NationalIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.NationalId"]</a>
+                                }
+                                @if (!string.IsNullOrEmpty(student.UniversityIdDocumentUrl))
+                                {
+                                    <a href="@student.UniversityIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.UniversityId"]</a>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="text-muted">-</span>
+                        }
+                    </td>
+                    <td class="text-end">
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a asp-action="Details" asp-route-id="@user.Id" class="btn btn-sm btn-soft">
+                                <i class="bi bi-eye me-1"></i>@AL["Users.View"]
+                            </a>
+                            @if (student?.VerificationStatus == VerificationStatus.Pending || student?.VerificationStatus == VerificationStatus.NeedsChanges)
+                            {
+                                <form method="post" asp-action="VerifyStudent" asp-route-userId="@user.Id" asp-route-approve="true" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-soft-success"><i class="bi bi-check-lg me-1"></i>@AL["Users.Approve"]</button>
+                                </form>
+                                <form method="post" asp-action="RequestDocuments" asp-route-userId="@user.Id" class="d-inline-flex align-items-center gap-1 ms-1">
+                                    <input type="text" name="reason" class="form-control form-control-sm" style="width: 160px;" placeholder="@AL["Users.ReasonForNew"]" />
+                                    <button type="submit" class="btn btn-sm btn-soft"><i class="bi bi-arrow-counterclockwise me-1"></i>@AL["Users.RequestNew"]</button>
+                                </form>
+                                <form method="post" asp-action="VerifyStudent" asp-route-userId="@user.Id" asp-route-approve="false" class="d-inline-flex align-items-center gap-1 ms-1">
+                                    <input type="text" name="reason" class="form-control form-control-sm" style="width: 160px;" placeholder="@AL["Users.RejectionReason"]" />
+                                    <button type="submit" class="btn btn-sm btn-soft-danger"><i class="bi bi-x-lg me-1"></i>@AL["Users.Reject"]</button>
+                                </form>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,73 @@
+@using System.Globalization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<StudentHousing.Resources.SharedResource> L
+@{
+    var isRtl = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
+    var cultureName = CultureInfo.CurrentUICulture.Name;
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+    bool IsActive(string c, string? a = null) =>
+        string.Equals(controller, c, StringComparison.OrdinalIgnoreCase) &&
+        (a == null || string.Equals(action, a, StringComparison.OrdinalIgnoreCase));
+}
+<!DOCTYPE html>
+<html lang="@cultureName" dir="@(isRtl ? "rtl" : "ltr")">
+<head>
+    @await Html.PartialAsync("_LayoutHead")
+</head>
+<body class="app-body role-owner">
+    @await Html.PartialAsync("~/Areas/Owner/Views/Shared/_OwnerTopbar.cshtml")
+
+    <div class="app-shell">
+        <aside class="app-sidebar" id="appSidebar">
+            <nav aria-label="@L["Nav.Toggle"]">
+                <ul class="nav flex-column" style="list-style:none; padding:0; margin:0;">
+                    <li>
+                        <a class="app-nav-link @(IsActive("Dashboard") ? "active" : "")"
+                           asp-area="Owner" asp-controller="Dashboard" asp-action="Index" title="@L["Nav.Dashboard"]">
+                            <i class="bi bi-speedometer2"></i><span class="nav-link-text">@L["Nav.Dashboard"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Properties") ? "active" : "")"
+                           asp-area="Owner" asp-controller="Properties" asp-action="Index" title="@L["Nav.MyProperties"]">
+                            <i class="bi bi-building"></i><span class="nav-link-text">@L["Nav.MyProperties"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Applications") ? "active" : "")"
+                           asp-area="Owner" asp-controller="Applications" asp-action="Index" title="@L["Nav.Applications"]">
+                            <i class="bi bi-file-earmark-person"></i><span class="nav-link-text">@L["Nav.Applications"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Profile", "Index") || IsActive("Profile", "Edit") ? "active" : "")"
+                           asp-area="Owner" asp-controller="Profile" asp-action="Index" title="@L["Nav.MyProfile"]">
+                            <i class="bi bi-person"></i><span class="nav-link-text">@L["Nav.MyProfile"]</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="app-nav-link @(IsActive("Profile", "Verify") ? "active" : "")"
+                           asp-area="Owner" asp-controller="Profile" asp-action="Verify" title="@L["Nav.Verification"]">
+                            <i class="bi bi-patch-check"></i><span class="nav-link-text">@L["Nav.Verification"]</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="app-content" id="appContent">
+            <div class="app-content-inner">
+                <div class="mb-3">
+                    @await Html.PartialAsync("_Alerts")
+                </div>
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <div class="app-sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+    @await Html.PartialAsync("_LayoutScripts")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

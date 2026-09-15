@@ -1,0 +1,161 @@
+@model StudentProfileViewModel
+@{
+    ViewData["Title"] = AL["Profile.Title"];
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-0">@AL["Profile.Title"]</h1>
+</div>
+
+@if (Model.VerificationStatus == VerificationStatus.Verified)
+{
+    <div class="alert alert-success d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-patch-check-fill fs-4"></i>
+        <div>@AL["Profile.VerifiedBanner"] <strong>@EnumDisplay.Get(VerificationStatus.Verified, L)</strong>. @AL["Profile.VerifiedStays"] @Model.VerifiedStayCount.</div>
+    </div>
+}
+else if (Model.VerificationStatus == VerificationStatus.Pending)
+{
+    <div class="alert alert-warning d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-hourglass-split fs-4"></i>
+        <div>@AL["Profile.PendingBanner"]</div>
+    </div>
+}
+else if (Model.VerificationStatus == VerificationStatus.NeedsChanges)
+{
+    <div class="alert alert-warning d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-file-earmark-excel fs-4"></i>
+        <div>
+            <strong>@AL["Profile.NewDocsRequested"]</strong>
+            @if (!string.IsNullOrEmpty(Model.VerificationRejectReason))
+            {
+                <div class="mt-1 text-muted">@L["Common.Name"]: @Model.VerificationRejectReason</div>
+            }
+            <div class="mt-1"><a asp-controller="Profile" asp-action="Verify" class="fw-semibold">@AL["Profile.UploadUpdatedDocs"]</a>.</div>
+        </div>
+    </div>
+}
+else if (Model.VerificationStatus == VerificationStatus.Rejected)
+{
+    <div class="alert alert-danger d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-x-octagon-fill fs-4"></i>
+        <div>
+            @AL["Profile.RejectedBanner"]
+            @if (!string.IsNullOrEmpty(Model.VerificationRejectReason))
+            {
+                <div class="mt-1 text-muted">@L["Common.Name"]: @Model.VerificationRejectReason</div>
+            }
+            <div class="mt-1"><a asp-controller="Profile" asp-action="Verify" class="fw-semibold">@AL["Profile.UploadNewDocs"]</a>.</div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-info d-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-patch-question fs-4"></i>
+        <div>@AL["Profile.NotVerified"] <a asp-controller="Profile" asp-action="Verify" class="fw-semibold">@AL["Profile.VerifyStudentId"]</a>.</div>
+    </div>
+}
+
+<div class="card mb-4">
+    <div class="card-body d-flex flex-wrap align-items-center gap-3">
+        @if (!string.IsNullOrEmpty(Model.ProfilePictureUrl))
+        {
+            <img src="@Model.ProfilePictureUrl" class="avatar-image avatar-lg" style="width:64px;height:64px;" alt="" />
+        }
+        else
+        {
+            <span class="avatar-initials avatar-lg" style="width: 64px; height: 64px; font-size: 1.4rem;">
+                @string.Concat(Model.FirstName.Split(' ').Take(1).Select(p => p[0]))@string.Concat(Model.LastName.Split(' ').Take(1).Select(p => p[0]))
+            </span>
+        }
+        <div class="flex-grow-1 min-width-0">
+            <div class="h5 fw-bold mb-0">@Model.FirstName @Model.LastName</div>
+            <div class="text-muted small text-truncate">@Model.Email</div>
+        </div>
+        <a asp-controller="Profile" asp-action="Edit" class="btn btn-soft"><i class="bi bi-pencil-square me-1"></i>@L["Common.Edit"]</a>
+    </div>
+</div>
+
+<ul class="nav nav-pills gap-1 mb-4" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab"><i class="bi bi-person me-1"></i>@AL["Profile.Overview"]</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#preferences" type="button" role="tab"><i class="bi bi-sliders me-1"></i>@AL["Profile.Preferences"]</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#verification" type="button" role="tab"><i class="bi bi-patch-check me-1"></i>@AL["Profile.VerifyTitle"]</button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="overview" role="tabpanel">
+        <div class="card">
+            <div class="card-body">
+                <dl class="row mb-0 g-2">
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.University"]</dt>
+                    <dd class="col-sm-9">@Model.University</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.Major"]</dt>
+                    <dd class="col-sm-9">@(Model.Major ?? "-")</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.Governorate"]</dt>
+                    <dd class="col-sm-9">@(Model.Governorate ?? "-")</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.CityDistrict"]</dt>
+                    <dd class="col-sm-9">@(Model.District ?? "-")</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.AcademicYear"]</dt>
+                    <dd class="col-sm-9">@(Model.AcademicYear?.ToString() ?? "-")</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@L["Common.Budget"]</dt>
+                    <dd class="col-sm-9">@Model.BudgetMin.ToString("N0") - @Model.BudgetMax.ToString("N0") @L["Card.PerMonth"]</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.MoveInDate"]</dt>
+                    <dd class="col-sm-9">@(Model.MoveInDate?.ToLocalTime().ToString("dd MMM yyyy") ?? AL["Profile.Flexible"])</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.MinLease"]</dt>
+                    <dd class="col-sm-9">@Model.MinLeaseMonths @AL["Profile.Months"]</dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.Lifestyle"]</dt>
+                    <dd class="col-sm-9">
+                        <span class="badge badge-neutral-soft">@EnumDisplay.Get(Model.SleepSchedule, L)</span>
+                        <span class="badge badge-neutral-soft">@EnumDisplay.Get(Model.NoiseLevel, L)</span>
+                        <span class="badge badge-neutral-soft">@EnumDisplay.Get(Model.Cleanliness, L)</span>
+                        @if (Model.IsSmoker) { <span class="badge badge-warning-soft">@AL["Profile.Smoker"]</span> }
+                        @if (Model.HasPets) { <span class="badge badge-info-soft">@AL["Profile.HasPets"]</span> }
+                    </dd>
+                    <dt class="col-sm-3 fw-semibold text-muted">@AL["Profile.Bio"]</dt>
+                    <dd class="col-sm-9">@(Model.Bio ?? "-")</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="preferences" role="tabpanel">
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">@AL["Profile.PrefsText"]</p>
+                <a asp-controller="Profile" asp-action="Preferences" class="btn btn-primary"><i class="bi bi-sliders me-1"></i>@AL["Profile.EditPrefs"]</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="verification" role="tabpanel">
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">@AL["Profile.VerifyText"]</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <span>@AL["Profile.NationalId"]</span>
+                        <span class="badge @(Model.HasNationalIdDocument ? "badge-success-soft" : "badge-neutral-soft")">
+                            <i class="bi @(Model.HasNationalIdDocument ? "bi-check-circle" : "bi-clock") me-1"></i>
+                            @(Model.HasNationalIdDocument ? AL["Profile.Uploaded"] : AL["Profile.NotUploaded"])
+                        </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        <span>@AL["Profile.UniversityId"]</span>
+                        <span class="badge @(Model.HasUniversityIdDocument ? "badge-success-soft" : "badge-neutral-soft")">
+                            <i class="bi @(Model.HasUniversityIdDocument ? "bi-check-circle" : "bi-clock") me-1"></i>
+                            @(Model.HasUniversityIdDocument ? AL["Profile.Uploaded"] : AL["Profile.NotUploaded"])
+                        </span>
+                    </li>
+                </ul>
+                <a asp-controller="Profile" asp-action="Verify" class="btn btn-soft"><i class="bi bi-cloud-arrow-up me-1"></i>@AL["Profile.UploadDocs"]</a>
+            </div>
+        </div>
+    </div>
+</div>
