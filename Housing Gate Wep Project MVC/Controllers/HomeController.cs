@@ -29,8 +29,8 @@ namespace StudentHousing.Controllers
             {
                 FeaturedProperties = (await _propertyService.GetForHomeAsync(6)).ToList(),
                 AvailableListings = await _propertyService.CountApprovedActiveAsync(),
-                VerifiedStudents = students.Count(s => s.StudentProfile!.VerificationStatus == VerificationStatus.Verified),
-                VerifiedOwners = owners.Count(o => o.OwnerProfile!.VerificationStatus == VerificationStatus.Verified),
+                VerifiedStudents = students.Count(s => s.StudentProfile != null && s.StudentProfile.VerificationStatus == VerificationStatus.Verified),
+                VerifiedOwners = owners.Count(o => o.OwnerProfile != null && o.OwnerProfile.VerificationStatus == VerificationStatus.Verified),
                 PopularCities = (await _propertyService.GetCitiesAsync()).ToList()
             };
 

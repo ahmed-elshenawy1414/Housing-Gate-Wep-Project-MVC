@@ -18,13 +18,15 @@ namespace StudentHousing.Areas.Owner.Controllers
         private readonly INotificationService _notifications;
         private readonly IWebHostEnvironment _env;
         private readonly IStringLocalizer<SharedResource> _L;
+        private readonly StudentHousing.Services.Interfaces.IDocumentStorageService _docs;
 
-        public ProfileController(IUnitOfWork uow, INotificationService notifications, IWebHostEnvironment env, IStringLocalizer<SharedResource> L)
+        public ProfileController(IUnitOfWork uow, INotificationService notifications, IWebHostEnvironment env, IStringLocalizer<SharedResource> L, StudentHousing.Services.Interfaces.IDocumentStorageService docs)
         {
             _uow = uow;
             _notifications = notifications;
             _env = env;
             _L = L;
+            _docs = docs;
         }
 
         public async Task<IActionResult> Index()
@@ -119,21 +121,17 @@ namespace StudentHousing.Areas.Owner.Controllers
                 return View();
             }
 
-            string path;
-            try
+            var res = await _docs.SavePrivateAsync(document, userId, "owner-verify");
+            if (!res.Success)
             {
-                path = await ImageFileHelper.SaveAsync(document, _env);
-            }
-            catch (Exception)
-            {
-                TempData["Error"] = _L["Err.UploadFailed"].ToString();
+                TempData["Error"] = res.Error;
                 return View();
             }
+            string path = res.PrivatePath!;
 
-            if (profile.VerificationDocumentUrl != null)
-            {
+            _docs.DeletePrivate(profile.VerificationDocumentUrl);
+            if (!string.IsNullOrEmpty(profile.VerificationDocumentUrl) && profile.VerificationDocumentUrl.StartsWith("/uploads/"))
                 ImageFileHelper.Delete(profile.VerificationDocumentUrl, _env);
-            }
 
             profile.VerificationDocumentUrl = path;
             profile.VerificationStatus = VerificationStatus.Pending;
@@ -153,7 +151,7 @@ namespace StudentHousing.Areas.Owner.Controllers
                 LicenseNumber = profile.LicenseNumber,
                 VerificationStatus = profile.VerificationStatus,
                 VerifiedAt = profile.VerifiedAt,
-                VerificationDocumentUrl = profile.VerificationDocumentUrl,
+                HasVerificationDocument = !string.IsNullOrEmpty(profile.VerificationDocumentUrl),
                 Email = profile.User?.Email ?? string.Empty,
                 FirstName = profile.User?.FirstName ?? string.Empty,
                 LastName = profile.User?.LastName ?? string.Empty,

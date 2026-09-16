@@ -17,6 +17,7 @@ namespace StudentHousing.Data.Configurations
             builder.Property(p => p.District).HasMaxLength(100);
             builder.Property(p => p.University).HasMaxLength(150);
 
+            builder.Property(p => p.RowVersion).IsRowVersion();
             builder.HasIndex(p => new { p.ApprovalStatus, p.IsActive });
             builder.HasIndex(p => p.City);
             builder.HasIndex(p => p.PublicId).IsUnique().HasFilter("[PublicId] IS NOT NULL");

@@ -73,7 +73,7 @@
                     <td>
                         @if (!string.IsNullOrEmpty(owner?.VerificationDocumentUrl))
                         {
-                            <a href="@owner.VerificationDocumentUrl" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.View"]</a>
+                            <a href="@Url.Action("Download", "Documents", new { area = "", path = owner.VerificationDocumentUrl })" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.View"]</a>
                         }
                         else
                         {

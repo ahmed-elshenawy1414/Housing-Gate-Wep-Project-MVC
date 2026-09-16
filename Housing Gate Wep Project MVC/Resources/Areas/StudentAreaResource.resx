@@ -391,6 +391,12 @@
   <data name="Prop.AvailableRooms" xml:space="preserve">
     <value>Available rooms</value>
   </data>
+  <data name="Prop.SecureApply" xml:space="preserve">
+    <value>Secure Apply</value>
+  </data>
+  <data name="Prop.Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
   <data name="Prop.Bathrooms" xml:space="preserve">
     <value>Bathrooms</value>
   </data>

@@ -182,6 +182,15 @@
                                     </div>
                                     <div class="fw-semibold small mb-1">@review.Title</div>
                                     <p class="text-muted small mb-0">@review.Comment</p>
+                                    @if (review.Images != null && review.Images.Count > 0)
+                                    {
+                                        <div class="d-flex gap-2 mt-2 flex-wrap">
+                                            @foreach (var img in review.Images.Take(3))
+                                            {
+                                                <img src="@img.FilePath" class="rounded" style="width:80px;height:80px;object-fit:cover;" alt="" loading="lazy" />
+                                            }
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         }

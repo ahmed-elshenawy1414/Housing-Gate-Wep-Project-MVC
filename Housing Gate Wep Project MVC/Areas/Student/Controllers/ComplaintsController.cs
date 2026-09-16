@@ -92,7 +92,7 @@ namespace StudentHousing.Areas.Student.Controllers
                 .Select(u => new SelectListItemWrapper
                 {
                     Value = u.Id,
-                    Text = $"{u.FullName} ({u.Email})"
+                    Text = u.FullName
                 })
                 .OrderBy(i => i.Text)
                 .ToList();

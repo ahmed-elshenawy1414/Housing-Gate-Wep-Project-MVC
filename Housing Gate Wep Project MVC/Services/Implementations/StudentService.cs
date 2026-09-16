@@ -14,12 +14,14 @@ namespace StudentHousing.Services.Implementations
         private readonly IUnitOfWork _uow;
         private readonly IWebHostEnvironment _env;
         private readonly IStringLocalizer<SharedResource> _L;
+        private readonly StudentHousing.Services.Interfaces.IDocumentStorageService _docs;
 
-        public StudentService(IUnitOfWork uow, IWebHostEnvironment env, IStringLocalizer<SharedResource> L)
+        public StudentService(IUnitOfWork uow, IWebHostEnvironment env, IStringLocalizer<SharedResource> L, StudentHousing.Services.Interfaces.IDocumentStorageService docs)
         {
             _uow = uow;
             _env = env;
             _L = L;
+            _docs = docs;
         }
 
         public async Task<StudentProfile?> GetMyProfileAsync(string userId)
@@ -119,27 +121,27 @@ namespace StudentHousing.Services.Implementations
                 return (false, _L["Err.StudentProfileNotFound"]);
             }
 
-            string nationalPath;
-            string universityPath;
-            try
+            var nationalRes = await _docs.SavePrivateAsync(nationalId, userId, "student-verify");
+            if (!nationalRes.Success) return (false, nationalRes.Error ?? _L["Err.UploadFailed"]);
+            var universityRes = await _docs.SavePrivateAsync(universityId, userId, "student-verify");
+            if (!universityRes.Success)
             {
-                nationalPath = await ImageFileHelper.SaveAsync(nationalId, _env);
-                universityPath = await ImageFileHelper.SaveAsync(universityId, _env);
+                // Rollback first file
+                _docs.DeletePrivate(nationalRes.PrivatePath);
+                return (false, universityRes.Error ?? _L["Err.UploadFailed"]);
             }
-            catch (Exception)
-            {
-                return (false, _L["Err.UploadFailed"]);
-            }
+            string nationalPath = nationalRes.PrivatePath!;
+            string universityPath = universityRes.PrivatePath!;
 
-            if (profile.NationalIdDocumentUrl != null)
-            {
+            // Delete old private documents (or legacy public files)
+            _docs.DeletePrivate(profile.NationalIdDocumentUrl);
+            // Fallback delete for legacy public path via ImageFileHelper
+            if (!string.IsNullOrEmpty(profile.NationalIdDocumentUrl) && profile.NationalIdDocumentUrl.StartsWith("/uploads/"))
                 ImageFileHelper.Delete(profile.NationalIdDocumentUrl, _env);
-            }
 
-            if (profile.UniversityIdDocumentUrl != null)
-            {
+            _docs.DeletePrivate(profile.UniversityIdDocumentUrl);
+            if (!string.IsNullOrEmpty(profile.UniversityIdDocumentUrl) && profile.UniversityIdDocumentUrl.StartsWith("/uploads/"))
                 ImageFileHelper.Delete(profile.UniversityIdDocumentUrl, _env);
-            }
 
             profile.NationalIdDocumentUrl = nationalPath;
             profile.UniversityIdDocumentUrl = universityPath;
@@ -152,18 +154,16 @@ namespace StudentHousing.Services.Implementations
         public async Task<IReadOnlyList<Stay>> GetCompletedStaysWithoutReviewAsync(int studentProfileId)
         {
             var stays = await _uow.Stays.GetByStudentProfileAsync(studentProfileId);
-            var result = new List<Stay>();
+            var completed = stays.Where(s => s.Status == StayStatus.Completed).ToList();
+            if (completed.Count == 0) return Array.Empty<Stay>();
 
-            foreach (var stay in stays.Where(s => s.Status == StayStatus.Completed))
-            {
-                var reviewed = await _uow.Reviews.AlreadyReviewedStayAsync(stay.Id, stay.StudentProfile.UserId);
-                if (!reviewed)
-                {
-                    result.Add(stay);
-                }
-            }
+            // Batch: one query for all stays (fix N+1)
+            var stayIds = completed.Select(s => s.Id).ToHashSet();
+            var reviewerId = completed.First().StudentProfile.UserId;
+            var reviewedIds = (await _uow.Reviews.ListAsync(r => r.StayId != 0 && stayIds.Contains(r.StayId) && r.ReviewerId == reviewerId))
+                .Select(r => r.StayId).ToHashSet();
 
-            return result;
+            return completed.Where(s => !reviewedIds.Contains(s.Id)).ToList();
         }
     }
 }

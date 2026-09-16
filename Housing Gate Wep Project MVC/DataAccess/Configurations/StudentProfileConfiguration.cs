@@ -12,6 +12,8 @@ namespace StudentHousing.Data.Configurations
             builder.Property(s => s.Governorate).HasMaxLength(60);
             builder.Property(s => s.District).HasMaxLength(60);
             builder.Property(s => s.VerificationRejectReason).HasMaxLength(500);
+            builder.HasIndex(s => s.VerificationStatus);
+            builder.HasIndex(s => s.UserId).IsUnique();
 
             builder.HasOne(s => s.Preference)
                    .WithOne(p => p.StudentProfile)

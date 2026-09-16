@@ -1,0 +1,56 @@
+@model IReadOnlyList<StudentHousing.Models.Stay>
+@{
+    ViewData["Title"] = "Rate Students";
+}
+
+<div class="page-head mb-4">
+    <h1 class="mb-1">Rate Your Students</h1>
+    <p class="text-muted">Completed stays — rate the student you housed. Reviews are moderated before appearing on their profile.</p>
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="card">
+        <div class="empty-state">
+            <div class="empty-icon mb-3"><i class="bi bi-star"></i></div>
+            <h4>No completed stays to review</h4>
+            <p>When a student's stay is marked completed, you can rate them here.</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="table-wrapper">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Property</th>
+                    <th>Stay</th>
+                    <th class="text-end">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="avatar-initials avatar-initials-sm">@string.Concat(s.StudentProfile.User.FirstName?.FirstOrDefault(), s.StudentProfile.User.LastName?.FirstOrDefault())</span>
+                                <div>
+                                    <div class="fw-semibold">@s.StudentProfile.User.FullName</div>
+                                    <small class="text-muted">@s.StudentProfile.University</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>@s.Room.Property.Title - @s.Room.Name</td>
+                        <td class="small text-muted">@s.StartDate.ToLocalTime().ToString("dd MMM yyyy") - @(s.EndDate?.ToLocalTime().ToString("dd MMM yyyy") ?? "Active")</td>
+                        <td class="text-end">
+                            <a asp-action="ReviewStudent" asp-route-stayId="@s.Id" class="btn btn-sm btn-primary"><i class="bi bi-star me-1"></i> Rate Student</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

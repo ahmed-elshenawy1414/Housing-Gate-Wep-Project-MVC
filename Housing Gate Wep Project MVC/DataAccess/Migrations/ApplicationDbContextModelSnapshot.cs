@@ -385,6 +385,12 @@ namespace StudentHousing.Migrations
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<int?>("StudentProfileId")
                         .HasColumnType("int");
 
@@ -534,6 +540,11 @@ namespace StudentHousing.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.HasIndex("VerificationStatus");
+
                     b.ToTable("OwnerProfiles");
                 });
 
@@ -621,6 +632,12 @@ namespace StudentHousing.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -678,6 +695,12 @@ namespace StudentHousing.Migrations
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -689,6 +712,10 @@ namespace StudentHousing.Migrations
                     b.HasIndex("StudentProfileId");
 
                     b.HasIndex("RoomId", "Status");
+
+                    b.HasIndex("RoomId", "StudentProfileId")
+                        .IsUnique()
+                        .HasFilter("[Status] IN (0, 1)");
 
                     b.ToTable("PropertyApplications");
                 });
@@ -755,6 +782,12 @@ namespace StudentHousing.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -776,6 +809,32 @@ namespace StudentHousing.Migrations
                         .IsUnique();
 
                     b.ToTable("PropertyReviews");
+                });
+
+            modelBuilder.Entity("StudentHousing.Models.PropertyReviewImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<int>("PropertyReviewId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PropertyReviewId");
+
+                    b.ToTable("PropertyReviewImages");
                 });
 
             modelBuilder.Entity("StudentHousing.Models.Room", b =>
@@ -819,11 +878,24 @@ namespace StudentHousing.Migrations
                     b.Property<int>("RoomType")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PropertyId", "IsAvailable");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Rooms", t =>
+                        {
+                            t.HasCheckConstraint("CK_Room_AvailableBeds_Range", "[AvailableBeds] >= 0 AND [AvailableBeds] <= [NumberOfBeds]");
+
+                            t.HasCheckConstraint("CK_Room_NumberOfBeds_Range", "[NumberOfBeds] >= 0 AND [NumberOfBeds] <= 20");
+
+                            t.HasCheckConstraint("CK_Room_RentPerMonth_NonNegative", "[RentPerMonth] >= 0");
+                        });
                 });
 
             modelBuilder.Entity("StudentHousing.Models.RoommatePreference", b =>
@@ -876,6 +948,29 @@ namespace StudentHousing.Migrations
                     b.ToTable("RoommatePreferences");
                 });
 
+            modelBuilder.Entity("StudentHousing.Models.SiteSetting", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("ValueAr")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("SiteSettings");
+                });
+
             modelBuilder.Entity("StudentHousing.Models.Stay", b =>
                 {
                     b.Property<int>("Id")
@@ -895,6 +990,12 @@ namespace StudentHousing.Migrations
 
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -1013,6 +1114,8 @@ namespace StudentHousing.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
+                    b.HasIndex("VerificationStatus");
+
                     b.ToTable("StudentProfiles");
                 });
 
@@ -1074,6 +1177,12 @@ namespace StudentHousing.Migrations
                     b.Property<string>("ReviewerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -1325,6 +1434,17 @@ namespace StudentHousing.Migrations
                     b.Navigation("Stay");
                 });
 
+            modelBuilder.Entity("StudentHousing.Models.PropertyReviewImage", b =>
+                {
+                    b.HasOne("StudentHousing.Models.PropertyReview", "PropertyReview")
+                        .WithMany("Images")
+                        .HasForeignKey("PropertyReviewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PropertyReview");
+                });
+
             modelBuilder.Entity("StudentHousing.Models.Room", b =>
                 {
                     b.HasOne("StudentHousing.Models.Property", "Property")
@@ -1436,6 +1556,11 @@ namespace StudentHousing.Migrations
             modelBuilder.Entity("StudentHousing.Models.PropertyApplication", b =>
                 {
                     b.Navigation("Stay");
+                });
+
+            modelBuilder.Entity("StudentHousing.Models.PropertyReview", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("StudentHousing.Models.Room", b =>

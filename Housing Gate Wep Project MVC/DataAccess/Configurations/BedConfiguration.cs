@@ -9,6 +9,7 @@ namespace StudentHousing.Data.Configurations
         public void Configure(EntityTypeBuilder<Bed> builder)
         {
             builder.Property(b => b.Name).HasMaxLength(50).IsRequired();
+            builder.Property(b => b.RowVersion).IsRowVersion();
 
             builder.HasIndex(b => new { b.RoomId, b.IsAvailable });
 

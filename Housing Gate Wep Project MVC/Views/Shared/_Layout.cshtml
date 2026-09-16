@@ -20,12 +20,6 @@
         if (currentUser == null) return null;
         return $"{currentUser.FirstName?.FirstOrDefault()}{currentUser.LastName?.FirstOrDefault()}";
     }
-    string RoleArea()
-    {
-        if (User.IsInRole("Admin")) return "Admin";
-        if (User.IsInRole("Owner")) return "Owner";
-        return "Student";
-    }
     string RoleName()
     {
         if (User.IsInRole("Admin")) return L["Nav.Admin"];

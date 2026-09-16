@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Rate Student";
+    var studentName = (string)ViewBag.StudentName;
+}
+
+<div class="auth-shell">
+    <div class="auth-card p-4 p-md-5">
+        <div class="text-center mb-4">
+            <h1 class="h3 fw-bold mb-1">Rate @studentName</h1>
+            <p class="text-muted">Your rating will appear on the student's profile after moderation and will be visible to future landlords.</p>
+        </div>
+        <form method="post">
+            <input type="hidden" name="stayId" value="@ViewBag.StayId" />
+            <input type="hidden" name="reviewedUserId" value="@ViewBag.StudentUserId" />
+            <div class="mb-3">
+                <label class="form-label">Rating</label>
+                <div class="d-flex gap-1">
+                    @for (var i = 1; i <= 5; i++)
+                    {
+                        <input type="radio" class="btn-check" name="rating" id="r@i" value="@i" @(i==5?"checked":"") />
+                        <label class="btn btn-outline-warning flex-grow-1" for="r@i"><i class="bi bi-star-fill"></i></label>
+                    }
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label">Comment</label>
+                <textarea name="comment" class="form-control" rows="4" placeholder="How was the student as a tenant?"></textarea>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-grow-1">Submit Review</button>
+                <a asp-action="Index" class="btn btn-soft">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

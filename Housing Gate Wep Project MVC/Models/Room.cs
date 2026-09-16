@@ -35,6 +35,9 @@ namespace StudentHousing.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
+
         public Property Property { get; set; } = null!;
         public ICollection<PropertyApplication> Applications { get; set; } = new List<PropertyApplication>();
         public ICollection<Stay> Stays { get; set; } = new List<Stay>();
@@ -43,3 +46,6 @@ namespace StudentHousing.Models
         public ICollection<PropertyImage> Images { get; set; } = new List<PropertyImage>();
     }
 }
+
+
+

@@ -43,8 +43,8 @@ namespace StudentHousing.Repositories.Implementations
                 where string.IsNullOrWhiteSpace(search)
                       || user.FirstName.ToLower().Contains(search.ToLower())
                       || user.LastName.ToLower().Contains(search.ToLower())
-                      || user.Email.ToLower().Contains(search.ToLower())
-                      || role.Name.ToLower().Contains(search.ToLower())
+                      || (user.Email != null && user.Email.ToLower().Contains(search.ToLower()))
+                      || (role.Name != null && role.Name.ToLower().Contains(search.ToLower()))
                 group role.Name by user into grouped
                 select new UserWithRolesDto
                 {
@@ -63,7 +63,7 @@ namespace StudentHousing.Repositories.Implementations
                     && (string.IsNullOrWhiteSpace(search)
                         || u.FirstName.ToLower().Contains(search.ToLower())
                         || u.LastName.ToLower().Contains(search.ToLower())
-                        || u.Email.ToLower().Contains(search.ToLower())
+                        || (u.Email != null && u.Email.ToLower().Contains(search.ToLower()))
                         || (u.OwnerProfile.CompanyName != null && u.OwnerProfile.CompanyName.ToLower().Contains(search.ToLower()))))
                 .OrderBy(u => u.CreatedAt)
                 .AsNoTracking()
@@ -78,7 +78,7 @@ namespace StudentHousing.Repositories.Implementations
                     && (string.IsNullOrWhiteSpace(search)
                         || u.FirstName.ToLower().Contains(search.ToLower())
                         || u.LastName.ToLower().Contains(search.ToLower())
-                        || u.Email.ToLower().Contains(search.ToLower())
+                        || (u.Email != null && u.Email.ToLower().Contains(search.ToLower()))
                         || u.StudentProfile.University.ToLower().Contains(search.ToLower())))
                 .OrderBy(u => u.CreatedAt)
                 .AsNoTracking()
@@ -94,6 +94,16 @@ namespace StudentHousing.Repositories.Implementations
                 .ToListAsync();
         }
 
+        public async Task<IReadOnlyList<UserReview>> GetReviewsAboutUsersAsync(IEnumerable<string> userIds)
+        {
+            var ids = userIds.ToHashSet();
+            if (ids.Count == 0) return Array.Empty<UserReview>();
+            return await _db.UserReviews
+                .Where(r => ids.Contains(r.ReviewedUserId) && r.Status == ReviewStatus.Approved)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
         public async Task<IReadOnlyList<UserReview>> GetReviewsByUserAsync(string userId)
         {
             return await _db.UserReviews
@@ -102,5 +112,11 @@ namespace StudentHousing.Repositories.Implementations
                 .AsNoTracking()
                 .ToListAsync();
         }
+
+        public Task<int> CountAllAsync() => _db.Users.CountAsync();
+        public Task<int> CountStudentsAsync() => _db.Users.CountAsync(u => u.StudentProfile != null);
+        public Task<int> CountOwnersAsync() => _db.Users.CountAsync(u => u.OwnerProfile != null);
+        public Task<int> CountPendingOwnerVerificationsAsync() => _db.OwnerProfiles.CountAsync(o => o.VerificationStatus == VerificationStatus.Pending);
+        public Task<int> CountPendingStudentVerificationsAsync() => _db.StudentProfiles.CountAsync(s => s.VerificationStatus == VerificationStatus.Pending);
     }
 }

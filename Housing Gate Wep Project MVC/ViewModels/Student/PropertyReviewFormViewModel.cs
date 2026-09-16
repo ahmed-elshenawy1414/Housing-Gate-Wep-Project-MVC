@@ -22,6 +22,9 @@ namespace StudentHousing.ViewModels.Student
         [DataType(DataType.MultilineText)]
         public string Comment { get; set; } = string.Empty;
 
+        // Photos: optional, visible to anyone viewing the property listing
+        public List<IFormFile>? Photos { get; set; }
+
         // Display helpers
         public string PropertyTitle { get; set; } = string.Empty;
         public string? RoomName { get; set; }

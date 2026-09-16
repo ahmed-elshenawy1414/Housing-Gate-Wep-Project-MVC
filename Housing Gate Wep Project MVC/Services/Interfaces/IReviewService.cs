@@ -20,6 +20,10 @@ namespace StudentHousing.Services.Interfaces
 
         Task<(bool Success, string Error)> AddUserReviewAsync(int stayId, string reviewedUserId, string reviewerId, int rating, string comment);
 
+        // --- Landlord → Student reviews ---
+
+        Task<(bool Success, string Error)> AddOwnerToStudentReviewAsync(int stayId, string reviewedStudentUserId, string ownerUserId, int rating, string comment);
+
         // --- Moderation ---
 
         Task<IReadOnlyList<PropertyReview>> GetPendingAsync();

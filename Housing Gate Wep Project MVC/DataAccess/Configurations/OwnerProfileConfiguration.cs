@@ -8,6 +8,8 @@ namespace StudentHousing.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<OwnerProfile> builder)
         {
+            builder.HasIndex(o => o.VerificationStatus);
+            builder.HasIndex(o => o.UserId).IsUnique();
             builder.HasMany(o => o.Properties)
                    .WithOne(p => p.Owner)
                    .HasForeignKey(p => p.OwnerId)

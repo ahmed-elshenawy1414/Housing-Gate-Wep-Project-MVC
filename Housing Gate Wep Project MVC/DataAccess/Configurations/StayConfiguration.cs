@@ -8,6 +8,7 @@ namespace StudentHousing.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Stay> builder)
         {
+            builder.Property(s => s.RowVersion).IsRowVersion();
             builder.HasIndex(s => s.StudentProfileId);
             builder.HasIndex(s => new { s.RoomId, s.Status });
         }

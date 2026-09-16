@@ -10,8 +10,17 @@ namespace StudentHousing.Data.Configurations
         {
             builder.Property(r => r.Name).HasMaxLength(100).IsRequired();
             builder.Property(r => r.Description).HasMaxLength(500);
+            builder.Property(r => r.RowVersion).IsRowVersion();
 
             builder.HasIndex(r => new { r.PropertyId, r.IsAvailable });
+
+            // Data integrity: rent and bed counts must be non-negative
+            builder.ToTable(t =>
+            {
+                t.HasCheckConstraint("CK_Room_RentPerMonth_NonNegative", "[RentPerMonth] >= 0");
+                t.HasCheckConstraint("CK_Room_NumberOfBeds_Range", "[NumberOfBeds] >= 0 AND [NumberOfBeds] <= 20");
+                t.HasCheckConstraint("CK_Room_AvailableBeds_Range", "[AvailableBeds] >= 0 AND [AvailableBeds] <= [NumberOfBeds]");
+            });
 
             // Room images stay attached to the property if the room is deleted.
             builder.HasMany(r => r.Images)

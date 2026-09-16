@@ -106,6 +106,9 @@
   <data name="Dash.NoPendingVerifications" xml:space="preserve">
     <value>لا توجد طلبات توثيق معلقة.</value>
   </data>
+  <data name="Dash.Owners" xml:space="preserve">
+    <value>الملاك</value>
+  </data>
   <data name="Dash.OwnersAwaiting" xml:space="preserve">
     <value>مالكون بانتظار التوثيق</value>
   </data>
@@ -114,6 +117,9 @@
   </data>
   <data name="Dash.RecentListings" xml:space="preserve">
     <value>أحدث العقارات</value>
+  </data>
+  <data name="Dash.Students" xml:space="preserve">
+    <value>الطلاب</value>
   </data>
   <data name="Dash.StudentsAwaiting" xml:space="preserve">
     <value>طلاب بانتظار التوثيق</value>
@@ -309,6 +315,48 @@
   </data>
   <data name="Users.Yes" xml:space="preserve">
     <value>نعم</value>
+  </data>
+  <data name="Users.Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Users.Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Users.DeleteConfirm" xml:space="preserve">
+    <value>حذف هذا المستخدم؟ لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="Users.Document" xml:space="preserve">
+    <value>المستند</value>
+  </data>
+  <data name="Users.NoDocument" xml:space="preserve">
+    <value>لم يتم رفع مستند</value>
+  </data>
+  <data name="Users.AccountInfo" xml:space="preserve">
+    <value>معلومات الحساب</value>
+  </data>
+  <data name="Users.BlockedHeader" xml:space="preserve">
+    <value>تم حظر هذا الحساب للأسباب التالية:</value>
+  </data>
+  <data name="Users.Applications" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="Users.Properties" xml:space="preserve">
+    <value>العقارات</value>
+  </data>
+  <data name="Users.Stays" xml:space="preserve">
+    <value>الإقامات</value>
+  </data>
+  <data name="Users.ComplaintsFiled" xml:space="preserve">
+    <value>الشكاوى المقدمة</value>
+  </data>
+  <data name="Users.ComplaintsReceived" xml:space="preserve">
+    <value>الشكاوى المستلمة</value>
+  </data>
+  <data name="Users.ReviewsGiven" xml:space="preserve">
+    <value>التقييمات الممنوحة</value>
+  </data>
+  <data name="Users.ReviewsReceived" xml:space="preserve">
+    <value>التقييمات المستلمة</value>
   </data>
   <data name="Dash.OpenComplaints" xml:space="preserve">
     <value>الشكاوى المفتوحة</value>

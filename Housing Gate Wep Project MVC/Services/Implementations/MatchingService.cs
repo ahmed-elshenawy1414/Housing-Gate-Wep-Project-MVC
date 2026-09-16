@@ -25,6 +25,12 @@ namespace StudentHousing.Services.Implementations
             var all = await _uow.StudentProfiles.GetAllWithDetailsAsync();
             var others = all.Where(p => p.Id != myStudentProfileId && p.User.IsActive).ToList();
 
+            // Batch reviews for all others in one query (Phase 4 fix N+1)
+            var otherIds = others.Select(o => o.UserId).ToHashSet();
+            var allReviews = await _uow.Users.GetReviewsAboutUsersAsync(otherIds);
+            var reviewsByUser = allReviews.GroupBy(r => r.ReviewedUserId)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
             var matches = new List<RoommateMatchDto>();
             foreach (var other in others)
             {
@@ -34,7 +40,8 @@ namespace StudentHousing.Services.Implementations
                     continue; // Hide obvious mismatches so the list stays useful.
                 }
 
-                var aboutReviews = await _uow.Users.GetReviewsAboutUserAsync(other.UserId);
+                reviewsByUser.TryGetValue(other.UserId, out var aboutReviews);
+                aboutReviews ??= new List<UserReview>();
 
                 matches.Add(new RoommateMatchDto
                 {

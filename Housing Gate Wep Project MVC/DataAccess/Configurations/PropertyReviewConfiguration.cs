@@ -10,9 +10,15 @@ namespace StudentHousing.Data.Configurations
         {
             builder.Property(r => r.Title).HasMaxLength(120).IsRequired();
             builder.Property(r => r.Comment).HasMaxLength(2000).IsRequired();
+            builder.Property(r => r.RowVersion).IsRowVersion();
 
             // A student may review a property only once per verified stay.
             builder.HasIndex(r => new { r.StayId, r.ReviewerId }).IsUnique();
+
+            builder.HasMany(r => r.Images)
+                .WithOne(i => i.PropertyReview)
+                .HasForeignKey(i => i.PropertyReviewId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

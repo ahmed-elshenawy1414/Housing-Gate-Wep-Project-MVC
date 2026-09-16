@@ -13,6 +13,8 @@ namespace StudentHousing.Services.Interfaces
 
         Task<IReadOnlyList<PropertyCardViewModel>> SearchAsync(PropertySearchViewModel search);
 
+        Task<PaginatedResult<PropertyCardViewModel>> SearchPagedAsync(PropertySearchViewModel search);
+
         Task<Property?> GetByIdWithDetailsAsync(int id);
 
         Task<IReadOnlyList<string>> GetCitiesAsync();

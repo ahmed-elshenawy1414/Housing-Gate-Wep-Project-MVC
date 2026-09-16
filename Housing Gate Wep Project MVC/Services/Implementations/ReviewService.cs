@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Localization;
+using StudentHousing.Helpers;
 using StudentHousing.Models;
 using StudentHousing.Repositories.Interfaces;
 using StudentHousing.Resources;
@@ -13,14 +14,16 @@ namespace StudentHousing.Services.Implementations
         private readonly INotificationService _notifications;
         private readonly IAuditLogService _auditLog;
         private readonly IStringLocalizer<SharedResource> _L;
+        private readonly IWebHostEnvironment _env;
 
         public ReviewService(IUnitOfWork uow, INotificationService notifications, IAuditLogService auditLog,
-            IStringLocalizer<SharedResource> L)
+            IStringLocalizer<SharedResource> L, IWebHostEnvironment env)
         {
             _uow = uow;
             _notifications = notifications;
             _auditLog = auditLog;
             _L = L;
+            _env = env;
         }
 
         public async Task<IReadOnlyList<PropertyReview>> GetApprovedForPropertyAsync(int propertyId)
@@ -48,6 +51,21 @@ namespace StudentHousing.Services.Implementations
                 return (false, _L["Err.AlreadyReviewedProperty"]);
             }
 
+            // Validate photos (performance: max 3, security: extension/MIME/magic)
+            if (model.Photos != null && model.Photos.Count > 3)
+                return (false, _L["Err.TooManyPhotos"]);
+
+            string? photoError = null;
+            if (model.Photos != null)
+            {
+                foreach (var f in model.Photos.Where(f => f != null && f.Length > 0))
+                {
+                    photoError = ImageFileHelper.Validate(f, _L);
+                    if (photoError != null) break;
+                }
+            }
+            if (photoError != null) return (false, photoError);
+
             var review = new PropertyReview
             {
                 PropertyId = model.PropertyId,
@@ -61,6 +79,18 @@ namespace StudentHousing.Services.Implementations
 
             await _uow.Reviews.AddAsync(review);
             await _uow.SaveChangesAsync();
+
+            // Save photos after review has Id (DB integrity: FK)
+            if (model.Photos != null)
+            {
+                foreach (var f in model.Photos.Where(f => f != null && f.Length > 0).Take(3))
+                {
+                    var path = await ImageFileHelper.SaveAsync(f, _env);
+                    // Store under review-specific subfolder for privacy? Keep public for listing visibility
+                    review.Images.Add(new PropertyReviewImage { PropertyReviewId = review.Id, FilePath = path });
+                }
+                await _uow.SaveChangesAsync();
+            }
             return (true, string.Empty);
         }
 
@@ -119,6 +149,42 @@ namespace StudentHousing.Services.Implementations
 
             await _uow.Reviews.AddUserReviewAsync(review);
             await _uow.SaveChangesAsync();
+            return (true, string.Empty);
+        }
+
+        public async Task<(bool Success, string Error)> AddOwnerToStudentReviewAsync(int stayId, string reviewedStudentUserId, string ownerUserId, int rating, string comment)
+        {
+            if (reviewedStudentUserId == ownerUserId) return (false, _L["Err.CannotReviewSelf"]);
+            var stay = await _uow.Stays.GetByIdWithDetailsAsync(stayId);
+            if (stay == null) return (false, _L["Err.StayNotFound"]);
+            // Owner must own the property of this stay
+            if (stay.Room.Property.OwnerId != ownerUserId) return (false, _L["Err.NotPropertyOwner"]);
+            if (stay.Status != StayStatus.Completed) return (false, _L["Err.ReviewAfterStayEnd"]);
+            if (stay.StudentProfile.UserId != reviewedStudentUserId) return (false, _L["Err.OnlyLivedTogether"]);
+            if (await _uow.Reviews.UserReviewExistsAsync(stayId, ownerUserId, reviewedStudentUserId))
+                return (false, _L["Err.AlreadyReviewedRoommate"]);
+            if (rating < 1 || rating > 5) return (false, _L["Err.InvalidRating"]);
+            if (string.IsNullOrWhiteSpace(comment)) return (false, _L["Msg.CommentRequired"]);
+
+            var review = new UserReview
+            {
+                StayId = stayId,
+                ReviewerId = ownerUserId,
+                ReviewedUserId = reviewedStudentUserId,
+                Rating = rating,
+                Comment = comment.Trim(),
+                Status = ReviewStatus.Pending
+            };
+            await _uow.Reviews.AddUserReviewAsync(review);
+            try { await _uow.SaveChangesAsync(); }
+            catch (Microsoft.EntityFrameworkCore.DbUpdateException ex) when (ex.InnerException?.Message.Contains("UNIQUE") == true)
+            {
+                return (false, _L["Err.AlreadyReviewedRoommate"]);
+            }
+            catch (Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException)
+            {
+                return (false, _L["Err.ConcurrencyConflict"]);
+            }
             return (true, string.Empty);
         }
 

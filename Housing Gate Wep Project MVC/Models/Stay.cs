@@ -24,6 +24,9 @@ namespace StudentHousing.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
+
         public Room Room { get; set; } = null!;
         public StudentProfile StudentProfile { get; set; } = null!;
         public PropertyApplication Application { get; set; } = null!;
@@ -31,3 +34,6 @@ namespace StudentHousing.Models
         public ICollection<UserReview> UserReviews { get; set; } = new List<UserReview>();
     }
 }
+
+
+

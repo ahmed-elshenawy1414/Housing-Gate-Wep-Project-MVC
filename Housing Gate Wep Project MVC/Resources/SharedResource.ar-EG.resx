@@ -211,6 +211,9 @@
   <data name="Common.Email" xml:space="preserve">
     <value>البريد الإلكتروني</value>
   </data>
+  <data name="Common.Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
   <data name="Common.Actions" xml:space="preserve">
     <value>إجراءات</value>
   </data>
@@ -653,7 +656,7 @@
     <value>جد منزلك بعيدًا عن منزلك</value>
   </data>
   <data name="Home.HeroSub" xml:space="preserve">
-    <value>ابحث عن سكن طلابي موثق، قارن الغرف واعثر على زملاء متوافقين.</value>
+    <value>بوابة السكن الطلابي لا تساعد الطلاب فقط في العثور على غرفة — بل تساعدهم في العثور على المكان المناسب والأشخاص المناسبين للعيش معهم.</value>
   </data>
   <data name="Home.HeroTagline" xml:space="preserve">
     <value>جد منزلك واعثر على رفاقك.</value>
@@ -768,6 +771,24 @@
   </data>
   <data name="Home.AboutText" xml:space="preserve">
     <value>بوابة السكن تربط طلاب الجامعات بسكن موثق وعادل السعر وتساعدهم في العثور على زملاء متوافقين.</value>
+  </data>
+  <data name="Home.VerifiedStudents" xml:space="preserve">
+    <value>طلاب موثقون</value>
+  </data>
+  <data name="Home.VerifiedOwners" xml:space="preserve">
+    <value>ملاك موثقون</value>
+  </data>
+  <data name="Home.VerifiedOnly" xml:space="preserve">
+    <value>موثّق فقط</value>
+  </data>
+  <data name="Layout.FooterHelp" xml:space="preserve">
+    <value>المساعدة</value>
+  </data>
+  <data name="Layout.FooterRights" xml:space="preserve">
+    <value>جميع الحقوق محفوظة.</value>
+  </data>
+  <data name="Nav.ContactUs" xml:space="preserve">
+    <value>اتصل بنا</value>
   </data>
   <data name="Notif.NoNotifications" xml:space="preserve">
     <value>لا توجد إشعارات بعد.</value>
@@ -1141,6 +1162,15 @@
   <data name="Notif.ReviewRemovedBody" xml:space="preserve">
     <value>قام أحد المشرفين بإزالة مراجعتك. تواصل مع الدعم إذا كانت لديك أسئلة.</value>
   </data>
+  <data name="Reviews.Photos" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="Reviews.PhotosHint" xml:space="preserve">
+    <value>حتى 3 صور</value>
+  </data>
+  <data name="Reviews.PhotosHelp" xml:space="preserve">
+    <value>JPG أو PNG أو WebP، بحد أقصى 3 ميجابايت لكل صورة</value>
+  </data>
   <data name="Notif.NewComplaint" xml:space="preserve">
     <value>شكوى جديدة</value>
   </data>
@@ -1201,8 +1231,20 @@
   <data name="Err.PropertyHasComplaints" xml:space="preserve">
     <value>لهذا العقار شكاوى.</value>
   </data>
-  <data name="Common.Search" xml:space="preserve">
-    <value>Ø¨Ø­Ø«</value>
+  <data name="Layout.FooterAccounts" xml:space="preserve">
+    <value>الحسابات</value>
+  </data>
+  <data name="Layout.FooterExplore" xml:space="preserve">
+    <value>استكشاف</value>
+  </data>
+  <data name="Nav.Admin" xml:space="preserve">
+    <value>المشرف</value>
+  </data>
+  <data name="Nav.Owner" xml:space="preserve">
+    <value>المالك</value>
+  </data>
+  <data name="Nav.Student" xml:space="preserve">
+    <value>الطالب</value>
   </data>
   <data name="Common.SearchPlaceholder" xml:space="preserve">
     <value>Ø¨Ø­Ø«...</value>

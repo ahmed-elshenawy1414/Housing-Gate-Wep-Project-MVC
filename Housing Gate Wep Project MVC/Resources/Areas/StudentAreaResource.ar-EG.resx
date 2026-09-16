@@ -391,6 +391,12 @@
   <data name="Prop.AvailableRooms" xml:space="preserve">
     <value>الغرف المتاحة</value>
   </data>
+  <data name="Prop.SecureApply" xml:space="preserve">
+    <value>تقديم آمن</value>
+  </data>
+  <data name="Prop.Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
   <data name="Prop.Bathrooms" xml:space="preserve">
     <value>الحمامات</value>
   </data>

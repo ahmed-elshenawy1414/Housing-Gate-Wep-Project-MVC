@@ -1,4 +1,6 @@
 using StudentHousing.Models;
+using StudentHousing.ViewModels;
+using StudentHousing.ViewModels.Student;
 
 namespace StudentHousing.Repositories.Interfaces
 {
@@ -16,5 +18,11 @@ namespace StudentHousing.Repositories.Interfaces
         Task<int> CountByStatusAsync(ApprovalStatus status);
 
         Task<IReadOnlyList<Property>> SearchAsync(ApprovalStatus? status, string? search);
+
+        // Phase 4: efficient server-side queries
+        Task<PaginatedResult<PropertyCardViewModel>> SearchCardsAsync(PropertySearchViewModel search, int page, int pageSize);
+        Task<IReadOnlyList<PropertyCardViewModel>> GetHomeCardsAsync(int take);
+        Task<IReadOnlyList<string>> GetDistinctCitiesAsync();
+        Task<int> CountApprovedActiveAsync();
     }
 }

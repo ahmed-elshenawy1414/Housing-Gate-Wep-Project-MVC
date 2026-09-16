@@ -71,6 +71,9 @@ namespace StudentHousing.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
+
         public OwnerProfile Owner { get; set; } = null!;
         public ICollection<PropertyImage> Images { get; set; } = new List<PropertyImage>();
         public ICollection<Room> Rooms { get; set; } = new List<Room>();

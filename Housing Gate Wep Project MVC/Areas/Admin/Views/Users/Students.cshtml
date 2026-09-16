@@ -80,11 +80,11 @@
                             <div class="d-flex gap-2">
                                 @if (!string.IsNullOrEmpty(student.NationalIdDocumentUrl))
                                 {
-                                    <a href="@student.NationalIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.NationalId"]</a>
+                                    <a href="@Url.Action("Download", "Documents", new { area = "", path = student.NationalIdDocumentUrl })" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.NationalId"]</a>
                                 }
                                 @if (!string.IsNullOrEmpty(student.UniversityIdDocumentUrl))
                                 {
-                                    <a href="@student.UniversityIdDocumentUrl" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.UniversityId"]</a>
+                                    <a href="@Url.Action("Download", "Documents", new { area = "", path = student.UniversityIdDocumentUrl })" target="_blank" class="btn btn-sm btn-soft"><i class="bi bi-file-earmark-image me-1"></i> @AL["Users.UniversityId"]</a>
                                 }
                             </div>
                         }

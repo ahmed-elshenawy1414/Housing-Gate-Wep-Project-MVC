@@ -23,8 +23,14 @@ namespace StudentHousing.Models
 
         public DateTime? RespondedAt { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
+
         public Room Room { get; set; } = null!;
         public StudentProfile StudentProfile { get; set; } = null!;
         public Stay? Stay { get; set; }
     }
 }
+
+
+

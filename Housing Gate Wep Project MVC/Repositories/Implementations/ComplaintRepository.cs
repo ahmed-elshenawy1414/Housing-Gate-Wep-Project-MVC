@@ -37,7 +37,7 @@ namespace StudentHousing.Repositories.Implementations
                     || c.Description.ToLower().Contains(s)
                     || c.Complainant.FirstName.ToLower().Contains(s)
                     || c.Complainant.LastName.ToLower().Contains(s)
-                    || c.Complainant.Email.ToLower().Contains(s)
+                    || (c.Complainant.Email != null && c.Complainant.Email.ToLower().Contains(s))
                     || (c.TargetProperty != null && c.TargetProperty.Title.ToLower().Contains(s)));
             }
 

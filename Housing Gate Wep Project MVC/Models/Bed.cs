@@ -22,7 +22,13 @@ namespace StudentHousing.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
+
         public Room Room { get; set; } = null!;
         public StudentProfile? Student { get; set; }
     }
 }
+
+
+

@@ -5,7 +5,7 @@
 
 <div class="page-head mb-4">
     <h1 class="mb-1">@L["Nav.FindHousing"]</h1>
-    <p>@Model.Results.Count @AL["Search.ResultsCount"]</p>
+    <p>@Model.TotalCount @AL["Search.ResultsCount"]</p>
 </div>
 
 <form method="get" class="card mb-4">
@@ -67,7 +67,7 @@
                        class="btn btn-sm @(Model.SortBy == "newest" ? "btn-primary" : "btn-soft")">@AL["Search.SortNewest"]</a>
                 </div>
             </div>
-            <span class="small text-muted">@Model.Results.Count @AL["Search.ResultsCount"]</span>
+            <span class="small text-muted">@Model.TotalCount @AL["Search.ResultsCount"]</span>
         </div>
     </div>
 </form>
@@ -90,4 +90,20 @@ else
             <partial name="_PropertyCard" model="property" />
         }
     </div>
+    @if (Model.TotalPages > 1)
+    {
+        <nav class="d-flex justify-content-center align-items-center gap-2 mt-4">
+            <span class="small text-muted">@string.Format(AL["Search.PageInfo"] ?? "Page {0} of {1} ({2} results)", Model.Page, Model.TotalPages, Model.TotalCount)</span>
+            <div class="btn-group btn-group-sm">
+                @if (Model.Page > 1)
+                {
+                    <a asp-action="Index" asp-route-keyword="@Model.Keyword" asp-route-city="@Model.City" asp-route-propertyType="@Model.PropertyType" asp-route-maxRent="@Model.MaxRent" asp-route-sortBy="@Model.SortBy" asp-route-page="@(Model.Page - 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-soft"><i class="bi bi-chevron-left"></i> @L["Common.Previous"]</a>
+                }
+                @if (Model.Page < Model.TotalPages)
+                {
+                    <a asp-action="Index" asp-route-keyword="@Model.Keyword" asp-route-city="@Model.City" asp-route-propertyType="@Model.PropertyType" asp-route-maxRent="@Model.MaxRent" asp-route-sortBy="@Model.SortBy" asp-route-page="@(Model.Page + 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-soft">@L["Common.Next"] <i class="bi bi-chevron-right"></i></a>
+                }
+            </div>
+        </nav>
+    }
 }

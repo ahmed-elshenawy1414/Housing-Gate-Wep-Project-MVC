@@ -22,7 +22,7 @@
 
 <div class="row g-4">
     <div class="col-md-8">
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-header">
                 <h5 class="mb-0">@L["Social.Media.Links"]</h5>
             </div>
@@ -30,18 +30,52 @@
                 <form method="post" asp-action="Index" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label asp-for="FacebookUrl" class="form-label">Facebook</label>
-<input type="url" asp-for="FacebookUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
-                    <div class="invalid-feedback">Please enter a valid Facebook URL.</div>
+                        <input type="url" asp-for="FacebookUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                        <div class="invalid-feedback">Please enter a valid Facebook URL.</div>
                     </div>
                     <div class="mb-3">
                         <label asp-for="InstagramUrl" class="form-label">Instagram</label>
-<input type="url" asp-for="InstagramUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
-                    <div class="invalid-feedback">Please enter a valid Instagram URL.</div>
+                        <input type="url" asp-for="InstagramUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                        <div class="invalid-feedback">Please enter a valid Instagram URL.</div>
                     </div>
                     <div class="mb-3">
                         <label asp-for="TikTokUrl" class="form-label">TikTok</label>
-<input type="url" asp-for="TikTokUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
-                    <div class="invalid-feedback">Please enter a valid TikTok URL.</div>
+                        <input type="url" asp-for="TikTokUrl" class="form-control" placeholder="@L["Common.UrlPlaceholder"]" />
+                        <div class="invalid-feedback">Please enter a valid TikTok URL.</div>
+                    </div>
+                    <hr class="my-4" />
+                    <h6 class="fw-bold mb-3">Homepage Hero</h6>
+                    <div class="mb-3">
+                        <label asp-for="HomeHeroTitle" class="form-label"></label>
+                        <input asp-for="HomeHeroTitle" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HomeHeroSub" class="form-label"></label>
+                        <textarea asp-for="HomeHeroSub" class="form-control" rows="2"></textarea>
+                    </div>
+                    <hr class="my-4" />
+                    <h6 class="fw-bold mb-3">About Us</h6>
+                    <div class="mb-3">
+                        <label asp-for="AboutLead" class="form-label"></label>
+                        <textarea asp-for="AboutLead" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="AboutBody" class="form-label"></label>
+                        <textarea asp-for="AboutBody" class="form-control" rows="4"></textarea>
+                    </div>
+                    <hr class="my-4" />
+                    <h6 class="fw-bold mb-3">How It Works</h6>
+                    <div class="mb-3">
+                        <label asp-for="HowItWorksStep1" class="form-label">Step 1</label>
+                        <textarea asp-for="HowItWorksStep1" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HowItWorksStep2" class="form-label">Step 2</label>
+                        <textarea asp-for="HowItWorksStep2" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="HowItWorksStep3" class="form-label">Step 3</label>
+                        <textarea asp-for="HowItWorksStep3" class="form-control" rows="2"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save Settings</button>
                     <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="btn btn-link ms-2">Cancel</a>

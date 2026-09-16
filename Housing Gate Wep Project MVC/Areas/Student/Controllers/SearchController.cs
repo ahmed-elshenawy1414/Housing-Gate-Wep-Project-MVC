@@ -29,8 +29,10 @@ namespace StudentHousing.Areas.Student.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(PropertySearchViewModel search)
+        public async Task<IActionResult> Index(PropertySearchViewModel search, int page = 1, int pageSize = 12)
         {
+            search.Page = page;
+            search.PageSize = Math.Clamp(pageSize, 1, 50);
             search.Cities = (await _propertyService.GetCitiesAsync()).ToList();
             search.Results = (await _propertyService.SearchAsync(search)).ToList();
             return View(search);

@@ -211,6 +211,9 @@
   <data name="Common.Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="Common.Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="Common.Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
@@ -653,7 +656,7 @@
     <value>Find your home away from home</value>
   </data>
   <data name="Home.HeroSub" xml:space="preserve">
-    <value>Search verified student housing, compare rooms and find compatible roommates.</value>
+    <value>Student Housing Gate doesn't just help students find a room — it helps them find the right place and the right people to live with.</value>
   </data>
   <data name="Home.HeroTagline" xml:space="preserve">
     <value>Find your home, find your people.</value>
@@ -768,6 +771,24 @@
   </data>
   <data name="Home.AboutText" xml:space="preserve">
     <value>Housing Gate connects university students with verified, fairly-priced housing and helps them find compatible roommates.</value>
+  </data>
+  <data name="Home.VerifiedStudents" xml:space="preserve">
+    <value>Verified Students</value>
+  </data>
+  <data name="Home.VerifiedOwners" xml:space="preserve">
+    <value>Verified Owners</value>
+  </data>
+  <data name="Home.VerifiedOnly" xml:space="preserve">
+    <value>Verified Only</value>
+  </data>
+  <data name="Layout.FooterHelp" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Layout.FooterRights" xml:space="preserve">
+    <value>All rights reserved.</value>
+  </data>
+  <data name="Nav.ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
   </data>
   <data name="Notif.NoNotifications" xml:space="preserve">
     <value>No notifications yet.</value>
@@ -1141,6 +1162,15 @@
   <data name="Notif.ReviewRemovedBody" xml:space="preserve">
     <value>A moderator removed your review. Contact support if you have questions.</value>
   </data>
+  <data name="Reviews.Photos" xml:space="preserve">
+    <value>Photos</value>
+  </data>
+  <data name="Reviews.PhotosHint" xml:space="preserve">
+    <value>Up to 3 photos</value>
+  </data>
+  <data name="Reviews.PhotosHelp" xml:space="preserve">
+    <value>JPG, PNG or WebP, max 3 MB each</value>
+  </data>
   <data name="Notif.NewComplaint" xml:space="preserve">
     <value>New complaint</value>
   </data>
@@ -1201,8 +1231,20 @@
   <data name="Err.PropertyHasComplaints" xml:space="preserve">
     <value>This property has complaints.</value>
   </data>
-  <data name="Common.Search" xml:space="preserve">
-    <value>Search</value>
+  <data name="Layout.FooterAccounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="Layout.FooterExplore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="Nav.Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Nav.Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="Nav.Student" xml:space="preserve">
+    <value>Student</value>
   </data>
   <data name="Common.SearchPlaceholder" xml:space="preserve">
     <value>Search...</value>

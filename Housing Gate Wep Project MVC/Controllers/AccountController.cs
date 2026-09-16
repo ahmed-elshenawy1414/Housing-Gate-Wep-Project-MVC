@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Localization;
 using StudentHousing.Models;
 using StudentHousing.Resources;
@@ -65,6 +66,7 @@ namespace StudentHousing.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [EnableRateLimiting("login")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
@@ -75,11 +77,23 @@ namespace StudentHousing.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null || !user.IsActive)
             {
+                // Do not reveal whether email exists — generic error.
                 ModelState.AddModelError(string.Empty, _L["Err.InvalidLogin"]);
                 return View(model);
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
+            if (await _userManager.IsLockedOutAsync(user))
+            {
+                ModelState.AddModelError(string.Empty, _L["Err.AccountLocked"]);
+                return View(model);
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: true);
+            if (result.IsLockedOut)
+            {
+                ModelState.AddModelError(string.Empty, _L["Err.AccountLocked"]);
+                return View(model);
+            }
             if (!result.Succeeded)
             {
                 ModelState.AddModelError(string.Empty, _L["Err.InvalidLogin"]);

@@ -5,6 +5,7 @@ namespace StudentHousing.Services.Interfaces
     public interface INotificationService
     {
         Task CreateAsync(string userId, string title, string message, string? link = null);
+        Task CreateManyAsync(IEnumerable<(string userId, string title, string message, string? link)> items);
 
         Task<IReadOnlyList<Notification>> GetRecentAsync(string userId, int count = 20);
 

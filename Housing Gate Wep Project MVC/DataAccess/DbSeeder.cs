@@ -64,6 +64,9 @@ namespace StudentHousing.Data
         {
             await EnsureLookupsAsync(db);
 
+            // Demo data seeding disabled per user request (clean DB with 1 Admin + 2 Owners + 2 Students, 0 properties)
+            // To re-enable demo data, remove this return and restore the original check.
+            return;
             if (await db.Properties.AnyAsync())
             {
                 return;

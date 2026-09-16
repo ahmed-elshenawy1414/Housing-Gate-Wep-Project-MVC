@@ -26,12 +26,16 @@ namespace StudentHousing.Models
         [Required, StringLength(2000)]
         public string Comment { get; set; } = string.Empty;
 
-        public ReviewStatus Status { get; set; } = ReviewStatus.Approved;
+        public ReviewStatus Status { get; set; } = ReviewStatus.Pending;
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; } = new byte[8];
 
         public Property Property { get; set; } = null!;
         public Stay Stay { get; set; } = null!;
         public ApplicationUser Reviewer { get; set; } = null!;
+        public ICollection<PropertyReviewImage> Images { get; set; } = new List<PropertyReviewImage>();
     }
 }

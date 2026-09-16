@@ -25,6 +25,14 @@ namespace StudentHousing.Services.Implementations
             await _uow.SaveChangesAsync();
         }
 
+        public async Task CreateManyAsync(IEnumerable<(string userId, string title, string message, string? link)> items)
+        {
+            var list = items.Select(i => new Notification { UserId = i.userId, Title = i.title, Message = i.message, Link = i.link }).ToList();
+            if (list.Count == 0) return;
+            foreach (var n in list) await _uow.Notifications.AddAsync(n);
+            await _uow.SaveChangesAsync();
+        }
+
         public async Task<IReadOnlyList<Notification>> GetRecentAsync(string userId, int count = 20)
             => await _uow.Notifications.GetRecentForUserAsync(userId, count);
 

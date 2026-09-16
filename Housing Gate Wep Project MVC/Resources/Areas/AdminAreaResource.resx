@@ -106,6 +106,9 @@
   <data name="Dash.NoPendingVerifications" xml:space="preserve">
     <value>No pending verification requests.</value>
   </data>
+  <data name="Dash.Owners" xml:space="preserve">
+    <value>Owners</value>
+  </data>
   <data name="Dash.OwnersAwaiting" xml:space="preserve">
     <value>Owners awaiting verification</value>
   </data>
@@ -114,6 +117,9 @@
   </data>
   <data name="Dash.RecentListings" xml:space="preserve">
     <value>Recent listings</value>
+  </data>
+  <data name="Dash.Students" xml:space="preserve">
+    <value>Students</value>
   </data>
   <data name="Dash.StudentsAwaiting" xml:space="preserve">
     <value>Students awaiting verification</value>
@@ -309,6 +315,48 @@
   </data>
   <data name="Users.Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="Users.Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Users.Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Users.DeleteConfirm" xml:space="preserve">
+    <value>Delete this user? This cannot be undone.</value>
+  </data>
+  <data name="Users.Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="Users.NoDocument" xml:space="preserve">
+    <value>No document uploaded</value>
+  </data>
+  <data name="Users.AccountInfo" xml:space="preserve">
+    <value>Account information</value>
+  </data>
+  <data name="Users.BlockedHeader" xml:space="preserve">
+    <value>This account is blocked for the following reasons:</value>
+  </data>
+  <data name="Users.Applications" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="Users.Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Users.Stays" xml:space="preserve">
+    <value>Stays</value>
+  </data>
+  <data name="Users.ComplaintsFiled" xml:space="preserve">
+    <value>Complaints filed</value>
+  </data>
+  <data name="Users.ComplaintsReceived" xml:space="preserve">
+    <value>Complaints received</value>
+  </data>
+  <data name="Users.ReviewsGiven" xml:space="preserve">
+    <value>Reviews given</value>
+  </data>
+  <data name="Users.ReviewsReceived" xml:space="preserve">
+    <value>Reviews received</value>
   </data>
   <data name="Dash.OpenComplaints" xml:space="preserve">
     <value>Open complaints</value>

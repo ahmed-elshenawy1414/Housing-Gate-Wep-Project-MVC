@@ -34,24 +34,31 @@ namespace StudentHousing.Services.Implementations
 
         public async Task<AdminDashboardViewModel> GetDashboardAsync()
         {
-            var users = await _uow.Users.GetAllUsersWithRolesAsync();
-            var students = await _uow.Users.GetStudentsWithProfilesAsync();
-            var owners = await _uow.Users.GetOwnersWithProfilesAsync();
-            var properties = await _uow.Properties.GetApprovedActiveAsync();
+            // Phase 4: use count queries (no full load) for dashboard metrics
+            var totalUsers = await _uow.Users.CountAllAsync();
+            var totalStudents = await _uow.Users.CountStudentsAsync();
+            var totalOwners = await _uow.Users.CountOwnersAsync();
+            var pendingOwnerVerifs = await _uow.Users.CountPendingOwnerVerificationsAsync();
+            var pendingStudentVerifs = await _uow.Users.CountPendingStudentVerificationsAsync();
+            var pendingProps = await _uow.Properties.CountByStatusAsync(ApprovalStatus.Pending);
+            var approvedProps = await _uow.Properties.CountByStatusAsync(ApprovalStatus.Approved);
+            var openComplaints = await _uow.Complaints.CountByStatusAsync(ComplaintStatus.Open)
+                                   + await _uow.Complaints.CountByStatusAsync(ComplaintStatus.UnderReview);
+            var pendingReviews = await _uow.Reviews.CountAsync(r => r.Status == ReviewStatus.Pending);
+            var totalListings = await _uow.Properties.CountApprovedActiveAsync();
 
             return new AdminDashboardViewModel
             {
-                TotalUsers = users.Count,
-                TotalStudents = students.Count,
-                TotalOwners = owners.Count,
-                PendingOwnerVerifications = owners.Count(o => o.OwnerProfile!.VerificationStatus == VerificationStatus.Pending),
-                PendingStudentVerifications = students.Count(s => s.StudentProfile!.VerificationStatus == VerificationStatus.Pending),
-                PendingProperties = await _uow.Properties.CountByStatusAsync(ApprovalStatus.Pending),
-                ApprovedProperties = await _uow.Properties.CountByStatusAsync(ApprovalStatus.Approved),
-                OpenComplaints = await _uow.Complaints.CountByStatusAsync(ComplaintStatus.Open)
-                                  + await _uow.Complaints.CountByStatusAsync(ComplaintStatus.UnderReview),
-                PendingReviews = (await _uow.Reviews.GetPendingAsync()).Count,
-                TotalListings = properties.Count,
+                TotalUsers = totalUsers,
+                TotalStudents = totalStudents,
+                TotalOwners = totalOwners,
+                PendingOwnerVerifications = pendingOwnerVerifs,
+                PendingStudentVerifications = pendingStudentVerifs,
+                PendingProperties = pendingProps,
+                ApprovedProperties = approvedProps,
+                OpenComplaints = openComplaints,
+                PendingReviews = pendingReviews,
+                TotalListings = totalListings,
                 RecentlyAddedProperties = (await _uow.Properties.ListAsync(
                         orderBy: q => q.OrderByDescending(p => p.CreatedAt), includeProperties: "Owner.User"))
                     .Take(5).ToList(),
@@ -397,7 +404,7 @@ namespace StudentHousing.Services.Implementations
             {
                 await _uow.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (DbUpdateException)
             {
                 return (false, _L["Err.PropertyCannotBeDeleted"]);
             }

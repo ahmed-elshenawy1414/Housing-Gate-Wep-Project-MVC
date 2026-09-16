@@ -17,6 +17,14 @@ namespace StudentHousing.Repositories.Interfaces
 
         Task<IReadOnlyList<UserReview>> GetReviewsAboutUserAsync(string userId);
 
+        Task<IReadOnlyList<UserReview>> GetReviewsAboutUsersAsync(IEnumerable<string> userIds);
+
         Task<IReadOnlyList<UserReview>> GetReviewsByUserAsync(string userId);
+
+        Task<int> CountAllAsync();
+        Task<int> CountStudentsAsync();
+        Task<int> CountOwnersAsync();
+        Task<int> CountPendingOwnerVerificationsAsync();
+        Task<int> CountPendingStudentVerificationsAsync();
     }
 }

@@ -9,6 +9,7 @@ namespace StudentHousing.Data.Configurations
         public void Configure(EntityTypeBuilder<UserReview> builder)
         {
             builder.Property(r => r.Comment).HasMaxLength(2000).IsRequired();
+            builder.Property(r => r.RowVersion).IsRowVersion();
 
             // A student may review the same roommate once per shared stay.
             builder.HasIndex(r => new { r.StayId, r.ReviewerId, r.ReviewedUserId }).IsUnique();
