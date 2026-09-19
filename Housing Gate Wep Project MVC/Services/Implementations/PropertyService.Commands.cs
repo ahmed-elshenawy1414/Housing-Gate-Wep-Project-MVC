@@ -29,6 +29,7 @@ namespace StudentHousing.Services.Implementations
                 IsFurnished = model.IsFurnished,
                 PetAllowed = model.PetAllowed,
                 AvailableFrom = model.AvailableFrom,
+                AllowedGender = model.AllowedGender,
                 ApprovalStatus = ApprovalStatus.Pending
             };
 
@@ -69,6 +70,7 @@ namespace StudentHousing.Services.Implementations
             property.IsFurnished = model.IsFurnished;
             property.PetAllowed = model.PetAllowed;
             property.AvailableFrom = model.AvailableFrom;
+            property.AllowedGender = model.AllowedGender;
             property.UpdatedAt = DateTime.UtcNow;
             if (property.PublicId == null) property.PublicId = $"APT-{property.Id:D5}";
 
@@ -135,6 +137,18 @@ namespace StudentHousing.Services.Implementations
             if (room == null) return (false, _L["Err.RoomNotFound"]);
             if (room.Property.ApprovalStatus != ApprovalStatus.Approved || !room.Property.IsActive) return (false, _L["Err.ListingNotAccepting"]);
             if (!room.IsAvailable) return (false, _L["Err.RoomUnavailable"]);
+            // Gender restriction: property specifies allowed tenant gender
+            var studentProfile = await _uow.StudentProfiles.GetByIdAsync(studentProfileId);
+            if (studentProfile != null && room.Property.AllowedGender != TenantGender.Any)
+            {
+                var allowed = room.Property.AllowedGender;
+                var studentGender = studentProfile.Gender;
+                if ((allowed == TenantGender.Male && studentGender != Gender.Male) ||
+                    (allowed == TenantGender.Female && studentGender != Gender.Female))
+                {
+                    return (false, _L["Err.GenderNotAllowed"]);
+                }
+            }
             var alreadyApplied = await _uow.Applications.AnyAsync(a => a.RoomId == roomId && a.StudentProfileId == studentProfileId && a.Status != ApplicationStatus.Cancelled);
             if (alreadyApplied) return (false, _L["Err.AlreadyApplied"]);
             var application = new PropertyApplication { RoomId = roomId, StudentProfileId = studentProfileId, Message = message, Status = ApplicationStatus.Pending };

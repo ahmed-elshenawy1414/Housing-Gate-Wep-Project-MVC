@@ -203,20 +203,38 @@
             <div class="card sticky-top" style="top: 5.5rem; z-index: 10;">
                 <div class="card-body">
                     <div class="d-flex align-items-center gap-2 mb-3">
-                        <span class="avatar-initials avatar-lg">@(string.IsNullOrEmpty(Model.OwnerName) ? "?" : string.Join("", Model.OwnerName.Split(' ').Take(2).Select(p => p[0])))</span>
-                        <div>
-                            <div class="fw-bold">@Model.OwnerName</div>
-                            @if (Model.OwnerIsVerified)
-                            {
-                                <span class="badge badge-success-soft"><i class="bi bi-patch-check-fill me-1"></i>@L["Card.VerifiedOwner"]</span>
-                            }
-                            else
-                            {
-                                <span class="badge badge-neutral-soft"><i class="bi bi-shield me-1"></i>@AL["Prop.UnverifiedOwner"]</span>
-                            }
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="avatar-initials avatar-lg">@(string.IsNullOrEmpty(Model.OwnerName) ? "?" : string.Join("", Model.OwnerName.Split(' ').Take(2).Select(p => p[0])))</span>
+                            <div>
+                                <div class="fw-bold text-dark">@Model.OwnerName</div>
+                                @if (Model.OwnerIsVerified)
+                                {
+                                    <span class="badge badge-success-soft"><i class="bi bi-patch-check-fill me-1"></i>@L["Card.VerifiedOwner"]</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-neutral-soft"><i class="bi bi-shield me-1"></i>@AL["Prop.UnverifiedOwner"]</span>
+                                }
+                                @if (Model.OwnerReviewsCount > 0)
+                                {
+                                    <div class="small text-muted"><i class="bi bi-star-fill" style="color: var(--accent-500);"></i> @Model.OwnerAverageRating.ToString("0.0") (@Model.OwnerReviewsCount)</div>
+                                }
+                            </div>
                         </div>
                     </div>
+                    @if (Model.CanViewOwnerContact && !string.IsNullOrEmpty(Model.OwnerPhone))
+                    {
+                        <div class="d-flex align-items-center gap-2 mb-3 p-2 rounded" style="background: var(--shg-cream);">
+                            <i class="bi bi-telephone-fill" style="color: var(--shg-primary);"></i>
+                            <a href="tel:@Model.OwnerPhone" class="fw-semibold text-decoration-none" style="color: var(--shg-espresso);">@Model.OwnerPhone</a>
+                            <span class="badge badge-soft ms-auto">Landlord</span>
+                        </div>
+                    }
 
+                    @if (Model.CanRateProperty && Model.RateStayId.HasValue)
+                    {
+                        <a asp-area="Student" asp-controller="Reviews" asp-action="Create" asp-route-stayId="@Model.RateStayId" class="btn btn-warning w-100 mb-3"><i class="bi bi-star me-1"></i> Rate this property</a>
+                    }
                     @if (Model.AlreadyAppliedRoomId.HasValue && Model.AppliedStatus == (int)ApplicationStatus.Pending)
                     {
                         <div class="alert alert-info d-flex align-items-center gap-2 mb-0">

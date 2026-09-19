@@ -56,6 +56,9 @@ namespace StudentHousing.ViewModels.Owner
         [DataType(DataType.Date), Display(Name = "Available from")]
         public DateTime? AvailableFrom { get; set; }
 
+        [Required, Display(Name = "Allowed Tenant Gender")]
+        public TenantGender AllowedGender { get; set; } = TenantGender.Any;
+
         /// <summary>Rooms of the property (bound from the dynamic list in the form).</summary>
         public List<RoomFormViewModel> Rooms { get; set; } = new List<RoomFormViewModel>();
 

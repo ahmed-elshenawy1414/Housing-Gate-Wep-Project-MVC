@@ -1,0 +1,44 @@
+@model IReadOnlyList<StudentHousing.Models.HousingRequest>
+@{
+    ViewData["Title"] = "My Housing Requests";
+}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 fw-bold mb-0">My Housing Requests</h1>
+        <a asp-action="Create" class="btn btn-primary">New Request</a>
+    </div>
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5 text-muted">No requests yet. Create one to let landlords find you!</div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var r in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="fw-bold">@r.Title</h5>
+                                <span class="badge @(r.IsClosed ? "bg-secondary" : "bg-success")">@(r.IsClosed ? "Closed" : "Open")</span>
+                            </div>
+                            <p class="text-muted small">@r.City • @r.BudgetMin.ToString("N0") - @r.BudgetMax.ToString("N0") EGP</p>
+                            <p class="small">@r.Description</p>
+                            <small class="text-muted">@r.CreatedAt.ToLocalTime().ToString("dd MMM yyyy") • @r.Offers.Count offers</small>
+                        </div>
+                        <div class="card-footer bg-white d-flex gap-2">
+                            <a asp-action="Edit" asp-route-id="@r.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                            <form method="post" asp-action="ToggleClose" asp-route-id="@r.Id" class="d-inline">
+                                <button type="submit" class="btn btn-sm @(r.IsClosed ? "btn-success" : "btn-secondary")">@(r.IsClosed ? "Reopen" : "Close")</button>
+                            </form>
+                            <form method="post" asp-action="Delete" asp-route-id="@r.Id" class="d-inline" onsubmit="return confirm('Delete?')">
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

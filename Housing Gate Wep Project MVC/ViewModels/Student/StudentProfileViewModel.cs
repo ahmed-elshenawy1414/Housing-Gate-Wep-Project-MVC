@@ -24,6 +24,8 @@ namespace StudentHousing.ViewModels.Student
         [DataType(DataType.Date), Display(Name = "Date of birth")]
         public DateTime? DateOfBirth { get; set; }
 
+        [Required(ErrorMessage = "Please select your gender")]
+        [Range(0, 1, ErrorMessage = "Please select Male or Female")]
         public Gender Gender { get; set; } = Gender.PreferNotToSay;
 
         [StringLength(800)]

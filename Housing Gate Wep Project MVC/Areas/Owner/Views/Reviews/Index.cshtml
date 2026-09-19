@@ -44,7 +44,7 @@ else
                             </div>
                         </td>
                         <td>@s.Room.Property.Title - @s.Room.Name</td>
-                        <td class="small text-muted">@s.StartDate.ToLocalTime().ToString("dd MMM yyyy") - @(s.EndDate?.ToLocalTime().ToString("dd MMM yyyy") ?? "Active")</td>
+                        <td class="small text-muted">@s.StartDate.ToLocalTime().ToString("dd MMM yyyy") - @(s.EndDate?.ToLocalTime().ToString("dd MMM yyyy") ?? (s.Status == StudentHousing.Models.StayStatus.Completed ? "Completed" : "Active"))</td>
                         <td class="text-end">
                             <a asp-action="ReviewStudent" asp-route-stayId="@s.Id" class="btn btn-sm btn-primary"><i class="bi bi-star me-1"></i> Rate Student</a>
                         </td>

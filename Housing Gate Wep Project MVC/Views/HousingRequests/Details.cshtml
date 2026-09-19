@@ -1,0 +1,81 @@
+@model StudentHousing.Models.HousingRequest
+@{
+    ViewData["Title"] = Model.Title;
+}
+<div class="container py-4" style="max-width:900px">
+    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a asp-action="Index">Requests</a></li><li class="breadcrumb-item active">@Model.Title</li></ol></nav>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <h2 class="fw-bold">@Model.Title</h2>
+                <span class="badge @(Model.IsClosed?"bg-secondary":"bg-success")">@(Model.IsClosed?"Closed":"Open")</span>
+            </div>
+            <p class="text-muted">@Model.City @if(!string.IsNullOrEmpty(Model.District)){<span>• @Model.District</span>} @if(!string.IsNullOrEmpty(Model.University)){<span>• @Model.University</span>}</p>
+            <p style="white-space:pre-line">@Model.Description</p>
+            <hr />
+            <div class="row g-2 small">
+                <div class="col-6"><strong>Type:</strong> @Model.PropertyType</div>
+                <div class="col-6"><strong>Gender:</strong> @Model.PreferredGender</div>
+                <div class="col-6"><strong>Budget:</strong> @Model.BudgetMin.ToString("N0") - @Model.BudgetMax.ToString("N0") EGP</div>
+                <div class="col-6"><strong>Rooms:</strong> @Model.Bedrooms bd, @Model.Bathrooms ba</div>
+                <div class="col-6"><strong>Furnished:</strong> @(Model.IsFurnished ? "Yes" : "No")</div>
+                <div class="col-6"><strong>Move-in:</strong> @(Model.MoveInDate?.ToString("dd MMM yyyy") ?? "Flexible")</div>
+            </div>
+            <hr />
+            <div class="d-flex align-items-center gap-2">
+                <span class="avatar-initials">@Model.StudentProfile.User.FirstName.FirstOrDefault()</span>
+                <div>
+                    <div class="fw-semibold">@Model.StudentProfile.User.FullName @(Model.StudentProfile.VerificationStatus==VerificationStatus.Verified?"✓":"")</div>
+                    <small class="text-muted">@Model.StudentProfile.University • @Model.StudentProfile.Major</small>
+                </div>
+                <span class="ms-auto small text-muted">@Model.CreatedAt.ToLocalTime().ToString("dd MMM yyyy")</span>
+            </div>
+            @if (Model.Amenities.Any())
+            {
+                <div class="mt-3">
+                    @foreach (var a in Model.Amenities) { <span class="badge bg-light text-dark me-1">@a.Name</span> }
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header d-flex justify-content-between">
+            <span class="fw-semibold">Offers (@Model.Offers.Count)</span>
+            <span class="text-muted small">Landlords and students can make offers</span>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="Offer" asp-route-id="@Model.Id" class="mb-4">
+                <div class="mb-2">
+                    <label class="form-label">Your Message</label>
+                    <textarea name="message" class="form-control" rows="3" required placeholder="Describe your property or offer..."></textarea>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Offer a Property (optional, owners only)</label>
+                    <input type="number" name="propertyId" class="form-control" placeholder="Property ID" />
+                </div>
+                <button type="submit" class="btn btn-primary">Send Offer</button>
+            </form>
+            <hr />
+            @if (!Model.Offers.Any())
+            {
+                <p class="text-muted small">No offers yet.</p>
+            }
+            else
+            {
+                foreach (var o in Model.Offers.OrderByDescending(x => x.CreatedAt))
+                {
+                    <div class="d-flex gap-3 py-2 border-bottom">
+                        <span class="avatar-initials avatar-sm">@o.Offerer.FirstName.FirstOrDefault()</span>
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold small">@o.Offerer.FullName <span class="badge bg-light text-dark ms-1">@o.Status</span></div>
+                            @if (o.OfferedProperty != null) { <div class="small text-primary">@o.OfferedProperty.Title - @o.OfferedProperty.City</div> }
+                            <p class="small mb-1">@o.Message</p>
+                            <small class="text-muted">@o.CreatedAt.ToLocalTime().ToString("g")</small>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

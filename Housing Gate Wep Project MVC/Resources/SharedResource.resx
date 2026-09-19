@@ -985,6 +985,12 @@
   <data name="Err.ImgInvalidExtension" xml:space="preserve">
     <value>Only .jpg, .jpeg, .png and .webp images are allowed.</value>
   </data>
+  <data name="Err.GenderRequired" xml:space="preserve">
+    <value>Please select your gender (Male or Female).</value>
+  </data>
+  <data name="Err.GenderNotAllowed" xml:space="preserve">
+    <value>This property is not available for your gender.</value>
+  </data>
   <data name="Err.ImgTooLarge" xml:space="preserve">
     <value>Image must be between 1 byte and 3 MB.</value>
   </data>

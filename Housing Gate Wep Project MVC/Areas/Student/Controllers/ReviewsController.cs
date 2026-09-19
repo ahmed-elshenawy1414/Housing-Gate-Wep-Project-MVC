@@ -63,12 +63,20 @@ namespace StudentHousing.Areas.Student.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PropertyReviewFormViewModel model)
         {
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+            // Repopulate display helpers for redisplay
+            var stayForView = await _uow.Stays.GetByIdWithDetailsAsync(model.StayId);
+            if (stayForView != null)
+            {
+                model.PropertyTitle = stayForView.Room.Property.Title;
+                model.RoomName = stayForView.Room.Name;
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
             var result = await _reviewService.AddPropertyReviewAsync(model, userId);
 
             if (!result.Success)

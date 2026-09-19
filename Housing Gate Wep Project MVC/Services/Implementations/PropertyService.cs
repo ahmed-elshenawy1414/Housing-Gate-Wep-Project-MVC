@@ -174,6 +174,11 @@ namespace StudentHousing.Services.Implementations
                 return true;
             }
 
+            if (property.AllowedGender != model.AllowedGender)
+            {
+                return true;
+            }
+
             if (_reviewSettings.RequireReviewOnAmenityChange)
             {
                 var current = property.Amenities.Select(a => a.Id).OrderBy(id => id).ToList();

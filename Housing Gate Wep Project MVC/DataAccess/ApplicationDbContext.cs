@@ -25,6 +25,8 @@ namespace StudentHousing.Data
         public DbSet<PropertyReview> PropertyReviews => Set<PropertyReview>();
         public DbSet<PropertyReviewImage> PropertyReviewImages => Set<PropertyReviewImage>();
         public DbSet<UserReview> UserReviews => Set<UserReview>();
+        public DbSet<HousingRequest> HousingRequests => Set<HousingRequest>();
+        public DbSet<HousingRequestOffer> HousingRequestOffers => Set<HousingRequestOffer>();
         public DbSet<SiteSetting> SiteSettings => Set<SiteSetting>();
         public DbSet<Complaint> Complaints => Set<Complaint>();
         public DbSet<Notification> Notifications => Set<Notification>();

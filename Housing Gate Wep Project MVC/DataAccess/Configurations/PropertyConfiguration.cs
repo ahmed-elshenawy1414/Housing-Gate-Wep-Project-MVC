@@ -21,6 +21,7 @@ namespace StudentHousing.Data.Configurations
             builder.HasIndex(p => new { p.ApprovalStatus, p.IsActive });
             builder.HasIndex(p => p.City);
             builder.HasIndex(p => p.PublicId).IsUnique().HasFilter("[PublicId] IS NOT NULL");
+            builder.HasIndex(p => p.AllowedGender);
 
             builder.HasMany(p => p.Images)
                    .WithOne(i => i.Property)

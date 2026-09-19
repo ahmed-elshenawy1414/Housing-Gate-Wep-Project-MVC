@@ -23,7 +23,8 @@ namespace StudentHousing.Services.Implementations
             }
 
             var all = await _uow.StudentProfiles.GetAllWithDetailsAsync();
-            var others = all.Where(p => p.Id != myStudentProfileId && p.User.IsActive).ToList();
+            var others = all.Where(p => p.Id != myStudentProfileId && p.User.IsActive
+                && !IsGenderMismatch(me.Gender, p.Gender)).ToList();
 
             // Batch reviews for all others in one query (Phase 4 fix N+1)
             var otherIds = others.Select(o => o.UserId).ToHashSet();
@@ -117,6 +118,14 @@ namespace StudentHousing.Services.Implementations
         {
             var preferred = want.Preference?.PreferredGender;
             return preferred == null || preferred == person.Gender ? 100 : 0;
+        }
+
+        private static bool IsGenderMismatch(Gender a, Gender b)
+        {
+            // Strict: Male and Female should never be paired
+            if (a == Gender.Male && b == Gender.Female) return true;
+            if (a == Gender.Female && b == Gender.Male) return true;
+            return false;
         }
 
         private static int LifestyleScore(StudentProfile want, StudentProfile person)

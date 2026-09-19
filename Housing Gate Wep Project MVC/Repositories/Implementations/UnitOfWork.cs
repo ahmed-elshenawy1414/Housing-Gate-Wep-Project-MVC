@@ -24,6 +24,8 @@ namespace StudentHousing.Repositories.Implementations
         private IRepository<Amenity>? _amenities;
         private IRepository<Bed>? _beds;
         private IRepository<University>? _universities;
+        private IHousingRequestRepository? _housingRequests;
+        private IRepository<HousingRequestOffer>? _housingRequestOffers;
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -45,6 +47,8 @@ namespace StudentHousing.Repositories.Implementations
         public IRepository<Amenity> Amenities => _amenities ??= new Repository<Amenity>(_db);
         public IRepository<Bed> Beds => _beds ??= new Repository<Bed>(_db);
         public IRepository<University> Universities => _universities ??= new Repository<University>(_db);
+        public IHousingRequestRepository HousingRequests => _housingRequests ??= new HousingRequestRepository(_db);
+        public IRepository<HousingRequestOffer> HousingRequestOffers => _housingRequestOffers ??= new Repository<HousingRequestOffer>(_db);
 
         public Task<int> SaveChangesAsync() => _db.SaveChangesAsync();
     }

@@ -113,6 +113,7 @@ builder.Services.AddRateLimiter(options =>
 // ---------- Dependency injection ----------
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<StudentHousing.Services.Interfaces.ISiteSettingService, StudentHousing.Services.Implementations.SiteSettingService>();
+builder.Services.AddScoped<StudentHousing.Services.Interfaces.IHousingRequestService, StudentHousing.Services.Implementations.HousingRequestService>();
 builder.Services.AddScoped<IUnitOfWork, StudentHousing.Repositories.Implementations.UnitOfWork>();
 
 builder.Services.AddScoped<StudentHousing.Services.Interfaces.IDocumentStorageService, StudentHousing.Services.Implementations.DocumentStorageService>();

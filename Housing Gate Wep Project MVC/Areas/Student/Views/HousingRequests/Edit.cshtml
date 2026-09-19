@@ -1,0 +1,16 @@
+@model StudentHousing.ViewModels.Student.HousingRequestFormViewModel
+@{
+    ViewData["Title"] = "Edit Housing Request";
+}
+<div class="container py-4" style="max-width:800px">
+    <h1 class="h3 fw-bold mb-4">Edit Request</h1>
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <partial name="_HousingRequestForm" model="Model" />
+        <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Mine" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

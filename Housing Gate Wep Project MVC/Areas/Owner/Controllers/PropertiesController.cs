@@ -93,6 +93,7 @@ namespace StudentHousing.Areas.Owner.Controllers
                 IsFurnished = property.IsFurnished,
                 PetAllowed = property.PetAllowed,
                 AvailableFrom = property.AvailableFrom,
+                AllowedGender = property.AllowedGender,
                 ExistingImages = property.Images.ToList(),
                 ApprovalStatusDisplay = property.ApprovalStatus.ToString(),
                 SelectedAmenityIds = property.Amenities.Select(a => a.Id).ToList(),

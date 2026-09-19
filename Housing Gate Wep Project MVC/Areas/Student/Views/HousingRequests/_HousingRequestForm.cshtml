@@ -1,0 +1,19 @@
+@model StudentHousing.ViewModels.Student.HousingRequestFormViewModel
+<div class="row g-3">
+    <div class="col-12"><label asp-for="Title" class="form-label"></label><input asp-for="Title" class="form-control" /><span asp-validation-for="Title" class="text-danger"></span></div>
+    <div class="col-12"><label asp-for="Description" class="form-label"></label><textarea asp-for="Description" class="form-control" rows="3"></textarea><span asp-validation-for="Description" class="text-danger"></span></div>
+    <div class="col-md-4"><label asp-for="City" class="form-label"></label><input asp-for="City" class="form-control" /><span asp-validation-for="City" class="text-danger"></span></div>
+    <div class="col-md-4"><label asp-for="District" class="form-label"></label><input asp-for="District" class="form-control" /></div>
+    <div class="col-md-4"><label asp-for="University" class="form-label"></label><input asp-for="University" class="form-control" /></div>
+    <div class="col-md-3"><label asp-for="PropertyType" class="form-label"></label><select asp-for="PropertyType" asp-items="Html.GetEnumSelectList<PropertyType>()" class="form-select"></select></div>
+    <div class="col-md-3"><label asp-for="Bedrooms" class="form-label"></label><input asp-for="Bedrooms" class="form-control" type="number" /></div>
+    <div class="col-md-3"><label asp-for="Bathrooms" class="form-label"></label><input asp-for="Bathrooms" class="form-control" type="number" /></div>
+    <div class="col-md-3"><label asp-for="PreferredGender" class="form-label"></label><select asp-for="PreferredGender" asp-items="Html.GetEnumSelectList<TenantGender>()" class="form-select"></select></div>
+    <div class="col-md-3"><label asp-for="BudgetMin" class="form-label"></label><input asp-for="BudgetMin" class="form-control" type="number" /></div>
+    <div class="col-md-3"><label asp-for="BudgetMax" class="form-label"></label><input asp-for="BudgetMax" class="form-control" type="number" /></div>
+    <div class="col-md-3"><label asp-for="MoveInDate" class="form-label"></label><input asp-for="MoveInDate" class="form-control" type="date" /></div>
+    <div class="col-md-3"><label asp-for="MinLeaseMonths" class="form-label"></label><input asp-for="MinLeaseMonths" class="form-control" type="number" /></div>
+    <div class="col-12 form-check"><input asp-for="IsFurnished" class="form-check-input" /><label asp-for="IsFurnished" class="form-check-label"></label></div>
+    <div class="col-12 form-check"><input asp-for="PetAllowed" class="form-check-input" /><label asp-for="PetAllowed" class="form-check-label"></label></div>
+    <div class="col-12"><label class="form-label">Amenities</label><div class="row g-2">@foreach(var a in Model.AllAmenities){<div class="col-md-3 form-check"><input type="checkbox" name="SelectedAmenityIds" value="@a.Id" @(Model.SelectedAmenityIds.Contains(a.Id)?"checked":"") class="form-check-input" id="am_@a.Id" /><label class="form-check-label" for="am_@a.Id">@a.Name</label></div>}</div></div>
+</div>

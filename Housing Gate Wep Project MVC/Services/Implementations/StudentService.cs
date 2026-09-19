@@ -29,6 +29,8 @@ namespace StudentHousing.Services.Implementations
 
         public async Task<(bool Success, string Error)> UpdateProfileAsync(string userId, StudentProfileViewModel model)
         {
+            if (model.Gender != Gender.Male && model.Gender != Gender.Female)
+                return (false, _L["Err.GenderRequired"]);
             var profile = await _uow.StudentProfiles.GetByUserIdAsync(userId);
             if (profile == null)
             {

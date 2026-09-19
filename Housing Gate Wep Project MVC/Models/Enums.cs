@@ -8,6 +8,13 @@ namespace StudentHousing.Models
         PreferNotToSay
     }
 
+    public enum TenantGender
+    {
+        Any = 0,
+        Male = 1,
+        Female = 2
+    }
+
     public enum PropertyType
     {
         Apartment,

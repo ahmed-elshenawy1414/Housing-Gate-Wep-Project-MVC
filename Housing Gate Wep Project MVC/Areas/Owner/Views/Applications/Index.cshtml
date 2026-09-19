@@ -46,7 +46,17 @@ else
                                 <span class="avatar-initials avatar-initials-sm">@string.Concat(app.StudentProfile.User.FirstName?.FirstOrDefault(), app.StudentProfile.User.LastName?.FirstOrDefault())</span>
                                 <div class="min-width-0">
                                     <div class="fw-semibold text-truncate">@app.StudentProfile.User.FullName</div>
-                                    <small class="text-muted">@app.StudentProfile.University</small>
+                                    <small class="text-muted">@app.StudentProfile.University • @app.StudentProfile.Major</small>
+                                    <div class="small d-flex align-items-center gap-2 mt-1">
+                                        @if (app.StudentProfile.VerificationStatus == VerificationStatus.Verified)
+                                        {
+                                            <span class="badge badge-success-soft" style="font-size:0.65rem;"><i class="bi bi-patch-check-fill me-1"></i>Verified</span>
+                                        }
+                                        @if (!string.IsNullOrEmpty(app.StudentProfile.User.PhoneNumber))
+                                        {
+                                            <a href="tel:@app.StudentProfile.User.PhoneNumber" class="text-decoration-none small"><i class="bi bi-telephone me-1"></i>@app.StudentProfile.User.PhoneNumber</a>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </td>

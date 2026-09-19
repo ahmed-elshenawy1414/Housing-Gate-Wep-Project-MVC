@@ -27,6 +27,15 @@ namespace StudentHousing.ViewModels.Student
 
         public string OwnerName { get; set; } = string.Empty;
         public bool OwnerIsVerified { get; set; }
+        public string OwnerId { get; set; } = string.Empty;
+        public string? OwnerPhone { get; set; }
+        public string? OwnerProfileUrl { get; set; }
+        public double OwnerAverageRating { get; set; }
+        public int OwnerReviewsCount { get; set; }
+        // Related-party flag: student has applied/approved/completed stay for this property
+        public bool CanViewOwnerContact { get; set; }
+        public bool CanRateProperty { get; set; }
+        public int? RateStayId { get; set; }
 
         /// <summary>Id of the room the current student already applied for, if any.</summary>
         public int? AlreadyAppliedRoomId { get; set; }

@@ -65,6 +65,9 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Student" asp-controller="Search" asp-action="Index">@L["Nav.FindHousing"]</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="HousingRequests" asp-action="Index">Requests</a>
+                        </li>
                         @if (User.IsInRole("Student"))
                         {
                             <li class="nav-item">

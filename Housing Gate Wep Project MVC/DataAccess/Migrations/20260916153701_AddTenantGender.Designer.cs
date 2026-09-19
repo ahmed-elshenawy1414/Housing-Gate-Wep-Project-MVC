@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentHousing.Data;
 
@@ -11,9 +12,11 @@ using StudentHousing.Data;
 namespace StudentHousing.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260916153701_AddTenantGender")]
+    partial class AddTenantGender
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace StudentHousing.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("HousingRequestAmenities", b =>
-                {
-                    b.Property<int>("AmenitiesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HousingRequestId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AmenitiesId", "HousingRequestId");
-
-                    b.HasIndex("HousingRequestId");
-
-                    b.ToTable("HousingRequestAmenities");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -475,159 +463,6 @@ namespace StudentHousing.Migrations
                     b.ToTable("Complaints");
                 });
 
-            modelBuilder.Entity("StudentHousing.Models.HousingRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Bathrooms")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Bedrooms")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BudgetMax")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BudgetMin")
-                        .HasColumnType("int");
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
-
-                    b.Property<string>("District")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Governorate")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsClosed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsFurnished")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MinLeaseMonths")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("MoveInDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("PetAllowed")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("PreferredGender")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PropertyType")
-                        .HasColumnType("int");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
-                    b.Property<int>("StudentProfileId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("University")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("City");
-
-                    b.HasIndex("CreatedAt");
-
-                    b.HasIndex("StudentProfileId");
-
-                    b.HasIndex("IsActive", "IsClosed");
-
-                    b.ToTable("HousingRequests", t =>
-                        {
-                            t.HasCheckConstraint("CK_HousingRequest_Bathrooms_Range", "[Bathrooms] >= 0 AND [Bathrooms] <= 10");
-
-                            t.HasCheckConstraint("CK_HousingRequest_Bedrooms_Range", "[Bedrooms] >= 1 AND [Bedrooms] <= 20");
-
-                            t.HasCheckConstraint("CK_HousingRequest_BudgetMax_NonNegative", "[BudgetMax] >= 0");
-
-                            t.HasCheckConstraint("CK_HousingRequest_BudgetMin_NonNegative", "[BudgetMin] >= 0");
-                        });
-                });
-
-            modelBuilder.Entity("StudentHousing.Models.HousingRequestOffer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("HousingRequestId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Message")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<int?>("OfferedPropertyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("OffererUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OfferedPropertyId");
-
-                    b.HasIndex("OffererUserId");
-
-                    b.HasIndex("HousingRequestId", "Status");
-
-                    b.ToTable("HousingRequestOffers");
-                });
-
             modelBuilder.Entity("StudentHousing.Models.Notification", b =>
                 {
                     b.Property<int>("Id")
@@ -831,8 +666,6 @@ namespace StudentHousing.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AllowedGender");
 
                     b.HasIndex("City");
 
@@ -1375,21 +1208,6 @@ namespace StudentHousing.Migrations
                     b.ToTable("UserReviews");
                 });
 
-            modelBuilder.Entity("HousingRequestAmenities", b =>
-                {
-                    b.HasOne("StudentHousing.Models.Amenity", null)
-                        .WithMany()
-                        .HasForeignKey("AmenitiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("StudentHousing.Models.HousingRequest", null)
-                        .WithMany()
-                        .HasForeignKey("HousingRequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1523,43 +1341,6 @@ namespace StudentHousing.Migrations
                     b.Navigation("TargetProperty");
 
                     b.Navigation("TargetUser");
-                });
-
-            modelBuilder.Entity("StudentHousing.Models.HousingRequest", b =>
-                {
-                    b.HasOne("StudentHousing.Models.StudentProfile", "StudentProfile")
-                        .WithMany()
-                        .HasForeignKey("StudentProfileId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("StudentProfile");
-                });
-
-            modelBuilder.Entity("StudentHousing.Models.HousingRequestOffer", b =>
-                {
-                    b.HasOne("StudentHousing.Models.HousingRequest", "HousingRequest")
-                        .WithMany("Offers")
-                        .HasForeignKey("HousingRequestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("StudentHousing.Models.Property", "OfferedProperty")
-                        .WithMany()
-                        .HasForeignKey("OfferedPropertyId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("StudentHousing.Models.ApplicationUser", "Offerer")
-                        .WithMany()
-                        .HasForeignKey("OffererUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("HousingRequest");
-
-                    b.Navigation("OfferedProperty");
-
-                    b.Navigation("Offerer");
                 });
 
             modelBuilder.Entity("StudentHousing.Models.Notification", b =>
@@ -1762,11 +1543,6 @@ namespace StudentHousing.Migrations
                     b.Navigation("OwnerProfile");
 
                     b.Navigation("StudentProfile");
-                });
-
-            modelBuilder.Entity("StudentHousing.Models.HousingRequest", b =>
-                {
-                    b.Navigation("Offers");
                 });
 
             modelBuilder.Entity("StudentHousing.Models.OwnerProfile", b =>

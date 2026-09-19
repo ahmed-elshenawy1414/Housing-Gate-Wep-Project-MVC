@@ -50,6 +50,12 @@ namespace StudentHousing.Areas.Student.Controllers
             var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
             var profile = await _studentService.GetMyProfileAsync(userId);
 
+            var owner = property.Owner;
+            var ownerUserId = owner?.UserId ?? property.OwnerId;
+            // Landlord rating (owner as reviewed user)
+            var ownerReviews = ownerUserId != null ? await _uow.Users.GetReviewsAboutUserAsync(ownerUserId) : new List<UserReview>();
+            var ownerAvg = ownerReviews.Count == 0 ? 0 : Math.Round(ownerReviews.Average(r => r.Rating), 1);
+
             var model = new PropertyDetailViewModel
             {
                 Id = property.Id,
@@ -71,8 +77,12 @@ namespace StudentHousing.Areas.Student.Controllers
                 Rooms = property.Rooms.ToList(),
                 Reviews = property.Reviews.ToList(),
                 AverageRating = property.Reviews.Count == 0 ? 0 : Math.Round(property.Reviews.Average(r => r.Rating), 1),
-                OwnerName = property.Owner?.User?.FullName ?? _L["Account.Owner"],
-                OwnerIsVerified = property.Owner?.VerificationStatus == VerificationStatus.Verified
+                OwnerName = owner?.User?.FullName ?? _L["Account.Owner"],
+                OwnerIsVerified = owner?.VerificationStatus == VerificationStatus.Verified,
+                OwnerId = ownerUserId ?? "",
+                OwnerPhone = owner?.Phone ?? owner?.User?.PhoneNumber,
+                OwnerAverageRating = ownerAvg,
+                OwnerReviewsCount = ownerReviews.Count
             };
 
             if (profile != null)
@@ -86,6 +96,26 @@ namespace StudentHousing.Areas.Student.Controllers
                 model.AlreadyAppliedRoomId = myApplication?.RoomId;
                 model.AppliedMessage = myApplication?.Message;
                 model.AppliedStatus = myApplication == null ? null : (int)myApplication.Status;
+
+                // Related-party: has application or completed stay → can view owner contact
+                var hasRelation = myApplication != null;
+                if (!hasRelation)
+                {
+                    var staysForProp = await _uow.Stays.GetByStudentProfileAsync(profile.Id);
+                    hasRelation = staysForProp.Any(s => s.Room.PropertyId == property.Id);
+                }
+                model.CanViewOwnerContact = hasRelation;
+                // Can rate if has completed stay not yet reviewed
+                var completedStays = await _uow.Stays.GetByStudentProfileAsync(profile.Id);
+                foreach (var s in completedStays.Where(s => s.Room.PropertyId == property.Id && s.Status == StayStatus.Completed))
+                {
+                    if (!await _uow.Reviews.AlreadyReviewedStayAsync(s.Id, userId))
+                    {
+                        model.CanRateProperty = true;
+                        model.RateStayId = s.Id;
+                        break;
+                    }
+                }
             }
 
             return View(model);

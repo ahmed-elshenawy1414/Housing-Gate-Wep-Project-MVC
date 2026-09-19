@@ -23,8 +23,16 @@ namespace StudentHousing.Areas.Owner.Controllers
         {
             var ownerId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value ?? "";
             var all = await _uow.Stays.GetByOwnerAsync(ownerId);
-            var stays = all.Where(s => s.Status == Models.StayStatus.Completed).Take(50).ToList();
-            return View(stays);
+            var completed = all.Where(s => s.Status == Models.StayStatus.Completed).ToList();
+            // Filter out stays already reviewed by this owner
+            var filtered = new List<Models.Stay>();
+            foreach (var s in completed)
+            {
+                if (!await _uow.Reviews.UserReviewExistsAsync(s.Id, ownerId, s.StudentProfile.UserId))
+                    filtered.Add(s);
+                if (filtered.Count >= 50) break;
+            }
+            return View(filtered);
         }
 
         [HttpGet]

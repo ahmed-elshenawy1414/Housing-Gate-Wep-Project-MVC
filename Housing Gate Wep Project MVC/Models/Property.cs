@@ -59,6 +59,8 @@ namespace StudentHousing.Models
 
         public DateTime? AvailableFrom { get; set; }
 
+        public TenantGender AllowedGender { get; set; } = TenantGender.Any;
+
         public ApprovalStatus ApprovalStatus { get; set; } = ApprovalStatus.Pending;
 
         /// <summary>Rejection / moderation note from an admin.</summary>

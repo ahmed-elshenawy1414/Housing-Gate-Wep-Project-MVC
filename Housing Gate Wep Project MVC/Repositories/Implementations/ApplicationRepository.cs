@@ -36,8 +36,8 @@ namespace StudentHousing.Repositories.Implementations
         {
             return await _db.PropertyApplications
                 .Include(a => a.Room.Property.Images)
-                .Include(a => a.Room)
-                .Include(a => a.StudentProfile.User)
+                .Include(a => a.Room.Property)
+                .Include(a => a.StudentProfile).ThenInclude(s => s.User)
                 .Where(a => a.Room.Property.OwnerId == ownerId)
                 .OrderByDescending(a => a.AppliedAt)
                 .AsNoTracking()
@@ -48,8 +48,8 @@ namespace StudentHousing.Repositories.Implementations
         {
             return await _db.PropertyApplications
                 .Include(a => a.Room.Property.Images)
-                .Include(a => a.Room)
-                .Include(a => a.StudentProfile.User)
+                .Include(a => a.Room.Property)
+                .Include(a => a.StudentProfile).ThenInclude(s => s.User)
                 .Where(a => a.Room.Property.OwnerId == ownerId && a.Status == ApplicationStatus.Pending)
                 .OrderByDescending(a => a.AppliedAt)
                 .AsNoTracking()

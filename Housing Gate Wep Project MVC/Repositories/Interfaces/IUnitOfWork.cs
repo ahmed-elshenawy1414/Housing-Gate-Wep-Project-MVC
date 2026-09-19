@@ -23,6 +23,8 @@ namespace StudentHousing.Repositories.Interfaces
         IRepository<Amenity> Amenities { get; }
         IRepository<Bed> Beds { get; }
         IRepository<University> Universities { get; }
+        IHousingRequestRepository HousingRequests { get; }
+        IRepository<HousingRequestOffer> HousingRequestOffers { get; }
 
         Task<int> SaveChangesAsync();
     }

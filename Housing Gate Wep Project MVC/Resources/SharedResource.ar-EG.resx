@@ -985,6 +985,12 @@
   <data name="Err.ImgInvalidExtension" xml:space="preserve">
     <value>يُسمح فقط بصور .jpg و .jpeg و .png و .webp.</value>
   </data>
+  <data name="Err.GenderRequired" xml:space="preserve">
+    <value>يرجى اختيار الجنس (ذكر أو أنثى).</value>
+  </data>
+  <data name="Err.GenderNotAllowed" xml:space="preserve">
+    <value>هذا العقار غير متاح لجنسك.</value>
+  </data>
   <data name="Err.ImgTooLarge" xml:space="preserve">
     <value>يجب أن يتراوح حجم الصورة بين 1 بايت و 3 ميجابايت.</value>
   </data>

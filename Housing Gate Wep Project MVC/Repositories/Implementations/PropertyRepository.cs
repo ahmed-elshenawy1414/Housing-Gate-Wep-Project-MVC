@@ -19,6 +19,7 @@ namespace StudentHousing.Repositories.Implementations
                 .Include(p => p.Rooms)
                 .Include(p => p.Amenities)
                 .Include(p => p.Reviews.Where(r => r.Status == ReviewStatus.Approved)).ThenInclude(r => r.Reviewer)
+                .Include(p => p.Reviews.Where(r => r.Status == ReviewStatus.Approved)).ThenInclude(r => r.Images)
                 .AsSplitQuery()
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
@@ -86,6 +87,10 @@ namespace StudentHousing.Repositories.Implementations
                 var max = search.MaxRent.Value;
                 query = query.Where(p => p.Rooms.Any(r => r.IsAvailable && r.RentPerMonth <= max));
             }
+
+            // Gender filter: if search has Gender (from student's profile), filter properties that allow that gender or Any
+            // This is handled in service layer where student's Gender is known, but we also support direct TenantGender filter if provided
+            // For now, handle TenantGender if present in search (future extension)
 
             query = search.SortBy switch
             {
